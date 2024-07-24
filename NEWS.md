@@ -1,0 +1,12 @@
+* https://arrow.apache.org/blog/
+* https://github.com/posit-dev/great-tables/releases/tag/v0.10.0
+* https://posit.co/blog/
+* https://github.com/posit-dev/positron/releases
+* https://github.com/posit-dev/py-shiny/releases/tag/v1.0.0
+* https://ibis-project.org/release_notes
+* https://ibis-project.org/posts
+* https://github.com/substrait-io/substrait-python/releases/tag/v0.21.0
+* https://github.com/narwhals-dev/narwhals/releases/tag/v1.1.6
+* https://github.com/pola-rs/polars/releases
+* https://pandas.pydata.org/pandas-docs/version/2.2.2/whatsnew/index.html
+* 
