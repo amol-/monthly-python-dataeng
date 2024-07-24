@@ -11,3 +11,14 @@
 * https://pandas.pydata.org/pandas-docs/version/2.2.2/whatsnew/index.html
 * https://github.com/Crunch-io/diagnose
 * https://github.com/Crunch-io/lazycsv
+* https://blog.holoviz.org/
+* https://github.com/holoviz/datashader/releases
+* https://github.com/holoviz/panel/releases
+* https://github.com/holoviz/hvplot/releases
+* https://github.com/holoviz/holoviews/releases
+* https://github.com/pyscript/pyscript/releases
+* https://spark.apache.org/news/index.html
+* https://github.com/cython/cython/releases
+* https://github.com/plotly/dash/releases
+* https://numba.readthedocs.io/en/stable/release-notes-overview.html
+* https://github.com/dask/dask/releases
