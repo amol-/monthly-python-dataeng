@@ -9,4 +9,5 @@
 * https://github.com/narwhals-dev/narwhals/releases/tag/v1.1.6
 * https://github.com/pola-rs/polars/releases
 * https://pandas.pydata.org/pandas-docs/version/2.2.2/whatsnew/index.html
-* 
+* https://github.com/Crunch-io/diagnose
+* https://github.com/Crunch-io/lazycsv
