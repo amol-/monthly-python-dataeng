@@ -22,3 +22,4 @@
 * https://github.com/plotly/dash/releases
 * https://numba.readthedocs.io/en/stable/release-notes-overview.html
 * https://github.com/dask/dask/releases
+* https://github.com/delta-io/delta-rs/releases
