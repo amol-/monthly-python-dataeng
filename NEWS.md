@@ -1,12 +1,12 @@
-* https://arrow.apache.org/blog/
-* https://github.com/posit-dev/great-tables/releases
+* https://arrow.apache.org/blog/ | https://arrow.apache.org/docs/python/
+* https://github.com/posit-dev/great-tables/releases | https://posit-dev.github.io/great-tables/get-started/
 * https://posit.co/blog/
-* https://github.com/posit-dev/py-shiny/releases
-* https://ibis-project.org/release_notes
+* https://github.com/posit-dev/py-shiny/releases | https://shiny.posit.co/py/
+* https://ibis-project.org/release_notes | https://ibis-project.org/
 * https://ibis-project.org/posts
-* https://github.com/substrait-io/substrait-python/releases
-* https://github.com/narwhals-dev/narwhals/releases
-* https://github.com/pola-rs/polars/releases
+* https://github.com/substrait-io/substrait-python/releases | https://substrait.io/
+* https://github.com/narwhals-dev/narwhals/releases | https://narwhals-dev.github.io/narwhals/
+* https://github.com/pola-rs/polars/releases | https://docs.pola.rs/
 * https://pandas.pydata.org/pandas-docs/version/2.2.2/whatsnew/index.html
 * https://github.com/Crunch-io/diagnose
 * https://github.com/Crunch-io/lazycsv
