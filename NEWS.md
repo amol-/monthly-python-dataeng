@@ -10,7 +10,7 @@
 * https://pandas.pydata.org/docs/whatsnew/index.html | https://pandas.pydata.org/docs/index.html
 * https://pypi.org/rss/project/diagnose/releases.xml | https://github.com/Crunch-io/diagnose
 * https://pypi.org/rss/project/lazycsv/releases.xml | https://github.com/Crunch-io/lazycsv
-* https://blog.holoviz.org/
+* https://blog.holoviz.org/index.xml | https://holoviz.org/
 * https://github.com/holoviz/datashader/releases | https://datashader.org/
 * https://github.com/holoviz/panel/releases | https://panel.holoviz.org/
 * https://github.com/holoviz/hvplot/releases | https://hvplot.holoviz.org/
