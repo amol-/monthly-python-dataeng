@@ -1,4 +1,6 @@
 import datetime
+import webbrowser
+import os
 import requests
 import markdown
 
@@ -73,6 +75,7 @@ def main():
     with open("newsletter.html", "w+") as f:
         f.write(markdown.markdown(mkdown))
 
+    webbrowser.open(f"file://{os.getcwd()}/newsletter.html", new=1)
 
 if __name__ == "__main__":
     main()
