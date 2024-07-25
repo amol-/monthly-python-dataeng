@@ -2,8 +2,8 @@
 * https://github.com/posit-dev/great-tables/releases | https://posit-dev.github.io/great-tables/get-started/
 * https://posit.co/blog/
 * https://github.com/posit-dev/py-shiny/releases | https://shiny.posit.co/py/
-* https://ibis-project.org/release_notes | https://ibis-project.org/
-* https://ibis-project.org/posts
+* https://github.com/ibis-project/ibis/releases | https://ibis-project.org/
+* https://ibis-project.org/posts.xml | https://ibis-project.org/
 * https://github.com/substrait-io/substrait-python/releases | https://substrait.io/
 * https://github.com/narwhals-dev/narwhals/releases | https://narwhals-dev.github.io/narwhals/
 * https://github.com/pola-rs/polars/releases | https://docs.pola.rs/
