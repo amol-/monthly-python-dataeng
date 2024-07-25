@@ -1,7 +1,6 @@
 * https://arrow.apache.org/blog/
 * https://github.com/posit-dev/great-tables/releases
 * https://posit.co/blog/
-* https://github.com/posit-dev/positron/releases
 * https://github.com/posit-dev/py-shiny/releases
 * https://ibis-project.org/release_notes
 * https://ibis-project.org/posts
