@@ -7,19 +7,21 @@
 * https://github.com/substrait-io/substrait-python/releases | https://substrait.io/
 * https://github.com/narwhals-dev/narwhals/releases | https://narwhals-dev.github.io/narwhals/
 * https://github.com/pola-rs/polars/releases | https://docs.pola.rs/
-* https://pandas.pydata.org/pandas-docs/version/2.2.2/whatsnew/index.html
-* https://github.com/Crunch-io/diagnose
-* https://github.com/Crunch-io/lazycsv
+* https://pandas.pydata.org/docs/whatsnew/index.html | https://pandas.pydata.org/docs/index.html
+* https://pypi.org/rss/project/diagnose/releases.xml | https://github.com/Crunch-io/diagnose
+* https://pypi.org/rss/project/lazycsv/releases.xml | https://github.com/Crunch-io/lazycsv
 * https://blog.holoviz.org/
-* https://github.com/holoviz/datashader/releases
-* https://github.com/holoviz/panel/releases
-* https://github.com/holoviz/hvplot/releases
-* https://github.com/holoviz/holoviews/releases
-* https://github.com/pyscript/pyscript/releases
-* https://spark.apache.org/news/index.html
-* https://github.com/cython/cython/releases
-* https://github.com/plotly/dash/releases
-* https://numba.readthedocs.io/en/stable/release-notes-overview.html
-* https://github.com/dask/dask/releases
-* https://github.com/delta-io/delta-rs/releases
-* https://velox-lib.io/blog
+* https://github.com/holoviz/datashader/releases | https://datashader.org/
+* https://github.com/holoviz/panel/releases | https://panel.holoviz.org/
+* https://github.com/holoviz/hvplot/releases | https://hvplot.holoviz.org/
+* https://github.com/holoviz/holoviews/releases | https://holoviews.org/
+* https://github.com/pyscript/pyscript/releases | https://pyscript.com/
+* https://pyodide.org/en/stable/_sources/project/changelog.md | https://pyodide.org
+* https://spark.apache.org/news/index.html | https://spark.apache.org/docs/latest/api/python/index.html
+* https://github.com/cython/cython/releases | https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html
+* https://github.com/plotly/dash/releases | https://plotly.com/dash/
+* https://numba.readthedocs.io/en/stable/release-notes-overview.html | https://numba.readthedocs.io
+* https://github.com/dask/dask/releases | https://www.dask.org/
+* https://github.com/delta-io/delta-rs/releases | https://delta-io.github.io/delta-rs/usage/installation/
+* https://velox-lib.io/blog | https://facebookincubator.github.io/velox/velox-in-10-min.html
+* https://datafusion.apache.org/blog/feed.xml | https://datafusion.apache.org/python/
