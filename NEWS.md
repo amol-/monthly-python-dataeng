@@ -23,6 +23,6 @@
 * https://numba.readthedocs.io/en/stable/release-notes-overview.html | https://numba.readthedocs.io
 * https://github.com/dask/dask/releases | https://www.dask.org/
 * https://github.com/delta-io/delta-rs/releases | https://delta-io.github.io/delta-rs/usage/installation/
-* https://velox-lib.io/blog | https://facebookincubator.github.io/velox/velox-in-10-min.html
+* https://velox-lib.io/blog/rss.xml | https://facebookincubator.github.io/velox/velox-in-10-min.html
 * https://datafusion.apache.org/blog/feed.xml | https://datafusion.apache.org/python/
 * https://github.com/rapidsai/cudf/releases | https://docs.rapids.ai/api/cudf/stable/user_guide/10min/
