@@ -3,6 +3,8 @@ import webbrowser
 import os
 import requests
 import markdown
+from bs4 import BeautifulSoup
+
 
 GITHUB_API_TOKEN = "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"
 GITHUB_RELEASES_API = "https://api.github.com/repos/{ORG}/{REPO}/releases"
@@ -19,18 +21,27 @@ def fetch_news_entries():
     content = requests.get(download_url).text
     
     github_releases = []
-    blogs = []
+    html_blogs = []
+    xml_feeds = []
     for entry in content.split("\n"):
         if not entry:
             continue
         _, url = entry.split(" ", 1)
+        url, *webpage = url.split("|")
+        if webpage:
+            webpage = ''.join(webpage).strip()
+        else:
+            webpage = url
+        url = url.strip()
         if "github.com" in url:
             repo_url = url[len("https://github.com/"):]
             org, repo, *_ = repo_url.split("/", 3)
-            github_releases.append((url, org, repo))
+            github_releases.append((url, org, repo, webpage))
+        elif url.endswith(".xml"):
+            xml_feeds.append(url)
         else:
-            blogs.append(url)
-    return github_releases, blogs
+            html_blogs.append(url)
+    return github_releases, html_blogs, xml_feeds
 
 
 def fetch_releases(org, repo):
@@ -47,7 +58,8 @@ def fetch_releases(org, repo):
 
         release_name = release["name"]
         release_notes = release["body"]
-        release_infos.append((release_date, release_name, release_notes))
+        release_url = release["html_url"]
+        release_infos.append((release_date, release_name, release_notes, release_url))
     return release_infos
 
 
@@ -55,20 +67,99 @@ def _parse_github_date(date):
     return datetime.datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
 
 
+def fetch_html_posts(url):
+    content = requests.get(url).text
+    
+    if "spark.apache.org" in url:
+        return _parse_spark_blog(content)
+    if "arrow.apache.org" in url:
+        return _parse_arrow_blog(content)
+    else:
+        print(f"\tUNSUPPORTED: {url}")
+
+
+def _parse_spark_blog(content):
+    SPARK_BLOG_BASE_URL = "https://spark.apache.org"
+
+    blog_articles = []
+
+    sp = BeautifulSoup(content, "html5lib")
+    articles = sp.find_all('article')
+    for article in articles:
+        title = article.select_one(".entry-title").text
+        article_url = article.select_one(".entry-title > a")["href"]
+        date = article.select_one(".entry-date").text
+        content = article.select_one(".entry-content > p").text
+        date = _parse_USA_date(date)
+        if date < START_DATE:
+            break
+        blog_articles.append((date, title, content, SPARK_BLOG_BASE_URL + article_url))
+
+    return blog_articles
+
+
+def _parse_arrow_blog(content):
+    ARROW_BLOG_BASE_URL = "https://arrow.apache.org"
+
+    blog_articles = []
+
+    sp = BeautifulSoup(content, "html5lib")
+    article_headers = sp.select('main > h3')
+    for article_header in article_headers:
+        header_anchor = article_header.select_one("a")
+        title = header_anchor.text
+        article_url = header_anchor["href"]
+        article_header_sibling = article_header.find_next_sibling()
+        date_element = article_header_sibling.select_one(".blog-list-date")
+        if not date_element:
+            continue
+        date = date_element.text.strip()
+        date = _parse_eng_date(date)
+        if date < START_DATE:
+            break
+        blog_articles.append((date, title, "", ARROW_BLOG_BASE_URL + article_url))
+
+    return blog_articles
+
+
+def _parse_USA_date(date):
+    return datetime.datetime.strptime(date, "%B %d, %Y")
+
+
+def _parse_eng_date(date):
+    return datetime.datetime.strptime(date, "%d %B %Y")
+
+
 def main():
     mkdown = ""
 
-    github_releases, blogs = fetch_news_entries()
-    for releases_url, project_org, project_name in github_releases:
+    github_releases, html_blogs, xml_feeds = fetch_news_entries()
+
+    # Process HTML Blogs without RSS
+    for url in html_blogs:
+        print(f"Processing {url}")
+        recent_articles = fetch_html_posts(url)
+        if not recent_articles:
+            continue
+
+        mkdown += f"# [{url}]({url}), {len(recent_articles)} articles\n"
+        for recent_article in recent_articles:
+            article_date, article_title, article_content, article_url = recent_article
+            mkdown += f"## ⇰⇰ [{article_title}]({article_url})\n"
+            mkdown += article_content
+            mkdown += "\n"
+
+    # Process GitHub Releases
+    for releases_url, project_org, project_name, project_page in github_releases:
         print(f"Processing {project_org}/{project_name}")
         recent_releases = fetch_releases(project_org, project_name)
         if not recent_releases:
             continue
 
-        mkdown += f"# [{project_org}/{project_name}]({releases_url})\n"
+        mkdown += f"# [{project_org}/{project_name}]({project_page}), {len(recent_releases)} releases\n"
         for recent_release in recent_releases:
-            release_date, release_name, release_notes = recent_release
-            mkdown += f"## ⇰⇰ {release_name}\n"
+            release_date, release_name, release_notes, release_url = recent_release
+            mkdown += f"## ⇰⇰ {project_name} [{release_name}]({release_url})\n"
             mkdown += release_notes
             mkdown += "\n"
 
