@@ -26,3 +26,4 @@
 * https://velox-lib.io/blog/rss.xml | https://facebookincubator.github.io/velox/velox-in-10-min.html
 * https://datafusion.apache.org/blog/feed.xml | https://datafusion.apache.org/python/
 * https://github.com/rapidsai/cudf/releases | https://docs.rapids.ai/api/cudf/stable/user_guide/10min/
+* https://github.com/apache/avro/releases | https://avro.apache.org/docs/1.11.1/getting-started-python/
