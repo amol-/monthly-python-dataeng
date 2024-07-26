@@ -27,3 +27,5 @@
 * https://datafusion.apache.org/blog/feed.xml | https://datafusion.apache.org/python/
 * https://github.com/rapidsai/cudf/releases | https://docs.rapids.ai/api/cudf/stable/user_guide/10min/
 * https://github.com/apache/avro/releases | https://avro.apache.org/docs/1.11.1/getting-started-python/
+* https://github.com/lancedb/lance/releases | https://lancedb.github.io/lance/
+* https://github.com/lancedb/lancedb/releases | https://lancedb.github.io/lancedb/basic/
