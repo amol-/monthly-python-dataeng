@@ -1,4 +1,4 @@
-* https://arrow.apache.org/blog/ | https://arrow.apache.org/docs/python/
+* https://github.com/apache/arrow/releases | https://arrow.apache.org/docs/python/
 * https://github.com/posit-dev/great-tables/releases | https://posit-dev.github.io/great-tables/get-started/
 * https://posit.co/blog/
 * https://github.com/posit-dev/py-shiny/releases | https://shiny.posit.co/py/
