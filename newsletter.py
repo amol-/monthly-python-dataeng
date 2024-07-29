@@ -3,6 +3,7 @@ import webbrowser
 import os
 import requests
 import markdown
+import feedparser
 from bs4 import BeautifulSoup
 
 
@@ -66,6 +67,25 @@ def fetch_releases(org, repo):
 def _parse_github_date(date):
     return datetime.datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
 
+
+def fetch_rss_posts(url):
+    content = requests.get(url).text
+    feed = feedparser.parse(content)
+
+    blog_url = feed.feed.link
+    blog_title = feed.feed.title
+
+    articles = []
+    for entry in feed.entries:
+        published_date = datetime.datetime(*entry.published_parsed[:6])
+        if published_date < START_DATE:
+            break
+
+        soup = BeautifulSoup(entry.description)
+        content_preview = soup.get_text()
+        articles.append((published_date, entry.title, content_preview[:1024], entry.link))
+
+    return blog_url, blog_title, articles
 
 def fetch_html_posts(url):
     content = requests.get(url).text
@@ -137,7 +157,7 @@ def main():
 
     # Process HTML Blogs without RSS
     for url in html_blogs:
-        print(f"Processing {url}")
+        print(f"[HTML] Processing {url}")
         recent_articles = fetch_html_posts(url)
         if not recent_articles:
             continue
@@ -146,12 +166,26 @@ def main():
         for recent_article in recent_articles:
             article_date, article_title, article_content, article_url = recent_article
             mkdown += f"## ⇰⇰ [{article_title}]({article_url})\n"
-            mkdown += article_content
+            # mkdown += article_content
+            mkdown += "\n"
+
+    # Process RSS Blogs
+    for url in xml_feeds:
+        print(f"[RSS] Processing {url}")
+        blog_url, blog_title, recent_articles = fetch_rss_posts(url)
+        if not recent_articles:
+            continue
+
+        mkdown += f"# [{blog_title}]({blog_url}), {len(recent_articles)} articles\n"
+        for recent_article in recent_articles:
+            article_date, article_title, article_content, article_url = recent_article
+            mkdown += f"## ⇰⇰ [{article_title}]({article_url})\n"
+            # mkdown += article_content
             mkdown += "\n"
 
     # Process GitHub Releases
     for releases_url, project_org, project_name, project_page in github_releases:
-        print(f"Processing {project_org}/{project_name}")
+        print(f"[GH] Processing {project_org}/{project_name}")
         recent_releases = fetch_releases(project_org, project_name)
         if not recent_releases:
             continue
