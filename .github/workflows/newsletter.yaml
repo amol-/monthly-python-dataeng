@@ -1,0 +1,32 @@
+name: Generate Newsletter Updates
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-newsletter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies    
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r newsletter-requirements.txt
+
+      - name: Generate Newsletter
+        run: python newsletter.py
+
+      - name: Upload Newsletter
+        uses: actions/upload-artifact@v2
+        with:
+          name: newsletter
+          path: newsletter.html
+
+    
