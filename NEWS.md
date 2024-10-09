@@ -29,3 +29,4 @@
 * https://github.com/apache/avro/releases | https://avro.apache.org/docs/1.11.1/getting-started-python/
 * https://github.com/lancedb/lance/releases | https://lancedb.github.io/lance/
 * https://github.com/lancedb/lancedb/releases | https://lancedb.github.io/lancedb/basic/
+* https://github.com/innobi/pantab/releases | https://pantab.readthedocs.io/
