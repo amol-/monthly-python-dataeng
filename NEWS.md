@@ -31,3 +31,4 @@
 * https://github.com/lancedb/lancedb/releases | https://lancedb.github.io/lancedb/basic/
 * https://github.com/innobi/pantab/releases | https://pantab.readthedocs.io/
 * https://github.com/duckdb/duckdb/releases | https://duckdb.org/
+* https://github.com/trinodb/trino/tags | https://trino.io/docs/current/release/release-{release}.html
