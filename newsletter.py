@@ -155,6 +155,17 @@ def main():
 
     github_releases, html_blogs, xml_feeds = fetch_news_entries()
 
+    mkdown += "# Complete List of Projects\n"
+    for releases_url, project_org, project_name, project_page in github_releases:
+        mkdown += f" * Project: {project_org}/{project_name}\n"
+    for url in html_blogs:
+        mkdown += f" * Project: {url}\n"
+    for url in xml_feeds:
+        mkdown += f" * Project: {blog_title}\n"
+    mkdown += "\n\n"
+
+    mkdown += "# Releases for each project\n"
+    
     # Process HTML Blogs without RSS
     for url in html_blogs:
         print(f"[HTML] Processing {url}")
@@ -162,10 +173,10 @@ def main():
         if not recent_articles:
             continue
 
-        mkdown += f"# Project: [{url}]({url}), {len(recent_articles)} articles\n"
+        mkdown += f"## Project: [{url}]({url}), {len(recent_articles)} articles\n"
         for recent_article in recent_articles:
             article_date, article_title, article_content, article_url = recent_article
-            mkdown += f"## ⇰⇰ [{article_title}]({article_url})\n"
+            mkdown += f"### Release: [{article_title}]({article_url})\n"
             # mkdown += article_content
             mkdown += "\n"
 
@@ -176,10 +187,10 @@ def main():
         if not recent_articles:
             continue
 
-        mkdown += f"# Project: [{blog_title}]({blog_url}), {len(recent_articles)} articles\n"
+        mkdown += f"## Project: [{blog_title}]({blog_url}), {len(recent_articles)} articles\n"
         for recent_article in recent_articles:
             article_date, article_title, article_content, article_url = recent_article
-            mkdown += f"## ⇰⇰ [{article_title}]({article_url})\n"
+            mkdown += f"### Release: [{article_title}]({article_url})\n"
             # mkdown += article_content
             mkdown += "\n"
 
@@ -191,10 +202,10 @@ def main():
             continue
 
         release_names = [name for _, name, *_ in recent_releases]
-        mkdown += f"# Project: [{project_org}/{project_name}]({project_page}), {len(recent_releases)} releases: {release_names}\n"
+        mkdown += f"## Project: [{project_org}/{project_name}]({project_page}), {len(recent_releases)} releases: {release_names}\n"
         for recent_release in recent_releases:
             release_date, release_name, release_notes, release_url = recent_release
-            mkdown += f"## ⇰⇰ {project_name} [{release_name}]({release_url})\n"
+            mkdown += f"### Release: {project_name} [{release_name}]({release_url})\n"
             mkdown += release_notes
             mkdown += "\n"
 
