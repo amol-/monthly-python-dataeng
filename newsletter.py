@@ -154,14 +154,30 @@ def main():
     mkdown = ""
 
     github_releases, html_blogs, xml_feeds = fetch_news_entries()
+    downloaded_data = {}
 
     mkdown += "# Complete List of Projects\n"
     for releases_url, project_org, project_name, project_page in github_releases:
-        mkdown += f" * Project: {project_org}/{project_name}\n"
+        print(f"[GH] Fetching {project_org}/{project_name}")
+        recent_releases = fetch_releases(project_org, project_name)
+        if not recent_releases:
+            continue
+        downloaded_data[(project_org, project_name)] = recent_releases
+        mkdown += f" * Project: {project_org}/{project_name} has {len(recent_releases)} releases\n"
     for url in html_blogs:
-        mkdown += f" * Project: {url}\n"
+        print(f"[HTML] Fetching {url}")
+        recent_articles = fetch_html_posts(url)
+        if not recent_articles:
+            continue
+        downloaded_data[url] = recent_articles
+        mkdown += f" * Project: {url} has {len(recent_articles)} releases\n"
     for url in xml_feeds:
-        mkdown += f" * Project: {url}\n"
+        print(f"[RSS] Fetching {url}")
+        blog_url, blog_title, recent_articles = fetch_rss_posts(url)
+        if not recent_articles:
+            continue
+        downloaded_data[url] = (blog_url, blog_title, recent_articles)
+        mkdown += f" * Project: {url} has {len(recent_articles)} releases\n"
     mkdown += "\n\n"
 
     mkdown += "# Releases for each project\n"
@@ -169,7 +185,7 @@ def main():
     # Process HTML Blogs without RSS
     for url in html_blogs:
         print(f"[HTML] Processing {url}")
-        recent_articles = fetch_html_posts(url)
+        recent_articles = downloaded_data.get(url)
         if not recent_articles:
             continue
 
@@ -183,10 +199,11 @@ def main():
     # Process RSS Blogs
     for url in xml_feeds:
         print(f"[RSS] Processing {url}")
-        blog_url, blog_title, recent_articles = fetch_rss_posts(url)
-        if not recent_articles:
+        data = downloaded_data.get(url)
+        if not data:
             continue
-
+        
+        blog_url, blog_title, recent_articles = data
         mkdown += f"## Project: [{blog_title}]({blog_url}), {len(recent_articles)} articles\n"
         for recent_article in recent_articles:
             article_date, article_title, article_content, article_url = recent_article
@@ -197,7 +214,7 @@ def main():
     # Process GitHub Releases
     for releases_url, project_org, project_name, project_page in github_releases:
         print(f"[GH] Processing {project_org}/{project_name}")
-        recent_releases = fetch_releases(project_org, project_name)
+        recent_releases = downloaded_data.get((project_org, project_name))
         if not recent_releases:
             continue
 
