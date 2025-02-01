@@ -161,7 +161,7 @@ def main():
     for url in html_blogs:
         mkdown += f" * Project: {url}\n"
     for url in xml_feeds:
-        mkdown += f" * Project: {blog_title}\n"
+        mkdown += f" * Project: {url}\n"
     mkdown += "\n\n"
 
     mkdown += "# Releases for each project\n"
