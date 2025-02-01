@@ -162,7 +162,7 @@ def main():
         if not recent_articles:
             continue
 
-        mkdown += f"# [{url}]({url}), {len(recent_articles)} articles\n"
+        mkdown += f"# Project: [{url}]({url}), {len(recent_articles)} articles\n"
         for recent_article in recent_articles:
             article_date, article_title, article_content, article_url = recent_article
             mkdown += f"## ⇰⇰ [{article_title}]({article_url})\n"
@@ -176,7 +176,7 @@ def main():
         if not recent_articles:
             continue
 
-        mkdown += f"# [{blog_title}]({blog_url}), {len(recent_articles)} articles\n"
+        mkdown += f"# Project: [{blog_title}]({blog_url}), {len(recent_articles)} articles\n"
         for recent_article in recent_articles:
             article_date, article_title, article_content, article_url = recent_article
             mkdown += f"## ⇰⇰ [{article_title}]({article_url})\n"
@@ -190,7 +190,8 @@ def main():
         if not recent_releases:
             continue
 
-        mkdown += f"# [{project_org}/{project_name}]({project_page}), {len(recent_releases)} releases\n"
+        release_names = [name for _, name, *_ in recent_releases]
+        mkdown += f"# Project: [{project_org}/{project_name}]({project_page}), {len(recent_releases)} releases: {release_names}\n"
         for recent_release in recent_releases:
             release_date, release_name, release_notes, release_url = recent_release
             mkdown += f"## ⇰⇰ {project_name} [{release_name}]({release_url})\n"
