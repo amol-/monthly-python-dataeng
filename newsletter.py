@@ -226,6 +226,8 @@ def main():
             mkdown += release_notes
             mkdown += "\n"
 
+    with open("newsletter.md", "w+") as f:
+        f.write(mkdown)
     with open("newsletter.html", "w+") as f:
         f.write(markdown.markdown(mkdown))
 
