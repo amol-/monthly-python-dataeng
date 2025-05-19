@@ -32,3 +32,5 @@
 * https://github.com/innobi/pantab/releases | https://pantab.readthedocs.io/
 * https://github.com/duckdb/duckdb/releases | https://duckdb.org/
 * https://github.com/trinodb/trino/tags | https://trino.io/docs/current/release/release-{release}.html
+* https://github.com/datafusion-contrib/datafusion-table-providers/releases | https://github.com/datafusion-contrib/datafusion-table-providers
+* https://github.com/unionai-oss/pandera/releases | https://pandera.readthedocs.io/en/stable/index.html
