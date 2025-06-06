@@ -34,3 +34,4 @@
 * https://github.com/trinodb/trino/tags | https://trino.io/docs/current/release/release-{release}.html
 * https://github.com/datafusion-contrib/datafusion-table-providers/releases | https://github.com/datafusion-contrib/datafusion-table-providers
 * https://github.com/unionai-oss/pandera/releases | https://pandera.readthedocs.io/en/stable/index.html
+* https://github.com/apache/datafusion-python/releases | https://datafusion.apache.org/python/
