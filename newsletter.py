@@ -53,6 +53,7 @@ def fetch_releases(org, repo):
 
     release_infos = []
     for release in github_releases:
+        print("RELEASE:", release)
         release_date = release["published_at"] # "2013-02-27T19:35:32Z"
         release_date = _parse_github_date(release_date)
         if release_date < START_DATE:
