@@ -50,10 +50,10 @@ def fetch_releases(org, repo):
     github_releases = requests.get(GITHUB_RELEASES_API.format(ORG=org, REPO=repo),
                                    headers={"Accept": "application/vnd.github.v3+json",
                                            "Authorization": f"token {GITHUB_API_TOKEN}"}).json()
+    print("RELEASES FOR", org, repo, ":", github_releases)
 
     release_infos = []
     for release in github_releases:
-        print("RELEASE:", release)
         release_date = release["published_at"] # "2013-02-27T19:35:32Z"
         release_date = _parse_github_date(release_date)
         if release_date < START_DATE:
