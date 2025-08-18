@@ -7,7 +7,7 @@ import feedparser
 from bs4 import BeautifulSoup
 
 
-GITHUB_API_TOKEN = "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"
+GITHUB_API_TOKEN = "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"
 GITHUB_RELEASES_API = "https://api.github.com/repos/{ORG}/{REPO}/releases"
 NEWSLETTER_NEWS_md = "https://api.github.com/repos/amol-/modern-datascience/contents/NEWS.md"
 NOW = datetime.datetime.utcnow()
@@ -18,6 +18,7 @@ def fetch_news_entries():
     news_entries = requests.get(NEWSLETTER_NEWS_md,
                                    headers={"Accept": "application/vnd.github.v3+json",
                                            "Authorization": f"token {GITHUB_API_TOKEN}"}).json()
+    print(news_entries)
     download_url = news_entries["download_url"]
     content = requests.get(download_url).text
     
