@@ -22,7 +22,7 @@ jobs:
 
       - name: Generate Newsletter
         env:
-          TOKEN_API_GITHUB: ${{ secrets.TOKEN_API_GITHUB }}
+          TOKEN_GITHUB_API: ${{ secrets.TOKEN_GITHUB_API }}
         run: python newsletter.py
 
       - name: Upload Newsletter
