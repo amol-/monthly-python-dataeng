@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 # with endless tokens.
 GITHUB_API_TOKEN = os.environ["TOKEN_GITHUB_API"]
 GITHUB_RELEASES_API = "https://api.github.com/repos/{ORG}/{REPO}/releases"
-NEWSLETTER_NEWS_md = "https://api.github.com/repos/amol-/modern-datascience/contents/NEWS.md"
+NEWSLETTER_NEWS_md = "https://api.github.com/repos/amol-/monthly-python-dataeng/contents/NEWS.md"
 NOW = datetime.datetime.utcnow()
 START_DATE = NOW - datetime.timedelta(days=31)
 
