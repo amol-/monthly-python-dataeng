@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 # Expires after 1 year as ASF forbids access to their repositories
 # with endless tokens.
-GITHUB_API_TOKEN = "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"
+GITHUB_API_TOKEN = os.environ["TOKEN_API_GITHUB"]
 GITHUB_RELEASES_API = "https://api.github.com/repos/{ORG}/{REPO}/releases"
 NEWSLETTER_NEWS_md = "https://api.github.com/repos/amol-/modern-datascience/contents/NEWS.md"
 NOW = datetime.datetime.utcnow()
