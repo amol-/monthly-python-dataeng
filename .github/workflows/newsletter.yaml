@@ -65,6 +65,18 @@ jobs:
           asset_path: ./newsletter.md
           asset_name: newsletter.md
           asset_content_type: text/markdown
+
+      - name: Prepare GitHub Pages
+        run: |
+          mkdir -p docs
+          mv newsletter.md docs/newsletter.md
+
+      - name: Publish gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
           
 
     
