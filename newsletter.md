@@ -3,13 +3,14 @@
  * Project: substrait-io/substrait-python has 1 releases
  * Project: narwhals-dev/narwhals has 4 releases
  * Project: pola-rs/polars has 6 releases
+ * Project: pandas-dev/pandas has 1 releases
  * Project: holoviz/panel has 2 releases
  * Project: cython/cython has 1 releases
  * Project: plotly/dash has 3 releases
  * Project: dask/dask has 2 releases
  * Project: rapidsai/cudf has 1 releases
  * Project: lancedb/lance has 10 releases
- * Project: lancedb/lancedb has 18 releases
+ * Project: lancedb/lancedb has 16 releases
  * Project: datafusion-contrib/datafusion-table-providers has 2 releases
  * Project: duckdb/duckdb has 1 releases
  * Project: trinodb/trino has 1 releases
@@ -1006,6 +1007,25 @@ Thank you to all our contributors for making this release possible!
 Thank you to all our contributors for making this release possible!
 @Kevin-Patyk, @MarcoGorelli, @NeejWeej, @agossard, @alexander-beedie, @aparna2198, @borchero, @coastalwhite, @deanm0000, @dsprenkels, @eitsupi, @etiennebacher, @gab23r, @henryharbeck, @jjurm, @kdn36, @math-hiyoko, @mcrumiller, @mroeschke, @nameexhaustion, @orlp, @r-brink, @ritchie46, @stijnherfst, @vdrn and @wence-
 
+## Project: [pandas-dev/pandas](https://pandas.pydata.org/docs/index.html), 1 releases: ['Pandas 2.3.3']
+### Release: pandas [Pandas 2.3.3](https://github.com/pandas-dev/pandas/releases/tag/v2.3.3)
+We are pleased to announce the release of pandas 2.3.3.
+This release includes some improvements and fixes to the future string data type (preview feature for the upcoming pandas 3.0). We recommend that all users upgrade to this version.
+
+See the [full whatsnew](https://pandas.pydata.org/pandas-docs/version/2.3/whatsnew/v2.3.3.html) for a list of all the changes.
+Pandas 2.3.3 supports Python 3.9 and higher, and is the first release to support Python 3.14.
+
+The release will be available on the conda-forge channel:
+
+    conda install pandas --channel conda-forge
+
+Or via PyPI:
+
+    python3 -m pip install --upgrade pandas
+
+Please report any issues with the release on the [pandas issue tracker](https://github.com/pandas-dev/pandas/issues).
+
+Thanks to all the contributors who made this release possible.
 ## Project: [holoviz/panel](https://panel.holoviz.org/), 2 releases: ['Version 1.8.1', 'Version 1.8.0']
 ### Release: panel [Version 1.8.1](https://github.com/holoviz/panel/releases/tag/v1.8.1)
 Many thanks to [@ATL2001](https://github.com/ATL2001) (first contribution), [@Coderambling](https://github.com/Coderambling), [@philippjfr](https://github.com/philippjfr), and [@hoxbro](https://github.com/hoxbro) for their contributions.
@@ -1156,6 +1176,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 ## 🐛 Bug Fixes
 
+- Fix arrow timestamp frequency cases in `cudf.pandas` (#20128) @galipremsagar
 - Fix cudf.date_range with non-iso start and end date strings (#20116) @mroeschke
 - Unproxy few unnecessary testing utilities in pandas (#20088) @galipremsagar
 - Fix create_distinct_rows_column to create non-nullable columns (#20082) @davidwendt
@@ -1166,6 +1187,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 ## 🚀 New Features
 
+- Add memory resources to reduce, column, column_factories, and contiguous_split (#20135) @vyasr
 - Add memory resource to all strings modules (#20123) @vyasr
 - Add memory resources to all nvtext APIs (#20119) @vyasr
 - Add memory resources to groupby, datetime, and lists modules (#20102) @vyasr
@@ -1178,6 +1200,9 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 ## 🛠️ Improvements
 
+- Fix slowdown in cudf-polars distributed tests (#20137) @TomAugspurger
+- Disable async MR priming in cudf.pandas (#20133) @bdice
+- Add pyarrow stubs to mypy environment and fix associated errors (#20118) @vyasr
 - Avoid running pandas unit tests for private functionality with cudf.pandas (#20115) @mroeschke
 - Remove MultiIndex.from_pandas pytest benchmark (#20112) @mroeschke
 - Use 8 processes for pandas tests, show top 10 test times (#20109) @bdice
@@ -1191,6 +1216,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Cleanup of some libcudf aggregation code (#20053) @davidwendt
 - Prune entries in Sphinx nitpick_ignore (#20045) @mroeschke
 - Deprecate .from_pandas constructor (#19996) @mroeschke
+- Improve performance of string column size computation during parquet reads. (#19986) @nvdbaranec
 - Run cudf-polars conda unit tests with more than 1 process (#19980) @mroeschke
 - Clean up detail device atomic logic using atomic_ref (#19924) @PointKernel
 - Update nvbench (#19619) @bdice
@@ -1450,7 +1476,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 * @ebyhr made their first contribution in https://github.com/lancedb/lance/pull/4606
 
 **Full Changelog**: https://github.com/lancedb/lance/compare/v0.34.0...v0.34.0-beta.4
-## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 18 releases: ['Node/Rust LanceDB v0.22.2-beta.0', 'Python LanceDB v0.25.2-beta.0', 'Node/Rust LanceDB v0.22.1', 'Python LanceDB v0.25.1', 'Node/Rust LanceDB v0.22.1-beta.3', 'Python LanceDB v0.25.1-beta.3', 'Node/Rust LanceDB v0.22.1-beta.2', 'Python LanceDB v0.25.1-beta.2', 'Node/Rust LanceDB v0.22.1-beta.1', 'Node/Rust LanceDB v0.22.1-beta.0', 'Python LanceDB v0.25.1-beta.1', 'Python LanceDB v0.25.1-beta.0', 'Node/Rust LanceDB v0.22.0', 'Python LanceDB v0.25.0', 'Node/Rust LanceDB v0.22.0-beta.1', 'Python LanceDB v0.25.0-beta.1', 'Node/Rust LanceDB v0.22.0-beta.0', 'Python LanceDB v0.25.0-beta.0']
+## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 16 releases: ['Node/Rust LanceDB v0.22.2-beta.0', 'Python LanceDB v0.25.2-beta.0', 'Node/Rust LanceDB v0.22.1', 'Python LanceDB v0.25.1', 'Node/Rust LanceDB v0.22.1-beta.3', 'Python LanceDB v0.25.1-beta.3', 'Node/Rust LanceDB v0.22.1-beta.2', 'Python LanceDB v0.25.1-beta.2', 'Node/Rust LanceDB v0.22.1-beta.1', 'Node/Rust LanceDB v0.22.1-beta.0', 'Python LanceDB v0.25.1-beta.1', 'Python LanceDB v0.25.1-beta.0', 'Node/Rust LanceDB v0.22.0', 'Python LanceDB v0.25.0', 'Node/Rust LanceDB v0.22.0-beta.1', 'Python LanceDB v0.25.0-beta.1']
 ### Release: lancedb [Node/Rust LanceDB v0.22.2-beta.0](https://github.com/lancedb/lancedb/releases/tag/v0.22.2-beta.0)
 ## 🎉 New Features
 
@@ -1669,30 +1695,6 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 - fix!: fix doctest in query.py by @cmccabe in https://github.com/lancedb/lancedb/pull/2622
 - fix: remote python sdk namespace typing by @wkalt in https://github.com/lancedb/lancedb/pull/2620
-
-
-### Release: lancedb [Node/Rust LanceDB v0.22.0-beta.0](https://github.com/lancedb/lancedb/releases/tag/v0.22.0-beta.0)
-## 🛠 Breaking Changes
-
-- feat!: support multi-level namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2603
-
-## 🎉 New Features
-
-- feat: add __getitems__ method impl for torch integration by @westonpace in https://github.com/lancedb/lancedb/pull/2596
-- feat!: support multi-level namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2603
-- feat: add `name` parameter to remaining Python create index calls by @wjones127 in https://github.com/lancedb/lancedb/pull/2617
-
-
-### Release: lancedb [Python LanceDB v0.25.0-beta.0](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.0-beta.0)
-## 🛠 Breaking Changes
-
-- feat!: support multi-level namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2603
-
-## 🎉 New Features
-
-- feat: add __getitems__ method impl for torch integration by @westonpace in https://github.com/lancedb/lancedb/pull/2596
-- feat!: support multi-level namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2603
-- feat: add `name` parameter to remaining Python create index calls by @wjones127 in https://github.com/lancedb/lancedb/pull/2617
 
 
 ## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers?tab=readme-ov-file#datafusion-table-providers), 2 releases: ['v0.8.1', 'v0.8.0']
