@@ -1,7 +1,7 @@
 # Complete List of Projects
  * Project: posit-dev/py-shiny has 1 releases
  * Project: substrait-io/substrait-python has 1 releases
- * Project: narwhals-dev/narwhals has 3 releases
+ * Project: narwhals-dev/narwhals has 4 releases
  * Project: pola-rs/polars has 7 releases
  * Project: pandas-dev/pandas has 1 releases
  * Project: holoviz/panel has 2 releases
@@ -9,23 +9,21 @@
  * Project: plotly/dash has 3 releases
  * Project: dask/dask has 2 releases
  * Project: rapidsai/cudf has 1 releases
- * Project: lancedb/lance has 11 releases
- * Project: lancedb/lancedb has 19 releases
+ * Project: lancedb/lance has 8 releases
+ * Project: lancedb/lancedb has 17 releases
  * Project: datafusion-contrib/datafusion-table-providers has 2 releases
  * Project: duckdb/duckdb has 1 releases
  * Project: trinodb/trino has 1 releases
  * Project: datafusion-contrib/datafusion-table-providers has 2 releases
- * Project: https://spark.apache.org/news/index.html has 3 releases
+ * Project: https://spark.apache.org/news/index.html has 2 releases
  * Project: https://datafusion.apache.org/blog/feed.xml has 4 releases
 
 
 # Releases for each project
-## Project: [https://spark.apache.org/news/index.html](https://spark.apache.org/news/index.html), 3 articles
+## Project: [https://spark.apache.org/news/index.html](https://spark.apache.org/news/index.html), 2 articles
 ### Release: [Preview release of Spark 4.1.0](https://spark.apache.org/news/spark-4-1-0-preview2-released.html)
 
 ### Release: [Spark 3.5.7 released](https://spark.apache.org/news/spark-3-5-7-released.html)
-
-### Release: [Spark 4.0.1 released](https://spark.apache.org/news/spark-4-0-1-released.html)
 
 ## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 4 articles
 ### Release: [Apache DataFusion 50.0.0 Released](https://datafusion.apache.org/blog/2025/09/29/datafusion-50.0.0)
@@ -122,7 +120,38 @@
 * @Clonkk made their first contribution in https://github.com/substrait-io/substrait-python/pull/90
 
 **Full Changelog**: https://github.com/substrait-io/substrait-python/compare/v0.24.1...v0.24.2
-## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 3 releases: ['Narwhals v2.6.0', 'Narwhals v2.5.0', 'Narwhals v2.4.0']
+## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 4 releases: ['Narwhals v2.7.0', 'Narwhals v2.6.0', 'Narwhals v2.5.0', 'Narwhals v2.4.0']
+### Release: narwhals [Narwhals v2.7.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.7.0)
+## Changes
+
+## ✨ Enhancements
+
+- enh: Add `nw.format` (#3169)
+- feat: Adds `{Expr,Series}.{first,last}` (#2528)
+- feat: Support `polars.UInt128` (#3138)
+- feat: Add `prefix` argument to `generate_temporary_column_name` (#3147)
+- feat: Add `{nw,DataFrame}.from_dicts` (#3148)
+
+## 🐞 Bug fixes
+
+- fix: raise for rank followed by over with order_by for sql-like backends (#3178)
+- chore: Make `Implementation.UNKNOWN._backend_version()` safe (#3133)
+
+## 📖 Documentation
+
+- docs(python) remove now unnecessary returns statements (#3170)
+
+## 🛠️ Other improvements
+
+- chore: Add `CompliantNamespace.is_native` (#3130)
+- chore: Make `Implementation.UNKNOWN._backend_version()` safe (#3133)
+- chore(typing): Ignore another `EagerDataFrame` intermittent [False Negative] (#3142)
+- ci: fix darts job (#3172)
+- fix: add `--upgrade` flag to `uv sync --dev` (#3175)
+
+Thank you to all our contributors for making this release possible!
+@FBruzzesi, @MarcoGorelli, @akmalsoliev, @dangotbanned, @dependabot[bot], @felixgwilliams and [dependabot[bot]](https://github.com/apps/dependabot)
+
 ### Release: narwhals [Narwhals v2.6.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.6.0)
 ## Changes
 
@@ -1289,6 +1318,9 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 ## 🐛 Bug Fixes
 
+- Handle NVMLError_NotSupported in cudf-polars (#20179) @TomAugspurger
+- Require passing memory resources to from_libcudf methods (#20171) @vyasr
+- Fix RMM JNI pinned_fallback_host_memory_resource for CCCL 3.1.0 (#20160) @bdice
 - Fix arrow timestamp frequency cases in `cudf.pandas` (#20128) @galipremsagar
 - Fix cudf.date_range with non-iso start and end date strings (#20116) @mroeschke
 - Unproxy few unnecessary testing utilities in pandas (#20088) @galipremsagar
@@ -1311,24 +1343,35 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Add memory resource to all strings modules (#20123) @vyasr
 - Add memory resources to all nvtext APIs (#20119) @vyasr
 - Add an example to inspect parquet files and dump row group and page level metadata information (#20117) @mhaseeb123
+- Allow multiple calls to `cudf::initialize` and `cudf::deinitialize` (#20111) @vuule
 - Remove rounding from cudf java (#20110) @pmattione-nvidia
 - Add memory resources to groupby, datetime, and lists modules (#20102) @vyasr
 - Add memory resources to search, reshape, and partitioning module (#20101) @vyasr
 - Add memory resources to rolling, sorting, and quantiles modules (#20099) @vyasr
 - Add memory resources to binaryop, copying, and stream_compaction (#20059) @vyasr
 - Add memory resources to unary, transform, and filling modules (#20054) @vyasr
+- Support forward/backward filling null values in a grouped window context (#19907) @Matt711
 - [FEA] Implement JIT Filter for read_parquet (#19831) @lamarrr
 - Rewrite JNI functions to use `JNI_TRY`/`JNI_CATCH` (#19053) @ttnghia
 - Add support for maintain_order param in joins (#17698) @Matt711
 
 ## 🛠️ Improvements
 
+- Revert &quot;Temporarily disable conda-java-tests&quot; (#20184) @bdice
+- Don&#39;t assume cudf_polars benchmarking scale factor is always an integer (#20182) @mroeschke
+- Remove unnecessary work from `read_parquet_metadata` (#20180) @vuule
+- Reduce execution times for parquet dictionary tests (#20176) @mhaseeb123
+- Skip filtering Parquet row groups with dictionaries if there are non-dict encoded pages (#20175) @mhaseeb123
+- Improve performance of groupby tdigests gtests (#20173) @davidwendt
+- Update to rapids-logger 0.2 (#20172) @bdice
+- Add PDSH benchmark runner for cudf.pandas (#20164) @mroeschke
 - Temporarily disable conda-java-tests (#20162) @bdice
 - Manual forward merger for Branch 25.12 - branch 25.10 (#20157) @galipremsagar
 - Avoid NumericalColumn call from CategoricalColumn.children (#20153) @mroeschke
 - Branch 25.12 merge branch 25.10 (#20152) @vyasr
 - Make ColumnBase.as_*_column convert via pylibcudf (#20149) @mroeschke
 - Remove unused ColumnBase.view (#20141) @mroeschke
+- Adjust rmm pool handling in PDSH benchmarks (#20138) @TomAugspurger
 - Fix slowdown in cudf-polars distributed tests (#20137) @TomAugspurger
 - Disable async MR priming in cudf.pandas (#20133) @bdice
 - Fix type annotations in cudf-polars (#20131) @TomAugspurger
@@ -1357,7 +1400,28 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Trace node execution in cudf-polars (#19895) @TomAugspurger
 - Update nvbench (#19619) @bdice
 - Remove calling to `purge_nonempty_nulls` in `make_lists_column` (#12873) @ttnghia
-## Project: [lancedb/lance](https://lancedb.github.io/lance/), 11 releases: ['v0.38.0', 'v0.37.1-beta.1', 'v0.37.0', 'v0.36.0-beta.2', 'v0.36.0', 'v0.36.0-beta.1', 'v0.35.0-beta.3', 'v0.35.0-beta.2', 'v0.35.0-beta.1', 'v0.35.0', 'v0.34.0-beta.4']
+## Project: [lancedb/lance](https://lancedb.github.io/lance/), 8 releases: ['v0.38.1', 'v0.38.0', 'v0.37.1-beta.1', 'v0.37.0', 'v0.36.0-beta.2', 'v0.36.0', 'v0.36.0-beta.1', 'v0.35.0-beta.3']
+### Release: lance [v0.38.1](https://github.com/lancedb/lance/releases/tag/v0.38.1)
+<!-- Release notes generated using configuration in .github/release.yml at v0.38.1 -->
+
+## What's Changed
+### New Features 🎉
+* feat: upgrade url crate, rework temporary directory utils by @westonpace in https://github.com/lancedb/lance/pull/4860
+* feat: support fragment-level update columns by @wayneli-vt in https://github.com/lancedb/lance/pull/4715
+* feat: change one-pass GPU ivf-pq indexing as default by @eddyxu in https://github.com/lancedb/lance/pull/4879
+* feat: add scan_range_after_filter pushdown optimization for filtered reads by @LuQQiu in https://github.com/lancedb/lance/pull/4795
+### Bug Fixes 🐛
+* fix: typo in ut test_fragment_update by @wojiaodoubao in https://github.com/lancedb/lance/pull/4878
+* fix: filter out vectors that could produce infinite l2 distances by @wjones127 in https://github.com/lancedb/lance/pull/4890
+* fix: don't log the 'experimental' warning if users are using 2.1 by @westonpace in https://github.com/lancedb/lance/pull/4880
+* fix: don't retain indices that have no rows by @wjones127 in https://github.com/lancedb/lance/pull/4875
+### Documentation 📚
+* docs: rework file specification docs by @westonpace in https://github.com/lancedb/lance/pull/4619
+### Other Changes
+* refactor: remove unecessary parens by @cmccabe in https://github.com/lancedb/lance/pull/4876
+
+
+**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.0...v0.38.1
 ### Release: lance [v0.38.0](https://github.com/lancedb/lance/releases/tag/v0.38.0)
 <!-- Release notes generated using configuration in .github/release.yml at v0.38.0 -->
 
@@ -1557,106 +1621,31 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 * @steFaiz made their first contribution in https://github.com/lancedb/lance/pull/4649
 
 **Full Changelog**: https://github.com/lancedb/lance/compare/v0.35.0-beta.2...v0.35.0-beta.3
-### Release: lance [v0.35.0-beta.2](https://github.com/lancedb/lance/releases/tag/v0.35.0-beta.2)
-<!-- Release notes generated using configuration in .github/release.yml at v0.35.0-beta.2 -->
+## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 17 releases: ['Node/Rust LanceDB v0.22.2-beta.2', 'Python LanceDB v0.25.2-beta.2', 'Node/Rust LanceDB v0.22.2-beta.1', 'Python LanceDB v0.25.2-beta.1', 'ci-support-binaries', 'Node/Rust LanceDB v0.22.2-beta.0', 'Python LanceDB v0.25.2-beta.0', 'Node/Rust LanceDB v0.22.1', 'Python LanceDB v0.25.1', 'Node/Rust LanceDB v0.22.1-beta.3', 'Python LanceDB v0.25.1-beta.3', 'Node/Rust LanceDB v0.22.1-beta.2', 'Python LanceDB v0.25.1-beta.2', 'Node/Rust LanceDB v0.22.1-beta.1', 'Node/Rust LanceDB v0.22.1-beta.0', 'Python LanceDB v0.25.1-beta.1', 'Python LanceDB v0.25.1-beta.0']
+### Release: lancedb [Node/Rust LanceDB v0.22.2-beta.2](https://github.com/lancedb/lancedb/releases/tag/v0.22.2-beta.2)
+## 🐛 Bug Fixes
 
-## What's Changed
-### New Features 🎉
-* feat: build Linux wheels with debug symbols for GitHub releases by @wjones127 in https://github.com/lancedb/lance/pull/4647
+- fix(node): allow undefined/omitted values for nullable vector fields by @naaa760 in https://github.com/lancedb/lancedb/pull/2656
 
+## 🔧 Build and CI
 
-**Full Changelog**: https://github.com/lancedb/lance/compare/v0.35.0-beta.1...v0.35.0-beta.2
-### Release: lance [v0.35.0-beta.1](https://github.com/lancedb/lance/releases/tag/v0.35.0-beta.1)
-<!-- Release notes generated using configuration in .github/release.yml at v0.35.0-beta.1 -->
-
-## What's Changed
-### New Features 🎉
-* feat: build type-aware index for JSON by @Xuanwo in https://github.com/lancedb/lance/pull/4626
-* feat: add json parser for FtsQuery by @wojiaodoubao in https://github.com/lancedb/lance/pull/4605
-### Documentation 📚
-* docs: polish docs for JSON data types by @Xuanwo in https://github.com/lancedb/lance/pull/4640
-### Other Changes
-* refactor(python): refactor take bench and support parametrize compression by @yanghua in https://github.com/lancedb/lance/pull/4636
-* refactor: remove the 2.2 version requirement for using JSON features by @Xuanwo in https://github.com/lancedb/lance/pull/4641
+- ci: automatic issue creation for failed publish workflows by @wjones127 in https://github.com/lancedb/lancedb/pull/2694
+- ci: run remote tests on PRs only if they aren't a fork by @wjones127 in https://github.com/lancedb/lancedb/pull/2697
+- ci: fix Python and Node CI on main by @wjones127 in https://github.com/lancedb/lancedb/pull/2700
 
 
-**Full Changelog**: https://github.com/lancedb/lance/compare/v0.35.0...v0.35.0-beta.1
-### Release: lance [v0.35.0](https://github.com/lancedb/lance/releases/tag/v0.35.0)
-<!-- Release notes generated using configuration in .github/release.yml at v0.35.0 -->
+### Release: lancedb [Python LanceDB v0.25.2-beta.2](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.2-beta.2)
+## 🐛 Bug Fixes
 
-## What's Changed
-### Breaking Changes 🛠
-* feat!: add storage options to wrapping object store by @wkalt in https://github.com/lancedb/lance/pull/4509
-* feat!: shallow_clone supports index by @majin1102 in https://github.com/lancedb/lance/pull/4553
-### New Features 🎉
-* feat: add lance-tools command by @cmccabe in https://github.com/lancedb/lance/pull/4545
-* feat: add JSONB read/write support by @Xuanwo in https://github.com/lancedb/lance/pull/4566
-* feat(java): add deleteRows for Fragment by @fangbo in https://github.com/lancedb/lance/pull/4528
-* feat: inverted index for contains_tokens by @wojiaodoubao in https://github.com/lancedb/lance/pull/4489
-* feat: add cumulative_cpu output to analyze_plan string by @cmccabe in https://github.com/lancedb/lance/pull/4519
-* feat(rust): support update stable row id for overlapping by @yanghua in https://github.com/lancedb/lance/pull/4496
-* feat: add UDFs for json by @Xuanwo in https://github.com/lancedb/lance/pull/4577
-* feat: allow using opendal to access s3, azblob and gcs by @jackye1995 in https://github.com/lancedb/lance/pull/4597
-* feat: expose open_session in python by @wojiaodoubao in https://github.com/lancedb/lance/pull/4581
-* feat: add a scalar index for JSON by @westonpace in https://github.com/lancedb/lance/pull/4621
-### Bug Fixes 🐛
-* fix: include base_id in DeletionFile serialization by @pimdh in https://github.com/lancedb/lance/pull/4580
-* fix: tagged_old_versions should only track tagged and old versions by @wojiaodoubao in https://github.com/lancedb/lance/pull/4592
-* fix: index out of bounds caused by exhausted posting iterator by @BubbleCal in https://github.com/lancedb/lance/pull/4587
-* fix: validate operations in transaction commit by @majin1102 in https://github.com/lancedb/lance/pull/4532
-* fix: disable default features from jsonb to avoid changing serde-json behavior by @Xuanwo in https://github.com/lancedb/lance/pull/4601
-* fix: shallow_clone multiple times refering to wrong base path by @majin1102 in https://github.com/lancedb/lance/pull/4617
-* fix: can't train vector index with cosine distance on GPU by @BubbleCal in https://github.com/lancedb/lance/pull/4623
-### Documentation 📚
-* docs: add docs for JSON and JSON UDFs by @Xuanwo in https://github.com/lancedb/lance/pull/4599
-### Performance Improvements 🚀
-* perf: add dataset random take benchmark by @yanghua in https://github.com/lancedb/lance/pull/4113
-* perf: improve FTS performance for long query by @BubbleCal in https://github.com/lancedb/lance/pull/4576
-### Other Changes
-* refactor: rework scalar index loading, training, and parsing into a plugin trait by @westonpace in https://github.com/lancedb/lance/pull/4584
+- fix(node): allow undefined/omitted values for nullable vector fields by @naaa760 in https://github.com/lancedb/lancedb/pull/2656
 
-## New Contributors
-* @pimdh made their first contribution in https://github.com/lancedb/lance/pull/4580
-* @ebyhr made their first contribution in https://github.com/lancedb/lance/pull/4606
+## 🔧 Build and CI
 
-**Full Changelog**: https://github.com/lancedb/lance/compare/v0.34.0...v0.35.0
-### Release: lance [v0.34.0-beta.4](https://github.com/lancedb/lance/releases/tag/v0.34.0-beta.4)
-<!-- Release notes generated using configuration in .github/release.yml at v0.34.0-beta.4 -->
+- ci: automatic issue creation for failed publish workflows by @wjones127 in https://github.com/lancedb/lancedb/pull/2694
+- ci: run remote tests on PRs only if they aren't a fork by @wjones127 in https://github.com/lancedb/lancedb/pull/2697
+- ci: fix Python and Node CI on main by @wjones127 in https://github.com/lancedb/lancedb/pull/2700
 
-## What's Changed
-### Breaking Changes 🛠
-* feat!: add storage options to wrapping object store by @wkalt in https://github.com/lancedb/lance/pull/4509
-* feat!: shallow_clone supports index by @majin1102 in https://github.com/lancedb/lance/pull/4553
-### New Features 🎉
-* feat: add lance-tools command by @cmccabe in https://github.com/lancedb/lance/pull/4545
-* feat: add JSONB read/write support by @Xuanwo in https://github.com/lancedb/lance/pull/4566
-* feat(java): add deleteRows for Fragment by @fangbo in https://github.com/lancedb/lance/pull/4528
-* feat: inverted index for contains_tokens by @wojiaodoubao in https://github.com/lancedb/lance/pull/4489
-* feat: add cumulative_cpu output to analyze_plan string by @cmccabe in https://github.com/lancedb/lance/pull/4519
-* feat(rust): support update stable row id for overlapping by @yanghua in https://github.com/lancedb/lance/pull/4496
-* feat: add UDFs for json by @Xuanwo in https://github.com/lancedb/lance/pull/4577
-* feat: allow using opendal to access s3, azblob and gcs by @jackye1995 in https://github.com/lancedb/lance/pull/4597
-### Bug Fixes 🐛
-* fix: include base_id in DeletionFile serialization by @pimdh in https://github.com/lancedb/lance/pull/4580
-* fix: tagged_old_versions should only track tagged and old versions by @wojiaodoubao in https://github.com/lancedb/lance/pull/4592
-* fix: index out of bounds caused by exhausted posting iterator by @BubbleCal in https://github.com/lancedb/lance/pull/4587
-* fix: validate operations in transaction commit by @majin1102 in https://github.com/lancedb/lance/pull/4532
-* fix: disable default features from jsonb to avoid changing serde-json behavior by @Xuanwo in https://github.com/lancedb/lance/pull/4601
-* fix: shallow_clone multiple times refering to wrong base path by @majin1102 in https://github.com/lancedb/lance/pull/4617
-### Documentation 📚
-* docs: add docs for JSON and JSON UDFs by @Xuanwo in https://github.com/lancedb/lance/pull/4599
-### Performance Improvements 🚀
-* perf: add dataset random take benchmark by @yanghua in https://github.com/lancedb/lance/pull/4113
-* perf: improve FTS performance for long query by @BubbleCal in https://github.com/lancedb/lance/pull/4576
-### Other Changes
-* refactor: rework scalar index loading, training, and parsing into a plugin trait by @westonpace in https://github.com/lancedb/lance/pull/4584
 
-## New Contributors
-* @pimdh made their first contribution in https://github.com/lancedb/lance/pull/4580
-* @ebyhr made their first contribution in https://github.com/lancedb/lance/pull/4606
-
-**Full Changelog**: https://github.com/lancedb/lance/compare/v0.34.0...v0.34.0-beta.4
-## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 19 releases: ['Node/Rust LanceDB v0.22.2-beta.1', 'Python LanceDB v0.25.2-beta.1', 'ci-support-binaries', 'Node/Rust LanceDB v0.22.2-beta.0', 'Python LanceDB v0.25.2-beta.0', 'Node/Rust LanceDB v0.22.1', 'Python LanceDB v0.25.1', 'Node/Rust LanceDB v0.22.1-beta.3', 'Python LanceDB v0.25.1-beta.3', 'Node/Rust LanceDB v0.22.1-beta.2', 'Python LanceDB v0.25.1-beta.2', 'Node/Rust LanceDB v0.22.1-beta.1', 'Node/Rust LanceDB v0.22.1-beta.0', 'Python LanceDB v0.25.1-beta.1', 'Python LanceDB v0.25.1-beta.0', 'Node/Rust LanceDB v0.22.0', 'Python LanceDB v0.25.0', 'Node/Rust LanceDB v0.22.0-beta.1', 'Python LanceDB v0.25.0-beta.1']
 ### Release: lancedb [Node/Rust LanceDB v0.22.2-beta.1](https://github.com/lancedb/lancedb/releases/tag/v0.22.2-beta.1)
 ## 🎉 New Features
 
@@ -1847,72 +1836,6 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 ## 🐛 Bug Fixes
 
 - fix: add partition statistics to MetadataEraser by @LuQQiu in https://github.com/lancedb/lancedb/pull/2637
-
-
-### Release: lancedb [Node/Rust LanceDB v0.22.0](https://github.com/lancedb/lancedb/releases/tag/v0.22.0)
-## 🛠 Breaking Changes
-
-- feat!: support multi-level namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2603
-- fix!: fix doctest in query.py by @cmccabe in https://github.com/lancedb/lancedb/pull/2622
-
-## 🎉 New Features
-
-- feat: allow setting `train=False` and `name` on indices by @wjones127 in https://github.com/lancedb/lancedb/pull/2586
-- feat: upgrade lance to 0.33.0-beta.3 by @wjones127 in https://github.com/lancedb/lancedb/pull/2598
-- feat(python): integrate with lance namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2599
-- feat: add __getitems__ method impl for torch integration by @westonpace in https://github.com/lancedb/lancedb/pull/2596
-- feat!: support multi-level namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2603
-- feat: add `name` parameter to remaining Python create index calls by @wjones127 in https://github.com/lancedb/lancedb/pull/2617
-
-## 🐛 Bug Fixes
-
-- fix: make cloud features optional (#2567) by @vlovich in https://github.com/lancedb/lancedb/pull/2568
-- fix!: fix doctest in query.py by @cmccabe in https://github.com/lancedb/lancedb/pull/2622
-- fix: remote python sdk namespace typing by @wkalt in https://github.com/lancedb/lancedb/pull/2620
-
-
-### Release: lancedb [Python LanceDB v0.25.0](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.0)
-## 🛠 Breaking Changes
-
-- feat!: support multi-level namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2603
-- fix!: fix doctest in query.py by @cmccabe in https://github.com/lancedb/lancedb/pull/2622
-
-## 🎉 New Features
-
-- feat: allow setting `train=False` and `name` on indices by @wjones127 in https://github.com/lancedb/lancedb/pull/2586
-- feat: upgrade lance to 0.33.0-beta.3 by @wjones127 in https://github.com/lancedb/lancedb/pull/2598
-- feat(python): integrate with lance namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2599
-- feat: add __getitems__ method impl for torch integration by @westonpace in https://github.com/lancedb/lancedb/pull/2596
-- feat!: support multi-level namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2603
-- feat: add `name` parameter to remaining Python create index calls by @wjones127 in https://github.com/lancedb/lancedb/pull/2617
-
-## 🐛 Bug Fixes
-
-- fix: make cloud features optional (#2567) by @vlovich in https://github.com/lancedb/lancedb/pull/2568
-- fix!: fix doctest in query.py by @cmccabe in https://github.com/lancedb/lancedb/pull/2622
-- fix: remote python sdk namespace typing by @wkalt in https://github.com/lancedb/lancedb/pull/2620
-
-
-### Release: lancedb [Node/Rust LanceDB v0.22.0-beta.1](https://github.com/lancedb/lancedb/releases/tag/v0.22.0-beta.1)
-## 🛠 Breaking Changes
-
-- fix!: fix doctest in query.py by @cmccabe in https://github.com/lancedb/lancedb/pull/2622
-
-## 🐛 Bug Fixes
-
-- fix!: fix doctest in query.py by @cmccabe in https://github.com/lancedb/lancedb/pull/2622
-- fix: remote python sdk namespace typing by @wkalt in https://github.com/lancedb/lancedb/pull/2620
-
-
-### Release: lancedb [Python LanceDB v0.25.0-beta.1](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.0-beta.1)
-## 🛠 Breaking Changes
-
-- fix!: fix doctest in query.py by @cmccabe in https://github.com/lancedb/lancedb/pull/2622
-
-## 🐛 Bug Fixes
-
-- fix!: fix doctest in query.py by @cmccabe in https://github.com/lancedb/lancedb/pull/2622
-- fix: remote python sdk namespace typing by @wkalt in https://github.com/lancedb/lancedb/pull/2620
 
 
 ## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers?tab=readme-ov-file#datafusion-table-providers), 2 releases: ['v0.8.1', 'v0.8.0']
