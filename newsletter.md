@@ -1,23 +1,23 @@
 # Complete List of Projects
  * Project: posit-dev/great-tables has 1 releases
- * Project: posit-dev/py-shiny has 1 releases
  * Project: substrait-io/substrait-python has 1 releases
  * Project: narwhals-dev/narwhals has 3 releases
- * Project: pola-rs/polars has 7 releases
+ * Project: pola-rs/polars has 6 releases
  * Project: pandas-dev/pandas has 1 releases
- * Project: holoviz/panel has 3 releases
+ * Project: holoviz/panel has 2 releases
  * Project: cython/cython has 1 releases
  * Project: plotly/dash has 4 releases
- * Project: dask/dask has 2 releases
+ * Project: dask/dask has 1 releases
+ * Project: delta-io/delta-rs has 1 releases
  * Project: rapidsai/cudf has 2 releases
- * Project: lancedb/lance has 9 releases
- * Project: lancedb/lancedb has 19 releases
+ * Project: lancedb/lance has 8 releases
+ * Project: lancedb/lancedb has 17 releases
  * Project: datafusion-contrib/datafusion-table-providers has 2 releases
  * Project: duckdb/duckdb has 2 releases
  * Project: trinodb/trino has 1 releases
  * Project: datafusion-contrib/datafusion-table-providers has 2 releases
  * Project: https://spark.apache.org/news/index.html has 2 releases
- * Project: https://datafusion.apache.org/blog/feed.xml has 4 releases
+ * Project: https://datafusion.apache.org/blog/feed.xml has 3 releases
 
 
 # Releases for each project
@@ -26,14 +26,12 @@
 
 ### Release: [Spark 3.5.7 released](https://spark.apache.org/news/spark-3-5-7-released.html)
 
-## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 4 articles
+## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 3 articles
 ### Release: [Apache DataFusion 50.0.0 Released](https://datafusion.apache.org/blog/2025/09/29/datafusion-50.0.0)
 
 ### Release: [Implementing User Defined Types and Custom Metadata in DataFusion](https://datafusion.apache.org/blog/2025/09/21/custom-types-using-metadata)
 
 ### Release: [Apache DataFusion Comet 0.10.0 Release](https://datafusion.apache.org/blog/2025/09/16/datafusion-comet-0.10.0)
-
-### Release: [Dynamic Filters: Passing Information Between Operators During Execution for 25x Faster Queries](https://datafusion.apache.org/blog/2025/09/10/dynamic-filters)
 
 ## Project: [posit-dev/great-tables](https://posit-dev.github.io/great-tables/get-started/), 1 releases: ['v0.19.0']
 ### Release: great-tables [v0.19.0](https://github.com/posit-dev/great-tables/releases/tag/v0.19.0)
@@ -61,78 +59,6 @@
 * @FBruzzesi made their first contribution in https://github.com/posit-dev/great-tables/pull/731
 
 **Full Changelog**: https://github.com/posit-dev/great-tables/compare/v0.18.0...v0.19.0
-## Project: [posit-dev/py-shiny](https://shiny.posit.co/py/), 1 releases: ['shiny 1.5.0']
-### Release: py-shiny [shiny 1.5.0](https://github.com/posit-dev/py-shiny/releases/tag/v1.5.0)
-### New features
-
-* Added AI-powered test generator for Shiny applications. Use `shiny add test` to automatically generate comprehensive Playwright tests for your apps using AI models from Anthropic or OpenAI. (#2041)
-
-* `ui.sidebar()` is now interactively resizable. (#2020)
-
-* `ui.sidebar()` gains a `fillable` argument to support vertical fill behavior in sidebars. (#2077)
-
-* Added `ui.insert_nav_panel()`, `ui.remove_nav_panel()`, and `ui.update_nav_panel()` to support dynamic navigation. (#90)
-
-* `navset_card_*()` now gains a `full_screen` option. (#1451)
-
-* `ui.update_*()` functions now accept `ui.TagChild` (i.e., HTML) as input to the `label` and `icon` arguments. (#2020)
-
-* The `.output_*()` methods of the `ClientData` class (e.g., `session.clientdata.output_height()`) can now be called without an `id` when called inside a `@render` function. (#1978)
-
-* `playwright.controller.InputActionButton` gains a `expect_icon()` method. As a result, the already existing `expect_label()` no longer includes the icon. (#2020)
-
-### Breaking changes
-
-* The `ui.Chat` and `ui.MarkdownStream` components are now imported from the new `shinychat` library. Future versions of `shinychat` will likely deprecate and remove some features from `Chat`. If you still want to use those features with the latest Shiny, we suggest pinning `shinychat` to it's initial release (v0.1.0). (#2051)
-
-* `express.ui.insert_accordion_panel()`'s function signature has changed to be more ergonomic. Now you can pass the `panel_title` and `panel_contents` directly instead of `ui.hold()`ing the `ui.accordion_panel()` context manager. (#2042)
-
-### Improvements
-
-* Improved the styling and readability of markdown tables rendered by `ui.Chat()` and `ui.MarkdownStream()`. (#1973)
-
-* `input_date()`, `input_date_range()`, `update_date()`, and `update_date_range()` now support `""` for values, mins, and maxes. In this case, no date will be specified on the client. (#1713) (#1689)
-
-* Restricted the allowable types of the `choices` parameter of `input_select()`, `input_selectize()`, `update_select()`, and `update_selectize()` to actual set of allowable types (previously, the type was suggesting HTML-like values were supported). (#2048)
-
-* Added module support for `session.clientdata` methods. This allows you to access client data values in Shiny modules without needing to namespace the keys explicitly. (#1978)
-
-* Added `timeout_secs` parameter to `create_app_fixture` to allow testing apps with longer startup times. (#2033)
-
-* Add support for selecting menu items in `Navset` controllers to improve dropdown navigation test coverage. (#2066)
-
-* Python 3.13 is now offically supported and tested. (#1711)
-
-### Bug fixes
-
-* Fixed issue where apps run in Workbench were unexpectedly crashing. Apps running in Workbench will now have `ws_per_message_deflate=False` enforced. (#2005)
-
-* `include_js()` and `include_css()` now work as expected in multi-user settings and also when multiple files from the same directory are included. (#2061, #2069)
-
-* Fixed numerous issues related to programmatically updating selectize options. (#2053)
-   * `update_selectize(options=...)` no longer gets ignored when `server=False` (the default).
-   * `update_selectize(options=...)` now works as expected in a module.
-
-* Fixed an issue with `update_selectize(server=True)` not properly displaying labels with HTML reserved characters like "&" (#1330)
-
-* Fixed an issue with `ui.Chat()` sometimes wanting to scroll a parent element. (#1996)
-
-* Fix several issues with bookmarking error reporting and documentation. (#2076, #1984, #1983)
-
-* `input_date()` and `input_date_range()` once again use the client's (not the server) current date as the default `value`. (#2060)
-
-* Fixed false positive warning in `layout_columns()` about number of widths vs elements. (#1704)
-
-* Fixed `set()` method of the `InputSelectize` test controller so it clears existing selections before applying new values. (#2024)
-
-### Deprecations
-
-* `ui.update_navs()` is deprecated in favor of `ui.update_navset()`. (#2047)
-
-* `ui.panel_well()` is deprecated in favor of `ui.card()`. (#2038)
-
-* `selectize`, `remove_button`, and `options` parameters of `ui.input_select()` have been deprecated; use `ui.input_selectize()` instead. (Thanks, @ErdaradunGaztea!) (#1947)
-
 ## Project: [substrait-io/substrait-python](https://substrait.io/), 1 releases: ['v0.24.2']
 ### Release: substrait-python [v0.24.2](https://github.com/substrait-io/substrait-python/releases/tag/v0.24.2)
 ## What's Changed
@@ -147,7 +73,36 @@
 * @Clonkk made their first contribution in https://github.com/substrait-io/substrait-python/pull/90
 
 **Full Changelog**: https://github.com/substrait-io/substrait-python/compare/v0.24.1...v0.24.2
-## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 3 releases: ['Narwhals v2.7.0', 'Narwhals v2.6.0', 'Narwhals v2.5.0']
+## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 3 releases: ['Narwhals v2.8.0', 'Narwhals v2.7.0', 'Narwhals v2.6.0']
+### Release: narwhals [Narwhals v2.8.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.8.0)
+## Changes
+
+## 🚀 Performance improvements
+
+- perf: Add `__slots__` to all `DType`s (#3194)
+- perf: avoid full broadcast in horizontal functions (#3199)
+- fix: correctly preserve arrow dtypes for pandas-like, improve `concat_str` performance (#3193)
+- perf: Prefer `Iterator > tuple > list`, use native `pyarrow.repeat`, simplify `nw.concat_str` for DuckDB backend (#3190)
+
+## ✨ Enhancements
+
+- feat: Add support for `{Expr,Series}.str.to_titlecase` (#3116)
+
+## 🐞 Bug fixes
+
+- fix: correctly preserve arrow dtypes for pandas-like, improve `concat_str` performance (#3193)
+- fix: `BaseFrame.filter` with `list[bool]` in predicates (#3183)
+
+## 🛠️ Other improvements
+
+- chore: Add script to automatically sort members in api-reference  (#3200)
+- ci: Unpin (some) dependencies (#3186)
+- chore: pandas-nightly and duckdb-nightly fixes (#3158)
+- [pre-commit.ci] pre-commit autoupdate (#3181)
+
+Thank you to all our contributors for making this release possible!
+@FBruzzesi, @MarcoGorelli, @dangotbanned, @pre-commit-ci[bot] and [pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci)
+
 ### Release: narwhals [Narwhals v2.7.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.7.0)
 ## Changes
 
@@ -210,32 +165,7 @@ Thank you to all our contributors for making this release possible!
 Thank you to all our contributors for making this release possible!
 @FBruzzesi, @MarcoGorelli, @dangotbanned and @skritsotalakis
 
-### Release: narwhals [Narwhals v2.5.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.5.0)
-## Changes
-
-## ✨ Enhancements
-
-- feat: Allow `os.PathLike[str]` in `{read,scan}_*` functions (#3112)
-- enh: Support `keep={'first', 'last'}` in `{DataFrame,LazyFrame}.unique` (#3118)
-
-## 🐞 Bug fixes
-
-- fix: Handle duckdb breaking change in `arrow` (#3119)
-
-## 📖 Documentation
-
-- docs: Add python version support to backcompat (#3115)
-- docs: Nan non compliance (#3093)
-
-## 🛠️ Other improvements
-
-- test: add extra test for dataframe.rename (#3123)
-- chore(typing): Add `CompliantNamespace.from_native` (#3114)
-
-Thank you to all our contributors for making this release possible!
-@MarcoGorelli, @dangotbanned and @ym-pett
-
-## Project: [pola-rs/polars](https://docs.pola.rs/), 7 releases: ['Python Polars 1.34.0', 'Python Polars 1.34.0-beta.5', 'Python Polars 1.34.0-beta.4', 'Python Polars 1.34.0-beta.3', 'Python Polars 1.34.0-beta.1', 'Rust Polars 0.51.0', 'Python Polars 1.33.1']
+## Project: [pola-rs/polars](https://docs.pola.rs/), 6 releases: ['Python Polars 1.34.0', 'Python Polars 1.34.0-beta.5', 'Python Polars 1.34.0-beta.4', 'Python Polars 1.34.0-beta.3', 'Python Polars 1.34.0-beta.1', 'Rust Polars 0.51.0']
 ### Release: polars [Python Polars 1.34.0](https://github.com/pola-rs/polars/releases/tag/py-1.34.0)
 ## 🏆 Highlights
 
@@ -1103,62 +1033,6 @@ Thank you to all our contributors for making this release possible!
 Thank you to all our contributors for making this release possible!
 @Gusabary, @JakubValtar, @Kevin-Patyk, @MarcoGorelli, @Matt711, @NeejWeej, @VictorAtIfInsurance, @agossard, @alexander-beedie, @aparna2198, @borchero, @c-peters, @camriddell, @cgevans, @cmdlineluser, @coastalwhite, @deanm0000, @dsprenkels, @eitsupi, @etiennebacher, @gab23r, @gfvioli, @henryharbeck, @iishutov, @itamarst, @jarondl, @jimmmmmmmmmmmy, @jjurm, @joshuamarkovic, @juansolm, @kdn36, @kuril, @math-hiyoko, @mcrumiller, @mpasa, @mrkn, @mroeschke, @nameexhaustion, @nesb1, @orlp, @pka, @pomo-mondreganto, @r-brink, @rawhuul, @ritchie46, @stijnherfst, @vdrn and @wence-
 
-### Release: polars [Python Polars 1.33.1](https://github.com/pola-rs/polars/releases/tag/py-1.33.1)
-## 🚀 Performance improvements
-
-- Use specialized decoding for all predicates for Parquet dictionary encoding (#24403)
-- Allocate only for read items when reading Parquet with predicate (#24401)
-- Don't aggregate groups for strict cast if original len (#24381)
-- Allocate only for read items when reading Parquet with predicate (#24324)
-
-## ✨ Enhancements
-
-- Support S3 virtual-hosted–style URI (#24405)
-- Remove explicit file create for local async writes (#24358)
-- Add PyCapsule `__arrow_c_schema__` interface to `pl.Schema` (#24365)
-- Support Partitioning sinks in cloud (#24399)
-- User-friendly error message on empty path expansion (#24337)
-- Add unstable `pre_execution_query` parameter to `read_database_uri` (#23634)
-- Add Polars security policy (#24314)
-
-## 🐞 Bug fixes
-
-- Correct `sink_ipc` overload for compression (#24398)
-- Enable all integer dtypes for `by` parameter in `join_asof` (#24384)
-- Fix Group-By + filter aggregation performs subsequent operations on all data instead of only filtered data (#24373)
-- Wrap deprecated top-level imports in TYPE\_CHECKING (#24340)
-- Fix incorrect output ordering for row-separable exprs (#24354)
-- Fix `Series.__arrow_c_stream__` for Decimal and other logical types (#24120)
-- Match output type to engine for `Struct` arithmetic (#23805)
-- Make mmap use MAP\_PRIVATE rather than MAP\_SHARED (#24343)
-- Fix cloud iceberg scan DATASET\_PROVIDER\_VTABLE error (#24338)
-- Don't throw away type information for NumPy numeric values when using lit() (#24229)
-- Incorrect logic in negative streaming slice (#24326)
-- Ensure `read_database_uri` with ADBC works as expected with DuckDB URIs (#24097)
-- Do not error on non-list `Sequence` for `columns` parameter in `read_excel` (#23967)
-
-## 📖 Documentation
-
-- Document newly added `is_pure` parameter for `register_io_source` (#24311)
-- Create a module docstring for the public `polars` module (#24332)
-- Update to Polars Cloud user guide (#24187)
-- Update distributed page (#24323)
-- Add a note and example about exporting unformatted `Excel` sheet data (#24145)
-- Add detail about server-side cursor behaviour for SQLAlchemy in the "iter\_batches" parameter of `read_database` (#24094)
-- Add Polars security policy (#24314)
-
-## 🛠️ Other improvements
-
-- Bump c-api (#24412)
-- Add a regression test for #7631 (#24363)
-- Update cloud test `InteractiveQuery` to `DirectQuery` (#24287)
-- Mark some tests as slow (#24327)
-- Mark more tests as ready for cloud (#24315)
-- Add hint to update `PYPOLARS_VERSION` on version assert test (#24313)
-
-Thank you to all our contributors for making this release possible!
-@Kevin-Patyk, @VictorAtIfInsurance, @alexander-beedie, @coastalwhite, @dsprenkels, @itamarst, @kdn36, @kuril, @mcrumiller, @nameexhaustion, @nesb1, @orlp, @r-brink and @ritchie46
-
 ## Project: [pandas-dev/pandas](https://pandas.pydata.org/docs/index.html), 1 releases: ['Pandas 2.3.3']
 ### Release: pandas [Pandas 2.3.3](https://github.com/pandas-dev/pandas/releases/tag/v2.3.3)
 We are pleased to announce the release of pandas 2.3.3.
@@ -1178,7 +1052,7 @@ Or via PyPI:
 Please report any issues with the release on the [pandas issue tracker](https://github.com/pandas-dev/pandas/issues).
 
 Thanks to all the contributors who made this release possible.
-## Project: [holoviz/panel](https://panel.holoviz.org/), 3 releases: ['Version 1.8.2', 'Version 1.8.1', 'Version 1.8.0']
+## Project: [holoviz/panel](https://panel.holoviz.org/), 2 releases: ['Version 1.8.2', 'Version 1.8.1']
 ### Release: panel [Version 1.8.2](https://github.com/holoviz/panel/releases/tag/v1.8.2)
 This patch release focuses on polishing the user experience, fixing regressions, and improving documentation, particularly around app deployment and Tabulator interactivity. It includes several frontend and CSS tweaks, pyodide compatibility fixes, and two new deployment guides for **Anaconda Notebooks** and **PythonAnywhere**. Thanks to @philippjfr, @maximlt, @etihwo, @MarcSkovMadsen, and @Coderambling for their contributions to this release.
 
@@ -1223,74 +1097,28 @@ Many thanks to [@ATL2001](https://github.com/ATL2001) (first contribution), [@Co
 
 - Update indicators_performance.md to fix typo ([#8192](https://github.com/holoviz/panel/pull/8192))
 
-### Release: panel [Version 1.8.0](https://github.com/holoviz/panel/releases/tag/v1.8.0)
-This release brings a wide range of new features, enhancements, and compatibility improvements. Highlights include support for `JSCode` in ECharts and Tabulator, reworked WebSocket reconnection, and the ability to bundle resources into WASM apps, and numerous bug fixes to improve stability across components and templates. It also includes compatibility updates for **Bokeh 3.8** and several improvements for use in **Pyodide**, **JupyterLite**, and **authentication-based deployments**. Many thanks to our returning contributors @dalthviz and @etihwo, a very warm welcome to our new contributors @c-meier and @flxmr and as usual many thanks to our core team including @maximlt, @hoxbro, @ahuang11, @MarcSkovMadsen and @philippjfr.
-
-### 🚀 Features
-
-- Support for inline JavaScript functions in `ECharts` and `Tabulator` via `JSCode` wrapper ([#8162](https://github.com/holoviz/panel/pull/8162))
-- Add support for reconnecting to a session after network disruption ([#8120](https://github.com/holoviz/panel/pull/8120))
-- Add support for `AVIF` images ([#8164](https://github.com/holoviz/panel/pull/8164))
-- Add support for bundling local resources into WASM apps ([#8181](https://github.com/holoviz/panel/pull/8181))
-
-### ✨ Enhancements
-
-- Improve `.from_param()` behavior and error messages ([#8047](https://github.com/holoviz/panel/pull/8047), [#8079](https://github.com/holoviz/panel/pull/8079))
-- Add `--reuse-sessions warm` option to reduce session cold starts ([#8087](https://github.com/holoviz/panel/pull/8087))
-- Enable event dispatch immediately after WebSocket connect ([#8101](https://github.com/holoviz/panel/pull/8101))
-- Improve error message display in `LiteralInput` ([#8102](https://github.com/holoviz/panel/pull/8102))
-- Allow `hold` usage from a thread ([#8113](https://github.com/holoviz/panel/pull/8113))
-- Improve uniformity and consistency in `Tabulator` column configuration ([#8127](https://github.com/holoviz/panel/pull/8127))
-- Trigger `param.Event` correctly on value change ([#8148](https://github.com/holoviz/panel/pull/8148))
-- Allow registering external `extension_cdn` for JS resources ([#8175](https://github.com/holoviz/panel/pull/8175))
-- Allow overriding the `default_widgets` on `HoloViews` pane ([#8186](https://github.com/holoviz/panel/pull/8186))
-
-### 🐛 Bug Fixes
-
-- Ensure `Terminal` resizes correctly ([#8109](https://github.com/holoviz/panel/pull/8109))
-- Bundle correct `AceEditor` version ([#8111](https://github.com/holoviz/panel/pull/8111))
-- Remove `bokeh-sampledata` dependency from Pyodide builds ([#8138](https://github.com/holoviz/panel/pull/8138))
-- Correct resource handling when resources are symlinked ([#8143](https://github.com/holoviz/panel/pull/8143))
-- Correct behavior when `FileDownload` resets cursor before reading ([#8154](https://github.com/holoviz/panel/pull/8154))
-- Fix handling of `NaT` values ([#8156](https://github.com/holoviz/panel/pull/8156))
-- Apply template design after rendering template ([#8155](https://github.com/holoviz/panel/pull/8155))
-- Prevent `select-all` checkbox from being hidden in Material theme ([#8147](https://github.com/holoviz/panel/pull/8147))
-- Fix handling of exclusive bounds in `Param` widgets ([#8165](https://github.com/holoviz/panel/pull/8165))
-- Fix layout of `Card` headers with `row` flex mode ([#8166](https://github.com/holoviz/panel/pull/8166))
-- Uncap height of children in scrollable `Column` layouts ([#8167](https://github.com/holoviz/panel/pull/8167))
-- Fix errors in `ECharts` when chart has already been destroyed ([#8168](https://github.com/holoviz/panel/pull/8168))
-- Fix `Tabulator` filter behavior with list-based filters ([#8169](https://github.com/holoviz/panel/pull/8169))
-- Allow `Card` to overflow container ([#8170](https://github.com/holoviz/panel/pull/8170))
-- Fix `pyodide` model syncing ([#8174](https://github.com/holoviz/panel/pull/8174))
-
-### ⚠️ Deprecations
-
-- Removed `panel.io.model.hold` (was moved to `panel.io.document.hold` in 1.6.0) ([#8188](https://github.com/holoviz/panel/pull/8188))
-- Deprecated `panel.chat.langchain.PanelCallbackHandler` (to be removed in 1.9.0) ([#8188](https://github.com/holoviz/panel/pull/8188))
-
-### 📦 Compatibility & Infrastructure
-
-- Update component versions ([#7447](https://github.com/holoviz/panel/pull/7447))
-  - `DeckGL` version from 9.0.20 to 9.1.14
-  - `ECharts` version from 5.6.0 to 6.0.0
-  - `KaTeX` version from 0.6.0 to 0.16.22
-  - `Perspective` version from 3.6.1 to 3.8.0
-  - `Plotly` version from 3.0.1 to 3.1.0
-  - `Vega` version from 5 to 6.1.2 and vega-lite dependency from 5 to 6.3.0
-  - `Vizzu` version from 0.15 to 0.17.1
-- Drop support for Bokeh 3.5 and 3.6 ([#8116](https://github.com/holoviz/panel/pull/8116))
-- Full compatibility with **Bokeh 3.8** ([#8160](https://github.com/holoviz/panel/pull/8160))
-
-### 📚 Documentation
-
-- Add guide for using WebSocket comms ([#7952](https://github.com/holoviz/panel/pull/7952))
-- Update links for Tabulator ([#8126](https://github.com/holoviz/panel/pull/8126))
-- Align component parameter reference documentation ([#8152](https://github.com/holoviz/panel/pull/8152))
-
 ## Project: [cython/cython](https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html), 1 releases: ['3.1.4']
 ### Release: cython [3.1.4](https://github.com/cython/cython/releases/tag/3.1.4)
 
-## Project: [plotly/dash](https://plotly.com/dash/), 4 releases: ['Dash Version 3.3.0rc1', 'Dash Version 3.3.0rc0', 'v4.0.0rc1', 'v4.0.0rc0']
+## Project: [plotly/dash](https://plotly.com/dash/), 4 releases: ['v4.0.0rc2', 'Dash Version 3.3.0rc1', 'Dash Version 3.3.0rc0', 'v4.0.0rc1']
+### Release: dash [v4.0.0rc2](https://github.com/plotly/dash/releases/tag/v4.0.0rc2)
+## Added
+- [3468](https://github.com/plotly/dash/pull/3468) Modernize dcc.TextArea & dcc.Tooltip
+- [3467](https://github.com/plotly/dash/pull/3467) Modernize dcc.Loading
+- [3453](https://github.com/plotly/dash/pull/3453) Modernize dcc.Checklist & dcc.RadioItems
+
+## Changed
+
+- Various tweaks and bugfixes to issues reported in `4.0.0rc1`
+
+- Dropdown API changes
+    * default value of optionHeight is now 'auto' which supports text wrapping of lengthy text on small screens; you can still specify a numeric pixel height if desired
+    * new `labels` prop to customize strings used within the component
+    * default value for closeOnSelect is now `True` for single-select dropdowns and `False` for multi-select
+
+- Slider API changes
+    * default value of `step` is now only set to `1` if the `min` and `max` props are both integers. Otherwise, it will be dynamically computed according to the available space for the slider
+
 ### Release: dash [Dash Version 3.3.0rc1](https://github.com/plotly/dash/releases/tag/v3.3.0rc1)
 - Add placeholder plotly CLI
 - Add dash[cloud] optional dependency.
@@ -1312,10 +1140,7 @@ This release brings a wide range of new features, enhancements, and compatibilit
 ## Added
 - [#3440](https://github.com/plotly/dash/pull/3440) Modernize dcc.Dropdown
 
-### Release: dash [v4.0.0rc0](https://github.com/plotly/dash/releases/tag/v4.0.0rc0)
-- [#3398](https://github.com/plotly/dash/pull/3398) Modernize dcc.Input
-- [#3414](https://github.com/plotly/dash/pull/3414) Modernize dcc.Slider
-## Project: [dask/dask](https://www.dask.org/), 2 releases: ['2025.9.1', '2025.9.0']
+## Project: [dask/dask](https://www.dask.org/), 1 releases: ['2025.9.1']
 ### Release: dask [2025.9.1](https://github.com/dask/dask/releases/tag/2025.9.1)
 ## Changes
 
@@ -1325,28 +1150,87 @@ This release brings a wide range of new features, enhancements, and compatibilit
 
 See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more information.
 
-### Release: dask [2025.9.0](https://github.com/dask/dask/releases/tag/2025.9.0)
-## Changes
+## Project: [delta-io/delta-rs](https://delta-io.github.io/delta-rs/usage/installation/), 1 releases: ['python-v1.2.0']
+### Release: delta-rs [python-v1.2.0](https://github.com/delta-io/delta-rs/releases/tag/python-v1.2.0)
+## What's Changed
+* feat!: kernel log replay by @roeap in https://github.com/delta-io/delta-rs/pull/3660
+* chore: update hdfs object store to 0.15 by @Kimahriman in https://github.com/delta-io/delta-rs/pull/3681
+* fix(pandas): implement-automatic-conversion-for-pandas-null-types by @fvaleye in https://github.com/delta-io/delta-rs/pull/3695
+* fix(format): fix formatting in Python for conversion file by @fvaleye in https://github.com/delta-io/delta-rs/pull/3705
+* chore: remove unused dependencies by @rtyler in https://github.com/delta-io/delta-rs/pull/3698
+* fix: enabling correctly pulling partition values out of column mapped tables by @rtyler in https://github.com/delta-io/delta-rs/pull/3706
+* feat!: use kernel predicates on file streams by @roeap in https://github.com/delta-io/delta-rs/pull/3669
+* fix: reintroduce the 100 commit checkpoint interval by @rtyler in https://github.com/delta-io/delta-rs/pull/3708
+* chore: follow up changes on rust-v0.28.0 by @rtyler in https://github.com/delta-io/delta-rs/pull/3712
+* chore(cargo): add cargo-machete to detect and remove unused dependencies by @fvaleye in https://github.com/delta-io/delta-rs/pull/3713
+* chore: update kernel to 0.15.1 by @roeap in https://github.com/delta-io/delta-rs/pull/3714
+* feat(storage): expand user with tilde in local path by @fvaleye in https://github.com/delta-io/delta-rs/pull/3717
+* chore: bump to a minor version for a small core release with the new kernel by @rtyler in https://github.com/delta-io/delta-rs/pull/3718
+* feat: domain metadata read support by @roeap in https://github.com/delta-io/delta-rs/pull/3678
+* chore!: remove deprecated methods by @roeap in https://github.com/delta-io/delta-rs/pull/3715
+* refactor: move table provider to dedicated mod by @roeap in https://github.com/delta-io/delta-rs/pull/3726
+* feat(url): use Url in Rust for accessing to DeltaTable, use only string-based api in Python by @fvaleye in https://github.com/delta-io/delta-rs/pull/3707
+* chore(ci): cache rust dependencies in the CI by @fvaleye in https://github.com/delta-io/delta-rs/pull/3728
+* refactor: avoid explicit mutex in MergeBarrier by @roeap in https://github.com/delta-io/delta-rs/pull/3734
+* fix: re-export the DecimalType for consumers by @rtyler in https://github.com/delta-io/delta-rs/pull/3738
+* fix: `write_deltalake` with `mode="overwrite"` mode and `schema_mode=None` does not overwrite schema metadata by @FrankPortman in https://github.com/delta-io/delta-rs/pull/3747
+* feat: add per column Parquet Encoding support for Delta Table column by @niltecedu in https://github.com/delta-io/delta-rs/pull/3737
+* fix: better error handles in unity client by @hntd187 in https://github.com/delta-io/delta-rs/pull/3752
+* feat(datafusion): add insert_into operation with DataFusion by @fvaleye in https://github.com/delta-io/delta-rs/pull/3762
+* fix: ensure that invalid URLs are bubbled up as errors when parsed by @rtyler in https://github.com/delta-io/delta-rs/pull/3766
+* feat: change history() to return an Iterator by @rtyler in https://github.com/delta-io/delta-rs/pull/3764
+* chore: update docs by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/3761
+* feat: update to DataFusion 50, pyo3 24, pyo3-arrow 0.11 by @alamb in https://github.com/delta-io/delta-rs/pull/3749
+* feat: allow OptimizeBuilder to accept  SessionConfig for finer-grained control of execution by @rtyler in https://github.com/delta-io/delta-rs/pull/3763
+* feat(unity-catalog): support credentials via storage options by @fvaleye in https://github.com/delta-io/delta-rs/pull/3769
+* fix: check if eligible to read by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/3771
+* chore: upgrade the aws dependencies in deltalake-aws by @rtyler in https://github.com/delta-io/delta-rs/pull/3772
+* chore: pin cargo-machete action to the sha right before a regression by @rtyler in https://github.com/delta-io/delta-rs/pull/3779
+* chore: fix some typos in comment by @juejinyuxitu in https://github.com/delta-io/delta-rs/pull/3781
+* chore: upgrade to delta-kernel-rs 0.16.0 and remove more dependencies by @rtyler in https://github.com/delta-io/delta-rs/pull/3773
+* feat: get the delta table row count based on the table history by @ohadmata in https://github.com/delta-io/delta-rs/pull/3732
+* fix: somehow the right test value didn't make it into the pr by @rtyler in https://github.com/delta-io/delta-rs/pull/3788
+* fix: correct RecordBatchWriter interior schema mutation outside of evolution by @rtyler in https://github.com/delta-io/delta-rs/pull/3783
+* fix: use a safe checkpoint when cleaning up metadata by @corwinjoy in https://github.com/delta-io/delta-rs/pull/3748
+* chore(deps): update sqlparser requirement from 0.56.0 to 0.59.0 by @dependabot[bot] in https://github.com/delta-io/delta-rs/pull/3792
+* chore(ci): add automatic cache cleanup for closed main branch PRs by @fvaleye in https://github.com/delta-io/delta-rs/pull/3793
+* chore(deps): update foyer requirement from 0.17.2 to 0.20.0 by @dependabot[bot] in https://github.com/delta-io/delta-rs/pull/3791
+* refactor: use EagerSnapshot in datafusion module by @roeap in https://github.com/delta-io/delta-rs/pull/3796
+* feat: allow passing a `SessionState` into a `OptimizeBuilder` by @abhi-airspace-intelligence in https://github.com/delta-io/delta-rs/pull/3802
+* refactor: remove table_url from Snapshot by @roeap in https://github.com/delta-io/delta-rs/pull/3803
+* fix: maintaining load config from state by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/3805
+* refactor: consolidate extension planners by @roeap in https://github.com/delta-io/delta-rs/pull/3804
+* ci: split out integration tests by @roeap in https://github.com/delta-io/delta-rs/pull/3806
+* feat: access tombstones via TombstoneView by @roeap in https://github.com/delta-io/delta-rs/pull/3809
+* refactor: use EagerSnapshot in vacuum operation by @roeap in https://github.com/delta-io/delta-rs/pull/3812
+* fix: avoid overflow for large table state by @roeap in https://github.com/delta-io/delta-rs/pull/3801
+* refactor: avoid downcasting to SessionState by @roeap in https://github.com/delta-io/delta-rs/pull/3813
+* feat: add deletion_vector_descriptor method by @zeevm in https://github.com/delta-io/delta-rs/pull/3721
+* refactor: move find_files into dedicated mod by @roeap in https://github.com/delta-io/delta-rs/pull/3815
+* chore: remove unreferenced file by @roeap in https://github.com/delta-io/delta-rs/pull/3819
+* feat: shim kernel Scan and ScanBuilder by @roeap in https://github.com/delta-io/delta-rs/pull/3818
+* chore(deps): update datatest-stable requirement from 0.2 to 0.3 by @dependabot[bot] in https://github.com/delta-io/delta-rs/pull/3817
+* feat: expose arrow schema on snapshots by @roeap in https://github.com/delta-io/delta-rs/pull/3822
+* fix: update deprecation versions to next release by @roeap in https://github.com/delta-io/delta-rs/pull/3828
+* chore: unify inconsistent `SessionState` in datafusion operations by @abhi-airspace-intelligence in https://github.com/delta-io/delta-rs/pull/3816
+* fix(rust): protect recent uncommitted files in vacuum full mode by @vsmanish1772 in https://github.com/delta-io/delta-rs/pull/3835
+* feat: enable ability to do writes through Unity Catalog by @hntd187 in https://github.com/delta-io/delta-rs/pull/3834
+* chore(performance): optimize JSON parsing in get_actions and snapshot reading by @fvaleye in https://github.com/delta-io/delta-rs/pull/3830
+* refactor(bench): remove baseline while keeping the json_parsing benchmark by @fvaleye in https://github.com/delta-io/delta-rs/pull/3838
+* perf(path): only clone string for the path by @fvaleye in https://github.com/delta-io/delta-rs/pull/3841
+* feat(tracing): add tracing spans to all I/O sections by @fvaleye in https://github.com/delta-io/delta-rs/pull/3795
+* feat(bench): add new benchmarking script, harness, and profiling guide by @abhiaagarwal in https://github.com/delta-io/delta-rs/pull/3840
+* chore: bump version from 1.1.4 to 1.2.0 by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/3842
 
-- Bump actions/stale from 9 to 10 @[dependabot[bot]](https://github.com/apps/dependabot) (#12070)
-- Bump actions/setup-python from 5 to 6 @[dependabot[bot]](https://github.com/apps/dependabot) (#12069)
-- fix: `0` scalar setting for `scipy.sparse` @ilan-gold (#12027)
-- Get upstream-dev CI passing @TomAugspurger (#12061)
-- avoid instantiating a potentially very large arange in `take` @keewis (#11998)
-- MAINT: address NumPy deprecation in `np.minimum` @MarcoGorelli (#12059)
-- CI fixes @TomAugspurger (#12058)
-- MAINT: Address NumPy DeprecationWarning @MarcoGorelli (#12056)
-- TST: Fix test\_enforce\_columns on Python 3.14 @QuLogic (#12047)
-- Bump actions/checkout from 4 to 5 @[dependabot[bot]](https://github.com/apps/dependabot) (#12046)
-- Fix "th" --> "the" typo in DataFrame SQL docs @pjonsson (#12038)
-- Advance rng state in permutation @jrbourbeau (#12031)
-- Fix ``pyarrow`` chunked array conversion @jrbourbeau (#12034)
-- Fix ``xfail`` condition for ``pyarrow`` ``large\_string`` issue @jrbourbeau (#12032)
-- pandas 3.x compatibility @TomAugspurger (#12025)
-- (fix): `name` not passed to `blockwise` in `map_blocks` @ilan-gold (#11952)  
+## New Contributors
+* @FrankPortman made their first contribution in https://github.com/delta-io/delta-rs/pull/3747
+* @niltecedu made their first contribution in https://github.com/delta-io/delta-rs/pull/3737
+* @juejinyuxitu made their first contribution in https://github.com/delta-io/delta-rs/pull/3781
+* @ohadmata made their first contribution in https://github.com/delta-io/delta-rs/pull/3732
+* @abhi-airspace-intelligence made their first contribution in https://github.com/delta-io/delta-rs/pull/3802
+* @vsmanish1772 made their first contribution in https://github.com/delta-io/delta-rs/pull/3835
 
-See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more information.
-
+**Full Changelog**: https://github.com/delta-io/delta-rs/compare/python-v1.1.4...python-v1.2.0
 ## Project: [rapidsai/cudf](https://docs.rapids.ai/api/cudf/stable/user_guide/10min/), 2 releases: ['v25.10.00', '[NIGHTLY] v25.12.00']
 ### Release: cudf [v25.10.00](https://github.com/rapidsai/cudf/releases/tag/v25.10.00)
 ## 🚨 Breaking Changes
@@ -1746,6 +1630,8 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 ## 🚨 Breaking Changes
 
+- Change .str.starts/endswith with tuple argument to match any pattern instead of pairwise matching (#20249) @mroeschke
+- Remove DataFrame.apply_chunks, Groupby.apply_grouped (#20194) @mroeschke
 - Remove compatibility with nvCOMP versions before 5.0 (#20140) @vuule
 - Rewrite JNI functions to use `JNI_TRY`/`JNI_CATCH` (#19053) @ttnghia
 
@@ -1776,6 +1662,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 ## 🚀 New Features
 
+- Implement `ARGMIN` and `ARGMAX` aggregations for reduction (#20207) @ttnghia
 - Add remaining memory resources (#20197) @vyasr
 - Add memory resources to scalars (#20196) @vyasr
 - Add memory resources to replace, json, and hashing (#20150) @vyasr
@@ -1783,6 +1670,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Add pylibcudf is_valid_reduce_aggregation API (#20145) @davidwendt
 - Add memory resources to I/O modules (#20136) @vyasr
 - Add memory resources to reduce, column, column_factories, and contiguous_split (#20135) @vyasr
+- Passthrough unary ops through Parquet predicate pushdown (#20127) @mhaseeb123
 - Add memory resource to all strings modules (#20123) @vyasr
 - Add memory resources to all nvtext APIs (#20119) @vyasr
 - Add an example to inspect parquet files and dump row group and page level metadata information (#20117) @mhaseeb123
@@ -1801,12 +1689,19 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 ## 🛠️ Improvements
 
+- Change .str.starts/endswith with tuple argument to match any pattern instead of pairwise matching (#20249) @mroeschke
+- Prevent accidental copies of expensive-to-copy object types (#20226) @vuule
+- More mypy and docs fixes (#20224) @vyasr
+- Configuration for which metrics are enabled during tracing (#20223) @TomAugspurger
+- Fix parquet row number check for page bounds (#20217) @pmattione-nvidia
 - Rename `comparison_binop_generator` to `arg_minmax_binop_generator` and corresponding file to `nested_types_extrema_utils.cuh` (#20212) @Copilot
 - Fix various typing errors (#20205) @vyasr
 - Stop using libcudf default parameters in pylibcudf (#20204) @vyasr
 - Pin pydantic&lt;2.12 in ci/test_cudf_polars_polars_tests.sh (#20200) @mroeschke
 - Support binops between float scalar to decimal column (#20199) @mroeschke
 - Add an overhead field to cudf-polars tracing (#20198) @TomAugspurger
+- Remove DataFrame.apply_chunks, Groupby.apply_grouped (#20194) @mroeschke
+- [pre-commit.ci] pre-commit autoupdate (#20189) @pre-commit-ci[bot]
 - Revert &quot;Temporarily disable conda-java-tests&quot; (#20184) @bdice
 - Don&#39;t assume cudf_polars benchmarking scale factor is always an integer (#20182) @mroeschke
 - Remove unnecessary work from `read_parquet_metadata` (#20180) @vuule
@@ -1814,6 +1709,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Skip filtering Parquet row groups with dictionaries if there are non-dict encoded pages (#20175) @mhaseeb123
 - Improve performance of groupby tdigests gtests (#20173) @davidwendt
 - Update to rapids-logger 0.2 (#20172) @bdice
+- Split row operator header (#20166) @PointKernel
 - Add PDSH benchmark runner for cudf.pandas (#20164) @mroeschke
 - Temporarily disable conda-java-tests (#20162) @bdice
 - Manual forward merger for Branch 25.12 - branch 25.10 (#20157) @galipremsagar
@@ -1853,9 +1749,30 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Clean up detail device atomic logic using atomic_ref (#19924) @PointKernel
 - Pin polars version &lt;1.34 and &gt;=1.29 (#19912) @Matt711
 - Trace node execution in cudf-polars (#19895) @TomAugspurger
+- Cleanup parquet for simple columns (#19869) @pmattione-nvidia
 - Update nvbench (#19619) @bdice
 - Remove calling to `purge_nonempty_nulls` in `make_lists_column` (#12873) @ttnghia
-## Project: [lancedb/lance](https://lancedb.github.io/lance/), 9 releases: ['v0.38.3-beta.1', 'v0.38.2', 'v0.38.1', 'v0.38.0', 'v0.37.1-beta.1', 'v0.37.0', 'v0.36.0-beta.2', 'v0.36.0', 'v0.36.0-beta.1']
+## Project: [lancedb/lance](https://lancedb.github.io/lance/), 8 releases: ['v0.38.3-beta.2', 'v0.38.3-beta.1', 'v0.38.2', 'v0.38.1', 'v0.38.0', 'v0.37.1-beta.1', 'v0.37.0', 'v0.36.0-beta.2']
+### Release: lance [v0.38.3-beta.2](https://github.com/lancedb/lance/releases/tag/v0.38.3-beta.2)
+<!-- Release notes generated using configuration in .github/release.yml at v0.38.3-beta.2 -->
+
+## What's Changed
+### New Features 🎉
+* feat: add multi-path support for lance data paths by @jaystarshot in https://github.com/lancedb/lance/pull/4765
+### Bug Fixes 🐛
+* fix: let Java module use LanceFileVersion::Stable (#4558) by @ColdL in https://github.com/lancedb/lance/pull/4559
+* fix: fts match query on column without inverted index by @wojiaodoubao in https://github.com/lancedb/lance/pull/4859
+* fix: fix broken FTS example by replacing ROW_ID with DOC_ID by @niebayes in https://github.com/lancedb/lance/pull/4917
+* fix: correctly record output_rows in filtered read with hard range_after by @westonpace in https://github.com/lancedb/lance/pull/4919
+* fix: rewrap LanceFilterExec with_new_children by @wkalt in https://github.com/lancedb/lance/pull/4920
+### Documentation 📚
+* docs: add RabitQ in vector index spec by @BubbleCal in https://github.com/lancedb/lance/pull/4913
+
+## New Contributors
+* @yingjianwu98 made their first contribution in https://github.com/lancedb/lance/pull/4901
+* @niebayes made their first contribution in https://github.com/lancedb/lance/pull/4917
+
+**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.3-beta.1...v0.38.3-beta.2
 ### Release: lance [v0.38.3-beta.1](https://github.com/lancedb/lance/releases/tag/v0.38.3-beta.1)
 <!-- Release notes generated using configuration in .github/release.yml at v0.38.3-beta.1 -->
 
@@ -2022,63 +1939,23 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 * @jmhsieh made their first contribution in https://github.com/lancedb/lance/pull/4722
 
 **Full Changelog**: https://github.com/lancedb/lance/compare/v0.36.0-beta.1...v0.36.0-beta.2
-### Release: lance [v0.36.0](https://github.com/lancedb/lance/releases/tag/v0.36.0)
-<!-- Release notes generated using configuration in .github/release.yml at v0.36.0 -->
+## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 17 releases: ['Node/Rust LanceDB v0.22.3-beta.0', 'Python LanceDB v0.25.3-beta.0', 'Node/Rust LanceDB v0.22.2', 'Python LanceDB v0.25.2', 'Node/Rust LanceDB v0.22.2-beta.2', 'Python LanceDB v0.25.2-beta.2', 'Node/Rust LanceDB v0.22.2-beta.1', 'Python LanceDB v0.25.2-beta.1', 'ci-support-binaries', 'Node/Rust LanceDB v0.22.2-beta.0', 'Python LanceDB v0.25.2-beta.0', 'Node/Rust LanceDB v0.22.1', 'Python LanceDB v0.25.1', 'Node/Rust LanceDB v0.22.1-beta.3', 'Python LanceDB v0.25.1-beta.3', 'Node/Rust LanceDB v0.22.1-beta.2', 'Python LanceDB v0.25.1-beta.2']
+### Release: lancedb [Node/Rust LanceDB v0.22.3-beta.0](https://github.com/lancedb/lancedb/releases/tag/v0.22.3-beta.0)
+## 🎉 New Features
 
-## What's Changed
-### Breaking Changes 🛠
-* feat!: add target_partition_size vector index param by @BubbleCal in https://github.com/lancedb/lance/pull/4616
-* feat!: add MERGED state to MemWAL index by @jackye1995 in https://github.com/lancedb/lance/pull/4673
-### New Features 🎉
-* feat: build type-aware index for JSON by @Xuanwo in https://github.com/lancedb/lance/pull/4626
-* feat: add json parser for FtsQuery by @wojiaodoubao in https://github.com/lancedb/lance/pull/4605
-* feat: build Linux wheels with debug symbols for GitHub releases by @wjones127 in https://github.com/lancedb/lance/pull/4647
-* feat(java): supports fragment-level mergeColumn interface by @steFaiz in https://github.com/lancedb/lance/pull/4649
-* feat: support build FTS index distributedly by @chenghao-guo in https://github.com/lancedb/lance/pull/4578
-* feat: merge indices with provided unindexed fragments by @jackye1995 in https://github.com/lancedb/lance/pull/4659
-* feat: simplify wheel builds with debug parameter for workflow_dispatch by @wjones127 in https://github.com/lancedb/lance/pull/4655
-* feat: add LanceFileSession for sharing object store amongst file readers by @westonpace in https://github.com/lancedb/lance/pull/4670
-* feat(java): extends WriteParams in java with `enable_stable_row_ids` option by @steFaiz in https://github.com/lancedb/lance/pull/4674
-* feat: add timestamp precision control to logging and document logging by @westonpace in https://github.com/lancedb/lance/pull/4669
-* feat: add new cleanup policy to retain latest n versions by @wojiaodoubao in https://github.com/lancedb/lance/pull/4614
-* feat: add bloom filter filter support by @HaochengLIU in https://github.com/lancedb/lance/pull/4530
-* feat: allow using bitpacking in zero chunk by @Xuanwo in https://github.com/lancedb/lance/pull/4694
-* feat: add scalar index support in Java/JNI interface by @beinan in https://github.com/lancedb/lance/pull/4683
-* feat: create indexes from another source dataset by @jackye1995 in https://github.com/lancedb/lance/pull/4658
-* feat: add compact functionality to Java/JNI interface by @beinan in https://github.com/lancedb/lance/pull/4703
-* feat(java): expose merge_insert api by @fangbo in https://github.com/lancedb/lance/pull/4685
-* feat: add plan summary to `lance::execution` events by @wjones127 in https://github.com/lancedb/lance/pull/4700
-* feat: add traces for file level IO by @jaystarshot in https://github.com/lancedb/lance/pull/4697
-* feat: add `use_index` option for merge insert by @wjones127 in https://github.com/lancedb/lance/pull/4688
-* feat(python): pass `Session` when opening dataset by @wjones127 in https://github.com/lancedb/lance/pull/3927
-### Bug Fixes 🐛
-* fix: correctly decode lists with all nulls by @westonpace in https://github.com/lancedb/lance/pull/4679
-* fix: circular reference in index caching leaks memory by @wkalt in https://github.com/lancedb/lance/pull/4680
-* fix: resolve deadlock when multiple threads access a single LanceFileWriter by @lorinlee in https://github.com/lancedb/lance/pull/4600
-* fix(rust): fix duplicated source rows when merge insert by @yanghua in https://github.com/lancedb/lance/pull/4687
-* fix: use consistent naming for rows_per_zone in zone map index by @jackye1995 in https://github.com/lancedb/lance/pull/4692
-* fix: don't fail reading variable width full-zip with repetition but no definition by @westonpace in https://github.com/lancedb/lance/pull/4698
-### Documentation 📚
-* docs: polish docs for JSON data types by @Xuanwo in https://github.com/lancedb/lance/pull/4640
-* docs: non-optional enum fields in proto3 do not have explicit presence by @jbapple in https://github.com/lancedb/lance/pull/4642
-* docs: fix vector search add columns issue by @erik-wang-lancedb in https://github.com/lancedb/lance/pull/4690
-### Other Changes
-* refactor(python): refactor take bench and support parametrize compression by @yanghua in https://github.com/lancedb/lance/pull/4636
-* refactor: remove the 2.2 version requirement for using JSON features by @Xuanwo in https://github.com/lancedb/lance/pull/4641
-
-## New Contributors
-* @steFaiz made their first contribution in https://github.com/lancedb/lance/pull/4649
-* @jaystarshot made their first contribution in https://github.com/lancedb/lance/pull/4697
-* @erik-wang-lancedb made their first contribution in https://github.com/lancedb/lance/pull/4690
-
-**Full Changelog**: https://github.com/lancedb/lance/compare/v0.35.0...v0.36.0
-### Release: lance [v0.36.0-beta.1](https://github.com/lancedb/lance/releases/tag/v0.36.0-beta.1)
-<!-- Release notes generated using configuration in .github/release.yml at v0.36.0-beta.1 -->
+- feat(index): add IVF_RQ index type by @BubbleCal in https://github.com/lancedb/lancedb/pull/2687
+- feat: a utility for creating "permutation views" by @westonpace in https://github.com/lancedb/lancedb/pull/2552
+- feat: bump lance to 0.38.3-beta.2 and rust to 1.90.0 by @jackye1995 in https://github.com/lancedb/lancedb/pull/2714
 
 
+### Release: lancedb [Python LanceDB v0.25.3-beta.0](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.3-beta.0)
+## 🎉 New Features
 
-**Full Changelog**: https://github.com/lancedb/lance/compare/v0.36.0...v0.36.0-beta.1
-## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 19 releases: ['Node/Rust LanceDB v0.22.2', 'Python LanceDB v0.25.2', 'Node/Rust LanceDB v0.22.2-beta.2', 'Python LanceDB v0.25.2-beta.2', 'Node/Rust LanceDB v0.22.2-beta.1', 'Python LanceDB v0.25.2-beta.1', 'ci-support-binaries', 'Node/Rust LanceDB v0.22.2-beta.0', 'Python LanceDB v0.25.2-beta.0', 'Node/Rust LanceDB v0.22.1', 'Python LanceDB v0.25.1', 'Node/Rust LanceDB v0.22.1-beta.3', 'Python LanceDB v0.25.1-beta.3', 'Node/Rust LanceDB v0.22.1-beta.2', 'Python LanceDB v0.25.1-beta.2', 'Node/Rust LanceDB v0.22.1-beta.1', 'Node/Rust LanceDB v0.22.1-beta.0', 'Python LanceDB v0.25.1-beta.1', 'Python LanceDB v0.25.1-beta.0']
+- feat(index): add IVF_RQ index type by @BubbleCal in https://github.com/lancedb/lancedb/pull/2687
+- feat: a utility for creating "permutation views" by @westonpace in https://github.com/lancedb/lancedb/pull/2552
+- feat: bump lance to 0.38.3-beta.2 and rust to 1.90.0 by @jackye1995 in https://github.com/lancedb/lancedb/pull/2714
+
+
 ### Release: lancedb [Node/Rust LanceDB v0.22.2](https://github.com/lancedb/lancedb/releases/tag/v0.22.2)
 ## 🎉 New Features
 
@@ -2331,38 +2208,6 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 ## Other Changes
 
 - refactor: remove catalog implementation now that we have namespaces in database by @westonpace in https://github.com/lancedb/lancedb/pull/2662
-
-
-### Release: lancedb [Node/Rust LanceDB v0.22.1-beta.1](https://github.com/lancedb/lancedb/releases/tag/v0.22.1-beta.1)
-## 🎉 New Features
-
-- feat: support per-request header override by @jackye1995 in https://github.com/lancedb/lancedb/pull/2631
-
-
-### Release: lancedb [Node/Rust LanceDB v0.22.1-beta.0](https://github.com/lancedb/lancedb/releases/tag/v0.22.1-beta.0)
-## 🎉 New Features
-
-- feat: support mTLS for remote database by @jackye1995 in https://github.com/lancedb/lancedb/pull/2638
-
-## 🐛 Bug Fixes
-
-- fix: add partition statistics to MetadataEraser by @LuQQiu in https://github.com/lancedb/lancedb/pull/2637
-
-
-### Release: lancedb [Python LanceDB v0.25.1-beta.1](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.1-beta.1)
-## 🎉 New Features
-
-- feat: support per-request header override by @jackye1995 in https://github.com/lancedb/lancedb/pull/2631
-
-
-### Release: lancedb [Python LanceDB v0.25.1-beta.0](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.1-beta.0)
-## 🎉 New Features
-
-- feat: support mTLS for remote database by @jackye1995 in https://github.com/lancedb/lancedb/pull/2638
-
-## 🐛 Bug Fixes
-
-- fix: add partition statistics to MetadataEraser by @LuQQiu in https://github.com/lancedb/lancedb/pull/2637
 
 
 ## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers?tab=readme-ov-file#datafusion-table-providers), 2 releases: ['v0.8.1', 'v0.8.0']
