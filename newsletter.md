@@ -1,23 +1,24 @@
 # Complete List of Projects
+ * Project: apache/arrow has 1 releases
  * Project: posit-dev/great-tables has 1 releases
- * Project: substrait-io/substrait-python has 1 releases
+ * Project: ibis-project/ibis has 1 releases
  * Project: narwhals-dev/narwhals has 3 releases
  * Project: pola-rs/polars has 6 releases
  * Project: pandas-dev/pandas has 1 releases
  * Project: holoviz/panel has 2 releases
  * Project: cython/cython has 1 releases
  * Project: plotly/dash has 4 releases
- * Project: dask/dask has 1 releases
+ * Project: dask/dask has 2 releases
  * Project: delta-io/delta-rs has 1 releases
  * Project: rapidsai/cudf has 2 releases
- * Project: lancedb/lance has 8 releases
+ * Project: lancedb/lance has 9 releases
  * Project: lancedb/lancedb has 17 releases
  * Project: datafusion-contrib/datafusion-table-providers has 2 releases
  * Project: duckdb/duckdb has 2 releases
  * Project: trinodb/trino has 1 releases
  * Project: datafusion-contrib/datafusion-table-providers has 2 releases
  * Project: https://spark.apache.org/news/index.html has 2 releases
- * Project: https://datafusion.apache.org/blog/feed.xml has 3 releases
+ * Project: https://datafusion.apache.org/blog/feed.xml has 2 releases
 
 
 # Releases for each project
@@ -26,13 +27,14 @@
 
 ### Release: [Spark 3.5.7 released](https://spark.apache.org/news/spark-3-5-7-released.html)
 
-## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 3 articles
+## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 2 articles
 ### Release: [Apache DataFusion 50.0.0 Released](https://datafusion.apache.org/blog/2025/09/29/datafusion-50.0.0)
 
 ### Release: [Implementing User Defined Types and Custom Metadata in DataFusion](https://datafusion.apache.org/blog/2025/09/21/custom-types-using-metadata)
 
-### Release: [Apache DataFusion Comet 0.10.0 Release](https://datafusion.apache.org/blog/2025/09/16/datafusion-comet-0.10.0)
-
+## Project: [apache/arrow](https://arrow.apache.org/docs/python/), 1 releases: ['Apache Arrow 22.0.0 RC0']
+### Release: arrow [Apache Arrow 22.0.0 RC0](https://github.com/apache/arrow/releases/tag/apache-arrow-22.0.0-rc0)
+Release Notes: Release Candidate: 22.0.0 RC0
 ## Project: [posit-dev/great-tables](https://posit-dev.github.io/great-tables/get-started/), 1 releases: ['v0.19.0']
 ### Release: great-tables [v0.19.0](https://github.com/posit-dev/great-tables/releases/tag/v0.19.0)
 ## Fixes
@@ -59,20 +61,73 @@
 * @FBruzzesi made their first contribution in https://github.com/posit-dev/great-tables/pull/731
 
 **Full Changelog**: https://github.com/posit-dev/great-tables/compare/v0.18.0...v0.19.0
-## Project: [substrait-io/substrait-python](https://substrait.io/), 1 releases: ['v0.24.2']
-### Release: substrait-python [v0.24.2](https://github.com/substrait-io/substrait-python/releases/tag/v0.24.2)
-## What's Changed
-* chore(deps): bump actions/download-artifact from 4 to 5 by @dependabot[bot] in https://github.com/substrait-io/substrait-python/pull/88
-* chore(deps): bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/substrait-io/substrait-python/pull/89
-* chore(deps): bump actions/setup-python from 5 to 6 by @dependabot[bot] in https://github.com/substrait-io/substrait-python/pull/92
-* chore(deps): bump actions/github-script from 7 to 8 by @dependabot[bot] in https://github.com/substrait-io/substrait-python/pull/93
-* chore(deps): bump actions/setup-node from 4 to 5 by @dependabot[bot] in https://github.com/substrait-io/substrait-python/pull/94
-* feat: pretty-printer for plan and expr by @Clonkk in https://github.com/substrait-io/substrait-python/pull/90
+## Project: [ibis-project/ibis](https://ibis-project.org/), 1 releases: ['11.0.0']
+### Release: ibis [11.0.0](https://github.com/ibis-project/ibis/releases/tag/11.0.0)
+## [11.0.0](https://github.com/ibis-project/ibis/compare/10.8.0...11.0.0) (2025-10-15)
 
-## New Contributors
-* @Clonkk made their first contribution in https://github.com/substrait-io/substrait-python/pull/90
+### ⚠ BREAKING CHANGES
 
-**Full Changelog**: https://github.com/substrait-io/substrait-python/compare/v0.24.1...v0.24.2
+* **clickhouse:** adjust array indexing code for later versions of clickhouse
+* **trino:** remove deprecated password parameter (#11538)
+* **datatypes:** `DataType.name` is removed. Use `DataType.__class__.__name__` instead.
+* **memtables:** `memtable`s can no longer be named explicitly, please use `create_table` or `create_view` to create a named object instead.
+* **api:** `Struct.destructure` is removed in favor of `Table.unpack`.
+* **api:** `String.to_date` is removed in favor of `String.as_date`.
+* **api:** `String.to_timestamp` method is removed in favor of `String.as_timestamp`.
+* **api:** `IntegerValue.to_interval` is removed. Use `IntegerValue.as_interval` instead.
+* **api:** `IntegerValue.to_timestamp` is removed. Use `IntegerValue.as_timestamp` instead.
+* **api:** `ibis.case()` is removed. Use `ibis.cases()` instead.
+* **pyspark:** Type annotations using pd.Series/pd.DataFrame are now required per the non-deprecated PySpark Pandas UDF API.
+
+### Features
+
+* **databricks:** allow reads of streaming tables ([#11565](https://github.com/ibis-project/ibis/issues/11565)) ([75a944b](https://github.com/ibis-project/ibis/commit/75a944ba641ee88e21d000ad9ce53e50160f5a3c))
+* **databricks:** use temporary view for memtables to avoid polluting the catalog ([#11562](https://github.com/ibis-project/ibis/issues/11562)) ([346504f](https://github.com/ibis-project/ibis/commit/346504f1a5b8586016a7fc10761e6b8ff45b44c1))
+* **deps:** support duckdb 1.4.0 ([#11622](https://github.com/ibis-project/ibis/issues/11622)) ([aacf072](https://github.com/ibis-project/ibis/commit/aacf0724331b937160f848eb5c75e79ddea8b769))
+
+### Bug Fixes
+
+* **backends:** ensure that memtable finalizers do not hold onto references to self ([096efa3](https://github.com/ibis-project/ibis/commit/096efa3745396040a8c51e58a820b441e51ada92))
+* **clickhouse:** adjust array indexing code for later versions of clickhouse ([a16f13f](https://github.com/ibis-project/ibis/commit/a16f13f3694f53eb8bebbd00c914098932e4cdce))
+* **clickhouse:** ensure that sqlglot does not capitalize the `translate` function ([6fcabf5](https://github.com/ibis-project/ibis/commit/6fcabf51f73fa540c19f2b5ff152cec111431152))
+* **clickhouse:** reraise non-unknown-table exceptions when running `get_schema` queries ([#11520](https://github.com/ibis-project/ibis/issues/11520)) ([c95436d](https://github.com/ibis-project/ibis/commit/c95436d6b0802947eb41fa219e11cd560582f0d1))
+* **duckdb:** allow creating tables with columns containing sql keywords ([#11532](https://github.com/ibis-project/ibis/issues/11532)) ([db1a727](https://github.com/ibis-project/ibis/commit/db1a727b3c4c75e8e4af0f7ef3d0101d26d4450b))
+* **duckdb:** support duckdb 1.4.1 ([f9f2363](https://github.com/ibis-project/ibis/commit/f9f23635fb2eea6bc7bc8e2b3b667033c1b20aed))
+* **exasol:** ensure back compat for exasol ([93e847c](https://github.com/ibis-project/ibis/commit/93e847c676c4e043ff54ed6bbece6198c8714167))
+* **flink:** update key_hack SQL for array handling ([71b50a2](https://github.com/ibis-project/ibis/commit/71b50a2bafce51cc71fb8c252e35bae7f2eca080))
+* **impala:** compile to NOW instead of hive-default current_timestamp ([563cb8e](https://github.com/ibis-project/ibis/commit/563cb8ea346091733842dcc749a1f9afbb85bb4b))
+* lazily import packaging so we don't depend on it in a base install ([bad3ca3](https://github.com/ibis-project/ibis/commit/bad3ca3dcd54383c1435bf327e009c9058dd9850))
+* **packaging:** remove unnecessary base install requirement for `packaging` and cleanup packaging requirement for other backends ([05397d7](https://github.com/ibis-project/ibis/commit/05397d739bc9f12acc8742042eab45e3514628f8))
+* **pyspark:** only register json unwraps if they are being used ([#11503](https://github.com/ibis-project/ibis/issues/11503)) ([2fc3303](https://github.com/ibis-project/ibis/commit/2fc33034412cb6d65a09303fadcee8971f27f61a))
+* **snowflake:** allow expressions in window bounds ([a82631b](https://github.com/ibis-project/ibis/commit/a82631bdd4128b6eab71acf11ac31a492ac753ec))
+* **typing:** harmonize Table.join and Table.*_join type hints ([c60431e](https://github.com/ibis-project/ibis/commit/c60431e74d5f0292989c3ac639861021caa3032e))
+
+### Documentation
+
+* **contribute:** add missing "Install just" in uv set-up guide ([68e8c55](https://github.com/ibis-project/ibis/commit/68e8c55ea45dddda3ca35ec5846f3e8394cdc21d))
+* disable duckdb credential chain creation ([393da16](https://github.com/ibis-project/ibis/commit/393da1605bbdd21fc40da1553349dddaec76d07e))
+* improve Value.identical_to() docstring and example ([7c8fcf7](https://github.com/ibis-project/ibis/commit/7c8fcf7da493d008e5e87c8b21951b953cd1bcd5))
+
+### Refactors
+
+* **api:** remove deprecated `IntegerValue.to_interval` method ([378f7ee](https://github.com/ibis-project/ibis/commit/378f7ee2553ef46abae12753d24692d8ee4eab12))
+* **api:** remove deprecated `IntegerValue.to_timestamp` method ([12b92a5](https://github.com/ibis-project/ibis/commit/12b92a57f9c37dacdb36e5d45dfbcc8571843dcc))
+* **api:** remove deprecated `String.to_date` method ([0d22310](https://github.com/ibis-project/ibis/commit/0d223108e6730b8aaff740af54a5e19616cd3bc4))
+* **api:** remove deprecated `String.to_timestamp` method ([db4c83b](https://github.com/ibis-project/ibis/commit/db4c83be6dc89779849804767fb560b9007d0542))
+* **api:** remove deprecated `Struct.destructure` method ([95caf6e](https://github.com/ibis-project/ibis/commit/95caf6ed4a0f943a3807aacbae54b8838215b162))
+* **api:** remove deprecated top-level `case` function ([ce927d7](https://github.com/ibis-project/ibis/commit/ce927d7b008bc81739e55c6c2cc8bd2ecf06a033))
+* **binding:** make DerefMap computation lazy and support multiple value inputs ([#11540](https://github.com/ibis-project/ibis/issues/11540)) ([5757caa](https://github.com/ibis-project/ibis/commit/5757caa4a2cefd1b64aee9ea502bab615fb67eb9))
+* **datatypes:** fully remove unused DataType.name ([#11102](https://github.com/ibis-project/ibis/issues/11102)) ([8a7534c](https://github.com/ibis-project/ibis/commit/8a7534c8ef3c675229edd17f2f4467f314d0c143))
+* **memtables:** remove support for problematic memtable properties ([5d35ad5](https://github.com/ibis-project/ibis/commit/5d35ad50bae9ac18140544030ebbef2b78f4905a))
+* split temp table support along finalizer lines ([4e4a165](https://github.com/ibis-project/ibis/commit/4e4a165a9ab204f15c6c4dbc468f62d725563b3c))
+* **trino:** remove deprecated password parameter ([#11538](https://github.com/ibis-project/ibis/issues/11538)) ([a178459](https://github.com/ibis-project/ibis/commit/a178459ad4e30cb3305ad261e62e826352b4b38a))
+
+### Performance
+
+* **athena:** replace `list_table_metadata` with `get_table_metadata` in `_get_schema_with_query`  ([#11573](https://github.com/ibis-project/ibis/issues/11573)) ([40b73e7](https://github.com/ibis-project/ibis/commit/40b73e751ec4834eb5191a7f6c21852c8e9a49ff))
+* **athena:** use `get_table_metadata` in `get_schema` ([#11574](https://github.com/ibis-project/ibis/issues/11574)) ([e4e582a](https://github.com/ibis-project/ibis/commit/e4e582a920a7255078cb96c2769d859827b66db1))
+* **binding:** only create a dereference map in `Table.bind` when needed ([#11531](https://github.com/ibis-project/ibis/issues/11531)) ([90e790c](https://github.com/ibis-project/ibis/commit/90e790c680ad12513446d6f2e459b0c731935015))
+
 ## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 3 releases: ['Narwhals v2.8.0', 'Narwhals v2.7.0', 'Narwhals v2.6.0']
 ### Release: narwhals [Narwhals v2.8.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.8.0)
 ## Changes
@@ -1140,7 +1195,29 @@ Many thanks to [@ATL2001](https://github.com/ATL2001) (first contribution), [@Co
 ## Added
 - [#3440](https://github.com/plotly/dash/pull/3440) Modernize dcc.Dropdown
 
-## Project: [dask/dask](https://www.dask.org/), 1 releases: ['2025.9.1']
+## Project: [dask/dask](https://www.dask.org/), 2 releases: ['2025.10.0', '2025.9.1']
+### Release: dask [2025.10.0](https://github.com/dask/dask/releases/tag/2025.10.0)
+## Changes
+
+- Use updated docs theme @jacobtomlinson (#12093)
+- Fix: `dask.array.cumprod` does not deal with `dtype` @tonyyuyiding (#12097)
+- cupy compatibility for percentile @TomAugspurger (#12098)
+- Fix: avoid using methods.concat on empty lists @tonyyuyiding (#12096)
+- Add distribution check for optional dependencies @jrbourbeau (#12087)
+- Fix percentile inconsistencies @Oisin-M (#12088)
+- Fix warning in test\_ufunc\_where\_no\_out @TomAugspurger (#12094)
+- Fix/choose trivial case @Oisin-M (#12090)
+- Add input validation on `dask.dataframe.read_sql_query()` @jacobtomlinson (#12091)
+- Numpy 2.2 updates for cov function with tests @mmccarty (#12079)
+- Fix/nanvar @Oisin-M (#12089)
+- Document manually triggering the conda-forge bots @jacobtomlinson (#12083)
+- Fix mixed HLG/Expr handling in ``\_ExprSequence.\_simplify\_down`` @rjzamora (#12081)
+- DOC: Add dask.tokenize to API docs @Username46786 (#12080)
+- CreateOverlappingPartitions: Add before and after to prepend name @faulaire (#11965)
+- fix: csc scalar declaration in `_array_like_safe` @ilan-gold (#12078)  
+
+See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more information.
+
 ### Release: dask [2025.9.1](https://github.com/dask/dask/releases/tag/2025.9.1)
 ## Changes
 
@@ -1632,11 +1709,18 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 - Change .str.starts/endswith with tuple argument to match any pattern instead of pairwise matching (#20249) @mroeschke
 - Remove DataFrame.apply_chunks, Groupby.apply_grouped (#20194) @mroeschke
+- [cudf-polars] CUDA stream (#20154) @madsbk
 - Remove compatibility with nvCOMP versions before 5.0 (#20140) @vuule
 - Rewrite JNI functions to use `JNI_TRY`/`JNI_CATCH` (#19053) @ttnghia
 
 ## 🐛 Bug Fixes
 
+- We need this to pacify mypy (#20285) @wence-
+- Add Proxy for `SparseAccessor` (#20278) @galipremsagar
+- Add private attributes for `cudf.pandas` proxy objects (#20276) @galipremsagar
+- Pin ibis-framework&lt;11.0.0 (#20267) @Matt711
+- Pin `deltalake` in cudf-polars-polars-tests CI job (#20255) @TomAugspurger
+- Add `stream` and `mr` arguments to `Column.from_arrow` type stub (#20244) @TomAugspurger
 - Fix the host-device tdigest offsets by using cuda::std::span (#20220) @PointKernel
 - Deallocation should be noexcept (#20219) @bdice
 - Change stream_checking_resource_adaptor::do_deallocate to noexcept (#20218) @vyasr
@@ -1665,6 +1749,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Implement `ARGMIN` and `ARGMAX` aggregations for reduction (#20207) @ttnghia
 - Add remaining memory resources (#20197) @vyasr
 - Add memory resources to scalars (#20196) @vyasr
+- Skip decompression of pruned parquet pages (#20192) @mhaseeb123
 - Add memory resources to replace, json, and hashing (#20150) @vyasr
 - Support decimal literals in cudf-polars (#20147) @Matt711
 - Add pylibcudf is_valid_reduce_aggregation API (#20145) @davidwendt
@@ -1684,12 +1769,26 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Support `cum_sum(...).over(...)` expressions in cudf-polars (#19908) @Matt711
 - Support forward/backward filling null values in a grouped window context (#19907) @Matt711
 - [FEA] Implement JIT Filter for read_parquet (#19831) @lamarrr
+- Add an example to demonstrate the use of next-gen parquet reader to read a parquet file with highly selective filters (#19469) @mhaseeb123
 - Rewrite JNI functions to use `JNI_TRY`/`JNI_CATCH` (#19053) @ttnghia
 - Add support for maintain_order param in joins (#17698) @Matt711
 
 ## 🛠️ Improvements
 
+- Skip mypy in pre-commit.ci (#20286) @bdice
+- Remove extraneous host_memory_resource include (#20284) @bdice
+- Add numpy to the mypy pre-commit environment (#20282) @vyasr
+- Add `MultiIndex.dtypes` (#20279) @galipremsagar
+- Add more type annotations to cudf/core/column subclasses (#20277) @mroeschke
+- Handle unordered grouped windows properly for null filling and cum sums (#20275) @Matt711
+- Unpin DuckDB and Ibis in cudf.pandas thirdparty tests (#20269) @mroeschke
+- Enable `sccache-dist` connection pool (#20264) @trxcllnt
+- Update ``ConfigOptions`` for rapidsmpf-streaming integration (#20252) @rjzamora
+- Add arm testing of cudf.pandas unit tests (#20251) @vyasr
+- Add pylibcudf to pre-commit linting and fix outstanding errors (#20250) @vyasr
 - Change .str.starts/endswith with tuple argument to match any pattern instead of pairwise matching (#20249) @mroeschke
+- Move and rename ``ScanPartitionPlan`` (#20248) @rjzamora
+- Standardize setting StructDtype field names post libcudf conversion (#20235) @mroeschke
 - Prevent accidental copies of expensive-to-copy object types (#20226) @vuule
 - More mypy and docs fixes (#20224) @vyasr
 - Configuration for which metrics are enabled during tracing (#20223) @TomAugspurger
@@ -1713,10 +1812,12 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Add PDSH benchmark runner for cudf.pandas (#20164) @mroeschke
 - Temporarily disable conda-java-tests (#20162) @bdice
 - Manual forward merger for Branch 25.12 - branch 25.10 (#20157) @galipremsagar
+- [cudf-polars] CUDA stream (#20154) @madsbk
 - Avoid NumericalColumn call from CategoricalColumn.children (#20153) @mroeschke
 - Branch 25.12 merge branch 25.10 (#20152) @vyasr
 - Make ListColumn._transform_leaves convert via pylibcudf (#20151) @mroeschke
 - Make ColumnBase.as_*_column convert via pylibcudf (#20149) @mroeschke
+- Make ColumnBase.deserialize construct via pylibcudf (#20142) @mroeschke
 - Remove unused ColumnBase.view (#20141) @mroeschke
 - Remove compatibility with nvCOMP versions before 5.0 (#20140) @vuule
 - Adjust rmm pool handling in PDSH benchmarks (#20138) @TomAugspurger
@@ -1751,8 +1852,42 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Trace node execution in cudf-polars (#19895) @TomAugspurger
 - Cleanup parquet for simple columns (#19869) @pmattione-nvidia
 - Update nvbench (#19619) @bdice
+- Run polars tests with the streaming and in-memory executors (#19354) @Matt711
 - Remove calling to `purge_nonempty_nulls` in `make_lists_column` (#12873) @ttnghia
-## Project: [lancedb/lance](https://lancedb.github.io/lance/), 8 releases: ['v0.38.3-beta.2', 'v0.38.3-beta.1', 'v0.38.2', 'v0.38.1', 'v0.38.0', 'v0.37.1-beta.1', 'v0.37.0', 'v0.36.0-beta.2']
+## Project: [lancedb/lance](https://lancedb.github.io/lance/), 9 releases: ['v0.38.3-beta.4', 'v0.38.3-beta.3', 'v0.38.3-beta.2', 'v0.38.3-beta.1', 'v0.38.2', 'v0.38.1', 'v0.38.0', 'v0.37.1-beta.1', 'v0.37.0']
+### Release: lance [v0.38.3-beta.4](https://github.com/lancedb/lance/releases/tag/v0.38.3-beta.4)
+<!-- Release notes generated using configuration in .github/release.yml at v0.38.3-beta.4 -->
+
+## What's Changed
+### Bug Fixes 🐛
+* fix: support preview relase in writer version by @jackye1995 in https://github.com/lancedb/lance/pull/4974
+
+
+**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.3-beta.3...v0.38.3-beta.4
+### Release: lance [v0.38.3-beta.3](https://github.com/lancedb/lance/releases/tag/v0.38.3-beta.3)
+<!-- Release notes generated using configuration in .github/release.yml at v0.38.3-beta.3 -->
+
+## What's Changed
+### New Features 🎉
+* feat: support general compression zstd/lz4 in blocks by @lyang24 in https://github.com/lancedb/lance/pull/4900
+* feat: fts supports custom stop words by @wojiaodoubao in https://github.com/lancedb/lance/pull/4866
+* feat: implement add_bases api to add bases to lance dataset by @jaystarshot in https://github.com/lancedb/lance/pull/4945
+* feat: allow a commit message to be specified in the python dataset commit method by @westonpace in https://github.com/lancedb/lance/pull/4952
+* feat: support tracking newly inserted and updated rows between versions by @yanghua in https://github.com/lancedb/lance/pull/4741
+### Bug Fixes 🐛
+* fix: optimize_indices may unexpectly delete delta indices by @BubbleCal in https://github.com/lancedb/lance/pull/4931
+* fix: rebuild HNSW graph while remapping it by @BubbleCal in https://github.com/lancedb/lance/pull/4941
+* fix: be compatible to old `pack` metadata in 2.0 by @Xuanwo in https://github.com/lancedb/lance/pull/4964
+* fix: filter with < current_date() should expand with correct time by @Xuanwo in https://github.com/lancedb/lance/pull/4963
+* fix: use correct logic to detect old/new scheme in binary block decoder by @westonpace in https://github.com/lancedb/lance/pull/4966
+### Documentation 📚
+* docs: document the metadata cache by @westonpace in https://github.com/lancedb/lance/pull/4953
+
+## New Contributors
+* @zhangyue19921010 made their first contribution in https://github.com/lancedb/lance/pull/4915
+* @dependabot[bot] made their first contribution in https://github.com/lancedb/lance/pull/4954
+
+**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.3-beta.2...v0.38.3-beta.3
 ### Release: lance [v0.38.3-beta.2](https://github.com/lancedb/lance/releases/tag/v0.38.3-beta.2)
 <!-- Release notes generated using configuration in .github/release.yml at v0.38.3-beta.2 -->
 
@@ -1927,18 +2062,6 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 * @morales-t-netflix made their first contribution in https://github.com/lancedb/lance/pull/4764
 
 **Full Changelog**: https://github.com/lancedb/lance/compare/v0.36.0...v0.37.0
-### Release: lance [v0.36.0-beta.2](https://github.com/lancedb/lance/releases/tag/v0.36.0-beta.2)
-<!-- Release notes generated using configuration in .github/release.yml at v0.36.0-beta.2 -->
-
-## What's Changed
-### New Features 🎉
-* feat: optimize bitmap index with lazy loading and column projection by @LuQQiu in https://github.com/lancedb/lance/pull/4699
-* feat: add LanceFileSession.open_writer for sharing object store by @jmhsieh in https://github.com/lancedb/lance/pull/4722
-
-## New Contributors
-* @jmhsieh made their first contribution in https://github.com/lancedb/lance/pull/4722
-
-**Full Changelog**: https://github.com/lancedb/lance/compare/v0.36.0-beta.1...v0.36.0-beta.2
 ## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 17 releases: ['Node/Rust LanceDB v0.22.3-beta.0', 'Python LanceDB v0.25.3-beta.0', 'Node/Rust LanceDB v0.22.2', 'Python LanceDB v0.25.2', 'Node/Rust LanceDB v0.22.2-beta.2', 'Python LanceDB v0.25.2-beta.2', 'Node/Rust LanceDB v0.22.2-beta.1', 'Python LanceDB v0.25.2-beta.1', 'ci-support-binaries', 'Node/Rust LanceDB v0.22.2-beta.0', 'Python LanceDB v0.25.2-beta.0', 'Node/Rust LanceDB v0.22.1', 'Python LanceDB v0.25.1', 'Node/Rust LanceDB v0.22.1-beta.3', 'Python LanceDB v0.25.1-beta.3', 'Node/Rust LanceDB v0.22.1-beta.2', 'Python LanceDB v0.25.1-beta.2']
 ### Release: lancedb [Node/Rust LanceDB v0.22.3-beta.0](https://github.com/lancedb/lancedb/releases/tag/v0.22.3-beta.0)
 ## 🎉 New Features
