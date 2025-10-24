@@ -6,12 +6,13 @@
  * Project: pola-rs/polars has 6 releases
  * Project: pandas-dev/pandas has 1 releases
  * Project: holoviz/panel has 1 releases
- * Project: cython/cython has 1 releases
+ * Project: pyscript/pyscript has 3 releases
+ * Project: cython/cython has 4 releases
  * Project: plotly/dash has 4 releases
  * Project: dask/dask has 1 releases
  * Project: delta-io/delta-rs has 2 releases
  * Project: rapidsai/cudf has 2 releases
- * Project: lancedb/lance has 12 releases
+ * Project: lancedb/lance has 15 releases
  * Project: lancedb/lancedb has 17 releases
  * Project: datafusion-contrib/datafusion-table-providers has 1 releases
  * Project: duckdb/duckdb has 1 releases
@@ -28,9 +29,9 @@
 ### Release: [Spark 3.5.7 released](https://spark.apache.org/news/spark-3-5-7-released.html)
 
 ## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 2 articles
-### Release: [Apache DataFusion 50.0.0 Released](https://datafusion.apache.org/blog/2025/09/29/datafusion-50.0.0)
+### Release: [Apache DataFusion Comet 0.11.0 Release](https://datafusion.apache.org/blog/2025/10/21/datafusion-comet-0.11.0)
 
-### Release: [Implementing User Defined Types and Custom Metadata in DataFusion](https://datafusion.apache.org/blog/2025/09/21/custom-types-using-metadata)
+### Release: [Apache DataFusion 50.0.0 Released](https://datafusion.apache.org/blog/2025/09/29/datafusion-50.0.0)
 
 ## Project: [apache/arrow](https://arrow.apache.org/docs/python/), 2 releases: ['Apache Arrow 22.0.0 RC1', 'Apache Arrow 22.0.0 RC0']
 ### Release: arrow [Apache Arrow 22.0.0 RC1](https://github.com/apache/arrow/releases/tag/apache-arrow-22.0.0-rc1)
@@ -1023,7 +1024,48 @@ This patch release focuses on polishing the user experience, fixing regressions,
 - Add missing Anaconda logo to documentation ([#8208](https://github.com/holoviz/panel/pull/8208))
 - Add how-to guide on using `uv` to distribute Panel apps and dependencies ([#8205](https://github.com/holoviz/panel/pull/8205))
 
-## Project: [cython/cython](https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html), 1 releases: ['3.1.5']
+## Project: [pyscript/pyscript](https://pyscript.com/), 3 releases: ['2025.10.3', '2025.10.2', '2025.10.1']
+### Release: pyscript [2025.10.3](https://github.com/pyscript/pyscript/releases/tag/2025.10.3)
+After a Chromium update we have noticed our `pyscript.fs` broke so that:
+
+  * a bug has been filed to inform Chromium about the regression or breaking change: https://issues.chromium.org/issues/454531070
+  * investigation occurred and code has been updated to use the pattern that doesn't throw cryptic errors anymore
+  * extensive tests both on Pyodide and MicroPython, main thread and workers, has been manually done to be sure all expectations are met
+
+From users' perspective, the modal about granting access might happen twice now:
+
+  * the first time lasts the whole session or until you close your browser
+  * the next time you get a chance to allow that access *always*, as opposite of *once*
+  * if you accept *always* that dialog will never bother you again unless you clear the whole browser cache
+
+More details in #2395.
+### Release: pyscript [2025.10.2](https://github.com/pyscript/pyscript/releases/tag/2025.10.2)
+* Fixed remote packages issue found after real-world use case example. See: #2393 
+### Release: pyscript [2025.10.1](https://github.com/pyscript/pyscript/releases/tag/2025.10.1)
+* Added a *transform* ability from main to worker, not just worker to main: https://github.com/pyscript/polyscript/issues/148
+* Added `experimental_remote_packages` config flag for remote packages: https://github.com/pyscript/polyscript/commit/f0861291247bd8282b6765391862ddfc3f69e216
+* Augmented Pyodide bootstrap with pre-fetched packages details to improve feedback on incompatible packages when bootstrapping PyScript: https://github.com/pyscript/polyscript/commit/c879c6edf09e359435bf70383c05b65e824ee457
+* Simplified the `@pyscript/bridge` to bring in automatically PyScript if not already on the page: https://github.com/pyscript/pyscript/pull/2379
+* Fixed PyEditor issue on Ctrl+Enter (now working): https://github.com/pyscript/pyscript/pull/2385
+* Improved `pyscript.web` after MicroPython updates: https://github.com/pyscript/pyscript/pull/2387
+* We now allow you to define a custom TOML parser for more complex configs: https://github.com/pyscript/pyscript/pull/2390
+* First steps (of a work in progress) to validate Pyodide package availability and metadata: https://github.com/pyscript/pyscript/pull/2392
+* Updated MicroPython to version 1.27.0-preview-283:
+    * Fixed proxies references
+    * Improved interoperability with JS
+    * Added `inspect.signature` for callables / generators / others
+* Update Pyodide to version 0.29.0:
+    * `py-game-ce` is back!
+    * Default conversion of `to_js` as JS object literal, not map
+    * Fixed a Wasm GC reference leak on invokes
+    * New features / enhancements here: https://pyodide.org/en/stable/project/changelog.html#version-0-29-0
+## Project: [cython/cython](https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html), 4 releases: ['3.1.6', '3.2.0b1-3', '3.2.0b1', '3.1.5']
+### Release: cython [3.1.6](https://github.com/cython/cython/releases/tag/3.1.6)
+
+### Release: cython [3.2.0b1-3](https://github.com/cython/cython/releases/tag/3.2.0b1-3)
+
+### Release: cython [3.2.0b1](https://github.com/cython/cython/releases/tag/3.2.0b1)
+Not released due to package metadata problems.
 ### Release: cython [3.1.5](https://github.com/cython/cython/releases/tag/3.1.5)
 3.1.5 (2025-10-19)
 ==================
@@ -1045,7 +1087,9 @@ Bugs fixed
 * Value conversion errors when tracing C return statements no longer fail the trace
   but fall back to reporting ``None`` returns instead.
   (Github issue :issue:`6503`)
-## Project: [plotly/dash](https://plotly.com/dash/), 4 releases: ['v4.0.0rc2', 'Dash Version 3.3.0rc1', 'Dash Version 3.3.0rc0', 'v4.0.0rc1']
+## Project: [plotly/dash](https://plotly.com/dash/), 4 releases: ['Dash Version 3.3.0rc2', 'v4.0.0rc2', 'Dash Version 3.3.0rc1', 'Dash Version 3.3.0rc0']
+### Release: dash [Dash Version 3.3.0rc2](https://github.com/plotly/dash/releases/tag/v3.3.0rc2)
+- Remove placeholde publish button when on workspace
 ### Release: dash [v4.0.0rc2](https://github.com/plotly/dash/releases/tag/v4.0.0rc2)
 ## Added
 - [3468](https://github.com/plotly/dash/pull/3468) Modernize dcc.TextArea & dcc.Tooltip
@@ -1081,10 +1125,6 @@ Bugs fixed
 - [#3397](https://github.com/plotly/dash/pull/3397) Add optional callbacks, suppressing callback warning for missing component ids for a single callback.
 - [#3415](https://github.com/plotly/dash/pull/3415) Fix the error triggered when only a single no_update is returned for client-side callback functions with multiple Outputs. Fix [#3366](https://github.com/plotly/dash/issues/3366)
 - [#3416](https://github.com/plotly/dash/issues/3416) Fix DeprecationWarning in dash/_jupyter.py by migrating from deprecated ipykernel.comm.Comm to comm module
-### Release: dash [v4.0.0rc1](https://github.com/plotly/dash/releases/tag/v4.0.0rc1)
-## Added
-- [#3440](https://github.com/plotly/dash/pull/3440) Modernize dcc.Dropdown
-
 ## Project: [dask/dask](https://www.dask.org/), 1 releases: ['2025.10.0']
 ### Release: dask [2025.10.0](https://github.com/dask/dask/releases/tag/2025.10.0)
 ## Changes
@@ -1769,7 +1809,48 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Update nvbench (#19619) @bdice
 - Run polars tests with the streaming and in-memory executors (#19354) @Matt711
 - Remove calling to `purge_nonempty_nulls` in `make_lists_column` (#12873) @ttnghia
-## Project: [lancedb/lance](https://lancedb.github.io/lance/), 12 releases: ['v0.38.3-beta.7', 'v0.38.3-beta.6', 'v0.38.3-beta.5', 'v0.38.3-beta.4', 'v0.38.3-beta.3', 'v0.38.3-beta.2', 'v0.38.3-beta.1', 'v0.38.2', 'v0.38.1', 'v0.38.0', 'v0.37.1-beta.1', 'v0.37.0']
+## Project: [lancedb/lance](https://lancedb.github.io/lance/), 15 releases: ['v0.38.3-beta.10', 'v0.38.3-beta.9', 'v0.38.3-beta.8', 'v0.38.3-beta.7', 'v0.38.3-beta.6', 'v0.38.3-beta.5', 'v0.38.3-beta.4', 'v0.38.3-beta.3', 'v0.38.3-beta.2', 'v0.38.3-beta.1', 'v0.38.2', 'v0.38.1', 'v0.38.0', 'v0.37.1-beta.1', 'v0.37.0']
+### Release: lance [v0.38.3-beta.10](https://github.com/lancedb/lance/releases/tag/v0.38.3-beta.10)
+<!-- Release notes generated using configuration in .github/release.yml at v0.38.3-beta.10 -->
+
+## What's Changed
+### New Features 🎉
+* feat: should dictionary encode based on size by @yingjianwu98 in https://github.com/lancedb/lance/pull/4972
+* feat: add variable packed struct support by @Xuanwo in https://github.com/lancedb/lance/pull/5003
+* feat(python): support index for nested field by @jackye1995 in https://github.com/lancedb/lance/pull/5027
+### Bug Fixes 🐛
+* fix: update to respect file version from write params when writing fragments in java by @morales-t-netflix in https://github.com/lancedb/lance/pull/5014
+* fix: general block decompression mismatch for Lance 2.2 dictionaries by @Xuanwo in https://github.com/lancedb/lance/pull/5025
+* fix: handle List types in Substrait field counting by @LuQQiu in https://github.com/lancedb/lance/pull/5015
+### Documentation 📚
+* docs: minor fix for docs/src/format/table/index.md#Deletion by @zhangyue19921010 in https://github.com/lancedb/lance/pull/5033
+
+
+**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.3-beta.9...v0.38.3-beta.10
+### Release: lance [v0.38.3-beta.9](https://github.com/lancedb/lance/releases/tag/v0.38.3-beta.9)
+<!-- Release notes generated using configuration in .github/release.yml at v0.38.3-beta.9 -->
+
+## What's Changed
+### Breaking Changes 🛠
+* refactor!: cleanup public API, remove lance_arrow re-exports by @westonpace in https://github.com/lancedb/lance/pull/4991
+### New Features 🎉
+* feat: expose storage options in dataset by @jackye1995 in https://github.com/lancedb/lance/pull/5016
+
+
+**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.3-beta.8...v0.38.3-beta.9
+### Release: lance [v0.38.3-beta.8](https://github.com/lancedb/lance/releases/tag/v0.38.3-beta.8)
+<!-- Release notes generated using configuration in .github/release.yml at v0.38.3-beta.8 -->
+
+## What's Changed
+### New Features 🎉
+* feat: log version on dataset load event by @wjones127 in https://github.com/lancedb/lance/pull/4988
+* feat(java): support blob api by @majin1102 in https://github.com/lancedb/lance/pull/4769
+* feat(python): support shallow_clone by @majin1102 in https://github.com/lancedb/lance/pull/4949
+### Bug Fixes 🐛
+* fix: coerce nested regexp_match to boolean in filters by @BubbleCal in https://github.com/lancedb/lance/pull/5019
+
+
+**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.3-beta.7...v0.38.3-beta.8
 ### Release: lance [v0.38.3-beta.7](https://github.com/lancedb/lance/releases/tag/v0.38.3-beta.7)
 <!-- Release notes generated using configuration in .github/release.yml at v0.38.3-beta.7 -->
 
@@ -2019,7 +2100,43 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 * @morales-t-netflix made their first contribution in https://github.com/lancedb/lance/pull/4764
 
 **Full Changelog**: https://github.com/lancedb/lance/compare/v0.36.0...v0.37.0
-## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 17 releases: ['Node/Rust LanceDB v0.22.3-beta.1', 'Python LanceDB v0.25.3-beta.1', 'Node/Rust LanceDB v0.22.3-beta.0', 'Python LanceDB v0.25.3-beta.0', 'Node/Rust LanceDB v0.22.2', 'Python LanceDB v0.25.2', 'Node/Rust LanceDB v0.22.2-beta.2', 'Python LanceDB v0.25.2-beta.2', 'Node/Rust LanceDB v0.22.2-beta.1', 'Python LanceDB v0.25.2-beta.1', 'ci-support-binaries', 'Node/Rust LanceDB v0.22.2-beta.0', 'Python LanceDB v0.25.2-beta.0', 'Node/Rust LanceDB v0.22.1', 'Python LanceDB v0.25.1', 'Node/Rust LanceDB v0.22.1-beta.3', 'Python LanceDB v0.25.1-beta.3']
+## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 17 releases: ['Node/Rust LanceDB v0.22.3-beta.2', 'Python LanceDB v0.25.3-beta.2', 'Node/Rust LanceDB v0.22.3-beta.1', 'Python LanceDB v0.25.3-beta.1', 'Node/Rust LanceDB v0.22.3-beta.0', 'Python LanceDB v0.25.3-beta.0', 'Node/Rust LanceDB v0.22.2', 'Python LanceDB v0.25.2', 'Node/Rust LanceDB v0.22.2-beta.2', 'Python LanceDB v0.25.2-beta.2', 'Node/Rust LanceDB v0.22.2-beta.1', 'Python LanceDB v0.25.2-beta.1', 'ci-support-binaries', 'Node/Rust LanceDB v0.22.2-beta.0', 'Python LanceDB v0.25.2-beta.0', 'Node/Rust LanceDB v0.22.1', 'Python LanceDB v0.25.1']
+### Release: lancedb [Node/Rust LanceDB v0.22.3-beta.2](https://github.com/lancedb/lancedb/releases/tag/v0.22.3-beta.2)
+## 🎉 New Features
+
+- feat: expose storage options in table by @jackye1995 in https://github.com/lancedb/lancedb/pull/2736
+
+## Other Changes
+
+- chore: update lance dependency to v0.38.3-beta.7 by @github-actions[bot] in https://github.com/lancedb/lancedb/pull/2735
+- chore: update lance dependency to v0.38.3-beta.8 by @github-actions[bot] in https://github.com/lancedb/lancedb/pull/2737
+
+## 🔧 Build and CI
+
+- ci: use robot token instead of github's own token by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2732
+- ci: add instruct for codex to use gh with token by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2734
+- ci: make sure GH_TOKEN included in codex env by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2738
+- ci: polish codex prompt for better behavior by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2739
+
+
+### Release: lancedb [Python LanceDB v0.25.3-beta.2](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.3-beta.2)
+## 🎉 New Features
+
+- feat: expose storage options in table by @jackye1995 in https://github.com/lancedb/lancedb/pull/2736
+
+## Other Changes
+
+- chore: update lance dependency to v0.38.3-beta.7 by @github-actions[bot] in https://github.com/lancedb/lancedb/pull/2735
+- chore: update lance dependency to v0.38.3-beta.8 by @github-actions[bot] in https://github.com/lancedb/lancedb/pull/2737
+
+## 🔧 Build and CI
+
+- ci: use robot token instead of github's own token by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2732
+- ci: add instruct for codex to use gh with token by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2734
+- ci: make sure GH_TOKEN included in codex env by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2738
+- ci: polish codex prompt for better behavior by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2739
+
+
 ### Release: lancedb [Node/Rust LanceDB v0.22.3-beta.1](https://github.com/lancedb/lancedb/releases/tag/v0.22.3-beta.1)
 ## 🎉 New Features
 
@@ -2266,26 +2383,6 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 ## Other Changes
 
 - refactor: remove catalog implementation now that we have namespaces in database by @westonpace in https://github.com/lancedb/lancedb/pull/2662
-
-
-### Release: lancedb [Node/Rust LanceDB v0.22.1-beta.3](https://github.com/lancedb/lancedb/releases/tag/v0.22.1-beta.3)
-## 🎉 New Features
-
-- feat: support shallow clone by @jackye1995 in https://github.com/lancedb/lancedb/pull/2653
-
-## 🐛 Bug Fixes
-
-- fix(node): handle undefined vector fields with embedding functions by @naaa760 in https://github.com/lancedb/lancedb/pull/2655
-
-
-### Release: lancedb [Python LanceDB v0.25.1-beta.3](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.1-beta.3)
-## 🎉 New Features
-
-- feat: support shallow clone by @jackye1995 in https://github.com/lancedb/lancedb/pull/2653
-
-## 🐛 Bug Fixes
-
-- fix(node): handle undefined vector fields with embedding functions by @naaa760 in https://github.com/lancedb/lancedb/pull/2655
 
 
 ## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers?tab=readme-ov-file#datafusion-table-providers), 1 releases: ['v0.8.1']
