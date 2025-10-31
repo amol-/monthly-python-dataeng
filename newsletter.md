@@ -2,31 +2,29 @@
  * Project: apache/arrow has 3 releases
  * Project: posit-dev/great-tables has 1 releases
  * Project: ibis-project/ibis has 1 releases
- * Project: narwhals-dev/narwhals has 5 releases
- * Project: pola-rs/polars has 6 releases
- * Project: pandas-dev/pandas has 1 releases
+ * Project: narwhals-dev/narwhals has 4 releases
+ * Project: pola-rs/polars has 5 releases
  * Project: holoviz/panel has 1 releases
  * Project: pyscript/pyscript has 3 releases
- * Project: cython/cython has 5 releases
+ * Project: cython/cython has 6 releases
  * Project: plotly/dash has 3 releases
  * Project: dask/dask has 1 releases
  * Project: delta-io/delta-rs has 2 releases
  * Project: rapidsai/cudf has 1 releases
- * Project: lancedb/lance has 14 releases
- * Project: lancedb/lancedb has 15 releases
+ * Project: lancedb/lance has 15 releases
+ * Project: lancedb/lancedb has 17 releases
  * Project: duckdb/duckdb has 1 releases
+ * Project: trinodb/trino has 1 releases
  * Project: https://spark.apache.org/news/index.html has 1 releases
- * Project: https://datafusion.apache.org/blog/feed.xml has 2 releases
+ * Project: https://datafusion.apache.org/blog/feed.xml has 1 releases
 
 
 # Releases for each project
 ## Project: [https://spark.apache.org/news/index.html](https://spark.apache.org/news/index.html), 1 articles
-### Release: [Preview release of Spark 4.1.0](https://spark.apache.org/news/spark-4-1-0-preview2-released.html)
+### Release: [Preview release of Spark 4.1.0](https://spark.apache.org/news/spark-4-1-0-preview3-released.html)
 
-## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 2 articles
+## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 1 articles
 ### Release: [Apache DataFusion Comet 0.11.0 Release](https://datafusion.apache.org/blog/2025/10/21/datafusion-comet-0.11.0)
-
-### Release: [Apache DataFusion 50.0.0 Released](https://datafusion.apache.org/blog/2025/09/29/datafusion-50.0.0)
 
 ## Project: [apache/arrow](https://arrow.apache.org/docs/python/), 3 releases: ['Apache Arrow 22.0.0', 'Apache Arrow 22.0.0 RC1', 'Apache Arrow 22.0.0 RC0']
 ### Release: arrow [Apache Arrow 22.0.0](https://github.com/apache/arrow/releases/tag/apache-arrow-22.0.0)
@@ -128,7 +126,7 @@ Release Notes: Release Candidate: 22.0.0 RC0
 * **athena:** use `get_table_metadata` in `get_schema` ([#11574](https://github.com/ibis-project/ibis/issues/11574)) ([e4e582a](https://github.com/ibis-project/ibis/commit/e4e582a920a7255078cb96c2769d859827b66db1))
 * **binding:** only create a dereference map in `Table.bind` when needed ([#11531](https://github.com/ibis-project/ibis/issues/11531)) ([90e790c](https://github.com/ibis-project/ibis/commit/90e790c680ad12513446d6f2e459b0c731935015))
 
-## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 5 releases: ['Narwhals v2.10.0', 'Narwhals v2.9.0', 'Narwhals v2.8.0', 'Narwhals v2.7.0', 'Narwhals v2.6.0']
+## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 4 releases: ['Narwhals v2.10.0', 'Narwhals v2.9.0', 'Narwhals v2.8.0', 'Narwhals v2.7.0']
 ### Release: narwhals [Narwhals v2.10.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.10.0)
 ## Changes
 
@@ -247,38 +245,48 @@ Thank you to all our contributors for making this release possible!
 Thank you to all our contributors for making this release possible!
 @FBruzzesi, @MarcoGorelli, @akmalsoliev, @dangotbanned, @dependabot[bot], @felixgwilliams and [dependabot[bot]](https://github.com/apps/dependabot)
 
-### Release: narwhals [Narwhals v2.6.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.6.0)
-## Changes
+## Project: [pola-rs/polars](https://docs.pola.rs/), 5 releases: ['Python Polars 1.35.1', 'Python Polars 1.35.0', 'Python Polars 1.35.0-beta.1', 'Python Polars 1.34.0', 'Python Polars 1.34.0-beta.5']
+### Release: polars [Python Polars 1.35.1](https://github.com/pola-rs/polars/releases/tag/py-1.35.1)
+## 🚀 Performance improvements
+
+- Don't recompute full rolling moment window when NaNs/nulls leave the window (#25078)
+- Skip filtering scan IR if no paths were filtered (#25037)
+- Optimize ipc stream read performance (#24671)
 
 ## ✨ Enhancements
 
-- enh: support `skew` with `over` (#3161)
-- fix: Align division by zero behavior across all backends (#2761)
-- enh: support `n_unique` with `over` across all backends (#3159)
-- enh: support non-elementwise (but length-preserving) keys in group-by (#3157)
+- Support BYTE\_ARRAY backed Decimals in Parquet (#25076)
+- Allow `glimpse` to return a `DataFrame` (#24803)
+- Add `allow_empty` flag to `item` (#25048)
 
 ## 🐞 Bug fixes
 
-- fix: preserve nulls in cumulative functions (#3156)
+- The `SQL` interface should use logical, not bitwise, behaviour for unary "NOT" operator (#25091)
+- Fix panic if scan predicate produces 0 length mask (#25089)
+- Ensure SQL table alias resolution checks against CTE aliases on fallback (#25071)
+- Panic in `group_by_dynamic` with `group_by` and multiple chunks (#25075)
+- Minor improvement to internal `is_pycapsule` utility function (#25073)
+- Fix panic when using struct field as join key (#25059)
+- Allow broadcast in `group_by` for `ApplyExpr` and `BinaryExpr` (#25053)
+- Fix field metadata for nested categorical PyCapsule export (#25052)
+- Block predicate pushdown when `group_by` key values are changed (#25032)
+- Group-By aggregation problems caused by `AmortSeries` (#25043)
+- Don't push down predicates passed inserted cache nodes (#25042)
+- Allow for negative time in `group_by_dynamic` iterator (#25041)
+
+## 📖 Documentation
+
+- Fix typo in public dataset URL (#25044)
 
 ## 🛠️ Other improvements
 
-- chore(typing): pyright ignore `pl.UInt128` (#3144)
-- ci: ban click 8.3.0 (#3146)
-- chore: Support `@requires.backend_version` in namespaces (#3127)
-- ci: Temporary pin duckdb for ibis (#3136)
-- test: fix `version_test` failing on old `venv` (#3134)
-- test(typing): fix `pickle_test` using `Sequence` (#3135)
-- refactor: Simplify `maybe_convert_dtypes` (#3141)
-- chore: Add `CompliantFrame._with_native` (#3140)
-- refactor(typing): Remove now-unused `isinstance_or_issubclass` overloads (#3139)
-- chore: Upgrade ruff to `v0.13.0` and fix related issues in `tests/` (#3126)
-- tests: more `modern polars` tests (#3087)
+- Disable recursive CSPE for now (#25085)
+- Change group length mismatch error to `ShapeError` (#25004)
+- Update toolchain (#25007)
 
 Thank you to all our contributors for making this release possible!
-@FBruzzesi, @MarcoGorelli, @dangotbanned and @skritsotalakis
+@Kevin-Patyk, @Liyixin95, @alexander-beedie, @coastalwhite, @kdn36, @nameexhaustion, @orlp, @r-brink, @ritchie46 and @stijnherfst
 
-## Project: [pola-rs/polars](https://docs.pola.rs/), 6 releases: ['Python Polars 1.35.0', 'Python Polars 1.35.0-beta.1', 'Python Polars 1.34.0', 'Python Polars 1.34.0-beta.5', 'Python Polars 1.34.0-beta.4', 'Python Polars 1.34.0-beta.3']
 ### Release: polars [Python Polars 1.35.0](https://github.com/pola-rs/polars/releases/tag/py-1.35.0)
 ## 🏆 Highlights
 
@@ -854,259 +862,6 @@ Thank you to all our contributors for making this release possible!
 Thank you to all our contributors for making this release possible!
 @DeflateAwning, @Gusabary, @JakubValtar, @Kevin-Patyk, @MarcoGorelli, @Matt711, @alexander-beedie, @alonsosilvaallende, @borchero, @c-peters, @camriddell, @coastalwhite, @dangotbanned, @deanm0000, @dongchao-1, @dsprenkels, @eitsupi, @itamarst, @jan-krueger, @joshuamarkovic, @juansolm, @kdn36, @moizescbf, @nameexhaustion, @orlp, @r-brink, @ritchie46 and @stijnherfst
 
-### Release: polars [Python Polars 1.34.0-beta.4](https://github.com/pola-rs/polars/releases/tag/py-1.34.0-beta.4)
-## 🏆 Highlights
-
-- Add `LazyFrame.{sink,collect}_batches` (#23980)
-- Deterministic import order for Python Polars package variants (#24531)
-
-## 🚀 Performance improvements
-
-- Skip files in `scan_iceberg` with filter based on metadata statistics (#24547)
-- Push row\_index predicate for all scan types (#24537)
-- Perform integer in-filtering for Parquet inequality predicates (#24525)
-- Stop caching Parquet metadata after 8 files (#24513)
-- Native streaming `.mode()` expression (#24459)
-
-## ✨ Enhancements
-
-- Support scanning from `file:/path` URIs (#24603)
-- Log which file the schema was sourced from, and which file caused an extra column error (#24621)
-- Add `LazyFrame.{sink,collect}_batches` (#23980)
-- Deterministic import order for Python Polars package variants (#24531)
-- Add support to display lazy query plan in marimo notebooks without needing to install matplotlib or mermaid (#24540)
-- Add unstable `hidden_file_prefix` parameter to `scan_parquet` (#24507)
-- Use fixed-scale Decimals (#24542)
-- Add support for unsigned 128-bit integers (#24346)
-- Add unstable `pl.Config.set_default_credential_provider` (#24434)
-- Roundtrip `BinaryOffset` type through Parquet (#24344)
-- Add opt-in unstable functionality to load interval types as `Struct` (#24320)
-- Support reading parquet metadata from cloud storage (#24443)
-- Add user guide section on AWS role assumption (#24421)
-- Support `unique` / `n_unique` / `arg_unique` for `array` columns (#24406)
-
-## 🐞 Bug fixes
-
-- Widen `from_dicts` to `Iterable[Mapping[str, Any]]` (#24584)
-- Fix `unsupported arrow type Dictionary` error in `scan_iceberg()` (#24573)
-- Raise Exception instead of panic when unnest on non-struct column (#24471)
-- Include missing feature dependency from `polars-stream/diff` to `polars-plan/abs` (#24613)
-- Newline escaping in streaming show\_graph (#24612)
-- Do not allow inferring (`-1`) the dimension on any `Expr.reshape` dimension except the first (#24591)
-- Sink batches early stop on in-memory engine (#24585)
-- More precisely model expression ordering requirements (#24437)
-- Panic in zero-weight rolling mean/var (#24596)
-- Decimal \<-> literal arithmetic supertype rules (#24594)
-- Match various aggregation return types in the streaming engine with the in-memory engine (#24501)
-- Validate list type for list expressions in planner (#24589)
-- Fix `scan_iceberg()` storage options not taking effect (#24574)
-- Have `log()` prioritize the leftmost dtype for its output dtype (#24581)
-- CSV pl.len() was incorrect (#24587)
-- Add support for float inputs for duration types (#24529)
-- Roundtrip empty string through hive partitioning (#24546)
-- Fix potential OOB writes in unaligned IPC read (#24550)
-- Fix regression error when scanning AWS presigned URL (#24530)
-- Make `PlPath::join` for cloud paths replace on absolute paths (#24514)
-- Correct dtype for cum\_agg in streaming engine (#24510)
-- Restore support for np.datetime64() in pl.lit() (#24527)
-- Ignore Iceberg list element ID if missing (#24479)
-- Fix panic on streaming full join with coalesce (#23409)
-- Fix `AggState` on `all_literal` in `BinaryExpr` (#24461)
-- Show IR sort options in `explain` (#24465)
-- Benchmark CI import (#24463)
-- Fix schema on `ApplyExpr` with single row `literal` in agg context (#24422)
-- Fix planner schema for dividing `pl.Float32` by int (#24432)
-- Fix panic scanning from AWS legacy global endpoint URL (#24450)
-- Fix `iterable_to_pydf(..., infer_schema_length=None)` to scan all data (#23405)
-- Do not propagate struct of nulls with null (#24420)
-- Be stricter with invalid NDJSON input when `ignore_errors=False` (#24404)
-- Implement `approx_n_unique` for temporal dtypes and Null (#24417)
-
-## 📖 Documentation
-
-- Fix syntax error in data-types-and-structures.md (#24606)
-- Rename `avg_birthday` -> `avg_age` in examples aggregation (#23726)
-- Update Polars Cloud user guide (#24366)
-- Fix typo in `set_expr_depth_warning` docstring (#24427)
-
-## 📦 Build system
-
-- Use cargo-run to call dsl-schema script (#24607)
-
-## 🛠️ Other improvements
-
-- Remove dist/ from release python workflow (#24639)
-- Escape `sed` ampersand in release script (#24631)
-- Remove PyOdide from release for now (#24630)
-- Fix sed in-place in release script (#24628)
-- Release script pyodide wheel (#24627)
-- Release script pyodide wheel (#24626)
-- Update release script for runtimes (#24610)
-- Remove unused `UnknownKind::Ufunc` (#24614)
-- Use cargo-run to call dsl-schema script (#24607)
-- Cleanup and prepare `to_field` for element and struct field context (#24592)
-- Resolve nightly clippy hints (#24593)
-- Rename pl.dependencies to pl.\_dependencies (#24595)
-- More release scripting (#24582)
-- Again a minor fix for the setup script (#24580)
-- Minor fix in release script (#24579)
-- Correct release python beta version check (#24578)
-- Python dependency failure (#24576)
-- Always install yq (#24570)
-- Deterministic import order for Python Polars package variants (#24531)
-- Check Arrow FFI pointers with an assert (#24564)
-- Add a couple of missing type definitions in python (#24561)
-- Fix quickstart example in Polars Cloud user guide (#24554)
-- Add implementations for loading min/max statistics for Iceberg (#24496)
-- Update versions (#24508)
-- Add additional unit tests for `pl.concat` (#24487)
-- Refactor parametric tests for `as_struct` on aggstates (#24493)
-- Use `PlanCallback` in `name.map_*` (#24484)
-- Pin `xlsvwriter` to `3.2.5` or before (#24485)
-- Add dataclass to hold resolved iceberg scan data (#24418)
-- Fix iceberg test failure in CI (#24456)
-- Move CompressionUtils to polars-utils (#24430)
-- Update github template to dispatch to cloud client (#24416)
-
-Thank you to all our contributors for making this release possible!
-@Gusabary, @Kevin-Patyk, @Matt711, @MoizesCBF, @alonsosilvaallende, @borchero, @c-peters, @camriddell, @coastalwhite, @dangotbanned, @deanm0000, @dongchao-1, @dsprenkels, @itamarst, @jan-krueger, @joshuamarkovic, @juansolm, @kdn36, @nameexhaustion, @orlp, @r-brink, @ritchie46 and @stijnherfst
-
-### Release: polars [Python Polars 1.34.0-beta.3](https://github.com/pola-rs/polars/releases/tag/py-1.34.0-beta.3)
-## 🏆 Highlights
-
-- Add `LazyFrame.{sink,collect}_batches` (#23980)
-- Deterministic import order for Python Polars package variants (#24531)
-
-## 🚀 Performance improvements
-
-- Skip files in `scan_iceberg` with filter based on metadata statistics (#24547)
-- Push row\_index predicate for all scan types (#24537)
-- Perform integer in-filtering for Parquet inequality predicates (#24525)
-- Stop caching Parquet metadata after 8 files (#24513)
-- Native streaming `.mode()` expression (#24459)
-
-## ✨ Enhancements
-
-- Support scanning from `file:/path` URIs (#24603)
-- Log which file the schema was sourced from, and which file caused an extra column error (#24621)
-- Add `LazyFrame.{sink,collect}_batches` (#23980)
-- Deterministic import order for Python Polars package variants (#24531)
-- Add support to display lazy query plan in marimo notebooks without needing to install matplotlib or mermaid (#24540)
-- Add unstable `hidden_file_prefix` parameter to `scan_parquet` (#24507)
-- Use fixed-scale Decimals (#24542)
-- Add support for unsigned 128-bit integers (#24346)
-- Add unstable `pl.Config.set_default_credential_provider` (#24434)
-- Roundtrip `BinaryOffset` type through Parquet (#24344)
-- Add opt-in unstable functionality to load interval types as `Struct` (#24320)
-- Support reading parquet metadata from cloud storage (#24443)
-- Add user guide section on AWS role assumption (#24421)
-- Support `unique` / `n_unique` / `arg_unique` for `array` columns (#24406)
-
-## 🐞 Bug fixes
-
-- Widen `from_dicts` to `Iterable[Mapping[str, Any]]` (#24584)
-- Fix `unsupported arrow type Dictionary` error in `scan_iceberg()` (#24573)
-- Raise Exception instead of panic when unnest on non-struct column (#24471)
-- Include missing feature dependency from `polars-stream/diff` to `polars-plan/abs` (#24613)
-- Newline escaping in streaming show\_graph (#24612)
-- Do not allow inferring (`-1`) the dimension on any `Expr.reshape` dimension except the first (#24591)
-- Sink batches early stop on in-memory engine (#24585)
-- More precisely model expression ordering requirements (#24437)
-- Panic in zero-weight rolling mean/var (#24596)
-- Decimal \<-> literal arithmetic supertype rules (#24594)
-- Match various aggregation return types in the streaming engine with the in-memory engine (#24501)
-- Validate list type for list expressions in planner (#24589)
-- Fix `scan_iceberg()` storage options not taking effect (#24574)
-- Have `log()` prioritize the leftmost dtype for its output dtype (#24581)
-- CSV pl.len() was incorrect (#24587)
-- Add support for float inputs for duration types (#24529)
-- Roundtrip empty string through hive partitioning (#24546)
-- Fix potential OOB writes in unaligned IPC read (#24550)
-- Fix regression error when scanning AWS presigned URL (#24530)
-- Make `PlPath::join` for cloud paths replace on absolute paths (#24514)
-- Correct dtype for cum\_agg in streaming engine (#24510)
-- Restore support for np.datetime64() in pl.lit() (#24527)
-- Ignore Iceberg list element ID if missing (#24479)
-- Fix panic on streaming full join with coalesce (#23409)
-- Fix `AggState` on `all_literal` in `BinaryExpr` (#24461)
-- Show IR sort options in `explain` (#24465)
-- Benchmark CI import (#24463)
-- Fix schema on `ApplyExpr` with single row `literal` in agg context (#24422)
-- Fix planner schema for dividing `pl.Float32` by int (#24432)
-- Fix panic scanning from AWS legacy global endpoint URL (#24450)
-- Fix `iterable_to_pydf(..., infer_schema_length=None)` to scan all data (#23405)
-- Do not propagate struct of nulls with null (#24420)
-- Be stricter with invalid NDJSON input when `ignore_errors=False` (#24404)
-- Implement `approx_n_unique` for temporal dtypes and Null (#24417)
-
-## 📖 Documentation
-
-- Fix syntax error in data-types-and-structures.md (#24606)
-- Rename `avg_birthday` -> `avg_age` in examples aggregation (#23726)
-- Update Polars Cloud user guide (#24366)
-- Fix typo in `set_expr_depth_warning` docstring (#24427)
-
-## 📦 Build system
-
-- Use cargo-run to call dsl-schema script (#24607)
-
-## 🛠️ Other improvements
-
-- Remove dist/ from release python workflow (#24639)
-- Escape `sed` ampersand in release script (#24631)
-- Remove PyOdide from release for now (#24630)
-- Fix sed in-place in release script (#24628)
-- Release script pyodide wheel (#24627)
-- Release script pyodide wheel (#24626)
-- Update release script for runtimes (#24610)
-- Remove unused `UnknownKind::Ufunc` (#24614)
-- Use cargo-run to call dsl-schema script (#24607)
-- Cleanup and prepare `to_field` for element and struct field context (#24592)
-- Resolve nightly clippy hints (#24593)
-- Rename pl.dependencies to pl.\_dependencies (#24595)
-- More release scripting (#24582)
-- Again a minor fix for the setup script (#24580)
-- Minor fix in release script (#24579)
-- Correct release python beta version check (#24578)
-- Python dependency failure (#24576)
-- Always install yq (#24570)
-- Deterministic import order for Python Polars package variants (#24531)
-- Check Arrow FFI pointers with an assert (#24564)
-- Add a couple of missing type definitions in python (#24561)
-- Fix quickstart example in Polars Cloud user guide (#24554)
-- Add implementations for loading min/max statistics for Iceberg (#24496)
-- Update versions (#24508)
-- Add additional unit tests for `pl.concat` (#24487)
-- Refactor parametric tests for `as_struct` on aggstates (#24493)
-- Use `PlanCallback` in `name.map_*` (#24484)
-- Pin `xlsvwriter` to `3.2.5` or before (#24485)
-- Add dataclass to hold resolved iceberg scan data (#24418)
-- Fix iceberg test failure in CI (#24456)
-- Move CompressionUtils to polars-utils (#24430)
-- Update github template to dispatch to cloud client (#24416)
-
-Thank you to all our contributors for making this release possible!
-@Gusabary, @Kevin-Patyk, @Matt711, @MoizesCBF, @alonsosilvaallende, @borchero, @c-peters, @camriddell, @coastalwhite, @dangotbanned, @deanm0000, @dongchao-1, @dsprenkels, @itamarst, @jan-krueger, @joshuamarkovic, @juansolm, @kdn36, @nameexhaustion, @orlp, @r-brink, @ritchie46 and @stijnherfst
-
-## Project: [pandas-dev/pandas](https://pandas.pydata.org/docs/index.html), 1 releases: ['Pandas 2.3.3']
-### Release: pandas [Pandas 2.3.3](https://github.com/pandas-dev/pandas/releases/tag/v2.3.3)
-We are pleased to announce the release of pandas 2.3.3.
-This release includes some improvements and fixes to the future string data type (preview feature for the upcoming pandas 3.0). We recommend that all users upgrade to this version.
-
-See the [full whatsnew](https://pandas.pydata.org/pandas-docs/version/2.3/whatsnew/v2.3.3.html) for a list of all the changes.
-Pandas 2.3.3 supports Python 3.9 and higher, and is the first release to support Python 3.14.
-
-The release will be available on the conda-forge channel:
-
-    conda install pandas --channel conda-forge
-
-Or via PyPI:
-
-    python3 -m pip install --upgrade pandas
-
-Please report any issues with the release on the [pandas issue tracker](https://github.com/pandas-dev/pandas/issues).
-
-Thanks to all the contributors who made this release possible.
 ## Project: [holoviz/panel](https://panel.holoviz.org/), 1 releases: ['Version 1.8.2']
 ### Release: panel [Version 1.8.2](https://github.com/holoviz/panel/releases/tag/v1.8.2)
 This patch release focuses on polishing the user experience, fixing regressions, and improving documentation, particularly around app deployment and Tabulator interactivity. It includes several frontend and CSS tweaks, pyodide compatibility fixes, and two new deployment guides for **Anaconda Notebooks** and **PythonAnywhere**. Thanks to @philippjfr, @maximlt, @etihwo, @MarcSkovMadsen, and @Coderambling for their contributions to this release.
@@ -1171,7 +926,9 @@ More details in #2395.
     * Default conversion of `to_js` as JS object literal, not map
     * Fixed a Wasm GC reference leak on invokes
     * New features / enhancements here: https://pyodide.org/en/stable/project/changelog.html#version-0-29-0
-## Project: [cython/cython](https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html), 5 releases: ['3.2.0b2', '3.1.6', '3.2.0b1-3', '3.2.0b1', '3.1.5']
+## Project: [cython/cython](https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html), 6 releases: ['3.2.0b3', '3.2.0b2', '3.1.6', '3.2.0b1-3', '3.2.0b1', '3.1.5']
+### Release: cython [3.2.0b3](https://github.com/cython/cython/releases/tag/3.2.0b3)
+
 ### Release: cython [3.2.0b2](https://github.com/cython/cython/releases/tag/3.2.0b2)
 
 ### Release: cython [3.1.6](https://github.com/cython/cython/releases/tag/3.1.6)
@@ -1751,7 +1508,89 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Use KvikIO&#39;s implementation of file-backed memory mapping (#19164) @kingcrimsontianyu
 - Replace `rmm::device_scalar` with `cudf::detail::device_scalar` due to unnecessary synchronization (Part 3 of miss-sync) (#19119) @JigaoLuo
 - Implement distributed sorted for ``cudf_polars`` (#18912) @seberg
-## Project: [lancedb/lance](https://lancedb.github.io/lance/), 14 releases: ['v0.38.3-beta.11', 'v0.38.3-beta.10', 'v0.38.3-beta.9', 'v0.38.3-beta.8', 'v0.38.3-beta.7', 'v0.38.3-beta.6', 'v0.38.3-beta.5', 'v0.38.3-beta.4', 'v0.38.3-beta.3', 'v0.38.3-beta.2', 'v0.38.3-beta.1', 'v0.38.2', 'v0.38.1', 'v0.38.0']
+## Project: [lancedb/lance](https://lancedb.github.io/lance/), 15 releases: ['v0.38.3', 'v0.38.3-beta.11', 'v0.38.3-beta.10', 'v0.38.3-beta.9', 'v0.38.3-beta.8', 'v0.38.3-beta.7', 'v0.38.3-beta.6', 'v0.38.3-beta.5', 'v0.38.3-beta.4', 'v0.38.3-beta.3', 'v0.38.3-beta.2', 'v0.38.3-beta.1', 'v0.38.2', 'v0.38.1', 'v0.38.0']
+### Release: lance [v0.38.3](https://github.com/lancedb/lance/releases/tag/v0.38.3)
+<!-- Release notes generated using configuration in .github/release.yml at v0.38.3 -->
+
+## What's Changed
+### Breaking Changes 🛠
+* refactor!: cleanup public API, remove lance_arrow re-exports by @westonpace in https://github.com/lancedb/lance/pull/4991
+### New Features 🎉
+* feat: handle forking better by @cmccabe in https://github.com/lancedb/lance/pull/4903
+* feat: add multi-path support for lance data paths by @jaystarshot in https://github.com/lancedb/lance/pull/4765
+* feat: support general compression zstd/lz4 in blocks by @lyang24 in https://github.com/lancedb/lance/pull/4900
+* feat: fts supports custom stop words by @wojiaodoubao in https://github.com/lancedb/lance/pull/4866
+* feat: implement add_bases api to add bases to lance dataset by @jaystarshot in https://github.com/lancedb/lance/pull/4945
+* feat: allow a commit message to be specified in the python dataset commit method by @westonpace in https://github.com/lancedb/lance/pull/4952
+* feat: support tracking newly inserted and updated rows between versions by @yanghua in https://github.com/lancedb/lance/pull/4741
+* feat: support fetching _rowid and _rowaddr in take operation by @chunshao90 in https://github.com/lancedb/lance/pull/4794
+* feat: support mTLS in REST namespace by @jackye1995 in https://github.com/lancedb/lance/pull/4981
+* fix: populate all fields from ExecutionSummaryCounts to  ScannerStats by @jaystarshot in https://github.com/lancedb/lance/pull/4980
+* feat: support WhenMatched::Fail for MergeInsert by @ddupg in https://github.com/lancedb/lance/pull/4956
+* feat(java): support shallow_clone by @majin1102 in https://github.com/lancedb/lance/pull/4962
+* feat: add VariablePackedStruct defination by @Xuanwo in https://github.com/lancedb/lance/pull/4950
+* feat: log version on dataset load event by @wjones127 in https://github.com/lancedb/lance/pull/4988
+* feat(java): support blob api by @majin1102 in https://github.com/lancedb/lance/pull/4769
+* feat(python): support shallow_clone by @majin1102 in https://github.com/lancedb/lance/pull/4949
+* feat: expose storage options in dataset by @jackye1995 in https://github.com/lancedb/lance/pull/5016
+* feat: should dictionary encode based on size by @yingjianwu98 in https://github.com/lancedb/lance/pull/4972
+* feat: add variable packed struct support by @Xuanwo in https://github.com/lancedb/lance/pull/5003
+* feat(python): support index for nested field by @jackye1995 in https://github.com/lancedb/lance/pull/5027
+* feat(java): support branch operations by @majin1102 in https://github.com/lancedb/lance/pull/5012
+* feat(python): support branch operations by @majin1102 in https://github.com/lancedb/lance/pull/5010
+* feat: add json fts in python by @wojiaodoubao in https://github.com/lancedb/lance/pull/5020
+* feat: add file audit events for deleting staging manifest paths in external commit handler by @wjones127 in https://github.com/lancedb/lance/pull/4989
+* feat: implement create index and data replacement conflict rules by @westonpace in https://github.com/lancedb/lance/pull/5077
+* feat: support fragment level update columns operation in Python by @xloya in https://github.com/lancedb/lance/pull/5001
+### Bug Fixes 🐛
+* fix: let Java module use LanceFileVersion::Stable (#4558) by @ColdL in https://github.com/lancedb/lance/pull/4559
+* fix: fts match query on column without inverted index by @wojiaodoubao in https://github.com/lancedb/lance/pull/4859
+* fix: fix broken FTS example by replacing ROW_ID with DOC_ID by @niebayes in https://github.com/lancedb/lance/pull/4917
+* fix: correctly record output_rows in filtered read with hard range_after by @westonpace in https://github.com/lancedb/lance/pull/4919
+* fix: rewrap LanceFilterExec with_new_children by @wkalt in https://github.com/lancedb/lance/pull/4920
+* fix: optimize_indices may unexpectly delete delta indices by @BubbleCal in https://github.com/lancedb/lance/pull/4931
+* fix: rebuild HNSW graph while remapping it by @BubbleCal in https://github.com/lancedb/lance/pull/4941
+* fix: be compatible to old `pack` metadata in 2.0 by @Xuanwo in https://github.com/lancedb/lance/pull/4964
+* fix: filter with < current_date() should expand with correct time by @Xuanwo in https://github.com/lancedb/lance/pull/4963
+* fix: use correct logic to detect old/new scheme in binary block decoder by @westonpace in https://github.com/lancedb/lance/pull/4966
+* fix: support preview relase in writer version by @jackye1995 in https://github.com/lancedb/lance/pull/4974
+* fix: index cache assumed_entry_size is inconsistent by @ddupg in https://github.com/lancedb/lance/pull/4975
+* fix: clarify column names in missing column errors by @wkalt in https://github.com/lancedb/lance/pull/4942
+* fix: the KMeans may result in all zeros centroids by @BubbleCal in https://github.com/lancedb/lance/pull/4977
+* fix: full text search may miss some results by @BubbleCal in https://github.com/lancedb/lance/pull/4986
+* fix: do not modify Lance schema when projecting system columns by @jackye1995 in https://github.com/lancedb/lance/pull/4997
+* fix: handle empty batches in dictionary decode helper by @yingjianwu98 in https://github.com/lancedb/lance/pull/4995
+* fix: coerce nested regexp_match to boolean in filters by @BubbleCal in https://github.com/lancedb/lance/pull/5019
+* fix: update to respect file version from write params when writing fragments in java by @morales-t-netflix in https://github.com/lancedb/lance/pull/5014
+* fix: general block decompression mismatch for Lance 2.2 dictionaries by @Xuanwo in https://github.com/lancedb/lance/pull/5025
+* fix: handle List types in Substrait field counting by @LuQQiu in https://github.com/lancedb/lance/pull/5015
+* fix: ensure limit cancels scan by @westonpace in https://github.com/lancedb/lance/pull/5032
+* fix: don't panic in 2.1 if one page has nulls and the other doesn't by @westonpace in https://github.com/lancedb/lance/pull/5074
+* fix: correct read column ordering in Fragment::update_columns by @wayneli-vt in https://github.com/lancedb/lance/pull/4983
+* fix(java): the CompactionOptions is not serializable by @steFaiz in https://github.com/lancedb/lance/pull/4819
+* fix: fix the deduplicated prefix in the opendal s3 store root setting by @xloya in https://github.com/lancedb/lance/pull/5082
+### Documentation 📚
+* docs: add RabitQ in vector index spec by @BubbleCal in https://github.com/lancedb/lance/pull/4913
+* docs: document the metadata cache by @westonpace in https://github.com/lancedb/lance/pull/4953
+* docs: add docs for newly added options by @Xuanwo in https://github.com/lancedb/lance/pull/4976
+* docs: minor fix for docs/src/format/table/index.md#Deletion by @zhangyue19921010 in https://github.com/lancedb/lance/pull/5033
+* docs: minor doc fix for stable row id description by @zhangyue19921010 in https://github.com/lancedb/lance/pull/5047
+* docs: add initial migration guide and document some steps for 0.39 by @westonpace in https://github.com/lancedb/lance/pull/5052
+* docs: add migration guide for diff_meta and namespace by @jackye1995 in https://github.com/lancedb/lance/pull/5054
+* docs: add json to full text search document by @wojiaodoubao in https://github.com/lancedb/lance/pull/4865
+### Other Changes
+* refactor: move lance-namespace into lance repo by @jackye1995 in https://github.com/lancedb/lance/pull/4978
+* refactor: use lance-io object store for dir namespace and improve builder by @jackye1995 in https://github.com/lancedb/lance/pull/5045
+* refactor: don't add new with_... columns to scanner by @westonpace in https://github.com/lancedb/lance/pull/5007
+
+## New Contributors
+* @yingjianwu98 made their first contribution in https://github.com/lancedb/lance/pull/4901
+* @niebayes made their first contribution in https://github.com/lancedb/lance/pull/4917
+* @zhangyue19921010 made their first contribution in https://github.com/lancedb/lance/pull/4915
+* @dependabot[bot] made their first contribution in https://github.com/lancedb/lance/pull/4954
+* @chunshao90 made their first contribution in https://github.com/lancedb/lance/pull/4794
+
+**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.2...v0.38.3
 ### Release: lance [v0.38.3-beta.11](https://github.com/lancedb/lance/releases/tag/v0.38.3-beta.11)
 <!-- Release notes generated using configuration in .github/release.yml at v0.38.3-beta.11 -->
 
@@ -1994,7 +1833,35 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 * @jtuglu1 made their first contribution in https://github.com/lancedb/lance/pull/4871
 
 **Full Changelog**: https://github.com/lancedb/lance/compare/v0.37.0...v0.38.0
-## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 15 releases: ['Node/Rust LanceDB v0.22.3-beta.3', 'Python LanceDB v0.25.3-beta.3', 'Node/Rust LanceDB v0.22.3-beta.2', 'Python LanceDB v0.25.3-beta.2', 'Node/Rust LanceDB v0.22.3-beta.1', 'Python LanceDB v0.25.3-beta.1', 'Node/Rust LanceDB v0.22.3-beta.0', 'Python LanceDB v0.25.3-beta.0', 'Node/Rust LanceDB v0.22.2', 'Python LanceDB v0.25.2', 'Node/Rust LanceDB v0.22.2-beta.2', 'Python LanceDB v0.25.2-beta.2', 'Node/Rust LanceDB v0.22.2-beta.1', 'Python LanceDB v0.25.2-beta.1', 'ci-support-binaries']
+## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 17 releases: ['Node/Rust LanceDB v0.22.3-beta.4', 'Python LanceDB v0.25.3-beta.4', 'Node/Rust LanceDB v0.22.3-beta.3', 'Python LanceDB v0.25.3-beta.3', 'Node/Rust LanceDB v0.22.3-beta.2', 'Python LanceDB v0.25.3-beta.2', 'Node/Rust LanceDB v0.22.3-beta.1', 'Python LanceDB v0.25.3-beta.1', 'Node/Rust LanceDB v0.22.3-beta.0', 'Python LanceDB v0.25.3-beta.0', 'Node/Rust LanceDB v0.22.2', 'Python LanceDB v0.25.2', 'Node/Rust LanceDB v0.22.2-beta.2', 'Python LanceDB v0.25.2-beta.2', 'Node/Rust LanceDB v0.22.2-beta.1', 'Python LanceDB v0.25.2-beta.1', 'ci-support-binaries']
+### Release: lancedb [Node/Rust LanceDB v0.22.3-beta.4](https://github.com/lancedb/lancedb/releases/tag/v0.22.3-beta.4)
+## 🎉 New Features
+
+- feat(voyageai): update voyage integration by @fzowl in https://github.com/lancedb/lancedb/pull/2713
+
+## 📚 Documentation
+
+- docs: remove DynamoDB commit store section by @ozkatz in https://github.com/lancedb/lancedb/pull/2715
+
+## 🔧 Build and CI
+
+- ci: add agents and add reviewing instructions by @wjones127 in https://github.com/lancedb/lancedb/pull/2754
+
+
+### Release: lancedb [Python LanceDB v0.25.3-beta.4](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.3-beta.4)
+## 🎉 New Features
+
+- feat(voyageai): update voyage integration by @fzowl in https://github.com/lancedb/lancedb/pull/2713
+
+## 📚 Documentation
+
+- docs: remove DynamoDB commit store section by @ozkatz in https://github.com/lancedb/lancedb/pull/2715
+
+## 🔧 Build and CI
+
+- ci: add agents and add reviewing instructions by @wjones127 in https://github.com/lancedb/lancedb/pull/2754
+
+
 ### Release: lancedb [Node/Rust LanceDB v0.22.3-beta.3](https://github.com/lancedb/lancedb/releases/tag/v0.22.3-beta.3)
 
 ### Release: lancedb [Python LanceDB v0.25.3-beta.3](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.3-beta.3)
@@ -2278,3 +2145,6 @@ This is a bug fix release for various issues discovered after we released 1.4.0.
 * bump duckdb-azure ref for 1.4.1 by @benfleis in https://github.com/duckdb/duckdb/pull/19275
 
 **Full Changelog**: https://github.com/duckdb/duckdb/compare/v1.4.0...v1.4.1
+## Project: [trinodb/trino](https://trino.io/docs/current/release/release-{release}.html), 1 releases: ['Trino 478']
+### Release: trino [Trino 478](https://github.com/trinodb/trino/releases/tag/478)
+See https://trino.io/docs/current/release/release-478.html
