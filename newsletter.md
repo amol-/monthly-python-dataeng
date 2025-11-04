@@ -1,9 +1,9 @@
 # Complete List of Projects
  * Project: apache/arrow has 3 releases
- * Project: posit-dev/great-tables has 1 releases
+ * Project: posit-dev/great-tables has 2 releases
  * Project: ibis-project/ibis has 1 releases
- * Project: narwhals-dev/narwhals has 4 releases
- * Project: pola-rs/polars has 5 releases
+ * Project: narwhals-dev/narwhals has 5 releases
+ * Project: pola-rs/polars has 4 releases
  * Project: holoviz/panel has 1 releases
  * Project: pyscript/pyscript has 3 releases
  * Project: cython/cython has 6 releases
@@ -11,17 +11,21 @@
  * Project: dask/dask has 1 releases
  * Project: delta-io/delta-rs has 2 releases
  * Project: rapidsai/cudf has 1 releases
- * Project: lancedb/lance has 15 releases
- * Project: lancedb/lancedb has 17 releases
+ * Project: lancedb/lance has 14 releases
+ * Project: lancedb/lancedb has 16 releases
  * Project: duckdb/duckdb has 1 releases
  * Project: trinodb/trino has 1 releases
  * Project: https://spark.apache.org/news/index.html has 1 releases
+ * Project: https://velox-lib.io/blog/rss.xml has 1 releases
  * Project: https://datafusion.apache.org/blog/feed.xml has 1 releases
 
 
 # Releases for each project
 ## Project: [https://spark.apache.org/news/index.html](https://spark.apache.org/news/index.html), 1 articles
 ### Release: [Preview release of Spark 4.1.0](https://spark.apache.org/news/spark-4-1-0-preview3-released.html)
+
+## Project: [Velox Blog](https://velox-lib.io/blog), 1 articles
+### Release: [Enabling Shared Library Builds in Velox](https://velox-lib.io/blog/shared-build)
 
 ## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 1 articles
 ### Release: [Apache DataFusion Comet 0.11.0 Release](https://datafusion.apache.org/blog/2025/10/21/datafusion-comet-0.11.0)
@@ -33,7 +37,15 @@ Release Notes URL: https://arrow.apache.org/release/22.0.0.html
 Release Notes: Release Candidate: 22.0.0 RC1
 ### Release: arrow [Apache Arrow 22.0.0 RC0](https://github.com/apache/arrow/releases/tag/apache-arrow-22.0.0-rc0)
 Release Notes: Release Candidate: 22.0.0 RC0
-## Project: [posit-dev/great-tables](https://posit-dev.github.io/great-tables/get-started/), 1 releases: ['v0.19.0']
+## Project: [posit-dev/great-tables](https://posit-dev.github.io/great-tables/get-started/), 2 releases: ['v0.20.0', 'v0.19.0']
+### Release: great-tables [v0.20.0](https://github.com/posit-dev/great-tables/releases/tag/v0.20.0)
+## Features
+
+* Add `grand_summary_rows()` method by @juleswg23 in https://github.com/posit-dev/great-tables/pull/765
+* Support polars expressions in vals functions by @machow in https://github.com/posit-dev/great-tables/pull/793
+
+
+**Full Changelog**: https://github.com/posit-dev/great-tables/compare/v0.19.0...v0.20.0
 ### Release: great-tables [v0.19.0](https://github.com/posit-dev/great-tables/releases/tag/v0.19.0)
 ## Fixes
 
@@ -126,7 +138,33 @@ Release Notes: Release Candidate: 22.0.0 RC0
 * **athena:** use `get_table_metadata` in `get_schema` ([#11574](https://github.com/ibis-project/ibis/issues/11574)) ([e4e582a](https://github.com/ibis-project/ibis/commit/e4e582a920a7255078cb96c2769d859827b66db1))
 * **binding:** only create a dereference map in `Table.bind` when needed ([#11531](https://github.com/ibis-project/ibis/issues/11531)) ([90e790c](https://github.com/ibis-project/ibis/commit/90e790c680ad12513446d6f2e459b0c731935015))
 
-## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 4 releases: ['Narwhals v2.10.0', 'Narwhals v2.9.0', 'Narwhals v2.8.0', 'Narwhals v2.7.0']
+## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 5 releases: ['Narwhals v2.10.1', 'Narwhals v2.10.0', 'Narwhals v2.9.0', 'Narwhals v2.8.0', 'Narwhals v2.7.0']
+### Release: narwhals [Narwhals v2.10.1](https://github.com/narwhals-dev/narwhals/releases/tag/v2.10.1)
+## Changes
+
+## ✨ Enhancements
+
+- fix: allow for `None` dtype in `from_dict` (#3252)
+- [Enh] added modifications to make tests accessible to plugins (#3248)
+
+## 🐞 Bug fixes
+
+- fix: Ibis failing with IntegerColumn and `.is_finite` (#3258)
+- fix: allow for `None` dtype in `from_dict` (#3252)
+- fix: Address `pandas.Series.to_frame` for unnamed series in internal usage (#3251)
+
+## 🛠️ Other improvements
+
+- chore: Duckdb pre-release compat (#3263)
+- chore: Add `DTypeClass` to improve `DType.__repr__` and simplify `__slots__` (#3213)
+- ci: Add `typos-cli` in pre-commit (#3260)
+- tests: Allow to run polars without extra deps (#3256)
+- fix(test): TPCH `find_spec('dask') and find_spec('dask.dataframe')` (#3253)
+- test: Refactor TPCH testing to run without all dependencies installed (#3244)
+
+Thank you to all our contributors for making this release possible!
+@FBruzzesi, @MarcoGorelli, @hoxbro and @ym-pett
+
 ### Release: narwhals [Narwhals v2.10.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.10.0)
 ## Changes
 
@@ -245,7 +283,314 @@ Thank you to all our contributors for making this release possible!
 Thank you to all our contributors for making this release possible!
 @FBruzzesi, @MarcoGorelli, @akmalsoliev, @dangotbanned, @dependabot[bot], @felixgwilliams and [dependabot[bot]](https://github.com/apps/dependabot)
 
-## Project: [pola-rs/polars](https://docs.pola.rs/), 5 releases: ['Python Polars 1.35.1', 'Python Polars 1.35.0', 'Python Polars 1.35.0-beta.1', 'Python Polars 1.34.0', 'Python Polars 1.34.0-beta.5']
+## Project: [pola-rs/polars](https://docs.pola.rs/), 4 releases: ['Rust Polars 0.52.0', 'Python Polars 1.35.1', 'Python Polars 1.35.0', 'Python Polars 1.35.0-beta.1']
+### Release: polars [Rust Polars 0.52.0](https://github.com/pola-rs/polars/releases/tag/rs-0.52.0)
+## 🏆 Highlights
+
+- Add `LazyFrame.{sink,collect}_batches` (#23980)
+- Deterministic import order for Python Polars package variants (#24531)
+
+## 🚀 Performance improvements
+
+- Lazy gather for `{forward,backward}_fill` in group-by contexts (#25115)
+- Don't recompute full rolling moment window when NaNs/nulls leave the window (#25078)
+- Skip filtering scan IR if no paths were filtered (#25037)
+- Optimize ipc stream read performance (#24671)
+- Bump foldhash to 0.2.0 and hashbrown to 0.16.0 (#25014)
+- Lower `unique` to native group-by and speed up `n_unique` in group-by context (#24976)
+- Better parallelize `take{_slice,}_unchecked` (#24980)
+- Implement native `skew` and `kurtosis` in group-by context (#24961)
+- Use native group-by aggregations for `bitwise_*` operations (#24935)
+- Address `group_by_dynamic` slowness in sparse data (#24916)
+- Native `filter/drop_nulls/drop_nans` in group-by context (#24897)
+- Implement `cumulative_eval` using the group-by engine (#24889)
+- Prevent generation of copies of `Dataframe`s in `DslPlan` serialization (#24852)
+- Implement native `null_count`, `any` and `all` group-by aggregations (#24859)
+- Speed up `reverse` in group-by context (#24855)
+- Prune unused categorical values when exporting to arrow/parquet/IPC/pickle (#24829)
+- Don't check duplicates on streaming simple projection in release mode (#24830)
+- Lower approx\_n\_unique to the streaming engine (#24821)
+- Duration/interval string parsing optimisation (2-5x faster) (#24771)
+- Use native reducer for `first/last` on Decimals, Categoricals and Enums (#24786)
+- Implement indexed method for `BitMapIter::nth` (#24766)
+- Pushdown slices on plans within unions (#24735)
+- Optimize gather\_every(n=1) to slice (#24704)
+- Lower null count to streaming engine (#24703)
+- Native streaming `gather_every` (#24700)
+- Pushdown filter with `strptime` if input is literal (#24694)
+- Avoid copying expanded paths (#24669)
+- Relax filter expr ordering (#24662)
+- Remove unnecessary `groups` call in `aggregated` (#24651)
+- Skip files in `scan_iceberg` with filter based on metadata statistics (#24547)
+- Push row\_index predicate for all scan types (#24537)
+- Perform integer in-filtering for Parquet inequality predicates (#24525)
+- Stop caching Parquet metadata after 8 files (#24513)
+
+## ✨ Enhancements
+
+- Improve error message on unsupported SQL subquery comparisons (#25135)
+- Rewrite `IR::Scan` to `IR::DataFrameScan` in `expand_datasets` when applicable (#25106)
+- Support `ewm_var/std` in streaming engine (#25109)
+- Make DSL-hash skippable (#25140)
+- Streaming `{Expr,LazyFrame}.rolling` (#25058)
+- Set polars/\<version> user-agent (#25112)
+- Add `BIT_NOT` support to the SQL interface (#25094)
+- Support BYTE\_ARRAY backed Decimals in Parquet (#25076)
+- Add `allow_empty` flag to `item` (#25048)
+- Support `ewm_mean()` in streaming engine (#25003)
+- Improve row-count estimates (#24996)
+- Remove filtered scan paths in IR when possible (#24974)
+- Introduce remote Polars MCP server (#24977)
+- Allow local scans on polars cloud (configurable) (#24962)
+- Add `Expr.item` to strictly extract a single value from an expression (#24888)
+- Add environment variable to roundtrip empty struct in Parquet (#24914)
+- Add `glob` parameter to `scan_ipc` (#24898)
+- Prevent generation of copies of `Dataframe`s in `DslPlan` serialization (#24852)
+- Add `list.agg` and `arr.agg` (#24790)
+- Implement `{Expr,Series}.rolling_rank()` (#24776)
+- Support MergeSorted in CSPE (#24805)
+- Duration/interval string parsing optimisation (2-5x faster) (#24771)
+- Recursively apply CSPE (#24798)
+- Add streaming engine per-node metrics (#24788)
+- Add `arr.eval` (#24472)
+- Improve rolling\_(sum|mean) accuracy (#24743)
+- Add `nth_set_bit_u64()` with unit test (#24035)
+- Add `separator` to `{Data,Lazy}Frame.unnest` (#24716)
+- Add `union()` function for unordered concatenation (#24298)
+- Add `name.replace` to the set of column rename options (#17942)
+- Allow duration strings with leading "+" (#24737)
+- Drop now-unnecessary post-init "schema\_overrides" cast on `DataFrame` load from list of dicts (#24739)
+- Add support for UInt128 to pyo3-polars (#24731)
+- Implement maintain\_order for cross join (#24665)
+- Add support to output `dt.total_{}()` duration values as fractionals (#24598)
+- Support scanning from `file:/path` URIs (#24603)
+- Log which file the schema was sourced from, and which file caused an extra column error (#24621)
+- Add `LazyFrame.{sink,collect}_batches` (#23980)
+- Deterministic import order for Python Polars package variants (#24531)
+- Add support to display lazy query plan in marimo notebooks without needing to install matplotlib or mermaid (#24540)
+- Add unstable `hidden_file_prefix` parameter to `scan_parquet` (#24507)
+- Use fixed-scale Decimals (#24542)
+- Add support for unsigned 128-bit integers (#24346)
+
+## 🐞 Bug fixes
+
+- Fix CSV `select(len())` off by 1 with comment prefix (#25069)
+- Fix incorrect reshape on sliced lists (#25139)
+- Support "index" as column name in `group_by` iterator (#25138)
+- DSL\_SCHEMA\_HASH should not changed by line endings (#25123)
+- Solve multiple issues relating to arena mutation in SQL subqueries (#25110)
+- Fix panic in `dt.truncate` for invalid duration strings (#25124)
+- Don't trigger `DeprecationWarning` from SQL "IN" constraints that use subqueries (#25111)
+- Return the correct string-case `Expr` reprs (#25101)
+- Fix `groups` update on slices with different offsets (#25097)
+- Fix handling `Null` dtype in `ApplyExpr` on `group_by` (#25077)
+- Raise error for all/any on list instead of panic (#25018)
+- Unique key names in streaming sort/top\_k (#25082)
+- The `SQL` interface should use logical, not bitwise, behaviour for unary "NOT" operator (#25091)
+- Fix panic if scan predicate produces 0 length mask (#25089)
+- Ensure SQL table alias resolution checks against CTE aliases on fallback (#25071)
+- Panic in `group_by_dynamic` with `group_by` and multiple chunks (#25075)
+- Fix panic when using struct field as join key (#25059)
+- Allow broadcast in `group_by` for `ApplyExpr` and `BinaryExpr` (#25053)
+- Fix field metadata for nested categorical PyCapsule export (#25052)
+- Block predicate pushdown when `group_by` key values are changed (#25032)
+- Group-By aggregation problems caused by `AmortSeries` (#25043)
+- Don't push down predicates passed inserted cache nodes (#25042)
+- Allow for negative time in `group_by_dynamic` iterator (#25041)
+- Re-enable CPU feature check before import (#25010)
+- Correctness `any(ignore_nulls)` and OOB in `all` (#25005)
+- Streaming any/all with ignore\_nulls=False (#25008)
+- Fix incorrect `join_asof` on a casted expression (#25006)
+- Optimize memory on rolling groups in `ApplyExpr` (#24709)
+- Fallback `Pyarrow` scan to in-memory engine (#24991)
+- Make `Operator::swap_operands` return correct operators for `Plus`, `Minus`, `Multiply` and `Divide` (#24997)
+- Capitalize letters after numbers in to\_titlecase (#24993)
+- Preserve null values in `pct_change` (#24952)
+- Raise length mismatch on `over` with sliced groups (#24887)
+- Check duplicate name in transpose (#24956)
+- Follow Kleene logic in `any` / `all` for group-by (#24940)
+- Do not optimize cross join to iejoin if order maintaining (#24950)
+- Broadcast `partition_by` columns in `over` expression (#24874)
+- Clear index cache on stacked `df.filter` expressions (#24870)
+- Fix 'explode' mapping strategy on scalar value (#24861)
+- Fix repeated `with_row_index()` after `scan()` silently ignored (#24866)
+- Correctly return min and max for enums in groupby aggregation (#24808)
+- Refactor `BinaryExpr` in `group_by` dispatch logic (#24548)
+- Fix aggstate for `gather` (#24857)
+- Keep scalars for length preserving functions in `group_by` (#24819)
+- Have `range` feature depend on `dtype-array` feature (#24853)
+- Fix duplicate select panic (#24836)
+- Inconsistency of list.sum() result type with None values (#24476)
+- Division by zero in Expr.dt.truncate (#24832)
+- Potential deadlock in \_\_arrow\_c\_stream\_\_ (#24831)
+- Allow double aggregations in group-by contexts (#24823)
+- Series.shrink\_dtype for i128/u128 (#24833)
+- Fix dtype in `EvalExpr` (#24650)
+- Allow aggregations on `AggState::LiteralScalar` (#24820)
+- Dispatch to `group_aware` for fallible expressions with masked out elements (#24815)
+- Fix error for `arr.sum()` on small integer Array dtypes containing nulls (#24478)
+- Fix XOR did not follow kleene when one side is unit-length (#24810)
+- Incorrect precision in Series.str.to\_decimal (#24804)
+- Use `overlapping` instead of `rolling` (#24787)
+- Fix iterable on `dynamic_group_by` and `rolling` object (#24740)
+- Use Kahan summation for in-memory groupby sum/mean (#24774)
+- Release GIL in PythonScan predicate evaluation (#24779)
+- Type error in `bitmask::nth_set_bit_u64` (#24775)
+- Add `Expr.sign` for `Decimal` datatype (#24717)
+- Correct `str.replace` with missing pattern (#24768)
+- Support `decimal_comma` on `Decimal` type in `write_csv` (#24718)
+- Parse `Decimal` with comma as decimal separator in CSV (#24685)
+- Make `Categories` pickleable (#24691)
+- Shift on array within list (#24678)
+- Fix handling of `AggregatedScalar` in `ApplyExpr` single input (#24634)
+- Support reading of mixed compressed/uncompressed IPC buffers (#24674)
+- Overflow in slice-slice optimization (#24658)
+- Package discovery for `setuptools` (#24656)
+- Add type assertion to prevent out-of-bounds in `GenericFirstLastGroupedReduction` (#24590)
+- Remove inclusion of polars dir in runtime sdist/wheel (#24654)
+- Method `dt.month_end` was unnecessarily raising when the month-start timestamp was ambiguous (#24647)
+- Fix `unsupported arrow type Dictionary` error in `scan_iceberg()` (#24573)
+- Raise Exception instead of panic when unnest on non-struct column (#24471)
+- Include missing feature dependency from `polars-stream/diff` to `polars-plan/abs` (#24613)
+- Newline escaping in streaming show\_graph (#24612)
+- Do not allow inferring (`-1`) the dimension on any `Expr.reshape` dimension except the first (#24591)
+- Sink batches early stop on in-memory engine (#24585)
+- More precisely model expression ordering requirements (#24437)
+- Panic in zero-weight rolling mean/var (#24596)
+- Decimal \<-> literal arithmetic supertype rules (#24594)
+- Match various aggregation return types in the streaming engine with the in-memory engine (#24501)
+- Validate list type for list expressions in planner (#24589)
+- Have `log()` prioritize the leftmost dtype for its output dtype (#24581)
+- CSV pl.len() was incorrect (#24587)
+- Add support for float inputs for duration types (#24529)
+- Roundtrip empty string through hive partitioning (#24546)
+- Fix potential OOB writes in unaligned IPC read (#24550)
+- Fix regression error when scanning AWS presigned URL (#24530)
+- Make `PlPath::join` for cloud paths replace on absolute paths (#24514)
+- Correct dtype for cum\_agg in streaming engine (#24510)
+- Escape backslashes in EscapeLabel to produce valid DOT labels (#24532)
+
+## 📖 Documentation
+
+- Mention Narwhals in ecosystem page (#25100)
+- Fix typo in public dataset URL (#25044)
+- Introduce remote Polars MCP server (#24977)
+- Update Cloud docs with correct fn argument order (#24939)
+- Add i128 and u128 features to user guide (#24938)
+- Relax fsspec wording (#24881)
+- Fix duplicated article in SECURITY.md (#24762)
+- Specify that precision=None becomes 38 for Decimal (#24742)
+- Mention polars[rt64] and polars[rtcompat] instead of u64-idx and lts-cpu (#24749)
+- Fix source mapping (#24736)
+- Fix syntax error in data-types-and-structures.md (#24606)
+
+## 📦 Build system
+
+- Make building the docs on macOS more reliable (#25095)
+- Ensure `build_feature_flags.py` is included in artifact (#25024)
+- Python pre-release 1.34.0b5 (#24699)
+- Use cargo-run to call dsl-schema script (#24607)
+
+## 🛠️ Other improvements
+
+- Support for named/anonymous aggregations (#25118)
+- Silence unused mut warning (#25093)
+- Remove old join projection pushdown logic (#25088)
+- Disable recursive CSPE for now (#25085)
+- Remove unused row-count (#25080)
+- Add `proptest` strategies for Series logical types (#24849)
+- Add stateful `EwmCov` kernel (#25065)
+- Add IR for `scan_lines` (#25066)
+- Change group length mismatch error to `ShapeError` (#25004)
+- Move asof `tolerance` type coercion to IR conversion (#25033)
+- Move `EwmMeanState` to `polars-compute` (#25034)
+- Update toolchain (#25007)
+- Fix benchmark ci (#25019)
+- Fix non-deterministic test (#25009)
+- Fix makefile arch detection (#25011)
+- Make `LazyFrame.set_sorted` into a `FunctionIR::Hint` (#24981)
+- Update row estimation and reader schema in `filter_scan_ir` (#24995)
+- Insert casts for `ewm_mean` inputs in type coercion (#24992)
+- Remove unused `expr_eval` (#24988)
+- Remove symbolic links (#24982)
+- Add stateful `EwmMean` kernel (#24972)
+- Dispatch to no-op rayon thread-pool from streaming (#24957)
+- Add function to filter `IR::Scan` based on indices (#24979)
+- Organize code for opaque functions in a module (#24978)
+- Move scan filter code to `polars-mem-engine` (#24959)
+- Unpin pydantic (#24955)
+- Ensure safety of scan fast-count IR lowering in streaming (#24953)
+- Expose `polars_compute` from polars (#24556)
+- Re-use iterators in `set_` operations (#24850)
+- Move order code to instance function (#24895)
+- Visualization data generator for streaming physical plan (#24896)
+- Remove `GroupByPartitioned` and dispatch to streaming engine (#24903)
+- Improve IR visualization for IEJoin (#24902)
+- Turn `element()` into `{A,}Expr::Element` (#24885)
+- Pass `ScanOptions` to `new_from_ipc` (#24893)
+- Update tests to be index type agnostic (#24891)
+- Remove legacy `order_sensitive` code (#24894)
+- Rename `text_plan_graph` to `visualization_data` (#24878)
+- Use `UnifiedScanArgs` in `new_from_ipc` and remove `LazyIpcReader` (#24883)
+- Document safety of `CategoricalToArrowConverter` (#24876)
+- Unset `Context` in `Window` expression (#24875)
+- Unify expression order resolution (#24723)
+- Move `FunctionExpr` dispatch from `plan` to `expr` (#24839)
+- Fix SQL test giving wrong error message (#24835)
+- Consolidate dtype paths in `ApplyExpr` (#24825)
+- Add `days_in_month` to documentation (#24822)
+- Enable ruff D417 lint (#24814)
+- Turn `pl.format` into proper elementwise expression (#24811)
+- Fix remote benchmark by no-longer saving builds (#24812)
+- Expose function on IPC writer to write dictionary batches (#24802)
+- Refactor `ApplyExpr` in `group_by` context on multiple inputs (#24520)
+- IR text plan graph generator (#24733)
+- Move Series `to_arrow()` logic to struct function (#24794)
+- Temporarily pin pydantic to fix CI (#24797)
+- Extend and rename `rolling` groups to `overlapping` (#24577)
+- Refactor `DataType` `proptest` strategies (#24763)
+- Add `union` to documentation (#24769)
+- Cleaner whitespace skipping in CSV field parser (#24705)
+- Remove duplicate maintain\_order from CrossJoinOptions (#24725)
+- Change function order flags to be less error prone (#24604)
+- Remove `{Upper,Lower}Bound` expressions in IR (#24701)
+- Fix Makefile `uv pip` option syntax (#24711)
+- Add egg-info to gitignore (#24712)
+- Restructure python project directories again (#24676)
+- Use IR for `polars-expr` output field resolution (#24661)
+- Add `proptest` strategies for Series physical types (#24549)
+- Expose `CloudScheme` via `polars::prelude` (#24643)
+- Remove dist/ from release python workflow (#24639)
+- Escape `sed` ampersand in release script (#24631)
+- Remove PyOdide from release for now (#24630)
+- Fix sed in-place in release script (#24628)
+- Release script pyodide wheel (#24627)
+- Release script pyodide wheel (#24626)
+- Update release script for runtimes (#24610)
+- Remove tokio-util dependency (#24617)
+- Remove unused `UnknownKind::Ufunc` (#24614)
+- Use cargo-run to call dsl-schema script (#24607)
+- Genericize UnitVec for any T (#24597)
+- Cleanup and prepare `to_field` for element and struct field context (#24592)
+- Resolve nightly clippy hints (#24593)
+- Rename pl.dependencies to pl.\_dependencies (#24595)
+- More release scripting (#24582)
+- Again a minor fix for the setup script (#24580)
+- Minor fix in release script (#24579)
+- Correct release python beta version check (#24578)
+- Python dependency failure (#24576)
+- Always install yq (#24570)
+- Deterministic import order for Python Polars package variants (#24531)
+- Check Arrow FFI pointers with an assert (#24564)
+- Add `CloudScheme::FileNoHostname` variant (#24535)
+- Add a couple of missing type definitions in python (#24561)
+- Fix quickstart example in Polars Cloud user guide (#24554)
+- Add implementations for loading min/max statistics for Iceberg (#24496)
+- Move collapse\_joins optimizer logic into predicate pushdown optimizer (#24495)
+
+Thank you to all our contributors for making this release possible!
+@DeflateAwning, @EndPositive, @EnricoMi, @FBruzzesi, @JakubValtar, @Kevin-Patyk, @Liyixin95, @MarcoGorelli, @Object905, @alexander-beedie, @alonsosilvaallende, @andreseje, @borchero, @carnarez, @cmdlineluser, @coastalwhite, @craigalodon, @dangotbanned, @deanm0000, @dsprenkels, @eitsupi, @etrotta, @henryharbeck, @itamarst, @jan-krueger, @jordanosborn, @kdn36, @lzcmian, @math-hiyoko, @mcrumiller, @mjanssen, @moizescbf, @nameexhaustion, @orlp, @pavelzw, @r-brink, @ritchie46, @stijnherfst, @thomasjpfan and @williambdean
+
 ### Release: polars [Python Polars 1.35.1](https://github.com/pola-rs/polars/releases/tag/py-1.35.1)
 ## 🚀 Performance improvements
 
@@ -577,290 +922,6 @@ Thank you to all our contributors for making this release possible!
 
 Thank you to all our contributors for making this release possible!
 @JakubValtar, @Kevin-Patyk, @MarcoGorelli, @Object905, @alexander-beedie, @borchero, @cmdlineluser, @coastalwhite, @craigalodon, @dsprenkels, @eitsupi, @etrotta, @henryharbeck, @jordanosborn, @kdn36, @math-hiyoko, @nameexhaustion, @orlp, @pavelzw, @ritchie46, @thomasjpfan and @williambdean
-
-### Release: polars [Python Polars 1.34.0](https://github.com/pola-rs/polars/releases/tag/py-1.34.0)
-## 🏆 Highlights
-
-- Add `LazyFrame.{sink,collect}_batches` (#23980)
-- Deterministic import order for Python Polars package variants (#24531)
-
-## 🚀 Performance improvements
-
-- Optimize gather\_every(n=1) to slice (#24704)
-- Lower null count to streaming engine (#24703)
-- Native streaming `gather_every` (#24700)
-- Pushdown filter with `strptime` if input is literal (#24694)
-- Avoid copying expanded paths (#24669)
-- Relax filter expr ordering (#24662)
-- Remove unnecessary `groups` call in `aggregated` (#24651)
-- Skip files in `scan_iceberg` with filter based on metadata statistics (#24547)
-- Push row\_index predicate for all scan types (#24537)
-- Perform integer in-filtering for Parquet inequality predicates (#24525)
-- Stop caching Parquet metadata after 8 files (#24513)
-- Native streaming `.mode()` expression (#24459)
-
-## ✨ Enhancements
-
-- Implement maintain\_order for cross join (#24665)
-- Add support to output `dt.total_{}()` duration values as fractionals (#24598)
-- Avoid forcing a `pyarrow` dependency in `read_excel` when using the default "calamine" engine (#24655)
-- Support scanning from `file:/path` URIs (#24603)
-- Log which file the schema was sourced from, and which file caused an extra column error (#24621)
-- Add `LazyFrame.{sink,collect}_batches` (#23980)
-- Deterministic import order for Python Polars package variants (#24531)
-- Add support to display lazy query plan in marimo notebooks without needing to install matplotlib or mermaid (#24540)
-- Add unstable `hidden_file_prefix` parameter to `scan_parquet` (#24507)
-- Use fixed-scale Decimals (#24542)
-- Add support for unsigned 128-bit integers (#24346)
-- Add unstable `pl.Config.set_default_credential_provider` (#24434)
-- Roundtrip `BinaryOffset` type through Parquet (#24344)
-- Add opt-in unstable functionality to load interval types as `Struct` (#24320)
-- Support reading parquet metadata from cloud storage (#24443)
-- Add user guide section on AWS role assumption (#24421)
-- Support `unique` / `n_unique` / `arg_unique` for `array` columns (#24406)
-
-## 🐞 Bug fixes
-
-- Removing dots after noqa comments (#24722)
-- Parse `Decimal` with comma as decimal separator in CSV (#24685)
-- Make `Categories` pickleable (#24691)
-- Shift on array within list (#24678)
-- Fix handling of `AggregatedScalar` in `ApplyExpr` single input (#24634)
-- Support reading of mixed compressed/uncompressed IPC buffers (#24674)
-- Overflow in slice-slice optimization (#24658)
-- Package discovery for `setuptools` (#24656)
-- Add type assertion to prevent out-of-bounds in `GenericFirstLastGroupedReduction` (#24590)
-- Remove inclusion of polars dir in runtime sdist/wheel (#24654)
-- Method `dt.month_end` was unnecessarily raising when the month-start timestamp was ambiguous (#24647)
-- Widen `from_dicts` to `Iterable[Mapping[str, Any]]` (#24584)
-- Fix `unsupported arrow type Dictionary` error in `scan_iceberg()` (#24573)
-- Raise Exception instead of panic when unnest on non-struct column (#24471)
-- Include missing feature dependency from `polars-stream/diff` to `polars-plan/abs` (#24613)
-- Newline escaping in streaming show\_graph (#24612)
-- Do not allow inferring (`-1`) the dimension on any `Expr.reshape` dimension except the first (#24591)
-- Sink batches early stop on in-memory engine (#24585)
-- More precisely model expression ordering requirements (#24437)
-- Panic in zero-weight rolling mean/var (#24596)
-- Decimal \<-> literal arithmetic supertype rules (#24594)
-- Match various aggregation return types in the streaming engine with the in-memory engine (#24501)
-- Validate list type for list expressions in planner (#24589)
-- Fix `scan_iceberg()` storage options not taking effect (#24574)
-- Have `log()` prioritize the leftmost dtype for its output dtype (#24581)
-- CSV pl.len() was incorrect (#24587)
-- Add support for float inputs for duration types (#24529)
-- Roundtrip empty string through hive partitioning (#24546)
-- Fix potential OOB writes in unaligned IPC read (#24550)
-- Fix regression error when scanning AWS presigned URL (#24530)
-- Make `PlPath::join` for cloud paths replace on absolute paths (#24514)
-- Correct dtype for cum\_agg in streaming engine (#24510)
-- Restore support for np.datetime64() in pl.lit() (#24527)
-- Ignore Iceberg list element ID if missing (#24479)
-- Fix panic on streaming full join with coalesce (#23409)
-- Fix `AggState` on `all_literal` in `BinaryExpr` (#24461)
-- Show IR sort options in `explain` (#24465)
-- Benchmark CI import (#24463)
-- Fix schema on `ApplyExpr` with single row `literal` in agg context (#24422)
-- Fix planner schema for dividing `pl.Float32` by int (#24432)
-- Fix panic scanning from AWS legacy global endpoint URL (#24450)
-- Fix `iterable_to_pydf(..., infer_schema_length=None)` to scan all data (#23405)
-- Do not propagate struct of nulls with null (#24420)
-- Be stricter with invalid NDJSON input when `ignore_errors=False` (#24404)
-- Implement `approx_n_unique` for temporal dtypes and Null (#24417)
-
-## 📖 Documentation
-
-- Add default parquet compression levels (#24686)
-- Fix syntax error in data-types-and-structures.md (#24606)
-- Rename `avg_birthday` -> `avg_age` in examples aggregation (#23726)
-- Update Polars Cloud user guide (#24366)
-- Fix typo in `set_expr_depth_warning` docstring (#24427)
-
-## 📦 Build system
-
-- Python pre-release 1.34.0b5 (#24699)
-- Use cargo-run to call dsl-schema script (#24607)
-
-## 🛠️ Other improvements
-
-- Removing dots after noqa comments (#24722)
-- Make `test_multiple_sorting_columns` test runnable (#24719)
-- Remove `{Upper,Lower}Bound` expressions in IR (#24701)
-- Fix Makefile `uv pip` option syntax (#24711)
-- Add egg-info to gitignore (#24712)
-- Restructure python project directories again (#24676)
-- Use IR for `polars-expr` output field resolution (#24661)
-- Remove dist/ from release python workflow (#24639)
-- Escape `sed` ampersand in release script (#24631)
-- Remove PyOdide from release for now (#24630)
-- Fix sed in-place in release script (#24628)
-- Release script pyodide wheel (#24627)
-- Release script pyodide wheel (#24626)
-- Update release script for runtimes (#24610)
-- Remove unused `UnknownKind::Ufunc` (#24614)
-- Use cargo-run to call dsl-schema script (#24607)
-- Cleanup and prepare `to_field` for element and struct field context (#24592)
-- Resolve nightly clippy hints (#24593)
-- Rename pl.dependencies to pl.\_dependencies (#24595)
-- More release scripting (#24582)
-- Again a minor fix for the setup script (#24580)
-- Minor fix in release script (#24579)
-- Correct release python beta version check (#24578)
-- Python dependency failure (#24576)
-- Always install yq (#24570)
-- Deterministic import order for Python Polars package variants (#24531)
-- Check Arrow FFI pointers with an assert (#24564)
-- Add a couple of missing type definitions in python (#24561)
-- Fix quickstart example in Polars Cloud user guide (#24554)
-- Add implementations for loading min/max statistics for Iceberg (#24496)
-- Update versions (#24508)
-- Add additional unit tests for `pl.concat` (#24487)
-- Refactor parametric tests for `as_struct` on aggstates (#24493)
-- Use `PlanCallback` in `name.map_*` (#24484)
-- Pin `xlsvwriter` to `3.2.5` or before (#24485)
-- Add dataclass to hold resolved iceberg scan data (#24418)
-- Fix iceberg test failure in CI (#24456)
-- Move CompressionUtils to polars-utils (#24430)
-- Update github template to dispatch to cloud client (#24416)
-
-Thank you to all our contributors for making this release possible!
-@DeflateAwning, @Gusabary, @JakubValtar, @Kevin-Patyk, @MarcoGorelli, @Matt711, @alexander-beedie, @alonsosilvaallende, @andreseje, @borchero, @c-peters, @camriddell, @coastalwhite, @dangotbanned, @deanm0000, @dongchao-1, @dsprenkels, @eitsupi, @itamarst, @jan-krueger, @joshuamarkovic, @juansolm, @kdn36, @moizescbf, @nameexhaustion, @orlp, @r-brink, @ritchie46 and @stijnherfst
-
-### Release: polars [Python Polars 1.34.0-beta.5](https://github.com/pola-rs/polars/releases/tag/py-1.34.0-beta.5)
-## 🏆 Highlights
-
-- Add `LazyFrame.{sink,collect}_batches` (#23980)
-- Deterministic import order for Python Polars package variants (#24531)
-
-## 🚀 Performance improvements
-
-- Pushdown filter with `strptime` if input is literal (#24694)
-- Avoid copying expanded paths (#24669)
-- Relax filter expr ordering (#24662)
-- Remove unnecessary `groups` call in `aggregated` (#24651)
-- Skip files in `scan_iceberg` with filter based on metadata statistics (#24547)
-- Push row\_index predicate for all scan types (#24537)
-- Perform integer in-filtering for Parquet inequality predicates (#24525)
-- Stop caching Parquet metadata after 8 files (#24513)
-- Native streaming `.mode()` expression (#24459)
-
-## ✨ Enhancements
-
-- Implement maintain\_order for cross join (#24665)
-- Add support to output `dt.total_{}()` duration values as fractionals (#24598)
-- Avoid forcing a `pyarrow` dependency in `read_excel` when using the default "calamine" engine (#24655)
-- Support scanning from `file:/path` URIs (#24603)
-- Log which file the schema was sourced from, and which file caused an extra column error (#24621)
-- Add `LazyFrame.{sink,collect}_batches` (#23980)
-- Deterministic import order for Python Polars package variants (#24531)
-- Add support to display lazy query plan in marimo notebooks without needing to install matplotlib or mermaid (#24540)
-- Add unstable `hidden_file_prefix` parameter to `scan_parquet` (#24507)
-- Use fixed-scale Decimals (#24542)
-- Add support for unsigned 128-bit integers (#24346)
-- Add unstable `pl.Config.set_default_credential_provider` (#24434)
-- Roundtrip `BinaryOffset` type through Parquet (#24344)
-- Add opt-in unstable functionality to load interval types as `Struct` (#24320)
-- Support reading parquet metadata from cloud storage (#24443)
-- Add user guide section on AWS role assumption (#24421)
-- Support `unique` / `n_unique` / `arg_unique` for `array` columns (#24406)
-
-## 🐞 Bug fixes
-
-- Make `Categories` pickleable (#24691)
-- Shift on array within list (#24678)
-- Fix handling of `AggregatedScalar` in `ApplyExpr` single input (#24634)
-- Support reading of mixed compressed/uncompressed IPC buffers (#24674)
-- Overflow in slice-slice optimization (#24658)
-- Package discovery for `setuptools` (#24656)
-- Add type assertion to prevent out-of-bounds in `GenericFirstLastGroupedReduction` (#24590)
-- Remove inclusion of polars dir in runtime sdist/wheel (#24654)
-- Method `dt.month_end` was unnecessarily raising when the month-start timestamp was ambiguous (#24647)
-- Widen `from_dicts` to `Iterable[Mapping[str, Any]]` (#24584)
-- Fix `unsupported arrow type Dictionary` error in `scan_iceberg()` (#24573)
-- Raise Exception instead of panic when unnest on non-struct column (#24471)
-- Include missing feature dependency from `polars-stream/diff` to `polars-plan/abs` (#24613)
-- Newline escaping in streaming show\_graph (#24612)
-- Do not allow inferring (`-1`) the dimension on any `Expr.reshape` dimension except the first (#24591)
-- Sink batches early stop on in-memory engine (#24585)
-- More precisely model expression ordering requirements (#24437)
-- Panic in zero-weight rolling mean/var (#24596)
-- Decimal \<-> literal arithmetic supertype rules (#24594)
-- Match various aggregation return types in the streaming engine with the in-memory engine (#24501)
-- Validate list type for list expressions in planner (#24589)
-- Fix `scan_iceberg()` storage options not taking effect (#24574)
-- Have `log()` prioritize the leftmost dtype for its output dtype (#24581)
-- CSV pl.len() was incorrect (#24587)
-- Add support for float inputs for duration types (#24529)
-- Roundtrip empty string through hive partitioning (#24546)
-- Fix potential OOB writes in unaligned IPC read (#24550)
-- Fix regression error when scanning AWS presigned URL (#24530)
-- Make `PlPath::join` for cloud paths replace on absolute paths (#24514)
-- Correct dtype for cum\_agg in streaming engine (#24510)
-- Restore support for np.datetime64() in pl.lit() (#24527)
-- Ignore Iceberg list element ID if missing (#24479)
-- Fix panic on streaming full join with coalesce (#23409)
-- Fix `AggState` on `all_literal` in `BinaryExpr` (#24461)
-- Show IR sort options in `explain` (#24465)
-- Benchmark CI import (#24463)
-- Fix schema on `ApplyExpr` with single row `literal` in agg context (#24422)
-- Fix planner schema for dividing `pl.Float32` by int (#24432)
-- Fix panic scanning from AWS legacy global endpoint URL (#24450)
-- Fix `iterable_to_pydf(..., infer_schema_length=None)` to scan all data (#23405)
-- Do not propagate struct of nulls with null (#24420)
-- Be stricter with invalid NDJSON input when `ignore_errors=False` (#24404)
-- Implement `approx_n_unique` for temporal dtypes and Null (#24417)
-
-## 📖 Documentation
-
-- Add default parquet compression levels (#24686)
-- Fix syntax error in data-types-and-structures.md (#24606)
-- Rename `avg_birthday` -> `avg_age` in examples aggregation (#23726)
-- Update Polars Cloud user guide (#24366)
-- Fix typo in `set_expr_depth_warning` docstring (#24427)
-
-## 📦 Build system
-
-- Python pre-release 1.34.0b5 (#24699)
-- Use cargo-run to call dsl-schema script (#24607)
-
-## 🛠️ Other improvements
-
-- Restructure python project directories again (#24676)
-- Use IR for `polars-expr` output field resolution (#24661)
-- Remove dist/ from release python workflow (#24639)
-- Escape `sed` ampersand in release script (#24631)
-- Remove PyOdide from release for now (#24630)
-- Fix sed in-place in release script (#24628)
-- Release script pyodide wheel (#24627)
-- Release script pyodide wheel (#24626)
-- Update release script for runtimes (#24610)
-- Remove unused `UnknownKind::Ufunc` (#24614)
-- Use cargo-run to call dsl-schema script (#24607)
-- Cleanup and prepare `to_field` for element and struct field context (#24592)
-- Resolve nightly clippy hints (#24593)
-- Rename pl.dependencies to pl.\_dependencies (#24595)
-- More release scripting (#24582)
-- Again a minor fix for the setup script (#24580)
-- Minor fix in release script (#24579)
-- Correct release python beta version check (#24578)
-- Python dependency failure (#24576)
-- Always install yq (#24570)
-- Deterministic import order for Python Polars package variants (#24531)
-- Check Arrow FFI pointers with an assert (#24564)
-- Add a couple of missing type definitions in python (#24561)
-- Fix quickstart example in Polars Cloud user guide (#24554)
-- Add implementations for loading min/max statistics for Iceberg (#24496)
-- Update versions (#24508)
-- Add additional unit tests for `pl.concat` (#24487)
-- Refactor parametric tests for `as_struct` on aggstates (#24493)
-- Use `PlanCallback` in `name.map_*` (#24484)
-- Pin `xlsvwriter` to `3.2.5` or before (#24485)
-- Add dataclass to hold resolved iceberg scan data (#24418)
-- Fix iceberg test failure in CI (#24456)
-- Move CompressionUtils to polars-utils (#24430)
-- Update github template to dispatch to cloud client (#24416)
-
-Thank you to all our contributors for making this release possible!
-@DeflateAwning, @Gusabary, @JakubValtar, @Kevin-Patyk, @MarcoGorelli, @Matt711, @alexander-beedie, @alonsosilvaallende, @borchero, @c-peters, @camriddell, @coastalwhite, @dangotbanned, @deanm0000, @dongchao-1, @dsprenkels, @eitsupi, @itamarst, @jan-krueger, @joshuamarkovic, @juansolm, @kdn36, @moizescbf, @nameexhaustion, @orlp, @r-brink, @ritchie46 and @stijnherfst
 
 ## Project: [holoviz/panel](https://panel.holoviz.org/), 1 releases: ['Version 1.8.2']
 ### Release: panel [Version 1.8.2](https://github.com/holoviz/panel/releases/tag/v1.8.2)
@@ -1508,7 +1569,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Use KvikIO&#39;s implementation of file-backed memory mapping (#19164) @kingcrimsontianyu
 - Replace `rmm::device_scalar` with `cudf::detail::device_scalar` due to unnecessary synchronization (Part 3 of miss-sync) (#19119) @JigaoLuo
 - Implement distributed sorted for ``cudf_polars`` (#18912) @seberg
-## Project: [lancedb/lance](https://lancedb.github.io/lance/), 15 releases: ['v0.38.3', 'v0.38.3-beta.11', 'v0.38.3-beta.10', 'v0.38.3-beta.9', 'v0.38.3-beta.8', 'v0.38.3-beta.7', 'v0.38.3-beta.6', 'v0.38.3-beta.5', 'v0.38.3-beta.4', 'v0.38.3-beta.3', 'v0.38.3-beta.2', 'v0.38.3-beta.1', 'v0.38.2', 'v0.38.1', 'v0.38.0']
+## Project: [lancedb/lance](https://lancedb.github.io/lance/), 14 releases: ['v0.38.3', 'v0.38.3-beta.11', 'v0.38.3-beta.10', 'v0.38.3-beta.9', 'v0.38.3-beta.8', 'v0.38.3-beta.7', 'v0.38.3-beta.6', 'v0.38.3-beta.5', 'v0.38.3-beta.4', 'v0.38.3-beta.3', 'v0.38.3-beta.2', 'v0.38.3-beta.1', 'v0.38.2', 'v0.38.1']
 ### Release: lance [v0.38.3](https://github.com/lancedb/lance/releases/tag/v0.38.3)
 <!-- Release notes generated using configuration in .github/release.yml at v0.38.3 -->
 
@@ -1789,51 +1850,13 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 
 **Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.0...v0.38.1
-### Release: lance [v0.38.0](https://github.com/lancedb/lance/releases/tag/v0.38.0)
-<!-- Release notes generated using configuration in .github/release.yml at v0.38.0 -->
+## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 16 releases: ['Node/Rust LanceDB v0.22.3-beta.5', 'Node/Rust LanceDB v0.22.3-beta.4', 'Python LanceDB v0.25.3-beta.5', 'Python LanceDB v0.25.3-beta.4', 'Node/Rust LanceDB v0.22.3-beta.3', 'Python LanceDB v0.25.3-beta.3', 'Node/Rust LanceDB v0.22.3-beta.2', 'Python LanceDB v0.25.3-beta.2', 'Node/Rust LanceDB v0.22.3-beta.1', 'Python LanceDB v0.25.3-beta.1', 'Node/Rust LanceDB v0.22.3-beta.0', 'Python LanceDB v0.25.3-beta.0', 'Node/Rust LanceDB v0.22.2', 'Python LanceDB v0.25.2', 'Node/Rust LanceDB v0.22.2-beta.2', 'Python LanceDB v0.25.2-beta.2']
+### Release: lancedb [Node/Rust LanceDB v0.22.3-beta.5](https://github.com/lancedb/lancedb/releases/tag/v0.22.3-beta.5)
+## 🎉 New Features
 
-## What's Changed
-:tada: :tada: :exclamation:  As of this release, the 2.1 version of the file format is considered _stable_.  There will be no more breaking changes and the format should be readable by future versions of lance.  In an upcoming release (possibly the next release) the 2.1 version will become the default.
-### Breaking Changes 🛠
-* feat(rust)!: support branch based on shallow_clone by @majin1102 in https://github.com/lancedb/lance/pull/4710
-### New Features 🎉
-* feat: support manifeset summary and get it from Version by @majin1102 in https://github.com/lancedb/lance/pull/4754
-* feat: implement blob encoding for 2.1 by @westonpace in https://github.com/lancedb/lance/pull/4802
-* feat(java): expose additional Operation::Update fields to bindings by @wayneli-vt in https://github.com/lancedb/lance/pull/4788
-* feat(index/fts): build fst at write time instead of read time by @Xuanwo in https://github.com/lancedb/lance/pull/4811
-* feat: support RabitQ quantization by @BubbleCal in https://github.com/lancedb/lance/pull/4344
-* feat: add scalar and system index spec by @jackye1995 in https://github.com/lancedb/lance/pull/4736
-* feat: add support for already-dictionary to 2.1 by @westonpace in https://github.com/lancedb/lance/pull/4813
-* feat: allow reading blob descs in 2.1, fix bugs in FSL decoder when items are nullable by @westonpace in https://github.com/lancedb/lance/pull/4840
-* feat: add full text json index by @wojiaodoubao in https://github.com/lancedb/lance/pull/4752
-### Bug Fixes 🐛
-* fix: propagate span in filtered read by @wjones127 in https://github.com/lancedb/lance/pull/4790
-* fix: add incremental metrics in FilteredRead by @wjones127 in https://github.com/lancedb/lance/pull/4798
-* fix: fix handling of all-preamble chunks in mini-block scheduling by @westonpace in https://github.com/lancedb/lance/pull/4823
-* fix: don't interpret 64-bit offsets as 32 bits when decompressing per-value data in 2.1 by @westonpace in https://github.com/lancedb/lance/pull/4824
-* fix: aggregate gauge metrics in bytes_read for zonemap scans by @chenghao-guo in https://github.com/lancedb/lance/pull/4830
-* fix: remove blocking call in async function by @wjones127 in https://github.com/lancedb/lance/pull/4841
-* fix: index stats reports incorrect partition size by @BubbleCal in https://github.com/lancedb/lance/pull/4847
-* fix: fix typo "blfoat16" -> "bfloat16" in datatypes.rs by @huyuanfeng2018 in https://github.com/lancedb/lance/pull/4852
-* fix: blocking_take may hang on V2.0 by @ColdL in https://github.com/lancedb/lance/pull/4539
-* fix: schema mismatch when filtering nullable List<Struct> columns by @Xuanwo in https://github.com/lancedb/lance/pull/4838
-* fix: ensure fragment IDs are sorted in load_training_data by @jtuglu1 in https://github.com/lancedb/lance/pull/4871
-### Documentation 📚
-* docs: vector index specs by @BubbleCal in https://github.com/lancedb/lance/pull/4810
-### Performance Improvements 🚀
-* perf: move cpu heavy fst building into blocking threads by @Xuanwo in https://github.com/lancedb/lance/pull/4803
-* perf: optmize doc set loading by @Xuanwo in https://github.com/lancedb/lance/pull/4821
-### Other Changes
-* refactor: cowardly refuse to use scalar indexes on expressions with null literals by @westonpace in https://github.com/lancedb/lance/pull/4815
+- feat: add fts udtf in sql by @LuQQiu in https://github.com/lancedb/lancedb/pull/2755
 
-## New Contributors
-* @wayneli-vt made their first contribution in https://github.com/lancedb/lance/pull/4788
-* @huyuanfeng2018 made their first contribution in https://github.com/lancedb/lance/pull/4852
-* @ColdL made their first contribution in https://github.com/lancedb/lance/pull/4539
-* @jtuglu1 made their first contribution in https://github.com/lancedb/lance/pull/4871
 
-**Full Changelog**: https://github.com/lancedb/lance/compare/v0.37.0...v0.38.0
-## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 17 releases: ['Node/Rust LanceDB v0.22.3-beta.4', 'Python LanceDB v0.25.3-beta.4', 'Node/Rust LanceDB v0.22.3-beta.3', 'Python LanceDB v0.25.3-beta.3', 'Node/Rust LanceDB v0.22.3-beta.2', 'Python LanceDB v0.25.3-beta.2', 'Node/Rust LanceDB v0.22.3-beta.1', 'Python LanceDB v0.25.3-beta.1', 'Node/Rust LanceDB v0.22.3-beta.0', 'Python LanceDB v0.25.3-beta.0', 'Node/Rust LanceDB v0.22.2', 'Python LanceDB v0.25.2', 'Node/Rust LanceDB v0.22.2-beta.2', 'Python LanceDB v0.25.2-beta.2', 'Node/Rust LanceDB v0.22.2-beta.1', 'Python LanceDB v0.25.2-beta.1', 'ci-support-binaries']
 ### Release: lancedb [Node/Rust LanceDB v0.22.3-beta.4](https://github.com/lancedb/lancedb/releases/tag/v0.22.3-beta.4)
 ## 🎉 New Features
 
@@ -1846,6 +1869,12 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 ## 🔧 Build and CI
 
 - ci: add agents and add reviewing instructions by @wjones127 in https://github.com/lancedb/lancedb/pull/2754
+
+
+### Release: lancedb [Python LanceDB v0.25.3-beta.5](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.3-beta.5)
+## 🎉 New Features
+
+- feat: add fts udtf in sql by @LuQQiu in https://github.com/lancedb/lancedb/pull/2755
 
 
 ### Release: lancedb [Python LanceDB v0.25.3-beta.4](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.3-beta.4)
@@ -2039,44 +2068,6 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - ci: run remote tests on PRs only if they aren't a fork by @wjones127 in https://github.com/lancedb/lancedb/pull/2697
 - ci: fix Python and Node CI on main by @wjones127 in https://github.com/lancedb/lancedb/pull/2700
 
-
-### Release: lancedb [Node/Rust LanceDB v0.22.2-beta.1](https://github.com/lancedb/lancedb/releases/tag/v0.22.2-beta.1)
-## 🎉 New Features
-
-- feat: allow bitmap indexes on large-string, binary, large-binary, and bitmap by @westonpace in https://github.com/lancedb/lancedb/pull/2678
-- feat: add support for test_remote_connections by @cmccabe in https://github.com/lancedb/lancedb/pull/2666
-
-## 🐛 Bug Fixes
-
-- fix: use correct nodejs path for ci by @AyushExel in https://github.com/lancedb/lancedb/pull/2689
-- fix: inflated release size due to lance-namespace transitive dependency by @jackye1995 in https://github.com/lancedb/lancedb/pull/2691
-- fix: have CI download from ci-support-binaries by @cmccabe in https://github.com/lancedb/lancedb/pull/2692
-
-## 📚 Documentation
-
-- docs: transition to new docs by @AyushExel in https://github.com/lancedb/lancedb/pull/2681
-- docs: attempt fix doc deployment and remove recipes workflow trigger by @AyushExel in https://github.com/lancedb/lancedb/pull/2688
-
-
-### Release: lancedb [Python LanceDB v0.25.2-beta.1](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.2-beta.1)
-## 🎉 New Features
-
-- feat: allow bitmap indexes on large-string, binary, large-binary, and bitmap by @westonpace in https://github.com/lancedb/lancedb/pull/2678
-- feat: add support for test_remote_connections by @cmccabe in https://github.com/lancedb/lancedb/pull/2666
-
-## 🐛 Bug Fixes
-
-- fix: use correct nodejs path for ci by @AyushExel in https://github.com/lancedb/lancedb/pull/2689
-- fix: inflated release size due to lance-namespace transitive dependency by @jackye1995 in https://github.com/lancedb/lancedb/pull/2691
-- fix: have CI download from ci-support-binaries by @cmccabe in https://github.com/lancedb/lancedb/pull/2692
-
-## 📚 Documentation
-
-- docs: transition to new docs by @AyushExel in https://github.com/lancedb/lancedb/pull/2681
-- docs: attempt fix doc deployment and remove recipes workflow trigger by @AyushExel in https://github.com/lancedb/lancedb/pull/2688
-
-
-### Release: lancedb [ci-support-binaries](https://github.com/lancedb/lancedb/releases/tag/ci-support-binaries)
 
 ## Project: [duckdb/duckdb](https://duckdb.org/), 1 releases: ['v1.4.1 Bugfix Release']
 ### Release: duckdb [v1.4.1 Bugfix Release](https://github.com/duckdb/duckdb/releases/tag/v1.4.1)
