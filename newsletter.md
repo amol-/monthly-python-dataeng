@@ -2,17 +2,18 @@
  * Project: apache/arrow has 3 releases
  * Project: posit-dev/great-tables has 2 releases
  * Project: ibis-project/ibis has 1 releases
+ * Project: substrait-io/substrait-python has 1 releases
  * Project: narwhals-dev/narwhals has 5 releases
  * Project: pola-rs/polars has 4 releases
  * Project: holoviz/panel has 1 releases
  * Project: pyscript/pyscript has 3 releases
- * Project: cython/cython has 6 releases
+ * Project: cython/cython has 7 releases
  * Project: plotly/dash has 3 releases
- * Project: dask/dask has 1 releases
+ * Project: dask/dask has 2 releases
  * Project: delta-io/delta-rs has 2 releases
  * Project: rapidsai/cudf has 1 releases
- * Project: lancedb/lance has 14 releases
- * Project: lancedb/lancedb has 16 releases
+ * Project: lancedb/lance has 15 releases
+ * Project: lancedb/lancedb has 14 releases
  * Project: duckdb/duckdb has 1 releases
  * Project: trinodb/trino has 1 releases
  * Project: https://spark.apache.org/news/index.html has 1 releases
@@ -138,7 +139,48 @@ Release Notes: Release Candidate: 22.0.0 RC0
 * **athena:** use `get_table_metadata` in `get_schema` ([#11574](https://github.com/ibis-project/ibis/issues/11574)) ([e4e582a](https://github.com/ibis-project/ibis/commit/e4e582a920a7255078cb96c2769d859827b66db1))
 * **binding:** only create a dereference map in `Table.bind` when needed ([#11531](https://github.com/ibis-project/ibis/issues/11531)) ([90e790c](https://github.com/ibis-project/ibis/commit/90e790c680ad12513446d6f2e459b0c731935015))
 
-## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 5 releases: ['Narwhals v2.10.1', 'Narwhals v2.10.0', 'Narwhals v2.9.0', 'Narwhals v2.8.0', 'Narwhals v2.7.0']
+## Project: [substrait-io/substrait-python](https://substrait.io/), 1 releases: ['v0.25.0']
+### Release: substrait-python [v0.25.0](https://github.com/substrait-io/substrait-python/releases/tag/v0.25.0)
+## What's Changed
+* fix: issue-96 function name incorrect by @mbwhite in https://github.com/substrait-io/substrait-python/pull/97
+* feat: drop JSON functions and dependency on substrait-cpp by @benbellick in https://github.com/substrait-io/substrait-python/pull/100
+* chore(deps): bump astral-sh/setup-uv from 6 to 7 by @dependabot[bot] in https://github.com/substrait-io/substrait-python/pull/103
+* fix: add nullability check for NamedStruct in builder by @mbwhite in https://github.com/substrait-io/substrait-python/pull/104
+* feat: advanced_extensions by @mbwhite in https://github.com/substrait-io/substrait-python/pull/105
+* chore: fix and update devcontainer by @nielspardon in https://github.com/substrait-io/substrait-python/pull/108
+* chore: run tests with uv by @tokoko in https://github.com/substrait-io/substrait-python/pull/106
+* fix: update protobuf dependency to v5.29.5 by @nielspardon in https://github.com/substrait-io/substrait-python/pull/111
+* chore(deps): bump actions/setup-node from 5 to 6 by @dependabot[bot] in https://github.com/substrait-io/substrait-python/pull/109
+* fix: remove SHELL from devcontainer by @tokoko in https://github.com/substrait-io/substrait-python/pull/116
+* chore(deps): bump actions/download-artifact from 5 to 6 by @dependabot[bot] in https://github.com/substrait-io/substrait-python/pull/117
+* chore(deps): bump actions/upload-artifact from 4 to 5 by @dependabot[bot] in https://github.com/substrait-io/substrait-python/pull/118
+* feat: configurable registry for sql conversion by @tokoko in https://github.com/substrait-io/substrait-python/pull/115
+* feat: graceful URI -> URN migration by @benbellick in https://github.com/substrait-io/substrait-python/pull/114
+
+## New Contributors
+* @mbwhite made their first contribution in https://github.com/substrait-io/substrait-python/pull/97
+* @benbellick made their first contribution in https://github.com/substrait-io/substrait-python/pull/100
+* @nielspardon made their first contribution in https://github.com/substrait-io/substrait-python/pull/108
+
+**Full Changelog**: https://github.com/substrait-io/substrait-python/compare/v0.24.2...v0.25.0
+## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 5 releases: ['Narwhals v2.10.2', 'Narwhals v2.10.1', 'Narwhals v2.10.0', 'Narwhals v2.9.0', 'Narwhals v2.8.0']
+### Release: narwhals [Narwhals v2.10.2](https://github.com/narwhals-dev/narwhals/releases/tag/v2.10.2)
+## Changes
+
+- test: un-xfail `is_finite` for `sqlframe` (#3268)
+
+## ✨ Enhancements
+
+- enh: rewrite duckdb groupby so it avoids group-by-all (#3267)
+
+## 🐞 Bug fixes
+
+- fix when/then/otherwise for empty frame (#3280)
+- fix: `coalesce` was raising with multi-output expression (#3278)
+
+Thank you to all our contributors for making this release possible!
+@MarcoGorelli, @dangotbanned, @dependabot[bot] and [dependabot[bot]](https://github.com/apps/dependabot)
+
 ### Release: narwhals [Narwhals v2.10.1](https://github.com/narwhals-dev/narwhals/releases/tag/v2.10.1)
 ## Changes
 
@@ -251,37 +293,6 @@ Thank you to all our contributors for making this release possible!
 
 Thank you to all our contributors for making this release possible!
 @FBruzzesi, @MarcoGorelli, @dangotbanned, @pre-commit-ci[bot] and [pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci)
-
-### Release: narwhals [Narwhals v2.7.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.7.0)
-## Changes
-
-## ✨ Enhancements
-
-- enh: Add `nw.format` (#3169)
-- feat: Adds `{Expr,Series}.{first,last}` (#2528)
-- feat: Support `polars.UInt128` (#3138)
-- feat: Add `prefix` argument to `generate_temporary_column_name` (#3147)
-- feat: Add `{nw,DataFrame}.from_dicts` (#3148)
-
-## 🐞 Bug fixes
-
-- fix: raise for rank followed by over with order_by for sql-like backends (#3178)
-- chore: Make `Implementation.UNKNOWN._backend_version()` safe (#3133)
-
-## 📖 Documentation
-
-- docs(python) remove now unnecessary returns statements (#3170)
-
-## 🛠️ Other improvements
-
-- chore: Add `CompliantNamespace.is_native` (#3130)
-- chore: Make `Implementation.UNKNOWN._backend_version()` safe (#3133)
-- chore(typing): Ignore another `EagerDataFrame` intermittent [False Negative] (#3142)
-- ci: fix darts job (#3172)
-- fix: add `--upgrade` flag to `uv sync --dev` (#3175)
-
-Thank you to all our contributors for making this release possible!
-@FBruzzesi, @MarcoGorelli, @akmalsoliev, @dangotbanned, @dependabot[bot], @felixgwilliams and [dependabot[bot]](https://github.com/apps/dependabot)
 
 ## Project: [pola-rs/polars](https://docs.pola.rs/), 4 releases: ['Rust Polars 0.52.0', 'Python Polars 1.35.1', 'Python Polars 1.35.0', 'Python Polars 1.35.0-beta.1']
 ### Release: polars [Rust Polars 0.52.0](https://github.com/pola-rs/polars/releases/tag/rs-0.52.0)
@@ -987,7 +998,9 @@ More details in #2395.
     * Default conversion of `to_js` as JS object literal, not map
     * Fixed a Wasm GC reference leak on invokes
     * New features / enhancements here: https://pyodide.org/en/stable/project/changelog.html#version-0-29-0
-## Project: [cython/cython](https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html), 6 releases: ['3.2.0b3', '3.2.0b2', '3.1.6', '3.2.0b1-3', '3.2.0b1', '3.1.5']
+## Project: [cython/cython](https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html), 7 releases: ['3.2.0', '3.2.0b3', '3.2.0b2', '3.1.6', '3.2.0b1-3', '3.2.0b1', '3.1.5']
+### Release: cython [3.2.0](https://github.com/cython/cython/releases/tag/3.2.0)
+
 ### Release: cython [3.2.0b3](https://github.com/cython/cython/releases/tag/3.2.0b3)
 
 ### Release: cython [3.2.0b2](https://github.com/cython/cython/releases/tag/3.2.0b2)
@@ -1044,7 +1057,35 @@ Bugs fixed
 - Add placeholder plotly CLI
 - Add dash[cloud] optional dependency.
 - Add placeholder plotly cloud publish button in the devtools.
-## Project: [dask/dask](https://www.dask.org/), 1 releases: ['2025.10.0']
+## Project: [dask/dask](https://www.dask.org/), 2 releases: ['2025.11.0', '2025.10.0']
+### Release: dask [2025.11.0](https://github.com/dask/dask/releases/tag/2025.11.0)
+## Changes
+
+- Replace versioneer with setuptools-scm @jacobtomlinson (#12133)
+- Apply ruff/Pylint Refactor rules (PLR) @DimitriPapadopoulos (#12010)
+- Remove files from `MANIFEST.in` @DimitriPapadopoulos (#12041)
+- FIX: Stabilize test\_filter\_nonpartition\_columns @dongwonmoon (#12131)
+- Enforce ruff/pyupgrade rules UP007 and UP033 @DimitriPapadopoulos (#12125)
+- Update ``np.accumulate`` workaround comment @jacobtomlinson (#12129)
+- flake8, bugbear, pyupgrade → ruff @DimitriPapadopoulos (#12002)
+- Adjust pyarrow version skip in test\_parquet @TomAugspurger (#12124)
+- Fix ufunc in dask.array.cumreduction @tonyyuyiding (#12119)
+- Fix docs footer @jacobtomlinson (#12120)
+- use integer multiple of shard shape when rechunking in to\_zarr @d-v-b (#12106)
+- ensure that the shard shape is used as the default chunk shape for sharded Zarr arrays @d-v-b (#12104)
+- Skip ``test\_parquet`` for ``pyarrow==22.0`` @TomAugspurger (#12116)
+- Bump actions/upload-artifact from 4 to 5 @[dependabot[bot]](https://github.com/apps/dependabot) (#12114)
+- Clean up setuptools-specific configuration @DimitriPapadopoulos (#12040)
+- PEP 639 compliance @DimitriPapadopoulos (#12024)
+- Fix deprecated quantile 'interpolation' being passed to numpy @djhoese (#12108)
+- Add uv.lock to gitignore @jacobtomlinson (#12110)
+- use shard shape when available in to\_zarr @d-v-b (#12105)
+- Add more optional dependencies to Python 3.13 CI builds @jrbourbeau (#12100)
+- Remove ``pip`` pin for docs @jrbourbeau (#12102)
+- Address collection-based ``meta`` arguments in ``GroupByApply`` @rjzamora (#12099)  
+
+See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more information.
+
 ### Release: dask [2025.10.0](https://github.com/dask/dask/releases/tag/2025.10.0)
 ## Changes
 
@@ -1569,7 +1610,51 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - Use KvikIO&#39;s implementation of file-backed memory mapping (#19164) @kingcrimsontianyu
 - Replace `rmm::device_scalar` with `cudf::detail::device_scalar` due to unnecessary synchronization (Part 3 of miss-sync) (#19119) @JigaoLuo
 - Implement distributed sorted for ``cudf_polars`` (#18912) @seberg
-## Project: [lancedb/lance](https://lancedb.github.io/lance/), 14 releases: ['v0.38.3', 'v0.38.3-beta.11', 'v0.38.3-beta.10', 'v0.38.3-beta.9', 'v0.38.3-beta.8', 'v0.38.3-beta.7', 'v0.38.3-beta.6', 'v0.38.3-beta.5', 'v0.38.3-beta.4', 'v0.38.3-beta.3', 'v0.38.3-beta.2', 'v0.38.3-beta.1', 'v0.38.2', 'v0.38.1']
+## Project: [lancedb/lance](https://lancedb.github.io/lance/), 15 releases: ['v0.40.0-beta.1', 'v0.39.0', 'v0.38.3', 'v0.38.3-beta.11', 'v0.38.3-beta.10', 'v0.38.3-beta.9', 'v0.38.3-beta.8', 'v0.38.3-beta.7', 'v0.38.3-beta.6', 'v0.38.3-beta.5', 'v0.38.3-beta.4', 'v0.38.3-beta.3', 'v0.38.3-beta.2', 'v0.38.3-beta.1', 'v0.38.2']
+### Release: lance [v0.40.0-beta.1](https://github.com/lancedb/lance/releases/tag/v0.40.0-beta.1)
+<!-- Release notes generated using configuration in .github/release.yml at v0.40.0-beta.1 -->
+
+## What's Changed
+### Breaking Changes 🛠
+* refactor: remove not used storage class and blob dataset by @Xuanwo in https://github.com/lancedb/lance/pull/5131
+### New Features 🎉
+* feat: add fuzziness to json inverted match query by @wojiaodoubao in https://github.com/lancedb/lance/pull/5048
+* feat(java): expose cleanup_with_policy api by @fangbo in https://github.com/lancedb/lance/pull/5136
+* feat(java): supports building scalar indices distributedly in java module by @steFaiz in https://github.com/lancedb/lance/pull/4961
+### Bug Fixes 🐛
+* fix: always return correct json schema to users by @Xuanwo in https://github.com/lancedb/lance/pull/5109
+* fix: ensure I/O cancels correctly when scan is dropped by @westonpace in https://github.com/lancedb/lance/pull/5129
+* fix: remove unnecessary object store initialization by @zhangyue19921010 in https://github.com/lancedb/lance/pull/5145
+* fix: use typed LanceNamespace for python storage options provider by @jackye1995 in https://github.com/lancedb/lance/pull/5151
+### Performance Improvements 🚀
+* perf: add a chunk cache to avoid decoding duplicated miniblock chunks by @niyue in https://github.com/lancedb/lance/pull/4846
+
+
+**Full Changelog**: https://github.com/lancedb/lance/compare/v0.39.0...v0.40.0-beta.1
+### Release: lance [v0.39.0](https://github.com/lancedb/lance/releases/tag/v0.39.0)
+<!-- Release notes generated using configuration in .github/release.yml at v0.39.0 -->
+
+## What's Changed
+### Breaking Changes 🛠
+* feat!: incremental indexing via SPFresh by @BubbleCal in https://github.com/lancedb/lance/pull/4837
+### New Features 🎉
+* feat(java): expose ManifestSummary to java api by @steFaiz in https://github.com/lancedb/lance/pull/5092
+* feat: support dynamic storage options provider with AWS credentials vending by @jackye1995 in https://github.com/lancedb/lance/pull/4905
+### Bug Fixes 🐛
+* fix: infinite kmeans if the largest cluster produces only 1 cluster by @BubbleCal in https://github.com/lancedb/lance/pull/5078
+* fix: remove remainder explain_plan method in Python by @ddupg in https://github.com/lancedb/lance/pull/5085
+* fix(rust): add explicit dependency on chrono serde feature by @wjones127 in https://github.com/lancedb/lance/pull/5110
+* fix: no panic on unknown version by @wjones127 in https://github.com/lancedb/lance/pull/5111
+* fix: skip compression in create_per_value if compression metadata is set to none by @wojiaodoubao in https://github.com/lancedb/lance/pull/5086
+* fix: forward incompatibility of prerelease in writer version by @jackye1995 in https://github.com/lancedb/lance/pull/5116
+### Documentation 📚
+* docs: minor doc fix for docs/src/format/file/encoding.md by @zhangyue19921010 in https://github.com/lancedb/lance/pull/5108
+* docs: add fragment level update columns docs by @xloya in https://github.com/lancedb/lance/pull/5123
+### Other Changes
+* refactor: introduce SchemaAdapter to perform logical/physical transform by @Xuanwo in https://github.com/lancedb/lance/pull/5096
+
+
+**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.3...v0.39.0
 ### Release: lance [v0.38.3](https://github.com/lancedb/lance/releases/tag/v0.38.3)
 <!-- Release notes generated using configuration in .github/release.yml at v0.38.3 -->
 
@@ -1829,28 +1914,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 
 **Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.1...v0.38.2
-### Release: lance [v0.38.1](https://github.com/lancedb/lance/releases/tag/v0.38.1)
-<!-- Release notes generated using configuration in .github/release.yml at v0.38.1 -->
-
-## What's Changed
-### New Features 🎉
-* feat: upgrade url crate, rework temporary directory utils by @westonpace in https://github.com/lancedb/lance/pull/4860
-* feat: support fragment-level update columns by @wayneli-vt in https://github.com/lancedb/lance/pull/4715
-* feat: change one-pass GPU ivf-pq indexing as default by @eddyxu in https://github.com/lancedb/lance/pull/4879
-* feat: add scan_range_after_filter pushdown optimization for filtered reads by @LuQQiu in https://github.com/lancedb/lance/pull/4795
-### Bug Fixes 🐛
-* fix: typo in ut test_fragment_update by @wojiaodoubao in https://github.com/lancedb/lance/pull/4878
-* fix: filter out vectors that could produce infinite l2 distances by @wjones127 in https://github.com/lancedb/lance/pull/4890
-* fix: don't log the 'experimental' warning if users are using 2.1 by @westonpace in https://github.com/lancedb/lance/pull/4880
-* fix: don't retain indices that have no rows by @wjones127 in https://github.com/lancedb/lance/pull/4875
-### Documentation 📚
-* docs: rework file specification docs by @westonpace in https://github.com/lancedb/lance/pull/4619
-### Other Changes
-* refactor: remove unecessary parens by @cmccabe in https://github.com/lancedb/lance/pull/4876
-
-
-**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.0...v0.38.1
-## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 16 releases: ['Node/Rust LanceDB v0.22.3-beta.5', 'Node/Rust LanceDB v0.22.3-beta.4', 'Python LanceDB v0.25.3-beta.5', 'Python LanceDB v0.25.3-beta.4', 'Node/Rust LanceDB v0.22.3-beta.3', 'Python LanceDB v0.25.3-beta.3', 'Node/Rust LanceDB v0.22.3-beta.2', 'Python LanceDB v0.25.3-beta.2', 'Node/Rust LanceDB v0.22.3-beta.1', 'Python LanceDB v0.25.3-beta.1', 'Node/Rust LanceDB v0.22.3-beta.0', 'Python LanceDB v0.25.3-beta.0', 'Node/Rust LanceDB v0.22.2', 'Python LanceDB v0.25.2', 'Node/Rust LanceDB v0.22.2-beta.2', 'Python LanceDB v0.25.2-beta.2']
+## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 14 releases: ['Node/Rust LanceDB v0.22.3-beta.5', 'Node/Rust LanceDB v0.22.3-beta.4', 'Python LanceDB v0.25.3-beta.5', 'Python LanceDB v0.25.3-beta.4', 'Node/Rust LanceDB v0.22.3-beta.3', 'Python LanceDB v0.25.3-beta.3', 'Node/Rust LanceDB v0.22.3-beta.2', 'Python LanceDB v0.25.3-beta.2', 'Node/Rust LanceDB v0.22.3-beta.1', 'Python LanceDB v0.25.3-beta.1', 'Node/Rust LanceDB v0.22.3-beta.0', 'Python LanceDB v0.25.3-beta.0', 'Node/Rust LanceDB v0.22.2', 'Python LanceDB v0.25.2']
 ### Release: lancedb [Node/Rust LanceDB v0.22.3-beta.5](https://github.com/lancedb/lancedb/releases/tag/v0.22.3-beta.5)
 ## 🎉 New Features
 
@@ -2045,30 +2109,6 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - ci: fix Python and Node CI on main by @wjones127 in https://github.com/lancedb/lancedb/pull/2700
 
 
-### Release: lancedb [Node/Rust LanceDB v0.22.2-beta.2](https://github.com/lancedb/lancedb/releases/tag/v0.22.2-beta.2)
-## 🐛 Bug Fixes
-
-- fix(node): allow undefined/omitted values for nullable vector fields by @naaa760 in https://github.com/lancedb/lancedb/pull/2656
-
-## 🔧 Build and CI
-
-- ci: automatic issue creation for failed publish workflows by @wjones127 in https://github.com/lancedb/lancedb/pull/2694
-- ci: run remote tests on PRs only if they aren't a fork by @wjones127 in https://github.com/lancedb/lancedb/pull/2697
-- ci: fix Python and Node CI on main by @wjones127 in https://github.com/lancedb/lancedb/pull/2700
-
-
-### Release: lancedb [Python LanceDB v0.25.2-beta.2](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.2-beta.2)
-## 🐛 Bug Fixes
-
-- fix(node): allow undefined/omitted values for nullable vector fields by @naaa760 in https://github.com/lancedb/lancedb/pull/2656
-
-## 🔧 Build and CI
-
-- ci: automatic issue creation for failed publish workflows by @wjones127 in https://github.com/lancedb/lancedb/pull/2694
-- ci: run remote tests on PRs only if they aren't a fork by @wjones127 in https://github.com/lancedb/lancedb/pull/2697
-- ci: fix Python and Node CI on main by @wjones127 in https://github.com/lancedb/lancedb/pull/2700
-
-
 ## Project: [duckdb/duckdb](https://duckdb.org/), 1 releases: ['v1.4.1 Bugfix Release']
 ### Release: duckdb [v1.4.1 Bugfix Release](https://github.com/duckdb/duckdb/releases/tag/v1.4.1)
 This is a bug fix release for various issues discovered after we released 1.4.0. 
@@ -2138,4 +2178,4 @@ This is a bug fix release for various issues discovered after we released 1.4.0.
 **Full Changelog**: https://github.com/duckdb/duckdb/compare/v1.4.0...v1.4.1
 ## Project: [trinodb/trino](https://trino.io/docs/current/release/release-{release}.html), 1 releases: ['Trino 478']
 ### Release: trino [Trino 478](https://github.com/trinodb/trino/releases/tag/478)
-See https://trino.io/docs/current/release/release-478.html
+See the [release notes](https://trino.io/docs/current/release/release-478.html) or [download Trino](https://trino.io/download)
