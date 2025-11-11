@@ -1,20 +1,19 @@
 # Complete List of Projects
  * Project: apache/arrow has 3 releases
- * Project: posit-dev/great-tables has 2 releases
+ * Project: posit-dev/great-tables has 1 releases
  * Project: ibis-project/ibis has 1 releases
  * Project: substrait-io/substrait-python has 1 releases
- * Project: narwhals-dev/narwhals has 5 releases
- * Project: pola-rs/polars has 4 releases
+ * Project: narwhals-dev/narwhals has 6 releases
+ * Project: pola-rs/polars has 5 releases
  * Project: holoviz/panel has 1 releases
- * Project: pyscript/pyscript has 3 releases
+ * Project: holoviz/holoviews has 1 releases
+ * Project: pyscript/pyscript has 4 releases
  * Project: cython/cython has 7 releases
- * Project: plotly/dash has 3 releases
+ * Project: plotly/dash has 1 releases
  * Project: dask/dask has 2 releases
  * Project: delta-io/delta-rs has 2 releases
- * Project: rapidsai/cudf has 1 releases
- * Project: lancedb/lance has 15 releases
+ * Project: lancedb/lance has 13 releases
  * Project: lancedb/lancedb has 14 releases
- * Project: duckdb/duckdb has 1 releases
  * Project: trinodb/trino has 1 releases
  * Project: https://spark.apache.org/news/index.html has 1 releases
  * Project: https://velox-lib.io/blog/rss.xml has 1 releases
@@ -38,7 +37,7 @@ Release Notes URL: https://arrow.apache.org/release/22.0.0.html
 Release Notes: Release Candidate: 22.0.0 RC1
 ### Release: arrow [Apache Arrow 22.0.0 RC0](https://github.com/apache/arrow/releases/tag/apache-arrow-22.0.0-rc0)
 Release Notes: Release Candidate: 22.0.0 RC0
-## Project: [posit-dev/great-tables](https://posit-dev.github.io/great-tables/get-started/), 2 releases: ['v0.20.0', 'v0.19.0']
+## Project: [posit-dev/great-tables](https://posit-dev.github.io/great-tables/get-started/), 1 releases: ['v0.20.0']
 ### Release: great-tables [v0.20.0](https://github.com/posit-dev/great-tables/releases/tag/v0.20.0)
 ## Features
 
@@ -47,31 +46,6 @@ Release Notes: Release Candidate: 22.0.0 RC0
 
 
 **Full Changelog**: https://github.com/posit-dev/great-tables/compare/v0.19.0...v0.20.0
-### Release: great-tables [v0.19.0](https://github.com/posit-dev/great-tables/releases/tag/v0.19.0)
-## Fixes
-
-* Code using the NumPy library was replaced with standard Python to enable the removal of NumPy from the dependencies list, by @tylerriccio33 in https://github.com/posit-dev/great-tables/pull/749
-* An error when setting `groupname_col=` without `rowname_col=` in the `GT` constructor has been fixed by @juleswg23 in https://github.com/posit-dev/great-tables/pull/756
-* Using `row_group_as_column = True` now structures row groups as a column in the stub (previously, this was a no-op), by @juleswg23 in https://github.com/posit-dev/great-tables/pull/754
-* The `data_color()` method now takes the alpha value for the cell background color into account when choosing the foreground text color (fixes the internal `_ideal_fgnd_color()` util function), by @juleswg23 in https://github.com/posit-dev/great-tables/pull/747
-* When enabling row striping, there is now better color contrast between the text and the underlying cell background, by @juleswg23 in https://github.com/posit-dev/great-tables/pull/745
-* We now internally access column names consistently through `get_column_names()` instead of `.columns`, by @FBruzzesi in https://github.com/posit-dev/great-tables/pull/736
-* Column values with the `pyarrow` `float64` type are now right-aligned to match the default behavior when using Pandas and Polars DFs, by @FBruzzesi in https://github.com/posit-dev/great-tables/pull/734
-* We now avoid the double use of `clear` internally with Polars DFs, by @FBruzzesi in https://github.com/posit-dev/great-tables/pull/729
-
-## Docs
-
-* Various typos were corrected by @FBruzzesi in https://github.com/posit-dev/great-tables/pull/730
-* We now include a Posit badge in the header of the project website, by @rich-iannone in https://github.com/posit-dev/great-tables/pull/777
-
-## Chores
-
-* Refactoring was done to better adhere to best practices and to improve code performance, by @FBruzzesi in https://github.com/posit-dev/great-tables/pull/731
-
-## New Contributors
-* @FBruzzesi made their first contribution in https://github.com/posit-dev/great-tables/pull/731
-
-**Full Changelog**: https://github.com/posit-dev/great-tables/compare/v0.18.0...v0.19.0
 ## Project: [ibis-project/ibis](https://ibis-project.org/), 1 releases: ['11.0.0']
 ### Release: ibis [11.0.0](https://github.com/ibis-project/ibis/releases/tag/11.0.0)
 ## [11.0.0](https://github.com/ibis-project/ibis/compare/10.8.0...11.0.0) (2025-10-15)
@@ -163,7 +137,36 @@ Release Notes: Release Candidate: 22.0.0 RC0
 * @nielspardon made their first contribution in https://github.com/substrait-io/substrait-python/pull/108
 
 **Full Changelog**: https://github.com/substrait-io/substrait-python/compare/v0.24.2...v0.25.0
-## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 5 releases: ['Narwhals v2.10.2', 'Narwhals v2.10.1', 'Narwhals v2.10.0', 'Narwhals v2.9.0', 'Narwhals v2.8.0']
+## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 6 releases: ['Narwhals v2.11.0', 'Narwhals v2.10.2', 'Narwhals v2.10.1', 'Narwhals v2.10.0', 'Narwhals v2.9.0', 'Narwhals v2.8.0']
+### Release: narwhals [Narwhals v2.11.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.11.0)
+## Changes
+
+## ✨ Enhancements
+
+- feat: Add `Expr.replace_strict` support for lazy backends if `default` is provided (#3282)
+- enh: Show more informative `not_implemented` and "could not translate" errors for plugins (#3297)
+- feat: Add `default` in `{Expr,Series}.replace_strict` (#3276)
+
+## 🐞 Bug fixes
+
+- fix: `with_row_index` was returning incorrect results when used with `order_by` for pandas, pyarrow, and polars (#3292)
+- fix: Make `is_finite` consistent for Polars < 1.18 (#3288)
+- feat: Add `default` in `{Expr,Series}.replace_strict` (#3276)
+- fix: Pass/Retrieve empty categories from nw.Enum (#3284)
+
+## 📖 Documentation
+
+- docs: document Daft support (#3299)
+
+## 🛠️ Other improvements
+
+- chore: simplify dask implementation for direct translations (#3287)
+- chore: document closed interval options (#3291)
+- test: xfail polars `cat.get_categories` (flaky) (#3283)
+
+Thank you to all our contributors for making this release possible!
+@FBruzzesi, @MarcoGorelli, @camriddell and @liamholmes31
+
 ### Release: narwhals [Narwhals v2.10.2](https://github.com/narwhals-dev/narwhals/releases/tag/v2.10.2)
 ## Changes
 
@@ -294,7 +297,16 @@ Thank you to all our contributors for making this release possible!
 Thank you to all our contributors for making this release possible!
 @FBruzzesi, @MarcoGorelli, @dangotbanned, @pre-commit-ci[bot] and [pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci)
 
-## Project: [pola-rs/polars](https://docs.pola.rs/), 4 releases: ['Rust Polars 0.52.0', 'Python Polars 1.35.1', 'Python Polars 1.35.0', 'Python Polars 1.35.0-beta.1']
+## Project: [pola-rs/polars](https://docs.pola.rs/), 5 releases: ['Python Polars 1.35.2', 'Rust Polars 0.52.0', 'Python Polars 1.35.1', 'Python Polars 1.35.0', 'Python Polars 1.35.0-beta.1']
+### Release: polars [Python Polars 1.35.2](https://github.com/pola-rs/polars/releases/tag/py-1.35.2)
+* Fix incorrect `drop_nans()` result when used in `group_by()` / `over()` (https://github.com/pola-rs/polars/pull/25146)
+* Fix handling `Null` dtype in `ApplyExpr` on `group_by`(https://github.com/pola-rs/polars/pull/25077)
+* Fix assertion panic on `group_by` (https://github.com/pola-rs/polars/pull/25179)
+* Fix Wide-table join performance regression (https://github.com/pola-rs/polars/pull/25222)
+
+Thank you to all our contributors for making this release possible!
+@coastalwhite, @kdn36, @nameexhaustion and @ritchie46
+
 ### Release: polars [Rust Polars 0.52.0](https://github.com/pola-rs/polars/releases/tag/rs-0.52.0)
 ## 🏆 Highlights
 
@@ -934,36 +946,118 @@ Thank you to all our contributors for making this release possible!
 Thank you to all our contributors for making this release possible!
 @JakubValtar, @Kevin-Patyk, @MarcoGorelli, @Object905, @alexander-beedie, @borchero, @cmdlineluser, @coastalwhite, @craigalodon, @dsprenkels, @eitsupi, @etrotta, @henryharbeck, @jordanosborn, @kdn36, @math-hiyoko, @nameexhaustion, @orlp, @pavelzw, @ritchie46, @thomasjpfan and @williambdean
 
-## Project: [holoviz/panel](https://panel.holoviz.org/), 1 releases: ['Version 1.8.2']
-### Release: panel [Version 1.8.2](https://github.com/holoviz/panel/releases/tag/v1.8.2)
-This patch release focuses on polishing the user experience, fixing regressions, and improving documentation, particularly around app deployment and Tabulator interactivity. It includes several frontend and CSS tweaks, pyodide compatibility fixes, and two new deployment guides for **Anaconda Notebooks** and **PythonAnywhere**. Thanks to @philippjfr, @maximlt, @etihwo, @MarcSkovMadsen, and @Coderambling for their contributions to this release.
+## Project: [holoviz/panel](https://panel.holoviz.org/), 1 releases: ['Version 1.8.3']
+### Release: panel [Version 1.8.3](https://github.com/holoviz/panel/releases/tag/v1.8.3)
+This patch release brings targeted UI fixes, improves Python and Django compatibility, and enhances the developer and contributor experience. It also includes fixes for Tabulator, Pyodide, templates, and app interactivity, along with several documentation and robustness improvements. Many thanks to @ahuang11, @hoxbro, @maximlt, @MarcSkovMadsen, @Coderambling and  @philippjfr for their contributions to this release.
 
 ### ✨ Enhancements
 
-- Allow custom control over Tabulator editable rows using `JSCode` ([#8204](https://github.com/holoviz/panel/pull/8204))
-- Improve UI discoverability on `EditableTemplate` ([#8206](https://github.com/holoviz/panel/pull/8206))
-- Set pointer cursor on "Connection Lost" toast notification ([#8209](https://github.com/holoviz/panel/pull/8209))
-- Serve `index.html` automatically when serving a static directory ([#8222](https://github.com/holoviz/panel/pull/8222))
+- Align CSS variables between default and dark themes ([#8248](https://github.com/holoviz/panel/pull/8248))
+- Ensure behavior of dynamically served apps is aligned with file based apps ([#8249](https://github.com/holoviz/panel/pull/8249))
+- Add `export()` method to `Vega` pane ([#8266](https://github.com/holoviz/panel/pull/8266))
+- Add official support for **Python 3.14** ([#8241](https://github.com/holoviz/panel/pull/8241))
+- Add `render_policy="manual"` option for `JSComponent` ([#8285](https://github.com/holoviz/panel/pull/8285))
+- Disable text selection when editing in `EditableTemplate` ([#8286](https://github.com/holoviz/panel/pull/8286))
+- Prevent full text selection when replacing input values on `CodeEditor` ([#8262](https://github.com/holoviz/panel/pull/8262))
 
 ### 🐛 Bug Fixes
 
-- Ensure Tabulator does not break if other components don't correctly initialize ([#8212](https://github.com/holoviz/panel/pull/8212))
-- Fix Pyodide `jsnull` value conversion in Bokeh JSON patches ([#8217](https://github.com/holoviz/panel/pull/8217))
-- Fix regression causing column headers not to stretch properly across layout ([#8219](https://github.com/holoviz/panel/pull/8219))
-- Ensure `config.npm_cdn` is respected ([#8233](https://github.com/holoviz/panel/issues/8233))
-- Ensure bundled pyodide resources use correct path separator ([#8230](https://github.com/holoviz/panel/pull/8230))
-- Ensure pyodide resource bundle is only generated if necessary ([#8234](https://github.com/holoviz/panel/pull/8234))
-- Ensure pyodide session is registered as loaded ([#8235](https://github.com/holoviz/panel/pull/8234))
+- Fix FastAPI bug where `pn.state.location` wasn’t retained ([#8283](https://github.com/holoviz/panel/pull/8283))
+- Fix Tabulator popup container rendering issues ([#8247](https://github.com/holoviz/panel/pull/8247))
+- Resolve issues with pipeline `next/previous` buttons ([#8273](https://github.com/holoviz/panel/pull/8273))
+- Ensure ESM compilation uses `_esm` path ([#8245](https://github.com/holoviz/panel/pull/8245))
+- Fix CORS issue with `turbine` data URL in Pyodide ([#8272](https://github.com/holoviz/panel/pull/8272))
+- Ensure `ParamRef`, `ParamFunction`, and `ParamMethod` do not override styling ([#8264](https://github.com/holoviz/panel/pull/8264))
+- Fix toggle behavior in `BootstrapTemplate` sidebar ([#8268](https://github.com/holoviz/panel/pull/8268))
+- Minor robustness improvements for Bokeh model interop ([#8270](https://github.com/holoviz/panel/pull/8270))
 
 ### 📚 Documentation
 
-- Add how-to guide on deploying Panel apps on [**Anaconda Notebooks**](https://notebooks.anaconda.cloud) ([#8207](https://github.com/holoviz/panel/pull/8207))
-- Add how-to guide on deploying Panel apps on [**PythonAnywhere**](https://www.pythonanywhere.com/) ([#8216](https://github.com/holoviz/panel/pull/8216))
--  Update `Plotly.ipynb` to reflect current Plotly version and correct doc URLs ([#8214](https://github.com/holoviz/panel/pull/8214), [#8203](https://github.com/holoviz/panel/pull/8203))
-- Add missing Anaconda logo to documentation ([#8208](https://github.com/holoviz/panel/pull/8208))
-- Add how-to guide on using `uv` to distribute Panel apps and dependencies ([#8205](https://github.com/holoviz/panel/pull/8205))
+- Minor enhancements to the [Panel Gallery](https://panel.holoviz.org/gallery/) deployment ([#8240](https://github.com/holoviz/panel/pull/8240))
+- Update Django integration docs ([#8252](https://github.com/holoviz/panel/pull/8252))
+- Clarify setup instructions ([#8255](https://github.com/holoviz/panel/pull/8255))
+- Fix typo and layout issue in `README.md` ([#8287](https://github.com/holoviz/panel/pull/8287))
+- Fix unclosed code block in `convert.md` ([#8280](https://github.com/holoviz/panel/pull/8280))
 
-## Project: [pyscript/pyscript](https://pyscript.com/), 3 releases: ['2025.10.3', '2025.10.2', '2025.10.1']
+### 🧪 Infrastructure & Developer Experience
+
+- Remove Bokeh metadata workaround related to Tornado ([#8243](https://github.com/holoviz/panel/pull/8243))
+- Bump Django versions in example apps:
+
+  - `4.2.22` → `4.2.25` ([#8226](https://github.com/holoviz/panel/pull/8226))
+  - `4.2.22` → `4.2.26` in multi-apps example ([#8282](https://github.com/holoviz/panel/pull/8282))
+- Add `setup-dev` command for easier local development ([#8277](https://github.com/holoviz/panel/pull/8277))
+- Improve internal `_descendents` resolution for parameterized classes ([#8284](https://github.com/holoviz/panel/pull/8284))
+- Add `__panel__` stub method to `PyComponent` ([#8271](https://github.com/holoviz/panel/pull/8271))
+
+## Project: [holoviz/holoviews](https://holoviews.org/), 1 releases: ['Version 1.22.0']
+### Release: holoviews [Version 1.22.0](https://github.com/holoviz/holoviews/releases/tag/v1.22.0)
+This release adds [Narwhals](https://narwhals-dev.github.io/narwhals/) support for broader dataframe compatibility. By doing so, we now also support Polars and DuckDB data backends.
+Another new feature is the addition of sizebar support for `Points` elements, allowing for better visualization of point sizes in plots.
+Along with these new features, this release includes numerous enhancements, bug fixes, compatibility updates, and improved documentation.
+Many thanks to [@epaaso](https://github.com/epaaso) (first contribution), [@thuydotm](https://github.com/thuydotm) (first contribution), [@ahuang11](https://github.com/ahuang11), [@Azaya89](https://github.com/Azaya89), [@maximlt](https://github.com/maximlt), [@philippjfr](https://github.com/philippjfr), [@stanwest](https://github.com/stanwest), and [@hoxbro](https://github.com/hoxbro) for their contributions.
+
+New Features:
+
+- Support Narwhals ([#6567](https://github.com/holoviz/holoviews/pull/6567), [#6725](https://github.com/holoviz/holoviews/pull/6725))
+- Add `sizebar` support to `Point` ([#6663](https://github.com/holoviz/holoviews/pull/6663))
+
+Enhancements:
+
+- Add `gridstyle` to matplotlib ([#6700](https://github.com/holoviz/holoviews/pull/6700))
+- Add `from_sparse` classmethod for `Graph` ([#6673](https://github.com/holoviz/holoviews/pull/6673))
+- Add support for synthetic legends on `ImageStackPlot` ([#6662](https://github.com/holoviz/holoviews/pull/6662))
+- Sync tools with Bokeh and use `auto_box_zoom` as default ([#6650](https://github.com/holoviz/holoviews/pull/6650))
+- Add hover filter ([#6646](https://github.com/holoviz/holoviews/pull/6646))
+- Improve error message for non-matching types when aspect is set to equal ([#6103](https://github.com/holoviz/holoviews/pull/6103))
+- Use `ImageStack` as an `element_type` in `rasterize` ([#6631](https://github.com/holoviz/holoviews/pull/6631))
+- Improve `core.util` to work better without pandas installed ([#6702](https://github.com/holoviz/holoviews/pull/6702))
+- Implement `link_selections.unlink` ([#6685](https://github.com/holoviz/holoviews/pull/6685))
+
+Deprecations:
+
+- Deprecate `IbisInterface` for `NarwhalsInterface` ([#6718](https://github.com/holoviz/holoviews/pull/6718))
+
+Performance:
+
+- Optimize `HeatMap` rendering path if gridded and contiguous ([#6680](https://github.com/holoviz/holoviews/pull/6680))
+- Add debounce support to `PlotSize` and `RangeXY` Bokeh callbacks ([#6672](https://github.com/holoviz/holoviews/pull/6672))
+- Don't import IPython in `find_stack_level` ([#6724](https://github.com/holoviz/holoviews/pull/6724))
+
+Bug Fixes:
+
+- Interpolation for `Image` with `datashade` ([#6707](https://github.com/holoviz/holoviews/pull/6707))
+- `subcoordinate_y` for `DynamicMap` if labels mismatched between plots ([#6694](https://github.com/holoviz/holoviews/pull/6694))
+- Setting `selection_expr` programmatically ([#6689](https://github.com/holoviz/holoviews/pull/6689))
+- Handle `node_color` in element transformations for Bokeh and MPL ([#6678](https://github.com/holoviz/holoviews/pull/6678))
+- `hv.dim` and `hv.Dimension` as color opts for Matplotlib Path plots ([#6721](https://github.com/holoviz/holoviews/pull/6721), [#6665](https://github.com/holoviz/holoviews/pull/6665))
+- Use native bokeh `x` marker in plots and legends ([#6676](https://github.com/holoviz/holoviews/pull/6676))
+- Silence Bokeh `FIXED_SIZING_MODE` warning on hv.save ([#6674](https://github.com/holoviz/holoviews/pull/6674))
+- Comparison for non-numeric dtypes ([#6671](https://github.com/holoviz/holoviews/pull/6671))
+- Allow discovering `.apply` operation on pipeline ([#6670](https://github.com/holoviz/holoviews/pull/6670))
+- `dendrogram` edgecases ([#6669](https://github.com/holoviz/holoviews/pull/6669))
+- Don't select in `decimate` if start and end are the same ([#6661](https://github.com/holoviz/holoviews/pull/6661))
+
+Compatibility:
+
+- Ibis 11.0.0 ([#6706](https://github.com/holoviz/holoviews/pull/6706))
+- Python 3.14 ([#6704](https://github.com/holoviz/holoviews/pull/6704))
+- xarray 2025.08 ([#6664](https://github.com/holoviz/holoviews/pull/6664))
+- cuDF 25.10 ([#6659](https://github.com/holoviz/holoviews/pull/6659))
+- Pillow 11.3.0 ([#6651](https://github.com/holoviz/holoviews/pull/6651))
+
+
+
+## Project: [pyscript/pyscript](https://pyscript.com/), 4 releases: ['2025.11.1', '2025.10.3', '2025.10.2', '2025.10.1']
+### Release: pyscript [2025.11.1](https://github.com/pyscript/pyscript/releases/tag/2025.11.1)
+* PyScript does not throw errors anymore if a package is not available in the official Pyodide packages "graph". See [this PR](https://github.com/pyscript/polyscript/pull/162) for more details.
+* PyScript allows passing File and Blob instances to any worker from the main thread, through worker related Python code. See [this change](https://github.com/WebReflection/reflected-ffi/commit/5ead591d9b3b185ee845e3344556414792a65acc) for the underlying technical details.
+
+<!-- Release notes generated using configuration in .github/release.yml at 2025.11.1 -->
+
+
+
+**Full Changelog**: https://github.com/pyscript/pyscript/compare/2025.10.3...2025.11.1
 ### Release: pyscript [2025.10.3](https://github.com/pyscript/pyscript/releases/tag/2025.10.3)
 After a Chromium update we have noticed our `pyscript.fs` broke so that:
 
@@ -1032,31 +1126,9 @@ Bugs fixed
 * Value conversion errors when tracing C return statements no longer fail the trace
   but fall back to reporting ``None`` returns instead.
   (Github issue :issue:`6503`)
-## Project: [plotly/dash](https://plotly.com/dash/), 3 releases: ['Dash Version 3.3.0rc2', 'v4.0.0rc2', 'Dash Version 3.3.0rc1']
+## Project: [plotly/dash](https://plotly.com/dash/), 1 releases: ['Dash Version 3.3.0rc2']
 ### Release: dash [Dash Version 3.3.0rc2](https://github.com/plotly/dash/releases/tag/v3.3.0rc2)
 - Remove placeholde publish button when on workspace
-### Release: dash [v4.0.0rc2](https://github.com/plotly/dash/releases/tag/v4.0.0rc2)
-## Added
-- [3468](https://github.com/plotly/dash/pull/3468) Modernize dcc.TextArea & dcc.Tooltip
-- [3467](https://github.com/plotly/dash/pull/3467) Modernize dcc.Loading
-- [3453](https://github.com/plotly/dash/pull/3453) Modernize dcc.Checklist & dcc.RadioItems
-
-## Changed
-
-- Various tweaks and bugfixes to issues reported in `4.0.0rc1`
-
-- Dropdown API changes
-    * default value of optionHeight is now 'auto' which supports text wrapping of lengthy text on small screens; you can still specify a numeric pixel height if desired
-    * new `labels` prop to customize strings used within the component
-    * default value for closeOnSelect is now `True` for single-select dropdowns and `False` for multi-select
-
-- Slider API changes
-    * default value of `step` is now only set to `1` if the `min` and `max` props are both integers. Otherwise, it will be dynamically computed according to the available space for the slider
-
-### Release: dash [Dash Version 3.3.0rc1](https://github.com/plotly/dash/releases/tag/v3.3.0rc1)
-- Add placeholder plotly CLI
-- Add dash[cloud] optional dependency.
-- Add placeholder plotly cloud publish button in the devtools.
 ## Project: [dask/dask](https://www.dask.org/), 2 releases: ['2025.11.0', '2025.10.0']
 ### Release: dask [2025.11.0](https://github.com/dask/dask/releases/tag/2025.11.0)
 ## Changes
@@ -1219,398 +1291,13 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 * @vsmanish1772 made their first contribution in https://github.com/delta-io/delta-rs/pull/3835
 
 **Full Changelog**: https://github.com/delta-io/delta-rs/compare/python-v1.1.4...python-v1.2.0
-## Project: [rapidsai/cudf](https://docs.rapids.ai/api/cudf/stable/user_guide/10min/), 1 releases: ['v25.10.00']
-### Release: cudf [v25.10.00](https://github.com/rapidsai/cudf/releases/tag/v25.10.00)
-## 🚨 Breaking Changes
+## Project: [lancedb/lance](https://lancedb.github.io/lance/), 13 releases: ['v0.40.0-beta.2', 'v0.40.0-beta.1', 'v0.39.0', 'v0.38.3', 'v0.38.3-beta.11', 'v0.38.3-beta.10', 'v0.38.3-beta.9', 'v0.38.3-beta.8', 'v0.38.3-beta.7', 'v0.38.3-beta.6', 'v0.38.3-beta.5', 'v0.38.3-beta.4', 'v0.38.3-beta.3']
+### Release: lance [v0.40.0-beta.2](https://github.com/lancedb/lance/releases/tag/v0.40.0-beta.2)
+<!-- Release notes generated using configuration in .github/release.yml at v0.40.0-beta.2 -->
 
-- Remove UCX-Py (#19979) @pentschev
-- Revert &quot;Migrate mixed join to use multiset #19660&quot; (#19933) @PointKernel
-- Fill missing values in `Series/Index.values` for numeric types with np.nan by default (#19923) @mroeschke
-- Remove deprecated `DataFrame.apply_rows`, deprecate `DataFrame.apply_chunks` and `Groupby.apply_grouped` (#19896) @mroeschke
-- Move prefetching out of experimental and simplify the API (#19875) @vyasr
-- Add join `*_match_context` APIs to hash join (#19835) @PointKernel
-- Vendor libnvcomp in libcudf (#19743) @bdice
-- Migrate mixed join to use multiset (#19660) @PointKernel
-- Separate row mask and page mask computation and usage (#19537) @mhaseeb123
-- [FEA] Implement null-aware transforms and filters (#19502) @lamarrr
-- Support output-type for MEDIAN/QUANTILE aggregation in cudf::reduce (#19267) @davidwendt
 
-## 🐛 Bug Fixes
 
-- Fix edge cases in statistics collection (#20094) @rjzamora
-- Fix multi-partition `Filter` bug (#20075) @rjzamora
-- Fix `reindex` to fill only the reindexed values with `fill_value` (#20063) @galipremsagar
-- Fix arrow arrays + numpy ufunc interaction (#20047) @galipremsagar
-- Fix race conditions in ORC reader decimal decoding (#20044) @vuule
-- Keep mr alive along with arrow tables and columns (#20028) @vyasr
-- Fix `value_counts` missing `nan` bug (#20026) @galipremsagar
-- Compatibility for rapidsmpf&#39;s unspill_partitions (#20020) @TomAugspurger
-- Fix type metadata preservation in `shift` (#20017) @galipremsagar
-- Fix incorrect type propagation in dataframe assignment (#20010) @galipremsagar
-- Fix OOB memory read in decode_page_data_generic kernel (#19995) @davidwendt
-- Fix data_type creation in ast::operation::instantiate (#19994) @davidwendt
-- Skip Narwhals pandas get_dtype_backend[pyarrow] tests after ArrowDtype proxy changes (#19992) @Matt711
-- Make cudf.pandas callables usable with inspect.getfullargspec (#19988) @mroeschke
-- Align decimal dtypes to schema after parquet IO scan (#19974) @Matt711
-- Avoid undefined numpy protocols on cudf.pandas proxy objects (#19968) @mroeschke
-- Skip failing polars iceberg test (#19955) @Matt711
-- Revert &quot;Migrate mixed join to use multiset #19660&quot; (#19933) @PointKernel
-- Define FrozenList proxy independently in cudf.pandas (#19931) @mroeschke
-- Ignore scalars when broadcasting for horizontal string concatenation in cudf-polars (#19893) @Matt711
-- Fix is_valid_rolling_aggregation for STD aggregation (#19888) @davidwendt
-- Fix a decompression parameter in the chunked ORC reader (#19882) @vuule
-- Skip flaky stats tests pending follow up (#19881) @brandon-b-miller
-- Require list type for is_valid_aggregation and MERGE_LISTS/SETS (#19876) @davidwendt
-- Temporary solution to ensure data-source/sink stream ordering (#19874) @kingcrimsontianyu
-- Check for integer overflow in cudf::strings::find_multiple (#19867) @davidwendt
-- Fix missing stream from cudf::top_k_order (#19866) @davidwendt
-- Disallow loc.__setitem__ with list-like indexer when list elements not in index (#19851) @mroeschke
-- Fix .str.replace ignoring n for single character replacements (#19848) @mroeschke
-- Fix strings::find_instance warp parallel logic (#19845) @davidwendt
-- Add changed-files to the needs of every job that requires it (#19830) @Matt711
-- xfail polars `decimal(precision=None)` test (#19821) @Matt711
-- Fix empty column returned by cudf::from_arrow_stream_column (#19812) @davidwendt
-- Filter pandas warning in dask_cudf test (#19808) @TomAugspurger
-- Update identify_stream_usage CUDA runtime hooks to CUDA 13 (#19807) @robertmaynard
-- When bundling `libnvcomp.so.X` only append the major version value (#19786) @robertmaynard
-- Improvements to `pylibcudf.from_iterable_of_py` (#19781) @Matt711
-- Avoid using multiple `Cache` nodes with the same hash (#19769) @rjzamora
-- Fix window var() test failures from float rounding (#19761) @Matt711
-- Use `is_compressed` field from Parquet V2 data page headers to determine if they are compressed (#19755) @mhaseeb123
-- Fix bug in `eval` function with `nvtx-0.2.11` (#19754) @galipremsagar
-- Fix ndsh benchmarks nvtx range usage (#19753) @davidwendt
-- Support `nan` in non-floating point column in cudf-polars (#19742) @Matt711
-- Fix filter call in benchmark (#19732) @vyasr
-- Suppress NVRTC warning from stdint.h (#19712) @davidwendt
-- Correctly decode boolean lists in chunked parquet reader (#19707) @mhaseeb123
-- Add new xfails for xarray release (#19705) @vyasr
-- Fix &quot;--executor&quot; pytest parameter for cudf-polars (#19703) @rjzamora
-- Match polars semantics for rolling-sum with all-null windows (non-empty) (#19680) @Matt711
-- [BUG] Set `query_set` arg when validating/running cudf-polars PDS-DS benchmarks (#19674) @Matt711
-- Fix `group_by().agg()` on non-aggregatable dtypes (#19669) @Matt711
-- Fix broken links in 10min notebook (#19665) @Matt711
-- Skip managed memory test if managed memory not supported in cudf-polars (#19653) @Matt711
-- Fix integer overflow in warp-per-row grid calculation (#19638) @davidwendt
-- Propagate exceptions thrown in async IO operations (#19628) @vuule
-- Make `DataFrame.dtypes` not fallback to CPU always (#19627) @galipremsagar
-- Set scalar to valid in range_window_bounds unbounded/current_row (#19622) @davidwendt
-- Enable data page mask computation for nullable `list` and `struct` columns (#19617) @mhaseeb123
-- Fix cudf::sequence() to throw exception for invalid scalar inputs (#19612) @davidwendt
-- Fix uninitialized variable and misaligned write in parquet generic decoder (#19601) @mhaseeb123
-- Compatibility with rapidsmpf 25.10.0 (#19591) @TomAugspurger
-- Avoid querying device memory on systems without it in dask-cudf (#19577) @Matt711
-- Avoid querying device memory on systems without it in cudf-polars benchmarks (#19575) @Matt711
-- Increase alignment requirement for parquet bloom filter to 256 (#19573) @mhaseeb123
-- Fix strftime with non-exact %a, %A, %b, %B (#19570) @mroeschke
-- Fix OOB memcheck error in group_rank_to_percentage utility (#19567) @davidwendt
-- Fix logic for number of unique values generated by data profile in benchmarks (#19540) @shrshi
-- Fix contiguous-split nvbench cmake build (#19534) @davidwendt
-- Fix value counts expression when the column has nulls (#19524) @Matt711
-- Prefer `Column.astype` over `plc.unary.cast` in the fill null unary function expression (#19479) @Matt711
-- Fix missing return in StringFunction.Strptime strict=True path (#19464) @Matt711
-- Make dividing a boolean column return f64 dtype in cudf-polars (#19443) @Matt711
-- branch-25.10-merge-branch-25.08 (#19429) @davidwendt
-- Replace sprintf with std::format in libcudf parquet tests (#19364) @davidwendt
-
-## 📖 Documentation
-
-- Update missing docs (#19925) @vyasr
-- Add examples of null handling to doxygen for cudf::rank (#19774) @davidwendt
-- Fix cudf-polars dependency list docs (#19750) @pentschev
-- Update cuDF classic testing documention regarding testing organization (#19745) @mroeschke
-- Improve documentation around why we need no_gc_clear on pylibcudf Scalars (#19661) @vyasr
-
-## 🚀 New Features
-
-- Add memory resource parameters to interop, merge, and transpose (#20007) @vyasr
-- Add mixed join benchmark with complex AST operators (#20004) @PointKernel
-- Add memory resource arguments to join, round, and labeling (#20001) @vyasr
-- `cudf-polars` `strptime` format inference (#19997) @brandon-b-miller
-- Filter parquet row groups using byte offset bounds (#19991) @mhaseeb123
-- Add memory resource arguments to concatenate (#19943) @vyasr
-- Use column statistics to generate the physical plan in cuDF-Polars (#19940) @rjzamora
-- Add all missing stream parameters (#19922) @vyasr
-- Remote IO support in cudf-polars (#19921) @Matt711
-- Add streams to io/timezone and io/text modules (#19913) @vyasr
-- Add stream support to all nvtext modules (#19911) @vyasr
-- Add streams to all top-level strings modules (#19910) @vyasr
-- Update strings split APIs with stream parameters (#19909) @vyasr
-- Support ordered grouped windows in cudf-polars (#19891) @Matt711
-- Add local row-count and unique-count estimates to `explain(... logical=True)` (#19864) @rjzamora
-- Add join `*_match_context` APIs to hash join (#19835) @PointKernel
-- Support `rank(...).over(...)` expressions in cudf-polars (#19803) @Matt711
-- Add strings to/from encoded integer APIs (#19789) @davidwendt
-- Add to_arrow method to pylibcudf core types (#19787) @Matt711
-- Add streams to strings convert APIs (#19780) @vyasr
-- Add an option to support reading ORC timestamp column as UTC time. (#19773) @res-life
-- Support null_count in groupby/rolling context (#19739) @Matt711
-- Collect join-key information in cudf-polars (#19736) @rjzamora
-- Add count aggregation support to cudf::reduce (#19734) @davidwendt
-- [FEA] Implement AST Expression - JIT codegen (#19733) @lamarrr
-- Add streams to all scalar factories (#19729) @vyasr
-- Add streams to reshape (#19728) @vyasr
-- Add streams to null mask APIs (#19727) @vyasr
-- Add streams to column APIs (#19726) @vyasr
-- Construct next-gen parquet reader with pre-populated footer (#19724) @mhaseeb123
-- Require `numba-cuda&gt;=0.19.0,&lt;0.20.0a0` (#19711) @brandon-b-miller
-- Support `over` expression (window mapping) in cudf-polars (#19684) @Matt711
-- Add streams support to all list APIs (#19683) @vyasr
-- [FEA] Add Filter Benchmark (#19678) @lamarrr
-- Add streams to pylibcudf join APIs (#19672) @vyasr
-- Add streams to sorting APIs (#19671) @vyasr
-- [FEA] Remove excessive copies of JITIFY&#39;s ProgramData during JIT kernel launch (#19667) @lamarrr
-- Add streams to hashing APIs (#19663) @vyasr
-- Use a more robust metric for sorting (de)compression tasks (#19656) @vuule
-- Add streams support to datetime APIs (#19654) @vyasr
-- Add streams to stream_compaction (#19651) @vyasr
-- Enable casting `pl.Datetime` to integer types in `cudf-polars` (#19647) @brandon-b-miller
-- Add Java JNI interface to get Gpu UUID (#19646) @res-life
-- Add reduction with overflow detection (#19641) @PointKernel
-- Upgrade to nvCOMP 5.0.0.6 (#19636) @vuule
-- Use the nvCOMP 5.0 API to better estimate decompression memory requirements (#19616) @vuule
-- Add streams to transform and unary (#19613) @vyasr
-- Add streams to all modules with 4-5 functions (#19609) @vyasr
-- Enable casting integer dtypes to `pl.Datetime` via `cudf-polars` (#19607) @brandon-b-miller
-- Add fast path for Parquet reading with predicate pushdown via AST filters (#19605) @Matt711
-- Add streams to all modules with three or fewer functions (#19600) @vyasr
-- Add libcudf top_k_segmented APIs (#19597) @davidwendt
-- Update Arrow bounds to &gt;=15,&lt;22 (#19592) @bdice
-- Update cudf to handle CUDA 13 changes (#19585) @robertmaynard
-- Support hash-based workflow for `M2` groupby aggregation (#19569) @ttnghia
-- Expose `filter` and `columns` parquet reader builder options to python (#19566) @Matt711
-- [FEA] Switch to NVIDIA&#39;s JITIFY2 (#19561) @lamarrr
-- Add streams to all single-function modules (#19559) @vyasr
-- Add support for streams to all copying APIs. (#19553) @vyasr
-- Benchmarks comparing Arrow string formats (#19552) @davidwendt
-- Compile `libcudf_kafka` and `cudf_kafka` with C++20 (#19543) @vuule
-- RapidsMPF &quot;single&quot; shuffle integration (#19530) @rjzamora
-- Make nvCOMP ZLIB (de)compression available by default (#19528) @vuule
-- Implement chunking in the next-gen parquet reader (#19526) @mhaseeb123
-- Add primitive row dispatch support for semi/anti join and cudf::contains (#19518) @PointKernel
-- Derive and use page mask at subpass level for chunked reads (#19515) @mhaseeb123
-- [FEA] Implement null-aware transforms and filters (#19502) @lamarrr
-- Add PDS-DS queries 2 through 10 to cudf-polars benchmarks (#19488) @Matt711
-- Add API to &quot;initialize&quot; column statistics (#19447) @rjzamora
-- Implement top k expression in cudf-polars using `cudf::top_k` (#19431) @Matt711
-- Add hash-based SUM_WITH_OVERFLOW aggregation for INT64 values (#19403) @PointKernel
-- Support rank expression in cudf-polars (#19340) @Matt711
-- Support fill_null with fill strategy in cudf-polars (#19318) @Matt711
-- Support output-type for MEDIAN/QUANTILE aggregation in cudf::reduce (#19267) @davidwendt
-- Support ternary expression inside groupby/rolling context (#19242) @Matt711
-- Experimental API to read a parquet table, build a custom index column, and apply roaring bitmap deletion vector (#19237) @mhaseeb123
-- Support `cudf-polars` `str.zfill` (#19081) @brandon-b-miller
-- [FEA] Add chunked Parquet sink support using the libcudf writer (#19015) @Matt711
-- Add multi-column support for primitive row operator dispatch (#18940) @tgujar
-
-## 🛠️ Improvements
-
-- Fix CI failures for `pandas-2.3.3` (#20146) @galipremsagar
-- Skip passing failures for latest `numexpr` version (#20092) @galipremsagar
-- Empty commit to trigger a build (#20084) @msarahan
-- Update the reason to skip for parquet bloom filter test (#20043) @mhaseeb123
-- Remove test_scan_hf_url_raises (#20035) @mroeschke
-- xfail(strict=False) test_scan_hf_url_raises due to rate limiting (#20027) @mroeschke
-- Deprecate left semi- and anti- join functional APIs (#20014) @shrshi
-- Use to_arrow methods throughout pylibcudf and cudf (#20013) @Matt711
-- Fix chunked reads of list of bools. (#20000) @pmattione-nvidia
-- Raise more exceptions for invalid or unsupported cuDF arguments (#19990) @mroeschke
-- Configure repo for automatic release notes generation (#19984) @AyodeAwe
-- Pin duckdb&lt;1.4 in test_python_narwhals (#19982) @mroeschke
-- Default to False if `CUDA_ENABLE_NRT` isn&#39;t set in config (#19981) @brandon-b-miller
-- Remove UCX-Py (#19979) @pentschev
-- Add support for `attrs` (#19978) @galipremsagar
-- Run pytest-benchmarks in CI with --benchmark-disable (#19969) @mroeschke
-- Change target type so we can test on workflows (#19963) @vyasr
-- Update to actions/labeler v5 (#19962) @vyasr
-- Revert &quot;ci(labeler): update labeler action to @v5&quot; (#19961) @vyasr
-- Add `ArrowDtype` proxy class (#19960) @galipremsagar
-- Add missing type stub (#19958) @vyasr
-- Add missing `Styler` attributes (#19956) @galipremsagar
-- Allow newer CMake in Java tests (#19949) @bdice
-- Make stream a required parameter for from_libcudf methods (#19945) @vyasr
-- Return False instead of NA for comparison ops against NA in cudf.pandas (#19942) @mroeschke
-- Don&#39;t fall back in Series.describe in cudf.pandas for numeric types (#19941) @mroeschke
-- Move groupby benchmarks to nvbench (#19930) @davidwendt
-- Perform more input validation in cuDF classic APIs (#19929) @mroeschke
-- update nvidia-ml-py (&gt;=12), use cuda-toolkit wheels (#19927) @jameslamb
-- Fill missing values in `Series/Index.values` for numeric types with np.nan by default (#19923) @mroeschke
-- Add `rmm-release-threshold` to pdsh benchmarks CLI (#19918) @TomAugspurger
-- Also use the CUDA 12 container for nightlies (#19917) @vyasr
-- Move test_binops.py to new cuDF classic directory structure (#19914) @mroeschke
-- Eagerly load nvCOMP library in `cudf::initialize()` (#19906) @vuule
-- Pin to CUDA 12 image for integration tests (#19903) @vyasr
-- Use branch-25.10 again (#19902) @jameslamb
-- Disable test on non-default stream (#19901) @vyasr
-- Use cupy array instead of numba device array as inputs to jit routines (#19897) @mroeschke
-- Remove deprecated `DataFrame.apply_rows`, deprecate `DataFrame.apply_chunks` and `Groupby.apply_grouped` (#19896) @mroeschke
-- Move test_dataframe.py to new cuDF classic directory structure (#19890) @mroeschke
-- Make sure conftest fixture data is valid on exit (#19889) @vyasr
-- Move test_index/multiindex/indexing.py to new cuDF classic directory structure (#19887) @mroeschke
-- [FEA] Build CUDF with CCCL 3.1.0 (#19886) @lamarrr
-- Coalesce IO of chunks with different compression when reading Parquet files (#19884) @vuule
-- Update boost version to 1.79 for JNI dockerfile (#19883) @pxLi
-- Move test_categorical/dask/serialize.py to new cuDF classic test directory structure (#19877) @mroeschke
-- Move prefetching out of experimental and simplify the API (#19875) @vyasr
-- Remove `diff.sh` and merge diff generation into `run.sh` (#19871) @galipremsagar
-- Remove pyarrow upper bound (#19870) @vyasr
-- Prevent installation of pytest-rerunfailures 16.0.0 (#19863) @pentschev
-- use &#39;nvidia-ml-py&#39; package for &#39;pynvml&#39; module (#19862) @jameslamb
-- Avoid more direct construction of cuDF classic columns (#19858) @mroeschke
-- Bump pandas supported version to `2.3.2` (#19856) @galipremsagar
-- Use cupy arrays instead of numba device arrays for cuDF classic intermediates (#19855) @mroeschke
-- Move row operators to detail and deprecate legacy (#19849) @PointKernel
-- Fix flaky DataFrame `to_string` test (#19847) @brandon-b-miller
-- Pin pytest-rerunfailures&lt;16 (#19846) @mroeschke
-- revert numba CUDA 13 workaround (#19842) @jameslamb
-- Avoid CategoricalColumn constructors in cuDF classic (#19837) @mroeschke
-- Construct cuDF classic Decimal32/64Columns from RMM buffers (#19834) @mroeschke
-- Avoid direct construction of cuDF classic columns (#19829) @mroeschke
-- Support input filename in ndsh q01 benchmark (#19820) @davidwendt
-- Run cudf-polars-polars-tests on changes in test_python file group (#19819) @mroeschke
-- Remove test_mvc.py (#19816) @mroeschke
-- pin oldest numpy in dask-cudf tests, update dependency floors (cuda-python 12.9.2, cupy 13.6.0, numba 0.60.0) (#19806) @jameslamb
-- Remove iterative `nan` &amp; `nat` inefficient checks in `as_column` constructor (#19804) @galipremsagar
-- Simplify/consolidate from_arrow logic (#19801) @mroeschke
-- Refactor column_empty to use only pylibcudf APIs (#19800) @mroeschke
-- Use more cached_property where possible for Index and subclasses (#19799) @mroeschke
-- Update rapids-dependency-file-generator (#19796) @KyleFromNVIDIA
-- rearrange dependencies.yaml, other small changes (#19794) @jameslamb
-- Update exception handling in pdsh benchmarks (#19793) @TomAugspurger
-- Fix how nvcomp major version is extracted (#19791) @KyleFromNVIDIA
-- Use KvikIO&#39;s unified interface to create remote I/O endpoints (#19788) @kingcrimsontianyu
-- Add object-oriented APIs for left semi- and anti- join (Part I) (#19778) @shrshi
-- Add nvbench benchmark for cudf::encode API (#19777) @davidwendt
-- Some clarifications, improvements to GroupedRollingWindows in cudf-polars (#19776) @Matt711
-- Remove validation on import (#19775) @vyasr
-- Move more test_dataframe.py tests to new cudf classic testing directory (#19770) @mroeschke
-- Build and test with CUDA 13.0.0 (#19768) @jameslamb
-- Skip polars CPU perf test for with_columns (#19763) @Matt711
-- Optionally capture Shuffle Stats in cudf-polars pdsh benchmarks (#19762) @TomAugspurger
-- Expand compression codec coverage in ORC and Parquet benchmarks (#19760) @vuule
-- Add ``ColumnSourceInfo`` convenience layer (#19752) @rjzamora
-- Support decimal columns in cudf_polars (#19749) @mroeschke
-- Skip third-party tests when possible (#19747) @vyasr
-- Revert &quot;Support decimal columns in cudf_polars&quot; (#19746) @mroeschke
-- Vendor libnvcomp in libcudf (#19743) @bdice
-- Remove outdated numba workarounds (#19738) @bdice
-- Move test_buffer/column/column_accesor/cuda_apply.py to new cudf classic testing directory (#19737) @mroeschke
-- Move more test_dataframe.py tests to new cudf classic testing directory (#19731) @mroeschke
-- Move test_udf_masked_ops/test_dropna to new cudf classic testing directory (#19730) @mroeschke
-- Move test_numerical/{numpy|pandas}_interop/setitem.py to new cudf classic testing directory (#19725) @mroeschke
-- Move test_timedelta/string/sorting/list/datetime.py to new cudf classic directory structure (#19723) @mroeschke
-- Warn on fallback in the streaming tests in cudf-polars (#19721) @Matt711
-- Optionally print shuffle stats in pdsh benchmarks (#19719) @TomAugspurger
-- Move test_{io}.py files to new cudf classic test directory (#19709) @mroeschke
-- Move to pyarrow and numpy to run_constrained (#19706) @vyasr
-- Remove unreachable code in rapidsmpf shuffle (#19704) @TomAugspurger
-- Moves test_options to cudf testing directory, clean up old, stubbed testing files in directory (#19698) @mroeschke
-- Move (most of) test_index.py to new cudf classic directory structure (#19696) @mroeschke
-- Improve `M2`, `VARIANCE` and `STD` hash-based groupby aggregations (#19694) @ttnghia
-- Move quantiles libcudf benchmark to nvbench (#19692) @davidwendt
-- Handle `TIMESTAMP_DAYS` in rolling window offsets (#19689) @Matt711
-- Move test_groupby to new cudf classic directory structure (#19688) @mroeschke
-- Move some of test_dataframe.py to new cudf classic directory structure (#19687) @mroeschke
-- Change nvtext::character_tokenize to return a list column (#19685) @davidwendt
-- Split up rolling.cuh into separate headers (#19682) @davidwendt
-- Move test_factorize/drop_duplicates.py to new cudf classic test directory (#19681) @mroeschke
-- Move test_offset/repr.py to new cudf classic testing directory (#19677) @mroeschke
-- Move test_stats/reductions/quantile and misc to new cudf classic testing directory (#19675) @mroeschke
-- Cache hash values to improve hash-based groupby performance with wide/complex table keys (#19670) @ttnghia
-- Move test_interval/test_dtypes/test_rank.py to new cudf directory structure (#19668) @mroeschke
-- Clean and move test_join_order/interpolate/onehot.py to new cudf classic test directory structure (#19662) @mroeschke
-- Migrate mixed join to use multiset (#19660) @PointKernel
-- Run pylibcudf tests without its optional dependencies (#19657) @vyasr
-- Use build cluster in devcontainers (#19652) @trxcllnt
-- Use rapids_cuda_enable_fatbin_compression (#19650) @robertmaynard
-- Re-enable Disabled Join Tests (#19649) @PointKernel
-- Use public Arrow functions for TDigest in PercentileApproxInputTypesTests (#19648) @davidwendt
-- Use cudaDeviceGetAttribute to get ComputeMode for CUDA13 (#19645) @GaryShen2008
-- remove initial memset of values in parquet reader (#19643) @pmattione-nvidia
-- Move ~half of test_groupby.py to new cudf classic test directory structure (#19640) @mroeschke
-- Move test_csv/feather/json.py to new cudf classic test directory structure (#19639) @mroeschke
-- Move test_array_function/ufunc to new cudf classic test directory structure (#19637) @mroeschke
-- Fix anchor naming conventions in dependencies.yaml (#19635) @KyleFromNVIDIA
-- Require `--scale` for PDS-DS benchmarks (due to nonlinear scaling) (#19631) @Matt711
-- Move test_replace.py to new cudf classic directory structure (#19629) @mroeschke
-- Move test_concat/test_reductions.py to new cudf classic directory structure (#19626) @mroeschke
-- Update rapids_config to handle user defined branch name (#19623) @robertmaynard
-- Add nvtx ranges to public APIs of the experimental parquet reader (#19618) @mhaseeb123
-- Move test_resampling/query/pickling to new cudf classic directory structure (#19615) @mroeschke
-- Move test_reshape.py to new cudf classic directory strucutre, remove reshape._merge_sorted (#19614) @mroeschke
-- Move test_rolling/ewm.py to new cudf classic directory structure (#19611) @mroeschke
-- Simplify cudf::scalar usage in reduce utility (#19608) @davidwendt
-- Update to numba-cuda&gt;=0.18.0,&lt;0.19.0 (#19604) @bdice
-- Update spark-rapdis-jni action to use PR&#39;s base.ref and fix issue of ccache version in dockerfile (#19603) @pxLi
-- Multithreaded CPU algorithm for data page mask computation (#19602) @mhaseeb123
-- Move test_cuda_array_interface/cut/dataframe_copy.py to new cudf classic test directories (#19599) @mroeschke
-- Support decimal columns in cudf_polars (#19589) @mroeschke
-- Preserve decimal precision in `cudf::interop::column_metadata` (#19587) @mroeschke
-- Always use strict zipping (#19584) @vyasr
-- Pin polars version to &lt;1.33 (#19582) @Matt711
-- ci(labeler): update labeler action to @v5 (#19581) @gforsyth
-- Update rapids-build-backend to 0.4.0 (#19580) @KyleFromNVIDIA
-- Move (most of) test_list.py to new cudf classic test directories (#19574) @mroeschke
-- Move test_monotonic.py to new cudf classic test directory structure (#19572) @mroeschke
-- Additional gtests error checks for string/timestamp convert libcudf APIs (#19562) @davidwendt
-- Avoid cudf.pandas fallback for `pandas.array.NumpyExtensionArray` of strings (#19558) @mroeschke
-- Move str accessor tests in test_string.py to new cudf classic test directory structure (#19557) @mroeschke
-- Rework fill/repeat benchmark to use nvbench (#19556) @davidwendt
-- Use no_validity() instead of null_probability(0) in benchmarks profile (#19554) @davidwendt
-- Move (most of) test_timedelta.py and test_struct.py to new cudf classic test directory structure (#19551) @mroeschke
-- Capture commit hashes in pdsh benchmarks (#19548) @TomAugspurger
-- Simplify clang dependency spec (#19546) @vyasr
-- Move timeout in cudf.pandas pandas unit tests script to ci script (#19542) @mroeschke
-- [FEA] Refactor AST `operator_functor`s for use in JIT-compiled CUDA (#19541) @lamarrr
-- Construct cuDF classic columns with __array_interface__ through pylibcudf (#19538) @mroeschke
-- Separate row mask and page mask computation and usage (#19537) @mhaseeb123
-- Get rid of CG logic in the mixed semi-join kernel (#19536) @PointKernel
-- Construct more cuDF classic Columns with pylibcudf instead of using Buffers (#19535) @mroeschke
-- Fix clang-tools version pinning (#19529) @wence-
-- Add cudf_polars unit test for `is_in([])` expr (#19525) @mroeschke
-- Expose `nvtext::letter_type` to python (#19520) @Matt711
-- Remove c++ stringview interop example (#19516) @davidwendt
-- Remove cudf/_fuzz_testing directory (#19510) @mroeschke
-- Add missing import of pyarrow.parquet when reading specified row_groups. (#19509) @bdice
-- Don&#39;t run serial cudf_pandas tests when testing multiple pandas versions (#19507) @mroeschke
-- Clean testing/_utils.py (#19506) @mroeschke
-- Move some test_datetime.py tests to new cudf classic test directory structure (#19505) @mroeschke
-- Move test_joining to new cudf classic test directory structure (#19501) @mroeschke
-- Upgrade `gcc-toolset` for Java/JNI build to version 14 (#19500) @ttnghia
-- Remove deprecated subword-tokenizer APIs (#19498) @davidwendt
-- Move some test_multiindex.py to new cudf classic test directory structure (#19496) @mroeschke
-- Add nvtx ranges and minor fix for `lists` types in the next-gen parquet reader (#19493) @mhaseeb123
-- Move test_search/test_scan/test_seriesmap.py to new cudf classic test directory structure (#19492) @mroeschke
-- Improve support for sliced input on from_arrow_host APIs (#19491) @davidwendt
-- Move test_avro/test_api_types.py and some DataFrame tests to new cudf classic test directory structure (#19490) @mroeschke
-- Move test_series.py to new cudf classic test directory structure (#19485) @mroeschke
-- Move test_testing.py to new cudf classic test directory structure (#19481) @mroeschke
-- Allow latest OS in devcontainers (#19480) @bdice
-- Move test_unaops/test_unique/test_transform.py to new cudf classic test directory structure (#19477) @mroeschke
-- Branch 25.10 merge branch 25.08 (#19475) @davidwendt
-- Use more pytest fixtures and clean data files cuDF classic tests subdirectories (#19474) @mroeschke
-- Use more pytest fixtures and avoid GPU parameterization in test_binops/column/column_accessor/contains.py and more (#19473) @mroeschke
-- Use more pytest fixtures and avoid GPU parameterization in test_csv/cuda_*/cut.py and more (#19463) @mroeschke
-- Improve readability when printing pylibcudf enums (#19451) @Matt711
-- Use more pytest fixtures and avoid GPU parameterization in cuDF classic tests (#19450) @mroeschke
-- Use more pytest fixtures and avoid GPU parameterization in test_dropna/factorize.py and more (#19449) @mroeschke
-- Update build infra to support new branching strategy (#19445) @robertmaynard
-- Updated libcudf-example conda package to preserve directories structure (#19440) @Avinash-Raj
-- Use more pytest fixtures and avoid GPU parameterization in test_groupby/index.py (#19438) @mroeschke
-- Use more pytest fixtures and avoid GPU parameterization in test_indexing/joining/monotonic/multiindex.py (#19437) @mroeschke
-- Use more pytest fixtures and avoid GPU parameterization in cuDF classic tests (#19436) @mroeschke
-- Use more pytest fixtures and avoid GPU parameterization in test_query/rank/reduction/repr.py (#19434) @mroeschke
-- Use more pytest fixtures and avoid GPU parameterization in test_replace/reshape/rolling.py (#19426) @mroeschke
-- Update s3 Bucket fixture creation in test_s3 (#19424) @mroeschke
-- Use more pytest fixtures and avoid GPU parameterization in cuDF classic tests (#19419) @mroeschke
-- Fix various pandas test failures in `cudf.pandas` (#19372) @galipremsagar
-- Pin Narwhals to 1.47 (#19358) @Matt711
-- Run cudf-polars tests with all supported polars versions (#19353) @Matt711
-- Update `pandas-tests-diff` to only display GPU/CPU usage metrics (#19210) @galipremsagar
-- Use GCC 14 in conda builds. (#19192) @vyasr
-- Use KvikIO&#39;s implementation of file-backed memory mapping (#19164) @kingcrimsontianyu
-- Replace `rmm::device_scalar` with `cudf::detail::device_scalar` due to unnecessary synchronization (Part 3 of miss-sync) (#19119) @JigaoLuo
-- Implement distributed sorted for ``cudf_polars`` (#18912) @seberg
-## Project: [lancedb/lance](https://lancedb.github.io/lance/), 15 releases: ['v0.40.0-beta.1', 'v0.39.0', 'v0.38.3', 'v0.38.3-beta.11', 'v0.38.3-beta.10', 'v0.38.3-beta.9', 'v0.38.3-beta.8', 'v0.38.3-beta.7', 'v0.38.3-beta.6', 'v0.38.3-beta.5', 'v0.38.3-beta.4', 'v0.38.3-beta.3', 'v0.38.3-beta.2', 'v0.38.3-beta.1', 'v0.38.2']
+**Full Changelog**: https://github.com/lancedb/lance/compare/release-root/0.40.0-beta.N...v0.40.0-beta.2
 ### Release: lance [v0.40.0-beta.1](https://github.com/lancedb/lance/releases/tag/v0.40.0-beta.1)
 <!-- Release notes generated using configuration in .github/release.yml at v0.40.0-beta.1 -->
 
@@ -1875,46 +1562,87 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 * @dependabot[bot] made their first contribution in https://github.com/lancedb/lance/pull/4954
 
 **Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.3-beta.2...v0.38.3-beta.3
-### Release: lance [v0.38.3-beta.2](https://github.com/lancedb/lance/releases/tag/v0.38.3-beta.2)
-<!-- Release notes generated using configuration in .github/release.yml at v0.38.3-beta.2 -->
+## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 14 releases: ['Node/Rust LanceDB v0.22.3', 'Python LanceDB v0.25.3', 'Node/Rust LanceDB v0.22.3-beta.5', 'Node/Rust LanceDB v0.22.3-beta.4', 'Python LanceDB v0.25.3-beta.5', 'Python LanceDB v0.25.3-beta.4', 'Node/Rust LanceDB v0.22.3-beta.3', 'Python LanceDB v0.25.3-beta.3', 'Node/Rust LanceDB v0.22.3-beta.2', 'Python LanceDB v0.25.3-beta.2', 'Node/Rust LanceDB v0.22.3-beta.1', 'Python LanceDB v0.25.3-beta.1', 'Node/Rust LanceDB v0.22.3-beta.0', 'Python LanceDB v0.25.3-beta.0']
+### Release: lancedb [Node/Rust LanceDB v0.22.3](https://github.com/lancedb/lancedb/releases/tag/v0.22.3)
+## 🎉 New Features
 
-## What's Changed
-### New Features 🎉
-* feat: add multi-path support for lance data paths by @jaystarshot in https://github.com/lancedb/lance/pull/4765
-### Bug Fixes 🐛
-* fix: let Java module use LanceFileVersion::Stable (#4558) by @ColdL in https://github.com/lancedb/lance/pull/4559
-* fix: fts match query on column without inverted index by @wojiaodoubao in https://github.com/lancedb/lance/pull/4859
-* fix: fix broken FTS example by replacing ROW_ID with DOC_ID by @niebayes in https://github.com/lancedb/lance/pull/4917
-* fix: correctly record output_rows in filtered read with hard range_after by @westonpace in https://github.com/lancedb/lance/pull/4919
-* fix: rewrap LanceFilterExec with_new_children by @wkalt in https://github.com/lancedb/lance/pull/4920
-### Documentation 📚
-* docs: add RabitQ in vector index spec by @BubbleCal in https://github.com/lancedb/lance/pull/4913
+- feat(index): add IVF_RQ index type by @BubbleCal in https://github.com/lancedb/lancedb/pull/2687
+- feat: a utility for creating "permutation views" by @westonpace in https://github.com/lancedb/lancedb/pull/2552
+- feat: bump lance to 0.38.3-beta.2 and rust to 1.90.0 by @jackye1995 in https://github.com/lancedb/lancedb/pull/2714
+- feat: add output_schema method to queries by @westonpace in https://github.com/lancedb/lancedb/pull/2717
+- feat: remove dynamodb default dependency by @valkum in https://github.com/lancedb/lancedb/pull/2720
+- feat: expand support for multivector colpali models and enchancements by @AyushExel in https://github.com/lancedb/lancedb/pull/2719
+- feat: using codex to auto upgrade lance by @Xuanwo in https://github.com/lancedb/lancedb/pull/2723
+- feat: add a permutation reader that can read a permutation view by @westonpace in https://github.com/lancedb/lancedb/pull/2712
+- feat: expose storage options in table by @jackye1995 in https://github.com/lancedb/lancedb/pull/2736
+- feat(voyageai): update voyage integration by @fzowl in https://github.com/lancedb/lancedb/pull/2713
+- feat: add fts udtf in sql by @LuQQiu in https://github.com/lancedb/lancedb/pull/2755
+- feat: add `source` to TableNotFound errors by @wjones127 in https://github.com/lancedb/lancedb/pull/2765
+- feat: add python Permutation class to mimic hugging face dataset and provide pytorch dataloader by @westonpace in https://github.com/lancedb/lancedb/pull/2725
 
-## New Contributors
-* @yingjianwu98 made their first contribution in https://github.com/lancedb/lance/pull/4901
-* @niebayes made their first contribution in https://github.com/lancedb/lance/pull/4917
+## 🐛 Bug Fixes
 
-**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.3-beta.1...v0.38.3-beta.2
-### Release: lance [v0.38.3-beta.1](https://github.com/lancedb/lance/releases/tag/v0.38.3-beta.1)
-<!-- Release notes generated using configuration in .github/release.yml at v0.38.3-beta.1 -->
+- fix: relax bytemuck and crunchy version pins by @rm-dr in https://github.com/lancedb/lancedb/pull/2768
 
-## What's Changed
-### New Features 🎉
-* feat: handle forking better by @cmccabe in https://github.com/lancedb/lance/pull/4903
+## 📚 Documentation
+
+- docs: remove DynamoDB commit store section by @ozkatz in https://github.com/lancedb/lancedb/pull/2715
+
+## Other Changes
+
+- chore: update lance dependency to v0.38.3-beta.7 by @github-actions[bot] in https://github.com/lancedb/lancedb/pull/2735
+- chore: update lance dependency to v0.38.3-beta.8 by @github-actions[bot] in https://github.com/lancedb/lancedb/pull/2737
+
+## 🔧 Build and CI
+
+- ci: polish prompt to make codex happy work by @Xuanwo in https://github.com/lancedb/lancedb/pull/2724
+- ci: use robot token instead of github's own token by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2732
+- ci: add instruct for codex to use gh with token by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2734
+- ci: make sure GH_TOKEN included in codex env by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2738
+- ci: polish codex prompt for better behavior by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2739
+- ci: add agents and add reviewing instructions by @wjones127 in https://github.com/lancedb/lancedb/pull/2754
 
 
-**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.2...v0.38.3-beta.1
-### Release: lance [v0.38.2](https://github.com/lancedb/lance/releases/tag/v0.38.2)
-<!-- Release notes generated using configuration in .github/release.yml at v0.38.2 -->
+### Release: lancedb [Python LanceDB v0.25.3](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.3)
+## 🎉 New Features
 
-## What's Changed
-### Bug Fixes 🐛
-* fix: short circuit SQL parsing by @timsaucer in https://github.com/lancedb/lance/pull/4825
-* fix: forward compatibility of FTS index by @jackye1995 in https://github.com/lancedb/lance/pull/4906
+- feat(index): add IVF_RQ index type by @BubbleCal in https://github.com/lancedb/lancedb/pull/2687
+- feat: a utility for creating "permutation views" by @westonpace in https://github.com/lancedb/lancedb/pull/2552
+- feat: bump lance to 0.38.3-beta.2 and rust to 1.90.0 by @jackye1995 in https://github.com/lancedb/lancedb/pull/2714
+- feat: add output_schema method to queries by @westonpace in https://github.com/lancedb/lancedb/pull/2717
+- feat: remove dynamodb default dependency by @valkum in https://github.com/lancedb/lancedb/pull/2720
+- feat: expand support for multivector colpali models and enchancements by @AyushExel in https://github.com/lancedb/lancedb/pull/2719
+- feat: using codex to auto upgrade lance by @Xuanwo in https://github.com/lancedb/lancedb/pull/2723
+- feat: add a permutation reader that can read a permutation view by @westonpace in https://github.com/lancedb/lancedb/pull/2712
+- feat: expose storage options in table by @jackye1995 in https://github.com/lancedb/lancedb/pull/2736
+- feat(voyageai): update voyage integration by @fzowl in https://github.com/lancedb/lancedb/pull/2713
+- feat: add fts udtf in sql by @LuQQiu in https://github.com/lancedb/lancedb/pull/2755
+- feat: add `source` to TableNotFound errors by @wjones127 in https://github.com/lancedb/lancedb/pull/2765
+- feat: add python Permutation class to mimic hugging face dataset and provide pytorch dataloader by @westonpace in https://github.com/lancedb/lancedb/pull/2725
+
+## 🐛 Bug Fixes
+
+- fix: relax bytemuck and crunchy version pins by @rm-dr in https://github.com/lancedb/lancedb/pull/2768
+
+## 📚 Documentation
+
+- docs: remove DynamoDB commit store section by @ozkatz in https://github.com/lancedb/lancedb/pull/2715
+
+## Other Changes
+
+- chore: update lance dependency to v0.38.3-beta.7 by @github-actions[bot] in https://github.com/lancedb/lancedb/pull/2735
+- chore: update lance dependency to v0.38.3-beta.8 by @github-actions[bot] in https://github.com/lancedb/lancedb/pull/2737
+
+## 🔧 Build and CI
+
+- ci: polish prompt to make codex happy work by @Xuanwo in https://github.com/lancedb/lancedb/pull/2724
+- ci: use robot token instead of github's own token by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2732
+- ci: add instruct for codex to use gh with token by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2734
+- ci: make sure GH_TOKEN included in codex env by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2738
+- ci: polish codex prompt for better behavior by @lancedb-robot in https://github.com/lancedb/lancedb/pull/2739
+- ci: add agents and add reviewing instructions by @wjones127 in https://github.com/lancedb/lancedb/pull/2754
 
 
-**Full Changelog**: https://github.com/lancedb/lance/compare/v0.38.1...v0.38.2
-## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 14 releases: ['Node/Rust LanceDB v0.22.3-beta.5', 'Node/Rust LanceDB v0.22.3-beta.4', 'Python LanceDB v0.25.3-beta.5', 'Python LanceDB v0.25.3-beta.4', 'Node/Rust LanceDB v0.22.3-beta.3', 'Python LanceDB v0.25.3-beta.3', 'Node/Rust LanceDB v0.22.3-beta.2', 'Python LanceDB v0.25.3-beta.2', 'Node/Rust LanceDB v0.22.3-beta.1', 'Python LanceDB v0.25.3-beta.1', 'Node/Rust LanceDB v0.22.3-beta.0', 'Python LanceDB v0.25.3-beta.0', 'Node/Rust LanceDB v0.22.2', 'Python LanceDB v0.25.2']
 ### Release: lancedb [Node/Rust LanceDB v0.22.3-beta.5](https://github.com/lancedb/lancedb/releases/tag/v0.22.3-beta.5)
 ## 🎉 New Features
 
@@ -2039,143 +1767,6 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - feat: bump lance to 0.38.3-beta.2 and rust to 1.90.0 by @jackye1995 in https://github.com/lancedb/lancedb/pull/2714
 
 
-### Release: lancedb [Node/Rust LanceDB v0.22.2](https://github.com/lancedb/lancedb/releases/tag/v0.22.2)
-## 🎉 New Features
-
-- feat: add use_index parameter to merge insert operations by @wjones127 in https://github.com/lancedb/lancedb/pull/2674
-- feat(rust): support namespace backed database by @jackye1995 in https://github.com/lancedb/lancedb/pull/2664
-- feat: allow bitmap indexes on large-string, binary, large-binary, and bitmap by @westonpace in https://github.com/lancedb/lancedb/pull/2678
-- feat: add support for test_remote_connections by @cmccabe in https://github.com/lancedb/lancedb/pull/2666
-- feat: upgrade lance to 0.38.2 by @jackye1995 in https://github.com/lancedb/lancedb/pull/2705
-
-## 🐛 Bug Fixes
-
-- fix: use correct nodejs path for ci by @AyushExel in https://github.com/lancedb/lancedb/pull/2689
-- fix: inflated release size due to lance-namespace transitive dependency by @jackye1995 in https://github.com/lancedb/lancedb/pull/2691
-- fix: have CI download from ci-support-binaries by @cmccabe in https://github.com/lancedb/lancedb/pull/2692
-- fix(node): allow undefined/omitted values for nullable vector fields by @naaa760 in https://github.com/lancedb/lancedb/pull/2656
-- fix: use stdlib override when possible by @edrogers in https://github.com/lancedb/lancedb/pull/2699
-- fix: federated database should not pass namesapce to listing database by @jackye1995 in https://github.com/lancedb/lancedb/pull/2702
-- fix(node): support specifying arrow field types by name by @tlamarre91 in https://github.com/lancedb/lancedb/pull/2704
-- fix: add name to index config and fix create_index typing by @wkalt in https://github.com/lancedb/lancedb/pull/2660
-
-## 📚 Documentation
-
-- docs: transition to new docs by @AyushExel in https://github.com/lancedb/lancedb/pull/2681
-- docs: attempt fix doc deployment and remove recipes workflow trigger by @AyushExel in https://github.com/lancedb/lancedb/pull/2688
-- docs: add custom redirect for storage page by @AyushExel in https://github.com/lancedb/lancedb/pull/2706
-
-## 🔧 Build and CI
-
-- ci(nodejs): lint for unused imports by @wjones127 in https://github.com/lancedb/lancedb/pull/2673
-- ci: fix test failure on main by @wjones127 in https://github.com/lancedb/lancedb/pull/2677
-- ci: automatic issue creation for failed publish workflows by @wjones127 in https://github.com/lancedb/lancedb/pull/2694
-- ci: run remote tests on PRs only if they aren't a fork by @wjones127 in https://github.com/lancedb/lancedb/pull/2697
-- ci: fix Python and Node CI on main by @wjones127 in https://github.com/lancedb/lancedb/pull/2700
-
-
-### Release: lancedb [Python LanceDB v0.25.2](https://github.com/lancedb/lancedb/releases/tag/python-v0.25.2)
-## 🎉 New Features
-
-- feat: add use_index parameter to merge insert operations by @wjones127 in https://github.com/lancedb/lancedb/pull/2674
-- feat(rust): support namespace backed database by @jackye1995 in https://github.com/lancedb/lancedb/pull/2664
-- feat: allow bitmap indexes on large-string, binary, large-binary, and bitmap by @westonpace in https://github.com/lancedb/lancedb/pull/2678
-- feat: add support for test_remote_connections by @cmccabe in https://github.com/lancedb/lancedb/pull/2666
-- feat: upgrade lance to 0.38.2 by @jackye1995 in https://github.com/lancedb/lancedb/pull/2705
-
-## 🐛 Bug Fixes
-
-- fix: use correct nodejs path for ci by @AyushExel in https://github.com/lancedb/lancedb/pull/2689
-- fix: inflated release size due to lance-namespace transitive dependency by @jackye1995 in https://github.com/lancedb/lancedb/pull/2691
-- fix: have CI download from ci-support-binaries by @cmccabe in https://github.com/lancedb/lancedb/pull/2692
-- fix(node): allow undefined/omitted values for nullable vector fields by @naaa760 in https://github.com/lancedb/lancedb/pull/2656
-- fix: use stdlib override when possible by @edrogers in https://github.com/lancedb/lancedb/pull/2699
-- fix: federated database should not pass namesapce to listing database by @jackye1995 in https://github.com/lancedb/lancedb/pull/2702
-- fix(node): support specifying arrow field types by name by @tlamarre91 in https://github.com/lancedb/lancedb/pull/2704
-- fix: add name to index config and fix create_index typing by @wkalt in https://github.com/lancedb/lancedb/pull/2660
-
-## 📚 Documentation
-
-- docs: transition to new docs by @AyushExel in https://github.com/lancedb/lancedb/pull/2681
-- docs: attempt fix doc deployment and remove recipes workflow trigger by @AyushExel in https://github.com/lancedb/lancedb/pull/2688
-- docs: add custom redirect for storage page by @AyushExel in https://github.com/lancedb/lancedb/pull/2706
-
-## 🔧 Build and CI
-
-- ci(nodejs): lint for unused imports by @wjones127 in https://github.com/lancedb/lancedb/pull/2673
-- ci: fix test failure on main by @wjones127 in https://github.com/lancedb/lancedb/pull/2677
-- ci: automatic issue creation for failed publish workflows by @wjones127 in https://github.com/lancedb/lancedb/pull/2694
-- ci: run remote tests on PRs only if they aren't a fork by @wjones127 in https://github.com/lancedb/lancedb/pull/2697
-- ci: fix Python and Node CI on main by @wjones127 in https://github.com/lancedb/lancedb/pull/2700
-
-
-## Project: [duckdb/duckdb](https://duckdb.org/), 1 releases: ['v1.4.1 Bugfix Release']
-### Release: duckdb [v1.4.1 Bugfix Release](https://github.com/duckdb/duckdb/releases/tag/v1.4.1)
-This is a bug fix release for various issues discovered after we released 1.4.0. 
-
-## What's Changed
-* Fix attach to right DB when using DuckLake by @pdet in https://github.com/duckdb/duckdb/pull/19011
-* set default value of MAIN_BRANCH_VERSIONING to false by @c-herrewijn in https://github.com/duckdb/duckdb/pull/19014
-* ComplexJSON: parse all valid JSON correctly by @Mytherin in https://github.com/duckdb/duckdb/pull/19024
-* Issue #19016: ICU Offset Parsing by @hawkfish in https://github.com/duckdb/duckdb/pull/19029
-* Throw if we detect a quoted new line with the null padding set in parallel mode by @pdet in https://github.com/duckdb/duckdb/pull/19012
-* Bump iceberg & ducklake by @carlopi in https://github.com/duckdb/duckdb/pull/19037
-* Build Fix: `unordered_map<enum class` is not supported in all compilers, use `map<` instead by @Mytherin in https://github.com/duckdb/duckdb/pull/19046
-* Disable emitting versioned libraries by default by @Mytherin in https://github.com/duckdb/duckdb/pull/19047
-* Re-add aliased settings to duckdb_settings() view, and some fixes for aliased settings by @Mytherin in https://github.com/duckdb/duckdb/pull/19050
-* Fix threading issues in metadata manager, and expand concurrent attach / detach fuzz test by @Mytherin in https://github.com/duckdb/duckdb/pull/19054
-* Correctly re-align all child column segments of the ColumnData on Deserialize, and add logging to checkpoints by @Mytherin in https://github.com/duckdb/duckdb/pull/19055
-* [unittest] Fixes so that '{BASE_TEST_NAME}' can be used within --on-new-connection by @carlopi in https://github.com/duckdb/duckdb/pull/19056
-* add a bunch of expected error messages to old macro tests and fix iss… by @lnkuiper in https://github.com/duckdb/duckdb/pull/19042
-* Always execute cast and try_cast if they are not invertible by @DinosL in https://github.com/duckdb/duckdb/pull/19010
-* Switching core extension upload to dedicated credentials by @hannes in https://github.com/duckdb/duckdb/pull/19061
-* Include BeginQuery in latency metric by @taniabogatsch in https://github.com/duckdb/duckdb/pull/19064
-* [Dev] Bit of code cleanup in (parquet) ColumnWriter by @Tishj in https://github.com/duckdb/duckdb/pull/19063
-* Add config: one_schema_per_test.json by @carlopi in https://github.com/duckdb/duckdb/pull/19059
-* Change bucket name for core extensions by @hannes in https://github.com/duckdb/duckdb/pull/19083
-* Moved test data into testing dir by @NiclasHaderer in https://github.com/duckdb/duckdb/pull/19102
-* Bump httpfs by @carlopi in https://github.com/duckdb/duckdb/pull/19104
-* Fix example syntax in `variant_typeof()` function by @krlmlr in https://github.com/duckdb/duckdb/pull/18977
-* Avoid throwing on unset extension setting by @Mytherin in https://github.com/duckdb/duckdb/pull/19117
-* Fix internal issue 5975 by @lnkuiper in https://github.com/duckdb/duckdb/pull/19101
-* Properly initialize `StringStats` in Parquet reader by @lnkuiper in https://github.com/duckdb/duckdb/pull/19139
-* Remove HTTPFS tests and setup scripts by @Mytherin in https://github.com/duckdb/duckdb/pull/19140
-* Validate JSON in Parquet reader by @lnkuiper in https://github.com/duckdb/duckdb/pull/19143
-* Fix bug in merge into when condition is in parenthesis by @pdet in https://github.com/duckdb/duckdb/pull/19137
-* Allow implicit casts from `JSON[]` to `JSON` again by @lnkuiper in https://github.com/duckdb/duckdb/pull/19141
-* [ci] Change logic for saving caches: Github variable that decides what gets cached by @carlopi in https://github.com/duckdb/duckdb/pull/19150
-* Fix handling of quotes in ToString() of search_path in current_setting by @Mytherin in https://github.com/duckdb/duckdb/pull/19162
-* Delay throwing `NotImplementedException` in `ExpressionBinder` by @lnkuiper in https://github.com/duckdb/duckdb/pull/19153
-* Issue #18303: AsOf NLJ Nulls by @hawkfish in https://github.com/duckdb/duckdb/pull/19173
-* HTTPUtil: response might be null, perform check by @carlopi in https://github.com/duckdb/duckdb/pull/19179
-* Handle malformed schema index in Parquet reader by @Mytherin in https://github.com/duckdb/duckdb/pull/19191
-* ATTACH IF NOT EXISTS: avoid looping waiting for DETACH to finish, wait only for an ATTACH operation to finish by @Mytherin in https://github.com/duckdb/duckdb/pull/19193
-* Implement duckdb_connection_count table function by @taniabogatsch in https://github.com/duckdb/duckdb/pull/19187
-* Disable ALP for non-default block sizes by @taniabogatsch in https://github.com/duckdb/duckdb/pull/19197
-* Check for unresolved parameters when binding `CREATE MACRO ... AS TABLE` by @lnkuiper in https://github.com/duckdb/duckdb/pull/19196
-* https://duckdb-blobs.s3.amazonaws.com -> https://blobs.duckdb.org by @carlopi in https://github.com/duckdb/duckdb/pull/19206
-* [chore] Attempt at restoring workflow for MinGW Static libs  by @carlopi in https://github.com/duckdb/duckdb/pull/19205
-* Simple no default region return 301 response by @Tmonster in https://github.com/duckdb/duckdb/pull/19087
-* [Fix] Correctly reset the gate status during ART merging by @taniabogatsch in https://github.com/duckdb/duckdb/pull/19204
-* build spatial extension for mingw by @c-herrewijn in https://github.com/duckdb/duckdb/pull/19207
-* Fixup templated version of TryGetSecretKeyOrSetting by @carlopi in https://github.com/duckdb/duckdb/pull/19218
-* Bump: delta by @samansmink in https://github.com/duckdb/duckdb/pull/19220
-* Autoloading helper file system: allow either autoloading or proper errors in more file operations by @carlopi in https://github.com/duckdb/duckdb/pull/19198
-* Eargerly destroy sort buffers in Window by @lnkuiper in https://github.com/duckdb/duckdb/pull/19224
-* [Transaction] Delete and drop of a table can now happen in the same transaction without error by @Tishj in https://github.com/duckdb/duckdb/pull/18918
-* PRAGMA's MissingEntry: Suggest CALL might be an option by @carlopi in https://github.com/duckdb/duckdb/pull/18815
-* Bump: aws, ducklake, iceberg by @samansmink in https://github.com/duckdb/duckdb/pull/19228
-* Issue 18603 by @Tmonster in https://github.com/duckdb/duckdb/pull/19227
-* Bump DuckLake to latest of V1.4 by @pdet in https://github.com/duckdb/duckdb/pull/19237
-* Bump mysql and sqlite by @staticlibs in https://github.com/duckdb/duckdb/pull/19240
-* Don't write parquet-native `GEOMETRY` by default, add option to control GeoParquet version by @Maxxen in https://github.com/duckdb/duckdb/pull/19244
-* When executing a relation, generate a query to set if it is not a query relation by @Mytherin in https://github.com/duckdb/duckdb/pull/19234
-* add support for writing geoparquet with v2 metadata too by @Maxxen in https://github.com/duckdb/duckdb/pull/19246
-* Bump: iceberg by @samansmink in https://github.com/duckdb/duckdb/pull/19250
-* Bump: avro, httpfs by @samansmink in https://github.com/duckdb/duckdb/pull/19248
-* bump duckdb-azure ref for 1.4.1 by @benfleis in https://github.com/duckdb/duckdb/pull/19275
-
-**Full Changelog**: https://github.com/duckdb/duckdb/compare/v1.4.0...v1.4.1
 ## Project: [trinodb/trino](https://trino.io/docs/current/release/release-{release}.html), 1 releases: ['Trino 478']
 ### Release: trino [Trino 478](https://github.com/trinodb/trino/releases/tag/478)
 See the [release notes](https://trino.io/docs/current/release/release-478.html) or [download Trino](https://trino.io/download)
