@@ -226,7 +226,7 @@ def main():
         for recent_release in recent_releases:
             release_date, release_name, release_notes, release_url = recent_release
             mkdown += f"### Release: {project_name} [{release_name}]({release_url})\n"
-            mkdown += release_notes
+            mkdown += release_notes or f"ERROR: {recent_release}"
             mkdown += "\n"
 
     with open("newsletter.md", "w+") as f:
