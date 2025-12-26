@@ -19,7 +19,7 @@ def fetch_news_entries():
     news_entries = requests.get(NEWSLETTER_NEWS_md,
                                    headers={"Accept": "application/vnd.github.v3+json",
                                            "Authorization": f"token {GITHUB_API_TOKEN}"}).json()
-    print(news_entries)
+    # print(news_entries)
     download_url = news_entries["download_url"]
     content = requests.get(download_url).text
     
