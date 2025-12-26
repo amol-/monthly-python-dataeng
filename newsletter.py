@@ -51,7 +51,7 @@ def fetch_releases(org, repo):
     github_releases = requests.get(GITHUB_RELEASES_API.format(ORG=org, REPO=repo),
                                    headers={"Accept": "application/vnd.github.v3+json",
                                            "Authorization": f"token {GITHUB_API_TOKEN}"}).json()
-    print("RELEASES FOR", org, repo, ":", github_releases)
+    print("RELEASES FOR", org, repo, ":", len(github_releases))
 
     release_infos = []
     for release in github_releases:
