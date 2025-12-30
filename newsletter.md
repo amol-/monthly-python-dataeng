@@ -6,25 +6,28 @@
  * Project: holoviz/panel has 1 releases
  * Project: holoviz/hvplot has 1 releases
  * Project: holoviz/holoviews has 1 releases
- * Project: pyscript/pyscript has 1 releases
  * Project: cython/cython has 2 releases
- * Project: plotly/dash has 3 releases
+ * Project: plotly/dash has 2 releases
  * Project: dask/dask has 1 releases
  * Project: rapidsai/cudf has 1 releases
- * Project: lancedb/lance has 18 releases
+ * Project: lancedb/lance has 15 releases
  * Project: lancedb/lancedb has 12 releases
- * Project: datafusion-contrib/datafusion-table-providers has 3 releases
+ * Project: datafusion-contrib/datafusion-table-providers has 4 releases
  * Project: duckdb/duckdb has 1 releases
  * Project: trinodb/trino has 1 releases
- * Project: datafusion-contrib/datafusion-table-providers has 3 releases
- * Project: unionai-oss/pandera has 2 releases
+ * Project: datafusion-contrib/datafusion-table-providers has 4 releases
+ * Project: unionai-oss/pandera has 1 releases
  * Project: https://spark.apache.org/news/index.html has 1 releases
+ * Project: https://velox-lib.io/blog/rss.xml has 1 releases
  * Project: https://datafusion.apache.org/blog/feed.xml has 2 releases
 
 
 # Releases for each project
 ## Project: [https://spark.apache.org/news/index.html](https://spark.apache.org/news/index.html), 1 articles
 ### Release: [Spark 4.1.0 released](https://spark.apache.org/news/spark-4-1-0-released.html)
+
+## Project: [Velox Blog](https://velox-lib.io/blog), 1 articles
+### Release: [Why Sort is row-based in Velox — A Quantitative Assessment](https://velox-lib.io/blog/why-row-based-sort)
 
 ## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 2 articles
 ### Release: [Optimizing Repartitions in DataFusion: How I Went From Database Noob to Core Contribution](https://datafusion.apache.org/blog/2025/12/15/avoid-consecutive-repartitions)
@@ -853,22 +856,12 @@ Compatibility:
 
 - Pandas 3.0.0 ([#6749](https://github.com/holoviz/holoviews/pull/6749))
 
-## Project: [pyscript/pyscript](https://pyscript.com/), 1 releases: ['2025.11.2']
-### Release: pyscript [2025.11.2](https://github.com/pyscript/pyscript/releases/tag/2025.11.2)
-* Include a new `unstuck` feature for dealing with web workers stuck in an unresponsive loop (see [the docs](https://pyscript.github.io/polyscript/#the-xworker-reference) for more information).
-* A new `offline.zip` file is added to each release. This is an archive of an offline-first version of PyScript.
-
-<!-- Release notes generated using configuration in .github/release.yml at 2025.11.2 -->
-
-
-
-**Full Changelog**: https://github.com/pyscript/pyscript/compare/2025.11.1...2025.11.2
 ## Project: [cython/cython](https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html), 2 releases: ['3.2.3-1', '3.2.2']
 ### Release: cython [3.2.3-1](https://github.com/cython/cython/releases/tag/3.2.3-1)
 ERROR: (datetime.datetime(2025, 12, 14, 7, 47, 36), '3.2.3-1', None, 'https://github.com/cython/cython/releases/tag/3.2.3-1')
 ### Release: cython [3.2.2](https://github.com/cython/cython/releases/tag/3.2.2)
 ERROR: (datetime.datetime(2025, 11, 30, 11, 29, 9), '3.2.2', None, 'https://github.com/cython/cython/releases/tag/3.2.2')
-## Project: [plotly/dash](https://plotly.com/dash/), 3 releases: ['v4.0.0rc5', 'v4.0.0rc4', 'v4.0.0rc3']
+## Project: [plotly/dash](https://plotly.com/dash/), 2 releases: ['v4.0.0rc5', 'v4.0.0rc4']
 ### Release: dash [v4.0.0rc5](https://github.com/plotly/dash/releases/tag/v4.0.0rc5)
 ## Added
 - New prop in `dcc.Upload` allows users to recursively upload entire folders at once
@@ -878,16 +871,6 @@ ERROR: (datetime.datetime(2025, 11, 30, 11, 29, 9), '3.2.2', None, 'https://gith
 ### Release: dash [v4.0.0rc4](https://github.com/plotly/dash/releases/tag/v4.0.0rc4)
 - New `dcc.Button` component that mirrors `html.Button` but with default styles applied
 - Fix various bugs found in `rc3`
-### Release: dash [v4.0.0rc3](https://github.com/plotly/dash/releases/tag/v4.0.0rc3)
-## Added
-- Modernized `dcc.Tabs`
-- Modernized `dcc.DatePickerSingle` and `dcc.DatePickerRange`
-- DatePicker calendars can now accept translations as an external script, either with Dash's `external_scripts` or from the assets folder. See [documentation](https://date-fns.org/v4.1.0/docs/CDN) for the underlying library that supports this.
-
-## Changed
-- `dcc.Tab` now accepts a `width` prop which can be a pixel or percentage width for an individual tab.
-- `dcc.Tab` can accept other Dash Components for its label, in addition to a simple string.
-
 ## Project: [dask/dask](https://www.dask.org/), 1 releases: ['2025.12.0']
 ### Release: dask [2025.12.0](https://github.com/dask/dask/releases/tag/2025.12.0)
 ## Changes
@@ -1291,7 +1274,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 * @rockhowse made their first contribution in https://github.com/rapidsai/cudf/pull/20598
 
 **Full Changelog**: https://github.com/rapidsai/cudf/compare/v25.12.00a...v25.12.00
-## Project: [lancedb/lance](https://lancedb.github.io/lance/), 18 releases: ['v2.0.0-beta.5', 'v2.0.0-beta.4', 'v1.0.1-rc.1', 'v1.0.1-beta.1', 'v2.0.0-beta.3', 'v2.0.0-beta.2', 'v1.0.0', 'v2.0.0-beta.1', 'v1.0.0-rc.3', 'v1.1.0-beta.2', 'v1.1.0-beta.1', 'v1.0.0-rc.2', 'v1.0.0-rc.1', 'v1.0.0-beta.16', 'v1.0.0-beta.15', 'v1.0.0-beta.14', 'v1.0.0-beta.13', 'v1.0.0-beta.12']
+## Project: [lancedb/lance](https://lancedb.github.io/lance/), 15 releases: ['v2.0.0-beta.5', 'v2.0.0-beta.4', 'v1.0.1-rc.1', 'v1.0.1-beta.1', 'v2.0.0-beta.3', 'v2.0.0-beta.2', 'v1.0.0', 'v2.0.0-beta.1', 'v1.0.0-rc.3', 'v1.1.0-beta.2', 'v1.1.0-beta.1', 'v1.0.0-rc.2', 'v1.0.0-rc.1', 'v1.0.0-beta.16', 'v1.0.0-beta.15']
 ### Release: lance [v2.0.0-beta.5](https://github.com/lance-format/lance/releases/tag/v2.0.0-beta.5)
 <!-- Release notes generated using configuration in .github/release.yml at v2.0.0-beta.5 -->
 
@@ -2205,243 +2188,6 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 * @fMeow made their first contribution in https://github.com/lance-format/lance/pull/5371
 
 **Full Changelog**: https://github.com/lance-format/lance/compare/release-root/1.0.0-beta.N...v1.0.0-beta.15
-### Release: lance [v1.0.0-beta.14](https://github.com/lance-format/lance/releases/tag/v1.0.0-beta.14)
-<!-- Release notes generated using configuration in .github/release.yml at v1.0.0-beta.14 -->
-
-## What's Changed
-### Breaking Changes 🛠
-* perf!: dynamic pruning for vector search by @BubbleCal in https://github.com/lance-format/lance/pull/4773
-* feat!: remove unnecessary mut of dataset::sql by @ddupg in https://github.com/lance-format/lance/pull/5207
-* refactor!: move all previous code into `previous` mod by @Xuanwo in https://github.com/lance-format/lance/pull/5217
-* refactor!: deprecate TFRecord support by @jackye1995 in https://github.com/lance-format/lance/pull/4593
-* refactor!: use org.lance namespace for java package by @jackye1995 in https://github.com/lance-format/lance/pull/5339
-### Critical Fixes ‼️
-* fix: convert some panics into errors by @wjones127 in https://github.com/lance-format/lance/pull/5258
-### New Features 🎉
-* feat: provide inline_transaction model for IO optimizing by @majin1102 in https://github.com/lance-format/lance/pull/4774
-* feat(python): add support for HuggingFace IterableDataset by @changhiskhan in https://github.com/lance-format/lance/pull/2599
-* feat: add public accessors for count plan construction by @wkalt in https://github.com/lance-format/lance/pull/5103
-* feat: add adapter for REST namespace with manifest namespace backend by @jackye1995 in https://github.com/lance-format/lance/pull/4984
-* feat: add blob compaction support by @Xuanwo in https://github.com/lance-format/lance/pull/5189
-* feat: add inline optimization for dir namespace by @jackye1995 in https://github.com/lance-format/lance/pull/5244
-* feat: conflict resolution for DataReplacement by @wjones127 in https://github.com/lance-format/lance/pull/3631
-* feat: support namespace vended credentials for write by @jackye1995 in https://github.com/lance-format/lance/pull/5161
-* docs: correct the comment in util.py by @shiyajuan123 in https://github.com/lance-format/lance/pull/5252
-* feat: introduce community governance by @jackye1995 in https://github.com/lance-format/lance/pull/5262
-* feat: add describe_indices function by @westonpace in https://github.com/lance-format/lance/pull/5221
-* feat: add target_bases extension to python write_fragments API by @jaystarshot in https://github.com/lance-format/lance/pull/5234
-* feat: support credentials vending for file reader and session by @jackye1995 in https://github.com/lance-format/lance/pull/5256
-* feat: introduce blob arrow extension type by @Xuanwo in https://github.com/lance-format/lance/pull/5239
-* feat(java): add binding for rest and dir namespaces by @jackye1995 in https://github.com/lance-format/lance/pull/5292
-* feat: expose file upload and download in Lance file session by @jackye1995 in https://github.com/lance-format/lance/pull/5336
-* feat(java): support credential vending at write time by @jackye1995 in https://github.com/lance-format/lance/pull/5309
-* feat(ds-sql-api): support JSON bulit in functions in ds.sql API by @zhangyue19921010 in https://github.com/lance-format/lance/pull/5350
-* feat: support GEO types by @ddupg in https://github.com/lance-format/lance/pull/4678
-* feat(python): expose DatasetDeltaBuilder and relevant apis by @yanghua in https://github.com/lance-format/lance/pull/5091
-* feat: return Unprocessable error while expected error happened by @Xuanwo in https://github.com/lance-format/lance/pull/5347
-* feat: add huggingface native support by @Xuanwo in https://github.com/lance-format/lance/pull/5353
-### Bug Fixes 🐛
-* fix: ensure recheck for IsNotNull in bloom filter by @Xuanwo in https://github.com/lance-format/lance/pull/5192
-* fix: contributing URL gives 404 by @prrao87 in https://github.com/lance-format/lance/pull/5196
-* fix: merge struct array use wrong child values by @wojiaodoubao in https://github.com/lance-format/lance/pull/5106
-* fix: avoid unnecessary get_fragments calling during plan compaction by @zhangyue19921010 in https://github.com/lance-format/lance/pull/5179
-* fix: split partition may be assigned to itself by @BubbleCal in https://github.com/lance-format/lance/pull/5190
-* fix: improve schema validation for nullability and subschemas by @fenfeng9 in https://github.com/lance-format/lance/pull/4994
-* fix: compile error in test_inline_transaction by @wojiaodoubao in https://github.com/lance-format/lance/pull/5206
-* docs: fix batch udf with checkpoint document error by @fangyinc in https://github.com/lance-format/lance/pull/5185
-* fix: memory-limited string BTREE index building by @wjones127 in https://github.com/lance-format/lance/pull/5175
-* fix: home page code snippets cuasing various problems by @jackye1995 in https://github.com/lance-format/lance/pull/5245
-* fix: panic if only one partition and split is triggered by @BubbleCal in https://github.com/lance-format/lance/pull/5241
-* fix: clearer error in dataset take by @wkalt in https://github.com/lance-format/lance/pull/5243
-* fix: docs and comment have broken links by @prrao87 in https://github.com/lance-format/lance/pull/5261
-* fix: handle logical rows deletion properly for zonemap and bloomfilter by @HaochengLIU in https://github.com/lance-format/lance/pull/5140
-* fix: blob version should be passed in Projection by @Xuanwo in https://github.com/lance-format/lance/pull/5295
-* docs: fix broken links and 404s by @prrao87 in https://github.com/lance-format/lance/pull/5284
-* fix: index overestimates the posting list size by @BubbleCal in https://github.com/lance-format/lance/pull/5327
-* fix: update CachedFileMetadata version API to V2.0 by @zhangyue19921010 in https://github.com/lance-format/lance/pull/5330
-* fix: correctly handle OSS commit protocol to prevent data loss by @Pmathsun in https://github.com/lance-format/lance/pull/5332
-* fix: update btree index with its own zone size instead of DEFAULT_BTR… by @ztorchan in https://github.com/lance-format/lance/pull/5301
-* fix: join job may cause inconsistent delta indices by @BubbleCal in https://github.com/lance-format/lance/pull/5328
-* fix: panicException when calling compaction by @yanghua in https://github.com/lance-format/lance/pull/5282
-### Documentation 📚
-* docs: introduce lance as a lakehouse format by @jackye1995 in https://github.com/lance-format/lance/pull/5209
-* docs: update readme with latest lakehouse format info by @jackye1995 in https://github.com/lance-format/lance/pull/5216
-* docs: capitalization change by @timsaucer in https://github.com/lance-format/lance/pull/5269
-* docs: build project specific guidelines into web doc by @jackye1995 in https://github.com/lance-format/lance/pull/5324
-### Performance Improvements 🚀
-* perf: speed up filtered scan by up to 18.9× by moving the heavy CPU task out by @Xuanwo in https://github.com/lance-format/lance/pull/5165
-* perf: parallelize split job assigning by @BubbleCal in https://github.com/lance-format/lance/pull/5265
-* perf: use CPU pool to run WAND algo by @BubbleCal in https://github.com/lance-format/lance/pull/5363
-### Other Changes
-* refactor: move blob version as a table level config by @Xuanwo in https://github.com/lance-format/lance/pull/5220
-* refactor: add helper functions to delta.rs tests by @yanghua in https://github.com/lance-format/lance/pull/5298
-* refactor: move LanceNamespace interface to pylance and java lance-core by @jackye1995 in https://github.com/lance-format/lance/pull/5345
-* refactor: allow datafiles to contain columns without field id by @Xuanwo in https://github.com/lance-format/lance/pull/5348
-* refactor: rename RowIdSelection to RowAddrSelection by @yanghua in https://github.com/lance-format/lance/pull/5263
-* refactor: separate out python and java LanceNamespace interface by @jackye1995 in https://github.com/lance-format/lance/pull/5364
-
-## New Contributors
-* @prrao87 made their first contribution in https://github.com/lance-format/lance/pull/5196
-* @fenfeng9 made their first contribution in https://github.com/lance-format/lance/pull/4994
-* @fangyinc made their first contribution in https://github.com/lance-format/lance/pull/5185
-* @shiyajuan123 made their first contribution in https://github.com/lance-format/lance/pull/5252
-* @Pmathsun made their first contribution in https://github.com/lance-format/lance/pull/5332
-* @ztorchan made their first contribution in https://github.com/lance-format/lance/pull/5301
-
-**Full Changelog**: https://github.com/lance-format/lance/compare/release-root/1.0.0-beta.N...v1.0.0-beta.14
-### Release: lance [v1.0.0-beta.13](https://github.com/lance-format/lance/releases/tag/v1.0.0-beta.13)
-<!-- Release notes generated using configuration in .github/release.yml at v1.0.0-beta.13 -->
-
-## What's Changed
-### Breaking Changes 🛠
-* perf!: dynamic pruning for vector search by @BubbleCal in https://github.com/lance-format/lance/pull/4773
-* feat!: remove unnecessary mut of dataset::sql by @ddupg in https://github.com/lance-format/lance/pull/5207
-* refactor!: move all previous code into `previous` mod by @Xuanwo in https://github.com/lance-format/lance/pull/5217
-* refactor!: deprecate TFRecord support by @jackye1995 in https://github.com/lance-format/lance/pull/4593
-* refactor!: use org.lance namespace for java package by @jackye1995 in https://github.com/lance-format/lance/pull/5339
-### Critical Fixes ‼️
-* fix: convert some panics into errors by @wjones127 in https://github.com/lance-format/lance/pull/5258
-### New Features 🎉
-* feat: provide inline_transaction model for IO optimizing by @majin1102 in https://github.com/lance-format/lance/pull/4774
-* feat(python): add support for HuggingFace IterableDataset by @changhiskhan in https://github.com/lance-format/lance/pull/2599
-* feat: add public accessors for count plan construction by @wkalt in https://github.com/lance-format/lance/pull/5103
-* feat: add adapter for REST namespace with manifest namespace backend by @jackye1995 in https://github.com/lance-format/lance/pull/4984
-* feat: add blob compaction support by @Xuanwo in https://github.com/lance-format/lance/pull/5189
-* feat: add inline optimization for dir namespace by @jackye1995 in https://github.com/lance-format/lance/pull/5244
-* feat: conflict resolution for DataReplacement by @wjones127 in https://github.com/lance-format/lance/pull/3631
-* feat: support namespace vended credentials for write by @jackye1995 in https://github.com/lance-format/lance/pull/5161
-* docs: correct the comment in util.py by @shiyajuan123 in https://github.com/lance-format/lance/pull/5252
-* feat: introduce community governance by @jackye1995 in https://github.com/lance-format/lance/pull/5262
-* feat: add describe_indices function by @westonpace in https://github.com/lance-format/lance/pull/5221
-* feat: add target_bases extension to python write_fragments API by @jaystarshot in https://github.com/lance-format/lance/pull/5234
-* feat: support credentials vending for file reader and session by @jackye1995 in https://github.com/lance-format/lance/pull/5256
-* feat: introduce blob arrow extension type by @Xuanwo in https://github.com/lance-format/lance/pull/5239
-* feat(java): add binding for rest and dir namespaces by @jackye1995 in https://github.com/lance-format/lance/pull/5292
-* feat: expose file upload and download in Lance file session by @jackye1995 in https://github.com/lance-format/lance/pull/5336
-* feat(java): support credential vending at write time by @jackye1995 in https://github.com/lance-format/lance/pull/5309
-* feat(ds-sql-api): support JSON bulit in functions in ds.sql API by @zhangyue19921010 in https://github.com/lance-format/lance/pull/5350
-* feat: support GEO types by @ddupg in https://github.com/lance-format/lance/pull/4678
-* feat(python): expose DatasetDeltaBuilder and relevant apis by @yanghua in https://github.com/lance-format/lance/pull/5091
-### Bug Fixes 🐛
-* fix: ensure recheck for IsNotNull in bloom filter by @Xuanwo in https://github.com/lance-format/lance/pull/5192
-* fix: contributing URL gives 404 by @prrao87 in https://github.com/lance-format/lance/pull/5196
-* fix: merge struct array use wrong child values by @wojiaodoubao in https://github.com/lance-format/lance/pull/5106
-* fix: avoid unnecessary get_fragments calling during plan compaction by @zhangyue19921010 in https://github.com/lance-format/lance/pull/5179
-* fix: split partition may be assigned to itself by @BubbleCal in https://github.com/lance-format/lance/pull/5190
-* fix: improve schema validation for nullability and subschemas by @fenfeng9 in https://github.com/lance-format/lance/pull/4994
-* fix: compile error in test_inline_transaction by @wojiaodoubao in https://github.com/lance-format/lance/pull/5206
-* docs: fix batch udf with checkpoint document error by @fangyinc in https://github.com/lance-format/lance/pull/5185
-* fix: memory-limited string BTREE index building by @wjones127 in https://github.com/lance-format/lance/pull/5175
-* fix: home page code snippets cuasing various problems by @jackye1995 in https://github.com/lance-format/lance/pull/5245
-* fix: panic if only one partition and split is triggered by @BubbleCal in https://github.com/lance-format/lance/pull/5241
-* fix: clearer error in dataset take by @wkalt in https://github.com/lance-format/lance/pull/5243
-* fix: docs and comment have broken links by @prrao87 in https://github.com/lance-format/lance/pull/5261
-* fix: handle logical rows deletion properly for zonemap and bloomfilter by @HaochengLIU in https://github.com/lance-format/lance/pull/5140
-* fix: blob version should be passed in Projection by @Xuanwo in https://github.com/lance-format/lance/pull/5295
-* docs: fix broken links and 404s by @prrao87 in https://github.com/lance-format/lance/pull/5284
-* fix: index overestimates the posting list size by @BubbleCal in https://github.com/lance-format/lance/pull/5327
-* fix: update CachedFileMetadata version API to V2.0 by @zhangyue19921010 in https://github.com/lance-format/lance/pull/5330
-* fix: correctly handle OSS commit protocol to prevent data loss by @Pmathsun in https://github.com/lance-format/lance/pull/5332
-* fix: update btree index with its own zone size instead of DEFAULT_BTR… by @ztorchan in https://github.com/lance-format/lance/pull/5301
-* fix: join job may cause inconsistent delta indices by @BubbleCal in https://github.com/lance-format/lance/pull/5328
-* fix: panicException when calling compaction by @yanghua in https://github.com/lance-format/lance/pull/5282
-### Documentation 📚
-* docs: introduce lance as a lakehouse format by @jackye1995 in https://github.com/lance-format/lance/pull/5209
-* docs: update readme with latest lakehouse format info by @jackye1995 in https://github.com/lance-format/lance/pull/5216
-* docs: capitalization change by @timsaucer in https://github.com/lance-format/lance/pull/5269
-* docs: build project specific guidelines into web doc by @jackye1995 in https://github.com/lance-format/lance/pull/5324
-### Performance Improvements 🚀
-* perf: speed up filtered scan by up to 18.9× by moving the heavy CPU task out by @Xuanwo in https://github.com/lance-format/lance/pull/5165
-* perf: parallelize split job assigning by @BubbleCal in https://github.com/lance-format/lance/pull/5265
-### Other Changes
-* refactor: move blob version as a table level config by @Xuanwo in https://github.com/lance-format/lance/pull/5220
-* refactor: add helper functions to delta.rs tests by @yanghua in https://github.com/lance-format/lance/pull/5298
-* refactor: move LanceNamespace interface to pylance and java lance-core by @jackye1995 in https://github.com/lance-format/lance/pull/5345
-* refactor: allow datafiles to contain columns without field id by @Xuanwo in https://github.com/lance-format/lance/pull/5348
-
-## New Contributors
-* @prrao87 made their first contribution in https://github.com/lance-format/lance/pull/5196
-* @fenfeng9 made their first contribution in https://github.com/lance-format/lance/pull/4994
-* @fangyinc made their first contribution in https://github.com/lance-format/lance/pull/5185
-* @shiyajuan123 made their first contribution in https://github.com/lance-format/lance/pull/5252
-* @Pmathsun made their first contribution in https://github.com/lance-format/lance/pull/5332
-* @ztorchan made their first contribution in https://github.com/lance-format/lance/pull/5301
-
-**Full Changelog**: https://github.com/lance-format/lance/compare/release-root/1.0.0-beta.N...v1.0.0-beta.13
-### Release: lance [v1.0.0-beta.12](https://github.com/lance-format/lance/releases/tag/v1.0.0-beta.12)
-<!-- Release notes generated using configuration in .github/release.yml at v1.0.0-beta.12 -->
-
-## What's Changed
-### Breaking Changes 🛠
-* perf!: dynamic pruning for vector search by @BubbleCal in https://github.com/lance-format/lance/pull/4773
-* feat!: remove unnecessary mut of dataset::sql by @ddupg in https://github.com/lance-format/lance/pull/5207
-* refactor!: move all previous code into `previous` mod by @Xuanwo in https://github.com/lance-format/lance/pull/5217
-* refactor!: deprecate TFRecord support by @jackye1995 in https://github.com/lance-format/lance/pull/4593
-* refactor!: use org.lance namespace for java package by @jackye1995 in https://github.com/lance-format/lance/pull/5339
-### Critical Fixes ‼️
-* fix: convert some panics into errors by @wjones127 in https://github.com/lance-format/lance/pull/5258
-### New Features 🎉
-* feat: provide inline_transaction model for IO optimizing by @majin1102 in https://github.com/lance-format/lance/pull/4774
-* feat(python): add support for HuggingFace IterableDataset by @changhiskhan in https://github.com/lance-format/lance/pull/2599
-* feat: add public accessors for count plan construction by @wkalt in https://github.com/lance-format/lance/pull/5103
-* feat: add adapter for REST namespace with manifest namespace backend by @jackye1995 in https://github.com/lance-format/lance/pull/4984
-* feat: add blob compaction support by @Xuanwo in https://github.com/lance-format/lance/pull/5189
-* feat: add inline optimization for dir namespace by @jackye1995 in https://github.com/lance-format/lance/pull/5244
-* feat: conflict resolution for DataReplacement by @wjones127 in https://github.com/lance-format/lance/pull/3631
-* feat: support namespace vended credentials for write by @jackye1995 in https://github.com/lance-format/lance/pull/5161
-* docs: correct the comment in util.py by @shiyajuan123 in https://github.com/lance-format/lance/pull/5252
-* feat: introduce community governance by @jackye1995 in https://github.com/lance-format/lance/pull/5262
-* feat: add describe_indices function by @westonpace in https://github.com/lance-format/lance/pull/5221
-* feat: add target_bases extension to python write_fragments API by @jaystarshot in https://github.com/lance-format/lance/pull/5234
-* feat: support credentials vending for file reader and session by @jackye1995 in https://github.com/lance-format/lance/pull/5256
-* feat: introduce blob arrow extension type by @Xuanwo in https://github.com/lance-format/lance/pull/5239
-* feat(java): add binding for rest and dir namespaces by @jackye1995 in https://github.com/lance-format/lance/pull/5292
-* feat: expose file upload and download in Lance file session by @jackye1995 in https://github.com/lance-format/lance/pull/5336
-* feat(java): support credential vending at write time by @jackye1995 in https://github.com/lance-format/lance/pull/5309
-### Bug Fixes 🐛
-* fix: ensure recheck for IsNotNull in bloom filter by @Xuanwo in https://github.com/lance-format/lance/pull/5192
-* fix: contributing URL gives 404 by @prrao87 in https://github.com/lance-format/lance/pull/5196
-* fix: merge struct array use wrong child values by @wojiaodoubao in https://github.com/lance-format/lance/pull/5106
-* fix: avoid unnecessary get_fragments calling during plan compaction by @zhangyue19921010 in https://github.com/lance-format/lance/pull/5179
-* fix: split partition may be assigned to itself by @BubbleCal in https://github.com/lance-format/lance/pull/5190
-* fix: improve schema validation for nullability and subschemas by @fenfeng9 in https://github.com/lance-format/lance/pull/4994
-* fix: compile error in test_inline_transaction by @wojiaodoubao in https://github.com/lance-format/lance/pull/5206
-* docs: fix batch udf with checkpoint document error by @fangyinc in https://github.com/lance-format/lance/pull/5185
-* fix: memory-limited string BTREE index building by @wjones127 in https://github.com/lance-format/lance/pull/5175
-* fix: home page code snippets cuasing various problems by @jackye1995 in https://github.com/lance-format/lance/pull/5245
-* fix: panic if only one partition and split is triggered by @BubbleCal in https://github.com/lance-format/lance/pull/5241
-* fix: clearer error in dataset take by @wkalt in https://github.com/lance-format/lance/pull/5243
-* fix: docs and comment have broken links by @prrao87 in https://github.com/lance-format/lance/pull/5261
-* fix: handle logical rows deletion properly for zonemap and bloomfilter by @HaochengLIU in https://github.com/lance-format/lance/pull/5140
-* fix: blob version should be passed in Projection by @Xuanwo in https://github.com/lance-format/lance/pull/5295
-* docs: fix broken links and 404s by @prrao87 in https://github.com/lance-format/lance/pull/5284
-* fix: index overestimates the posting list size by @BubbleCal in https://github.com/lance-format/lance/pull/5327
-* fix: update CachedFileMetadata version API to V2.0 by @zhangyue19921010 in https://github.com/lance-format/lance/pull/5330
-* fix: correctly handle OSS commit protocol to prevent data loss by @Pmathsun in https://github.com/lance-format/lance/pull/5332
-* fix: update btree index with its own zone size instead of DEFAULT_BTR… by @ztorchan in https://github.com/lance-format/lance/pull/5301
-* fix: join job may cause inconsistent delta indices by @BubbleCal in https://github.com/lance-format/lance/pull/5328
-### Documentation 📚
-* docs: introduce lance as a lakehouse format by @jackye1995 in https://github.com/lance-format/lance/pull/5209
-* docs: update readme with latest lakehouse format info by @jackye1995 in https://github.com/lance-format/lance/pull/5216
-* docs: capitalization change by @timsaucer in https://github.com/lance-format/lance/pull/5269
-* docs: build project specific guidelines into web doc by @jackye1995 in https://github.com/lance-format/lance/pull/5324
-### Performance Improvements 🚀
-* perf: speed up filtered scan by up to 18.9× by moving the heavy CPU task out by @Xuanwo in https://github.com/lance-format/lance/pull/5165
-* perf: parallelize split job assigning by @BubbleCal in https://github.com/lance-format/lance/pull/5265
-### Other Changes
-* refactor: move blob version as a table level config by @Xuanwo in https://github.com/lance-format/lance/pull/5220
-* refactor: add helper functions to delta.rs tests by @yanghua in https://github.com/lance-format/lance/pull/5298
-* refactor: move LanceNamespace interface to pylance and java lance-core by @jackye1995 in https://github.com/lance-format/lance/pull/5345
-
-## New Contributors
-* @prrao87 made their first contribution in https://github.com/lance-format/lance/pull/5196
-* @fenfeng9 made their first contribution in https://github.com/lance-format/lance/pull/4994
-* @fangyinc made their first contribution in https://github.com/lance-format/lance/pull/5185
-* @shiyajuan123 made their first contribution in https://github.com/lance-format/lance/pull/5252
-* @Pmathsun made their first contribution in https://github.com/lance-format/lance/pull/5332
-* @ztorchan made their first contribution in https://github.com/lance-format/lance/pull/5301
-
-**Full Changelog**: https://github.com/lance-format/lance/compare/release-root/1.0.0-beta.N...v1.0.0-beta.12
 ## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 12 releases: ['Node/Rust LanceDB v0.23.1-beta.1', 'Node/Rust LanceDB v0.23.1-beta.0', 'Python LanceDB v0.26.1-beta.1', 'Python LanceDB v0.26.1-beta.0', 'Node/Rust LanceDB v0.23.0', 'Python LanceDB v0.26.0', 'Node/Rust LanceDB v0.23.0-beta.1', 'Python LanceDB v0.26.0-beta.1', 'Node/Rust LanceDB v0.23.0-beta.0', 'Python LanceDB v0.26.0-beta.0', 'Node/Rust LanceDB v0.22.4-beta.3', 'Python LanceDB v0.25.4-beta.3']
 ### Release: lancedb [Node/Rust LanceDB v0.23.1-beta.1](https://github.com/lancedb/lancedb/releases/tag/v0.23.1-beta.1)
 ## 🐛 Bug Fixes
@@ -2677,7 +2423,13 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 - ci: migrate macos ci runners by @Xuanwo in https://github.com/lancedb/lancedb/pull/2818
 
 
-## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers?tab=readme-ov-file#datafusion-table-providers), 3 releases: ['v0.9.1', 'v0.9.0', 'v0.8.2']
+## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers?tab=readme-ov-file#datafusion-table-providers), 4 releases: ['v0.9.2', 'v0.9.1', 'v0.9.0', 'v0.8.2']
+### Release: datafusion-table-providers [v0.9.2](https://github.com/datafusion-contrib/datafusion-table-providers/releases/tag/v0.9.2)
+## What's Changed
+* Add write support for Decimal32 and Decimal64 by @nuno-faria in https://github.com/datafusion-contrib/datafusion-table-providers/pull/519
+
+
+**Full Changelog**: https://github.com/datafusion-contrib/datafusion-table-providers/compare/v0.9.1...v0.9.2
 ### Release: datafusion-table-providers [v0.9.1](https://github.com/datafusion-contrib/datafusion-table-providers/releases/tag/v0.9.1)
 ## What's Changed
 * Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/datafusion-contrib/datafusion-table-providers/pull/505
@@ -2794,7 +2546,13 @@ This is a bug fix release for various issues discovered after we released 1.4.2.
 ## Project: [trinodb/trino](https://trino.io/docs/current/release/release-{release}.html), 1 releases: ['Trino 479']
 ### Release: trino [Trino 479](https://github.com/trinodb/trino/releases/tag/479)
 See the [release notes](https://trino.io/docs/current/release/release-479.html) or [download Trino](https://trino.io/download)
-## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers), 3 releases: ['v0.9.1', 'v0.9.0', 'v0.8.2']
+## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers), 4 releases: ['v0.9.2', 'v0.9.1', 'v0.9.0', 'v0.8.2']
+### Release: datafusion-table-providers [v0.9.2](https://github.com/datafusion-contrib/datafusion-table-providers/releases/tag/v0.9.2)
+## What's Changed
+* Add write support for Decimal32 and Decimal64 by @nuno-faria in https://github.com/datafusion-contrib/datafusion-table-providers/pull/519
+
+
+**Full Changelog**: https://github.com/datafusion-contrib/datafusion-table-providers/compare/v0.9.1...v0.9.2
 ### Release: datafusion-table-providers [v0.9.1](https://github.com/datafusion-contrib/datafusion-table-providers/releases/tag/v0.9.1)
 ## What's Changed
 * Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/datafusion-contrib/datafusion-table-providers/pull/505
@@ -2831,7 +2589,7 @@ See the [release notes](https://trino.io/docs/current/release/release-479.html) 
 
 
 **Full Changelog**: https://github.com/datafusion-contrib/datafusion-table-providers/compare/v0.8.1...v0.8.2
-## Project: [unionai-oss/pandera](https://pandera.readthedocs.io/en/stable/index.html), 2 releases: ['Release v0.27.1: bugfix related to numpy==2.4.0', 'v0.27.0: Support Python 3.14']
+## Project: [unionai-oss/pandera](https://pandera.readthedocs.io/en/stable/index.html), 1 releases: ['Release v0.27.1: bugfix related to numpy==2.4.0']
 ### Release: pandera [Release v0.27.1: bugfix related to numpy==2.4.0](https://github.com/unionai-oss/pandera/releases/tag/v0.27.1)
 ## What's Changed
 * enhancement #2122 by @Jarek-Rolski in https://github.com/unionai-oss/pandera/pull/2177
@@ -2840,39 +2598,3 @@ See the [release notes](https://trino.io/docs/current/release/release-479.html) 
 
 
 **Full Changelog**: https://github.com/unionai-oss/pandera/compare/v0.27.0...v0.27.1
-### Release: pandera [v0.27.0: Support Python 3.14](https://github.com/unionai-oss/pandera/releases/tag/v0.27.0)
-## ⭐️ Highlight
-
-Pandera now supports Python 3.14! We also dropped support for Python 3.9
-
-## What's Changed
-* `scipy-stubs` by @jorenham in https://github.com/unionai-oss/pandera/pull/2121
-* bugfix: set `SPARK_LOCAL_IP` to `127.0.0.1` if not set. by @cosmicBboy in https://github.com/unionai-oss/pandera/pull/2123
-* fix: collect `failure_cases` in `check_column_values_are_unique` by @MikeEvansLarah in https://github.com/unionai-oss/pandera/pull/2120
-* Adding import to code example in data_synthesis_strategies.md by @OwenLund in https://github.com/unionai-oss/pandera/pull/2126
-* Pin DuckDB<1.4.0 in dev env due to breaking change by @deepyaman in https://github.com/unionai-oss/pandera/pull/2140
-* fix mypy polars issues by @cosmicBboy in https://github.com/unionai-oss/pandera/pull/2142
-* Add descriptors to DataFrameModel by @lundybernard in https://github.com/unionai-oss/pandera/pull/2136
-* Support nonnullable equivalents for all data types by @deepyaman in https://github.com/unionai-oss/pandera/pull/2146
-* Fix failure case count for Ibis tables and strings by @deepyaman in https://github.com/unionai-oss/pandera/pull/2145
-* Implement `check_nullable` checks for Ibis backend by @deepyaman in https://github.com/unionai-oss/pandera/pull/2149
-* feat: create empty dataframe with index (and multiindex) when present… by @davidkleiven in https://github.com/unionai-oss/pandera/pull/2133
-* Bugfix/1994 Error loading frictionless schema by @Jarek-Rolski in https://github.com/unionai-oss/pandera/pull/2159
-* Do not pass removed `name` argument to `memtable`s by @deepyaman in https://github.com/unionai-oss/pandera/pull/2162
-* Fix: Add enum.Enum serialization support for to_json() by @chris-wright-nl in https://github.com/unionai-oss/pandera/pull/2163
-* Implement `drop_invalid_rows` for the Ibis backend by @deepyaman in https://github.com/unionai-oss/pandera/pull/2151
-* Support Python 3.14 by @glatterf42 in https://github.com/unionai-oss/pandera/pull/2158
-* optimize pandas MultiIndex validation by avoiding materializing level values when possible by @amerberg in https://github.com/unionai-oss/pandera/pull/2118
-* fix: remove pandas.concat signature hook by @kitagry in https://github.com/unionai-oss/pandera/pull/2173
-* add codecov token to ci by @cosmicBboy in https://github.com/unionai-oss/pandera/pull/2175
-* Use Ruff instead of Black, `pyupgrade` and `isort` by @deepyaman in https://github.com/unionai-oss/pandera/pull/2171
-
-## New Contributors
-* @jorenham made their first contribution in https://github.com/unionai-oss/pandera/pull/2121
-* @MikeEvansLarah made their first contribution in https://github.com/unionai-oss/pandera/pull/2120
-* @OwenLund made their first contribution in https://github.com/unionai-oss/pandera/pull/2126
-* @chris-wright-nl made their first contribution in https://github.com/unionai-oss/pandera/pull/2163
-* @glatterf42 made their first contribution in https://github.com/unionai-oss/pandera/pull/2158
-* @kitagry made their first contribution in https://github.com/unionai-oss/pandera/pull/2173
-
-**Full Changelog**: https://github.com/unionai-oss/pandera/compare/v0.26.1...v0.27.0
