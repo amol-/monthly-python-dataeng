@@ -1,7 +1,6 @@
 # Complete List of Projects
- * Project: posit-dev/py-shiny has 1 releases
- * Project: narwhals-dev/narwhals has 1 releases
- * Project: pola-rs/polars has 2 releases
+ * Project: narwhals-dev/narwhals has 2 releases
+ * Project: pola-rs/polars has 1 releases
  * Project: pandas-dev/pandas has 1 releases
  * Project: holoviz/panel has 1 releases
  * Project: holoviz/hvplot has 1 releases
@@ -16,7 +15,7 @@
  * Project: duckdb/duckdb has 1 releases
  * Project: trinodb/trino has 1 releases
  * Project: datafusion-contrib/datafusion-table-providers has 2 releases
- * Project: unionai-oss/pandera has 1 releases
+ * Project: unionai-oss/pandera has 3 releases
  * Project: https://spark.apache.org/news/index.html has 1 releases
  * Project: https://velox-lib.io/blog/rss.xml has 1 releases
  * Project: https://datafusion.apache.org/blog/feed.xml has 1 releases
@@ -32,22 +31,37 @@
 ## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 1 articles
 ### Release: [Optimizing Repartitions in DataFusion: How I Went From Database Noob to Core Contribution](https://datafusion.apache.org/blog/2025/12/15/avoid-consecutive-repartitions)
 
-## Project: [posit-dev/py-shiny](https://shiny.posit.co/py/), 1 releases: ['shiny 1.5.1']
-### Release: py-shiny [shiny 1.5.1](https://github.com/posit-dev/py-shiny/releases/tag/v1.5.1)
-### New features
+## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 2 releases: ['Narwhals v2.15.0', 'Narwhals v2.14.0']
+### Release: narwhals [Narwhals v2.15.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.15.0)
+## Changes
 
-* Added toast notification system with `ui.toast()`, `ui.toast_header()`, `ui.show_toast()`, and `ui.hide_toast()`. Toast notifications are temporary, non-intrusive messages that support multiple semantic types (success, warning, error, etc.), flexible positioning (9 positions: top/middle/bottom × left/center/right), auto-hide with configurable duration, optional headers with icons, and programmatic control. (#2111)
+- test: unxfail sqlframe tests for list functions (#3383)
+- ci: Test fairlearn using pytest marker (#3234)
 
-* Added a new `input_submit_textarea()` input element, which is similar to `input_text_area()`, but includes a submit button to only submit the text changes to the server on click. This is especially useful when the input text change triggers a long-running operation and/or the user wants to type longer-form input and review it before submitting it. (#2099)
+## ✨ Enhancements
 
-### Bug fixes
+- test: unxfail sqlframe for `list.median` (#3387)
+- feat: Add `{Expr,Series}.sin` (#3365)
+- feat: add `list.sort` (#3356)
 
-* Fixed `ui.tooltip()`'s `options` parameter to properly pass Bootstrap tooltip options to the underlying web component. (#2101)
+## 🐞 Bug fixes
 
-* Fixed an issue where `session.bookmark()` would error when non-existent `input` values are read. (#2117)
+- test: Various GPU fixes (#3390)
+- test: separate numpy array for tests (#3385)
+- fix(docs): Keep table filter only in api-completeness page (#3367)
+- ci: Fix `hierarchicalforecast` installation (#3362)
 
-* Revised `accordion()`'s `open` logic to close all panels when an empty list is passed. (#2109)
-## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 1 releases: ['Narwhals v2.14.0']
+## 📖 Documentation
+
+- fix(docs): Keep table filter only in api-completeness page (#3367)
+
+## 🛠️ Other improvements
+
+- chore: Refactor pandas-like pyarrow branching (#3361)
+
+Thank you to all our contributors for making this release possible!
+@FBruzzesi, @MarcoGorelli, @liamholmes31, @raisadz
+
 ### Release: narwhals [Narwhals v2.14.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.14.0)
 ## Changes
 
@@ -78,7 +92,7 @@
 Thank you to all our contributors for making this release possible!
 @FBruzzesi, @MarcoGorelli, @dependabot[bot], @hoxbro, @raisadz, @ym-pett and [dependabot[bot]](https://github.com/apps/dependabot)
 
-## Project: [pola-rs/polars](https://docs.pola.rs/), 2 releases: ['Python Polars 1.36.1', 'Python Polars 1.36.0']
+## Project: [pola-rs/polars](https://docs.pola.rs/), 1 releases: ['Python Polars 1.36.1']
 ### Release: polars [Python Polars 1.36.1](https://github.com/pola-rs/polars/releases/tag/py-1.36.1)
 ## 🚀 Performance improvements
 
@@ -114,316 +128,6 @@ Thank you to all our contributors for making this release possible!
 
 Thank you to all our contributors for making this release possible!
 @AndreaBozzo, @Kevin-Patyk, @alexander-beedie, @dsprenkels, @jamesfricker, @mcrumiller, @nameexhaustion, @orlp and @ritchie46
-
-### Release: polars [Python Polars 1.36.0](https://github.com/pola-rs/polars/releases/tag/py-1.36.0)
-🏆 Highlights
-- Add Extension types (#25322)
-
-## ✨ Enhancements
-
-- Add SQL support for the QUALIFY clause (#25652)
-- Add bin.slice(), bin.head(), and bin.tail() methods (#25647)
-- Add SQL syntax support for CROSS JOIN UNNEST(col) (#25623)
-- Add separate env var to log tracked metrics (#25586)
-- Expose fields for generating physical plan visualization data (#25562)
-- Allow pl.Object in pivot value (#25533)
-- Minor improvement for as_struct repr (#25529)
-- Temporal quantile in rolling context (#25479)
-- Add quantile for missing temporals (#25464)
-- Add strict parameter to pl.concat(how='horizontal') (#25452)
-- Support decimals in search_sorted (#25450)
-- Expose and document pl.Categories (#25443)
-- Use reference to Graph pipes when flushing metrics (#25442)
-- Extend SQL UNNEST support to handle multiple array expressions (#25418)
-- Add SQL support for ROW_NUMBER, RANK, and DENSE_RANK functions (#25409)
-- Allow elementwise Expr.over in aggregation context (#25402)
-- Add SQL support for named WINDOW references (#25400)
-- Add leftmost option to str.replace_many / str.find_many / str.extract_many (#25398)
-- Automatically Parquet dictionary encode floats (#25387)
-- Support unique_counts for all datatypes (#25379)
-- Add maintain_order to Expr.mode (#25377)
-- Allow hash for all List dtypes (#25372)
-- Add empty_as_null and keep_nulls to {Lazy,Data}Frame.explode (#25369)
-- Display function of streaming physical plan map node (#25368)
-- Allow slice on scalar in aggregation context (#25358)
-- Allow implode and aggregation in aggregation context (#25357)
-- Move GraphMetrics into StreamingQuery (#25310)
-- Documentation on Polars Cloud manifests (#25295)
-- Add empty_as_null and keep_nulls flags to Expr.explode (#25289)
-- Allow Expr.unique on List/Array with non-numeric types (#25285)
-- Raise suitable error on non-integer "n" value for clear (#25266)
-- Allow Expr.rolling in aggregation contexts (#25258)
-- Allow bare .row() on a single-row DataFrame, equivalent to .item() on a single-element DataFrame (#25229)
-- Support additional forms of SQL CREATE TABLE statements (#25191)
-- Add support for Float16 dtype (#25185)
-- Support column-positional SQL "UNION" operations (#25183)
-- Add unstable `Schema.to_arrow()` (#25149)
-- Make DSL-hash skippable (#25140)
-- Improve error message on unsupported SQL subquery comparisons (#25135)
-- Support arbitrary expressions in SQL `JOIN` constraints (#25132)
-- Allow arbitrary expressions as the `Expr.rolling` `index_column` (#25117)
-- Set polars/<version> user-agent (#25112)
-- Support `ewm_var/std` in streaming engine (#25109)
-- Rewrite `IR::Scan` to `IR::DataFrameScan` in `expand_datasets` when applicable (#25106)
-- Add ignore_nulls to first / last (#25105)
-- Allow arbitrary Expressions in "subset" parameter of `unique` frame method (#25099)
-- Add `BIT_NOT` support to the SQL interface (#25094)
-- Streaming `{Expr,LazyFrame}.rolling` (#25058)
-- Add LazyFrame.pivot (#25016)
-- Add SQL support for `LEAD` and `LAG` functions (#23956)
-- Add having to group_by context (#23550)
-- Add show methods for DataFrame and LazyFrame (#19634)
-
-## 🚀 Performance improvements
-
-- Set parallelization threshold in `take_unchecked_impl` (#25672)
-- New single file IO sink pipeline enabled for sink_parquet (#25670)
-- Correct overly eager local predicate insertion for unpivot (#25644)
-- New partitioned IO sink pipeline enabled for sink_parquet (#25629)
-- Use strong hash instead of traversal for CSPE equality (#25537)
-- Reduce HuggingFace API calls (#25521)
-- Fix panic in is_between support in streaming Parquet predicate push down (#25476)
-- Faster kernels for rle_lengths (#25448)
-- Mark output of more non-order-maintaining ops as unordered (#25419)
-- Enable predicate expressions on unsigned integers (#25416)
-- Allow detecting plan sortedness in more cases (#25408)
-- Add parquet prefiltering for string regexes (#25381)
-- Fast find start window in group_by_dynamic with large offset (#25376)
-- Use fast path for agg_min/agg_max when nulls present (#25374)
-- Add streaming native LazyFrame.group_by_dynamic (#25342)
-- Fuse positive slice into streaming LazyFrame.rolling (#25338)
-- Mark Expr.reshape((-1,)) as row separable (#25326)
-- Return references from aexpr_to_leaf_names_iter (#25319)
-- Use bitmap instead of Vec<bool> in first/last w. skip_nulls (#25318)
-- Lazy gather for `{forward,backward}_fill` in group-by contexts (#25115)
-- Add streaming sorted Group-By (#25013)
-
-## 🐞 Bug fixes
-
-- Rechunk on nested dtypes in take_unchecked_impl parallel path (#25662)
-- Fix streaming SchemaMismatch panic on list.drop_nulls (#25661)
-- Fix panic on Boolean rolling_sum calculation for list or array eval (#25660)
-- Fix "dtype is unknown" panic in cross joins with literals (#25658)
-- Fix panic edge-case when scanning hive partitioned data (#25656)
-- Fix "unreachable code" panic in UDF dtype inference (#25655)
-- Address potential "batch_size" parameter collision in scan_pyarrow_dataset (#25654)
-- Fix empty format handling (#25638)
-- Improve SQL GROUP BY and ORDER BY expression resolution, handling aliasing edge-cases (#25637)
-- Preserve List inner dtype during chunked take operations (#25634)
-- Fix lifetime for AmortSeries lazy group iterator (#25620)
-- Fix spearman panicking on nulls (#25619)
-- Properly resolve HAVING clause during SQL GROUP BY operations (#25615)
-- Prevent false positives in is_in for large integers (#25608)
-- Differentiate between empty list an no list for unpivot (#25597)
-- Bug in boolean unique_counts (#25587)
-- Hang in multi-chunk DataFrame .rows() (#25582)
-- Correct arr_to_any_value for object arrays (#25581)
-- Have PySeries::new_f16 receive pf16s instead of f32s (#25579)
-- Set Float16 parquet schema type to Float16 (#25578)
-- Fix incorrect .list.eval after slicing operations (#25540)
-- Strict conversion AnyValue to Struct (#25536)
-- Rolling mean/median for temporals (#25512)
-- Add .rolling_rank() support for temporal types and pl.Boolean (#25509)
-- Fix occurence of exact matches of .join_asof(strategy="nearest", allow_exact_matches=False, ...) (#25506)
-- Always respect return_dtype in map_elements and map_rows (#25504)
-- Fix group lengths check in sort_by with AggregatedScalar (#25503)
-- Fix dictionary replacement error in write_ipc() (#25497)
-- Fix expr slice pushdown causing shape error on literals (#25485)
-- Allow empty list in sort_by in list.eval context (#25481)
-- Raise error on out-of-range dates in temporal operations (#25471)
-- Validate list.slice parameters are not lists (#25458)
-- Make sum on strings error in group_by context (#25456)
-- Prevent panic when joining sorted LazyFrame with itself (#25453)
-- Apply CSV dict overrides by name only (#25436)
-- Incorrect result in aggregated first/last with ignore_nulls (#25414)
-- Fix off-by-one bug in `ColumnPredicates` generation for inequalities operating on integer columns (#25412)
-- Use Cargo.template.toml to prevent git dependencies from using template (#25392)
-- Fix arr.{eval,agg} in aggregation context (#25390)
-- Support AggregatedList in list.{eval,agg} context (#25385)
-- Nested dtypes in streaming first_non_null/last_non_null (#25375)
-- Remove Expr casts in pl.lit invocations (#25373)
-- Optimize projection pushdown through HConcat (#25371)
-- Revert pl.format behavior with nulls (#25370)
-- Correct eq_missing for struct with nulls (#25363)
-- Resolve edge-case with SQL aggregates that have the same name as one of the GROUP BY keys (#25362)
-- Unique on literal in aggregation context (#25359)
-- Aggregation with drop_nulls on literal (#25356)
-- SQL NATURAL joins should coalesce the key columns (#25353)
-- Mark {forward,backward}_fill as length_preserving (#25352)
-- Correct drop_items for scalar input (#25351)
-- Schema mismatch with list.agg, unique and scalar (#25348)
-- AnyValue::to_physical for categoricals (#25341)
-- Bugs in pl.from_repr with signed exponential floats and line wrapping (#25331)
-- Remove ClosableFile (#25330)
-- Increase precision when constructing `float` Series (#25323)
-- Fix link errors reported by markdown-link-check (#25314)
-- Parquet is_in for mixed validity pages (#25313)
-- Fix building polars-plan with features lazy,concat_str (but no strings) (#25306)
-- Fix building polars-mem-engine with the async feature (#25300)
-- Nested dtypes in streaming first/last (#25298)
-- Fix length preserving check for eval expressions in streaming engine (#25294)
-- Panic exception when calling Expr.rolling in .over (#25283)
-- Don't quietly allow unsupported SQL SELECT clauses (#25282)
-- Reverse on chunked struct (#25281)
-- Correct {first,last}_non_null if there are empty chunks (#25279)
-- Incorrect results for aggregated {n_,}unique on bools (#25275)
-- Run async DB queries with regular asyncio if not inside a running loop (#25268)
-- Fix small bug with `PyExpr` to `PyObject` conversion (#25265)
-- Fix building polars-expr without timezones feature (#25254)
-- Correctly prune projected columns in hints (#25250)
-- Address multiple issues with SQL OVER clause behaviour for window functions (#25249)
-- Allow Null dtype values in scatter (#25245)
-- Make str.json_decode output deterministic with lists (#25240)
-- Correct handle requested stops in streaming shift (#25239)
-- Use (i64, u64) for VisualizationData (offset, length) slices (#25203)
-- Fix serialization of lazyframes containing huge tables (#25190)
-- Fix single-column CSV header duplication with leading empty lines (#25186)
-- Enhanced column resolution/tracking through multi-way SQL joins (#25181)
-- Fix `format_str` in case of multiple chunks (#25162)
-- Handle some unusual `pl.col.<colname>` edge-cases (#25153)
-- Fix incorrect reshape on sliced lists (#25139)
-- Support "index" as column name in `group_by` iterator (#25138)
-- Fix panic in `dt.truncate` for invalid duration strings (#25124)
-- DSL_SCHEMA_HASH should not changed by line endings (#25123)
-- Don't trigger `DeprecationWarning` from SQL "IN" constraints that use subqueries (#25111)
-- Solve multiple issues relating to arena mutation in SQL subqueries (#25110)
-- Return the correct string-case `Expr` reprs (#25101)
-- Fix `groups` update on slices with different offsets (#25097)
-- Unique key names in streaming sort/top_k (#25082)
-- Fix CSV `select(len())` off by 1 with comment prefix (#25069)
-- Raise error for all/any on list instead of panic (#25018)
-- Ensure out-of-range integers and other edge case values don't give wrong results for index_of() (#24369)
-- Improve SQL UNNEST behaviour (#22546)
-
-## 📖 Documentation
-
-- Document schema parameter in meta methods (#25543)
-- Correct link to datetime_range instead of date_range in resampling page (#25532)
-- Remove lzo from parquet write options (#25522)
-- Deprecate Categorical functions for lexical ordering and local checks (#25514)
-- Update LazyFrame.collect_schema() docstring (#25508)
-- Update on-premise documentation (#25489)
-- Add LazyFrame.pivot to reference guide (#25482)
-- Fix incorrect 'bitwise' in any_horizontal/all_horizontal docstring (#25469)
-- Add docstring example showing str.slice taking Expression params (#25461)
-- Add Extension and BaseExtension to doc index (#25444)
-- Add polars-on-premise documentation (#25431)
-- Add having API references (#25428)
-- Explain aggregation & sorting of lists (#25260)
-- Fix LanceDB URL (#25198)
-- Update user guide for QueryProgress rename to QueryProfile (#25195)
-- Update `LazyFrame.remote` signature (#25175)
-- Fix source path (#25170)
-- Fix non-existent `replace_all` reference in `replace` docs (#25161)
-- Mention Narwhals in ecosystem page (#25100)
-- Clarify bitwise behaviour of `and_`, `or_`, and `not_` Expressions on integer columns (#25092)
-
-## 🧪 Tests
-
-- Add reliable test for `pl.format` on multiple chunks (#25164)
-
-## 🔧 CI
-
-- Avoid relabelling changes-dsl on every commit (#25216)
-- Automatically label pull requests that change the DSL (#25177)
-
-## 🏗️ Build system
-
-- Fix `make fmt` and `make lint` commands (#25200)
-- Make building the docs on macOS more reliable (#25095)
-
-## 🛠️ Other improvements
-
-- Add "panic" and "streaming" tagging to issue-labeler workflow (#25657)
-- Use dtype for group_aware evaluation on ApplyExpr (#25639)
-- Ensure literal-only SELECT broadcast conforms to SQL semantics (#25633)
-- Ensure we hash all attributes and visit all children in traverse_and_hash_aexpr (#25627)
-- Rename polars-on-premise to polars-on-premises (#25617)
-- Constrain new issue-labeler workflow to the Issue title (#25614)
-- Avoid rechunk requirement for Series.iter() (#25603)
-- Help categorise Issues by automatically applying labels (using the same patterns used for labelling PRs) (#25599)
-- Add disk-cleaning step for Ubuntu runners (#25593)
-- Show on streaming engine (#25589)
-- Ignore a couple of unexplained typing errors (#25580)
-- Skip existing files in pypi upload (#25576)
-- Fix template path in release-python workflow (#25565)
-- Add asserts and tests for list.eval on multiple chunks with slicing (#25559)
-- Skip rust integration tests for coverage in CI (#25558)
-- Add Final type-qualifier to module-level constants (#25556)
-- Print expected DSL schema hashes if mismatched (#25526)
-- Update partitioned sink IR (#25524)
-- Fix --uv argument for benchmark-remote (#25513)
-- Add `proptest` `AnyValue` strategies (#25510)
-- Fix rolling kernel dispatch with monotonic group attribute (#25494)
-- Fix feature gating TZ_AWARE_RE again (#25493)
-- Run maturin with --uv option (#25490)
-- Add proptest DataFrame strategy (#25446)
-- Add some cleanup (#25445)
-- Add assert_sql_matches coverage for SQL DISTINCT and DISTINCT ON syntax (#25440)
-- Test for group_by(...).having(...) (#25430)
-- Remove aggregation context Context (#25424)
-- Remove debug file write from test suite (#25393)
-- Remove unused import (#25365)
-- Enable more streaming tests (#25364)
-- Dispatch Series.set to zip_with_same_dtype (#25327)
-- Remove Column::Partitioned (#25324)
-- Add toolchain file to runtimes for sdist (#25311)
-- Fix typo in CI release workflow (#25309)
-- Refactor sink IR (#25308)
-- Directly take CloudScheme in parse_cloud_options() (#25304)
-- Remove PyPartitioning (#25303)
-- Simplify sink parameter passing from Python (#25302)
-- Better coverage for group_by aggregations (#25290)
-- Use dedicated runtime packages from template (#25284)
-- Add test for unique with column subset (#25241)
-- Fix Decimal precision annotation (#25227)
-- Refactor dt_range functions (#25225)
-- Add `proptest` strategies for Series nested types (#25220)
-- Update markdown link checker (#25201)
-- Add ElementExpr for _eval expressions (#25199)
-- Upgraded `ruff` and `typos` and made the necessary lint updates (#25196)
-- Make python docs build again (#25165)
-- Upgrade to schemars 0.9.0 (#25158)
-- Update versions (#25141)
-- Silence unused mut warning (#25093)
-- Add `proptest` strategies for Series logical types (#24849)
-
-## ♻️ Refactoring
-
-- Make polars-plan constants more consistent (#25645)
-- Add support for multi-column reductions (#25640)
-- Simplify _write_any_value (#25622)
-- Add parquet file write pipeline for new IO sinks (#25618)
-- Add streaming IO sink components (#25594)
-- Add `arg_sort()` and `Writeable::as_buffered()` (#25583)
-- Take task priority argument in `parallelize_first_to_local` (#25563)
-- Rename `URL_ENCODE_CHARSET` to `HIVE_ENCODE_CHARSET` (#25554)
-- Remove verbose prints on file opens (#25523)
-- Remove some dead argminmax impl code (#25501)
-- Take `sync` parameter in `Writeable::close()` (#25475)
-- Fix unsoundness in ChunkedArray::{first, last} (#25449)
-- Take `&dyn Any` instead of `Box<dyn Any>` in python object converters (#25421)
-- Accept multiple files in `pipe_with_schema` (#25388)
-- Add oneshot channel to polars-stream (#25378)
-- Remove incorrect cast in reduce code (#25321)
-- Clean up CSPE callsite (#25215)
-- Move ewm variance code to polars-compute (#25188)
-- Make `pipe_with_schema` work on Arced schema (#25155)
-- Remove lower_ir conversion from Scan to InMemorySource (#25150)
-- Add functions for `scan_lines` (#25136)
-- Remove unused `optimization_toggle` (#25130)
-- Support for named/anonymous aggregations (#25118)
-- Remove old join projection pushdown logic (#25088)
-- Remove unused row-count (#25080)
-- Add IR for `scan_lines` (#25066)
-- Add stateful `EwmCov` kernel (#25065)
-- Move `EwmMeanState` to `polars-compute` (#25034)
-- Move asof `tolerance` type coercion to IR conversion (#25033)
-- Move supertype determination and casting to IR for `date_range` and related functions (#24084)
-
-
-Thank you to all our contributors for making this release possible!
-@AndreaBozzo, @DannyStoll1, @EndPositive, @JakubValtar, @Jesse-Bakker, @Kevin-Patyk, @MarcoGorelli, @TNieuwdorp, @Voultapher, @alexander-beedie, @borchero, @c-peters, @cBournhonesque, @camriddell, @carnarez, @cmdlineluser, @coastalwhite, @cr7pt0gr4ph7, @davanstrien, @davidia, @dsprenkels, @etiennebacher, @feliblo, @guilhem-dvr, @itamarst, @jannickj, @jetuk, @kdn36, @lun3x, @marinegor, @mcrumiller, @nameexhaustion, @orlp, @pomo-mondreganto, @ritchie46, @vyasr, @wtn, and more!
 
 ## Project: [pandas-dev/pandas](https://pandas.pydata.org/docs/index.html), 1 releases: ['Pandas 3.0.0rc1']
 ### Release: pandas [Pandas 3.0.0rc1](https://github.com/pandas-dev/pandas/releases/tag/v3.0.0rc1)
@@ -1675,7 +1379,33 @@ See the [release notes](https://trino.io/docs/current/release/release-479.html) 
 
 
 **Full Changelog**: https://github.com/datafusion-contrib/datafusion-table-providers/compare/v0.9.0...v0.9.1
-## Project: [unionai-oss/pandera](https://pandera.readthedocs.io/en/stable/index.html), 1 releases: ['Release v0.27.1: bugfix related to numpy==2.4.0']
+## Project: [unionai-oss/pandera](https://pandera.readthedocs.io/en/stable/index.html), 3 releases: ['v0.28.1: Fix regressions in Check behavior', 'Release 0.28.0: Add support for Pyspark 4', 'Release v0.27.1: bugfix related to numpy==2.4.0']
+### Release: pandera [v0.28.1: Fix regressions in Check behavior](https://github.com/unionai-oss/pandera/releases/tag/v0.28.1)
+## What's Changed
+* fix bugs in Check interface and Field by @cosmicBboy in https://github.com/unionai-oss/pandera/pull/2203
+
+
+**Full Changelog**: https://github.com/unionai-oss/pandera/compare/v0.28.0...v0.28.1
+### Release: pandera [Release 0.28.0: Add support for Pyspark 4](https://github.com/unionai-oss/pandera/releases/tag/v0.28.0)
+## ⭐️ Highlight
+
+Pandera now supports Pyspark 4 🚀
+
+## What's Changed
+* refactor(pyspark): restructure pyspark components by @ELC in https://github.com/unionai-oss/pandera/pull/2007
+* add support for pyspark 4 by @cosmicBboy in https://github.com/unionai-oss/pandera/pull/2193
+* Decouple import dependencies for io serialization formats by @cosmicBboy in https://github.com/unionai-oss/pandera/pull/2195
+* Use `get_annotations` instead of direct `__annotations__` access by @amerberg in https://github.com/unionai-oss/pandera/pull/2196
+* Re-implement improvements to str_length check by @cosmicBboy in https://github.com/unionai-oss/pandera/pull/2198
+* Support the `Decimal` data type in the Ibis engine by @deepyaman in https://github.com/unionai-oss/pandera/pull/2194
+* Update .git-blame-ignore-revs to add Ruff refactor by @deepyaman in https://github.com/unionai-oss/pandera/pull/2199
+* Avoid full materialization of levels in failing MultiIndex validations by @amerberg in https://github.com/unionai-oss/pandera/pull/2187
+* schema descriptor should raise AttributeError if build_schema_ is not implemented by @amerberg in https://github.com/unionai-oss/pandera/pull/2197
+
+## New Contributors
+* @ELC made their first contribution in https://github.com/unionai-oss/pandera/pull/2007
+
+**Full Changelog**: https://github.com/unionai-oss/pandera/compare/v0.27.1...v0.28.0
 ### Release: pandera [Release v0.27.1: bugfix related to numpy==2.4.0](https://github.com/unionai-oss/pandera/releases/tag/v0.27.1)
 ## What's Changed
 * enhancement #2122 by @Jarek-Rolski in https://github.com/unionai-oss/pandera/pull/2177
