@@ -1,18 +1,18 @@
 # Complete List of Projects
- * Project: apache/arrow has 1 releases
+ * Project: apache/arrow has 2 releases
  * Project: substrait-io/substrait-python has 1 releases
- * Project: narwhals-dev/narwhals has 2 releases
+ * Project: narwhals-dev/narwhals has 1 releases
  * Project: pola-rs/polars has 2 releases
- * Project: pandas-dev/pandas has 2 releases
+ * Project: pandas-dev/pandas has 1 releases
  * Project: holoviz/panel has 1 releases
- * Project: holoviz/hvplot has 1 releases
  * Project: cython/cython has 2 releases
- * Project: plotly/dash has 2 releases
+ * Project: plotly/dash has 1 releases
+ * Project: dask/dask has 2 releases
  * Project: delta-io/delta-rs has 4 releases
- * Project: lancedb/lance has 9 releases
- * Project: lancedb/lancedb has 8 releases
- * Project: datafusion-contrib/datafusion-table-providers has 2 releases
- * Project: datafusion-contrib/datafusion-table-providers has 2 releases
+ * Project: lancedb/lance has 8 releases
+ * Project: lancedb/lancedb has 2 releases
+ * Project: datafusion-contrib/datafusion-table-providers has 3 releases
+ * Project: datafusion-contrib/datafusion-table-providers has 3 releases
  * Project: unionai-oss/pandera has 3 releases
  * Project: https://spark.apache.org/news/index.html has 3 releases
  * Project: https://velox-lib.io/blog/rss.xml has 2 releases
@@ -35,7 +35,9 @@
 ## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 1 articles
 ### Release: [Extending SQL in DataFusion: from ->> to TABLESAMPLE](https://datafusion.apache.org/blog/2026/01/12/extending-sql)
 
-## Project: [apache/arrow](https://arrow.apache.org/docs/python/), 1 releases: ['Apache Arrow 23.0.0 RC2']
+## Project: [apache/arrow](https://arrow.apache.org/docs/python/), 2 releases: ['Apache Arrow 23.0.0', 'Apache Arrow 23.0.0 RC2']
+### Release: arrow [Apache Arrow 23.0.0](https://github.com/apache/arrow/releases/tag/apache-arrow-23.0.0)
+Release Notes URL: https://arrow.apache.org/release/23.0.0.html
 ### Release: arrow [Apache Arrow 23.0.0 RC2](https://github.com/apache/arrow/releases/tag/apache-arrow-23.0.0-rc2)
 Release Notes: Release Candidate: 23.0.0 RC2
 ## Project: [substrait-io/substrait-python](https://substrait.io/), 1 releases: ['v0.26.0']
@@ -66,7 +68,7 @@ Release Notes: Release Candidate: 23.0.0 RC2
 * @giospada made their first contribution in https://github.com/substrait-io/substrait-python/pull/127
 
 **Full Changelog**: https://github.com/substrait-io/substrait-python/compare/v0.25.0...v0.26.0
-## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 2 releases: ['Narwhals v2.15.0', 'Narwhals v2.14.0']
+## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 1 releases: ['Narwhals v2.15.0']
 ### Release: narwhals [Narwhals v2.15.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.15.0)
 ## Changes
 
@@ -96,36 +98,6 @@ Release Notes: Release Candidate: 23.0.0 RC2
 
 Thank you to all our contributors for making this release possible!
 @FBruzzesi, @MarcoGorelli, @liamholmes31, @raisadz
-
-### Release: narwhals [Narwhals v2.14.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.14.0)
-## Changes
-
-## ✨ Enhancements
-
-- feat: add list aggregate methods (#3332)
-- feat: Add `{Expr,Series}.any_value` (#3315)
-- enh: Add support for `slice(None)` in series getitem (#3342)
-
-## 🐞 Bug fixes
-
-- test: fix median tests for list.agg methods (#3354)
-- fix: `ArrowSeries.fill_null(strategy=..., limit=...)` and `None` at the "edge"  (#3335)
-
-## 📖 Documentation
-
-- docs: API Completeness overhaul (#3285)
-- docs: updated contributing with test_plugin install (#3345)
-
-## 🛠️ Other improvements
-
-- refactor: making _compliant selectors public (#3346)
-- chore: Add project classifiers in pyproject.toml (#3306)
-- fix: `is_ordered_categorical` doctest (#3348)
-- make CompliantExprNameNamespace public (#3344)
-- ci: Adjust based on polars 1.36 pre-release (#3343)
-
-Thank you to all our contributors for making this release possible!
-@FBruzzesi, @MarcoGorelli, @dependabot[bot], @hoxbro, @raisadz, @ym-pett and [dependabot[bot]](https://github.com/apps/dependabot)
 
 ## Project: [pola-rs/polars](https://docs.pola.rs/), 2 releases: ['Python Polars 1.37.1', 'Python Polars 1.37.0']
 ### Release: polars [Python Polars 1.37.1](https://github.com/pola-rs/polars/releases/tag/py-1.37.1)
@@ -283,11 +255,9 @@ Thank you to all our contributors for making this release possible!
 Thank you to all our contributors for making this release possible!
 @AndreaBozzo, @EndPositive, @Kevin-Patyk, @MarcoGorelli, @Voultapher, @alexander-beedie, @anosrepenilno, @arlyon, @azimafroozeh, @carnarez, @dependabot[bot], @dsprenkels, @edizeqiri, @eitanf, @gab23r, @henryharbeck, @hutch3232, @ion-elgreco, @jqnatividad, @kdn36, @lun3x, @m1guelperez, @mcrumiller, @nameexhaustion, @orlp, @ritchie46, @sachinn854, @yonikremer and [dependabot[bot]](https://github.com/apps/dependabot)
 
-## Project: [pandas-dev/pandas](https://pandas.pydata.org/docs/index.html), 2 releases: ['Pandas 3.0.0rc2', 'Pandas 3.0.0rc1']
+## Project: [pandas-dev/pandas](https://pandas.pydata.org/docs/index.html), 1 releases: ['Pandas 3.0.0rc2']
 ### Release: pandas [Pandas 3.0.0rc2](https://github.com/pandas-dev/pandas/releases/tag/v3.0.0rc2)
 ERROR: (datetime.datetime(2026, 1, 14, 22, 17, 15), 'Pandas 3.0.0rc2', '', 'https://github.com/pandas-dev/pandas/releases/tag/v3.0.0rc2')
-### Release: pandas [Pandas 3.0.0rc1](https://github.com/pandas-dev/pandas/releases/tag/v3.0.0rc1)
-ERROR: (datetime.datetime(2025, 12, 19, 21, 38, 48), 'Pandas 3.0.0rc1', '', 'https://github.com/pandas-dev/pandas/releases/tag/v3.0.0rc1')
 ## Project: [holoviz/panel](https://panel.holoviz.org/), 1 releases: ['Version 1.8.5']
 ### Release: panel [Version 1.8.5](https://github.com/holoviz/panel/releases/tag/v1.8.5)
 This release includes several fixes and enhancements for notebook stability, Tabulator behavior, ESM/ReactiveComponent handling, and Markdown rendering. It also adds documentation updates for FastAPI integration, app conversion guides, and the Panel roadmap.
@@ -312,46 +282,12 @@ This release includes several fixes and enhancements for notebook stability, Tab
 * Use **trusted publisher** setup for NPM release
 * Bump Node.js version used in build
 
-## Project: [holoviz/hvplot](https://hvplot.holoviz.org/), 1 releases: ['Version 0.12.2']
-### Release: hvplot [Version 0.12.2](https://github.com/holoviz/hvplot/releases/tag/v0.12.2)
-
-The 0.12.2 release is a patch release that brings a few bugfixes and enhancements. Many thanks to @ahuang11, @Azaya89, @hoxbro, @MarcSkovMadsen, @maximlt, and @MridulS for their contributions!
-
-Enhancements:
-
-- Automatically convert `xlim/ylim` to Web Mercator when `tiles=True` ([#1685](https://github.com/holoviz/hvplot/pull/1685))
-- Automatically use `y` as default `text` kwarg if only two columns ([#1681](https://github.com/holoviz/hvplot/pull/1681))
-
-Bug Fixes:
-
-- Fix handling of `hv.dim` expressions in `size` and `color` parameters ([#1691](https://github.com/holoviz/hvplot/pull/1691))
-- Exclude internal style columns (`_color` and `_size`) from tooltips ([#1690](https://github.com/holoviz/hvplot/pull/1690))
-
-Documentation:
-
-- Document `attr_labels` ([#1677](https://github.com/holoviz/hvplot/pull/1677))
-- Fix typo in the NetworkX user guide ([#1686](https://github.com/holoviz/hvplot/pull/1686))
-- Scale networkx layout and fix graphviz init in doc build ([#1672](https://github.com/holoviz/hvplot/pull/1672))
-- Roadmap updates ([#1694](https://github.com/holoviz/hvplot/pull/1694))
-
-Compatibility:
-
-- Ensure Python 3.14 support ([#1688](https://github.com/holoviz/hvplot/pull/1688), [#1703](https://github.com/holoviz/hvplot/pull/1703))
-- Compatibility with the latest versions of DuckDB ([#1682](https://github.com/holoviz/hvplot/pull/1682))
-- Compatibility with the upcoming Pandas 3.0 ([#1704](https://github.com/holoviz/hvplot/pull/1704))
-
-Infrastructure / Tests:
-
-- Address warnings emitted by the unit tests suite ([#1700](https://github.com/holoviz/hvplot/pull/1700))
-- Miscellaneous changes ([#1697](https://github.com/holoviz/hvplot/pull/1697), [#1698](https://github.com/holoviz/hvplot/pull/1698), [#1699](https://github.com/holoviz/hvplot/pull/1699), [#1701](https://github.com/holoviz/hvplot/pull/1701), [#1702](https://github.com/holoviz/hvplot/pull/1702), [#1706](https://github.com/holoviz/hvplot/pull/1706), [#1707](https://github.com/holoviz/hvplot/pull/1707))
-
-[Full Changelog](https://github.com/holoviz/hvplot/compare/v0.12.1...v0.12.2)
 ## Project: [cython/cython](https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html), 2 releases: ['3.2.4', '3.1.8']
 ### Release: cython [3.2.4](https://github.com/cython/cython/releases/tag/3.2.4)
 ERROR: (datetime.datetime(2026, 1, 4, 13, 13, 45), '3.2.4', None, 'https://github.com/cython/cython/releases/tag/3.2.4')
 ### Release: cython [3.1.8](https://github.com/cython/cython/releases/tag/3.1.8)
 ERROR: (datetime.datetime(2026, 1, 3, 15, 23, 29), '3.1.8', None, 'https://github.com/cython/cython/releases/tag/3.1.8')
-## Project: [plotly/dash](https://plotly.com/dash/), 2 releases: ['v4.0.0rc6', 'v4.0.0rc5']
+## Project: [plotly/dash](https://plotly.com/dash/), 1 releases: ['v4.0.0rc6']
 ### Release: dash [v4.0.0rc6](https://github.com/plotly/dash/releases/tag/v4.0.0rc6)
 ## Added
 - Restored missing implementation for `with_portal` and `with_full_screen_portal` in datepickers
@@ -359,12 +295,41 @@ ERROR: (datetime.datetime(2026, 1, 3, 15, 23, 29), '3.1.8', None, 'https://githu
 ## Changed
 - Bugfixes for feedback received in `rc5`: notably, popovers are `position: fixed` once again.
 
-### Release: dash [v4.0.0rc5](https://github.com/plotly/dash/releases/tag/v4.0.0rc5)
-## Added
-- New prop in `dcc.Upload` allows users to recursively upload entire folders at once
+## Project: [dask/dask](https://www.dask.org/), 2 releases: ['2026.1.1', '2026.1.0']
+### Release: dask [2026.1.1](https://github.com/dask/dask/releases/tag/2026.1.1)
+## Changes
 
-## Changed
-- Bugfixes for feedback received in `rc4`
+* No changes  
+
+See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more information.
+
+### Release: dask [2026.1.0](https://github.com/dask/dask/releases/tag/2026.1.0)
+## Changes
+
+- Remove the Python 2 Comment @vipinkataria2209 (#12229)
+- Bump JamesIves/github-pages-deploy-action from 4.7.6 to 4.8.0 @[dependabot[bot]](https://github.com/apps/dependabot) (#12230)
+- Fix changelog: distributed-pr -> pr-distributed @mplough-kobold (#12227)
+- Support duck-typed Futures in task graph processing @mrocklin (#12213)
+- Bump actions/setup-java from 4 to 5 @[dependabot[bot]](https://github.com/apps/dependabot) (#12057)
+- Relax `test_serialization` @crusaderky (#12226)
+- [cosmetic] Reorganise dependency groups in CI environment files @crusaderky (#12222)
+- Review `_array_expr_enabled()` @crusaderky (#12217)
+- Increase coverage; lower codecov threshold to pass @crusaderky (#12214)
+- Test array expr on mindeps @crusaderky (#12216)
+- Disable some Mac builds @crusaderky (#12218)
+- Typing tweaks @crusaderky (#12215)
+- [CI] unbreak codecov @crusaderky (#12211)
+- Test array expr on Python 3.14 @crusaderky (#12212)
+- Fix pickle compatibility for Python 3.14 @mrocklin (#12206)
+- Remove deprecated `dask._compatibility.entry_points` @crusaderky (#12202)
+- Tweak MacOS CI @crusaderky (#12200)
+- Remove obsolete CI pins @crusaderky (#12199)
+- Bump JamesIves/github-pages-deploy-action from 4.7.4 to 4.7.6 @[dependabot[bot]](https://github.com/apps/dependabot) (#12196)
+- Bump actions/upload-artifact from 5 to 6 @[dependabot[bot]](https://github.com/apps/dependabot) (#12197)
+- Bump actions/cache from 4 to 5 @[dependabot[bot]](https://github.com/apps/dependabot) (#12195)  
+
+See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more information.
+
 ## Project: [delta-io/delta-rs](https://delta-io.github.io/delta-rs/usage/installation/), 4 releases: ['python-v1.3.2', 'python-v1.3.1: read support deletion vectors, column mapping', 'rust-v0.30.0', 'python-v1.3.0']
 ### Release: delta-rs [python-v1.3.2](https://github.com/delta-io/delta-rs/releases/tag/python-v1.3.2)
 ## What's Changed
@@ -541,7 +506,155 @@ This release includes [delta_kernel](https://crates.io/crates/delta_kernel) whic
 * @danielgafni made their first contribution in https://github.com/delta-io/delta-rs/pull/3513
 
 **Full Changelog**: https://github.com/delta-io/delta-rs/compare/python-v1.2.1...python-v1.3.0
-## Project: [lancedb/lance](https://lancedb.github.io/lance/), 9 releases: ['v2.0.0-beta.9', 'v1.0.2', 'v2.0.0-beta.8', 'v1.0.2-rc.2', 'v1.0.1', 'v2.0.0-beta.5', 'v2.0.0-beta.4', 'v1.0.1-rc.1', 'v1.0.1-beta.1']
+## Project: [lancedb/lance](https://lancedb.github.io/lance/), 8 releases: ['v2.0.0-beta.10', 'v2.0.0-beta.9', 'v1.0.2', 'v2.0.0-beta.8', 'v1.0.2-rc.2', 'v1.0.1', 'v2.0.0-beta.5', 'v2.0.0-beta.4']
+### Release: lance [v2.0.0-beta.10](https://github.com/lance-format/lance/releases/tag/v2.0.0-beta.10)
+<!-- Release notes generated using configuration in .github/release.yml at v2.0.0-beta.10 -->
+
+## What's Changed
+### Breaking Changes 🛠
+* fix!: null handling when using `NOT` with scalar indices by @wjones127 in https://github.com/lance-format/lance/pull/5270
+* feat!: track cumulative wall time in analyze plan by @wkalt in https://github.com/lance-format/lance/pull/5505
+* fix!: check metric compatibility before using vector index by @wjones127 in https://github.com/lance-format/lance/pull/5609
+* feat!: define default index name and return IndexMetadata after building index by @wjones127 in https://github.com/lance-format/lance/pull/5645
+* feat!: make v2 manifest default by @wojiaodoubao in https://github.com/lance-format/lance/pull/5656
+* refactor!: introduce storage options accessor by @jackye1995 in https://github.com/lance-format/lance/pull/5728
+### New Features 🎉
+* feat: support using FTS as a filter in vector search by @wojiaodoubao in https://github.com/lance-format/lance/pull/4928
+* feat: support when_matched_delete in merge_insert by @jtuglu1 in https://github.com/lance-format/lance/pull/4939
+* feat: add support for large minichunk size (u32) in format v2.2 by @niyue in https://github.com/lance-format/lance/pull/4959
+* feat: support GEO RTree index by @ddupg in https://github.com/lance-format/lance/pull/5034
+* feat: support global tag retrieval and improve tag api by @majin1102 in https://github.com/lance-format/lance/pull/5088
+* feat: support create vector index distributedly by @chenghao-guo in https://github.com/lance-format/lance/pull/5117
+* feat: support add sub-column to struct col by @wojiaodoubao in https://github.com/lance-format/lance/pull/5126
+* feat: distributed range-based BTree index by @steFaiz in https://github.com/lance-format/lance/pull/5202
+* feat: strategized plan compaction by @zhangyue19921010 in https://github.com/lance-format/lance/pull/5233
+* feat: dataset supports deep_clone by @majin1102 in https://github.com/lance-format/lance/pull/5250
+* feat: cleanup only scan managed files by @majin1102 in https://github.com/lance-format/lance/pull/5338
+* feat: support map data type in lance format version 2.2 by @xloya in https://github.com/lance-format/lance/pull/5349
+* feat: add RTree index spec in table format by @ddupg in https://github.com/lance-format/lance/pull/5360
+* feat(java): support row lineage and cdf apis by @yanghua in https://github.com/lance-format/lance/pull/5362
+* feat: disable default features on internal use by @valkum in https://github.com/lance-format/lance/pull/5372
+* feat(cdf): support set start/end timestamp in cdf by @zhangyue19921010 in https://github.com/lance-format/lance/pull/5378
+* feat(blob_v2): add external blob support by @Xuanwo in https://github.com/lance-format/lance/pull/5385
+* feat(blob_v2): add dedicated blob support by @Xuanwo in https://github.com/lance-format/lance/pull/5406
+* feat: fallback to CPU if GPU accelerating is unavailable by @BubbleCal in https://github.com/lance-format/lance/pull/5407
+* feat(blob_v2): add packed blob support by @Xuanwo in https://github.com/lance-format/lance/pull/5413
+* feat: allow python tracing / logging to be independently configured by @westonpace in https://github.com/lance-format/lance/pull/5415
+* feat: add additional index APIs to support count rows split plan by @jackye1995 in https://github.com/lance-format/lance/pull/5447
+* feat(java): support multi-bases for writing database by @ddupg in https://github.com/lance-format/lance/pull/5450
+* feat(blob_v2): add BlobAray API for user input by @Xuanwo in https://github.com/lance-format/lance/pull/5451
+* feat: upgrade lance-namespace to 0.3.1 and add missing apis by @jackye1995 in https://github.com/lance-format/lance/pull/5457
+* feat(python): support cleanup_with_policy by @ddupg in https://github.com/lance-format/lance/pull/5458
+* feat: support dropping sub-column of list(struct) by @wojiaodoubao in https://github.com/lance-format/lance/pull/5469
+* feat(blob_v2): add GC support by @Xuanwo in https://github.com/lance-format/lance/pull/5473
+* feat: add `py.typed` marker file by @jonded94 in https://github.com/lance-format/lance/pull/5479
+* feat(python): expose the `distance_range` param in the Python scanner `nearest` config by @xloya in https://github.com/lance-format/lance/pull/5486
+* feat(java): simplify the use of optional in jni by @ddupg in https://github.com/lance-format/lance/pull/5488
+* feat(blob_v2): add Python API for Blob v2 by @Xuanwo in https://github.com/lance-format/lance/pull/5491
+* feat(python): add DatasetBasePath stub to improve IDE hints by @ddupg in https://github.com/lance-format/lance/pull/5503
+* feat(memtest): add macos support by @Xuanwo in https://github.com/lance-format/lance/pull/5510
+* feat(java): add full text search api by @wojiaodoubao in https://github.com/lance-format/lance/pull/5563
+* feat: support credentials vending in directory namespace by @jackye1995 in https://github.com/lance-format/lance/pull/5566
+* feat: upgrade lance-namespace to 0.4.0 by @jackye1995 in https://github.com/lance-format/lance/pull/5568
+* feat: add skip_merge for FTS index build by @BubbleCal in https://github.com/lance-format/lance/pull/5570
+* feat(java): add builder-style scalar index params by @wojiaodoubao in https://github.com/lance-format/lance/pull/5581
+* feat: optimize rle implementation by @Xuanwo in https://github.com/lance-format/lance/pull/5586
+* feat: support FixedSizeList<Struct> by @wkalt in https://github.com/lance-format/lance/pull/5593
+* feat: add dictionary encoding for 64bit types like int64/double by @Xuanwo in https://github.com/lance-format/lance/pull/5594
+* feat: support merge_insert with source dedupe on first seen value by @jackye1995 in https://github.com/lance-format/lance/pull/5603
+* feat: support truncate table api by @zhangyue19921010 in https://github.com/lance-format/lance/pull/5604
+* feat: add Error::External variant for preserving user errors by @wjones127 in https://github.com/lance-format/lance/pull/5606
+* feat: upgrade lance-namespace to 0.4.5 by @jackye1995 in https://github.com/lance-format/lance/pull/5611
+* feat: refactor use of Error::io by @lichuang in https://github.com/lance-format/lance/pull/5612
+* feat(java): add detached flag to commitTransaction by @wojiaodoubao in https://github.com/lance-format/lance/pull/5626
+* feat: add parts_searched metrics for FTS by @BubbleCal in https://github.com/lance-format/lance/pull/5627
+* feat: improve the random access file benchmark by @westonpace in https://github.com/lance-format/lance/pull/5628
+* feat(oss): add sts token support for aliyun oss via storage_options by @hh23485 in https://github.com/lance-format/lance/pull/5632
+* feat: merge-insert with primary key dedupe by @jackye1995 in https://github.com/lance-format/lance/pull/5633
+* feat: allow configure temp dir size for datafusion exec by @jackye1995 in https://github.com/lance-format/lance/pull/5659
+* feat(java): add support for optimizing indices by @majin1102 in https://github.com/lance-format/lance/pull/5663
+* feat: make on arg optional for merge insert api by @yanghua in https://github.com/lance-format/lance/pull/5667
+* feat: make OneShotPartitionStream pub by @timsaucer in https://github.com/lance-format/lance/pull/5672
+* feat: support array_contains in LabelList scalar index by @fenfeng9 in https://github.com/lance-format/lance/pull/5681
+* feat: add order to primary key by @touch-of-grey in https://github.com/lance-format/lance/pull/5683
+* feat: use independent region manifest for MemWAL by @touch-of-grey in https://github.com/lance-format/lance/pull/5689
+* feat: add stats() method to ObjectStoreRegistry by @wkalt in https://github.com/lance-format/lance/pull/5706
+* feat: support dynamic context for lance namespace by @jackye1995 in https://github.com/lance-format/lance/pull/5710
+* feat: cleanup partial idx files when merging distributed vector index by @yanghua in https://github.com/lance-format/lance/pull/5729
+### Bug Fixes 🐛
+* fix: correct null_count aggregation in boolean statistics collection by @YinZheng-Sun in https://github.com/lance-format/lance/pull/4839
+* fix: remove logging for project_batch by @westonpace in https://github.com/lance-format/lance/pull/5267
+* fix: stop documenting FTS index type, standardize on INVERTED by @mackrorysd in https://github.com/lance-format/lance/pull/5315
+* fix: don't allow change blob version during update by @Xuanwo in https://github.com/lance-format/lance/pull/5386
+* fix: take_blobs_by_indices fails with stable row IDs on fragment 1+ by @jmhsieh in https://github.com/lance-format/lance/pull/5392
+* fix: respect index metric when user overrides by @BubbleCal in https://github.com/lance-format/lance/pull/5395
+* fix: remove expensive clone in bitmap search by @westonpace in https://github.com/lance-format/lance/pull/5409
+* fix: fix vector index prewarm index by @xloya in https://github.com/lance-format/lance/pull/5412
+* fix: panic unwrap on None in decoder.rs by @camilesing in https://github.com/lance-format/lance/pull/5424
+* fix: dir namespace cloud storage path removes one subdir level by @jackye1995 in https://github.com/lance-format/lance/pull/5464
+* fix: make column name lookups case-insensitive by @wjones127 in https://github.com/lance-format/lance/pull/5465
+* fix: ensure trailing slash is normalized in rest adapter by @jackye1995 in https://github.com/lance-format/lance/pull/5499
+* fix(java): support FixedSizeList for java LanceField by @fangbo in https://github.com/lance-format/lance/pull/5509
+* fix: head external manifest object happend 404 NotFound error by @hushengquan in https://github.com/lance-format/lance/pull/5512
+* fix: json's arrow extension metadata missing by @Xuanwo in https://github.com/lance-format/lance/pull/5527
+* fix: infer multivector sampling rows by @BubbleCal in https://github.com/lance-format/lance/pull/5534
+* fix: support ManifestNamingSchemeV2 with unordered object stores by @wjones127 in https://github.com/lance-format/lance/pull/5539
+* fix: merge_insert uses full schema path for reordered columns by @wjones127 in https://github.com/lance-format/lance/pull/5541
+* fix: allow storage options provider without expires_at_millis by @jackye1995 in https://github.com/lance-format/lance/pull/5542
+* fix(ci): use pull_request_target for fork PR reviews by @wjones127 in https://github.com/lance-format/lance/pull/5544
+* fix: restore decrease max_fragment_id in manifest by @majin1102 in https://github.com/lance-format/lance/pull/5554
+* fix: improve error handling for environment variable parsing by @XuQianJin-Stars in https://github.com/lance-format/lance/pull/5560
+* fix: panic when lance.auto_cleanup.interval is set to 0 by @majin1102 in https://github.com/lance-format/lance/pull/5571
+* fix(python): correct type hint for to_tensor_fn parameter by @AndreaBozzo in https://github.com/lance-format/lance/pull/5577
+* fix: avoid panic while hitting non-null empty multi-vector by @Xuanwo in https://github.com/lance-format/lance/pull/5588
+* fix: filter garbage entries from null maps during encoding by @wkalt in https://github.com/lance-format/lance/pull/5591
+* fix: reduce verbosity of errors due to string conversion by @wjones127 in https://github.com/lance-format/lance/pull/5600
+* fix: remove imports that are not needed by @westonpace in https://github.com/lance-format/lance/pull/5651
+* fix: allow nearest applied in default_scan_options by @chenghao-guo in https://github.com/lance-format/lance/pull/5666
+* fix: trait Array has been sealed in arrow new version by @Xuanwo in https://github.com/lance-format/lance/pull/5690
+* fix: project_by_schema now reorders fields inside List<Struct> types by @wjones127 in https://github.com/lance-format/lance/pull/5703
+* fix: allocate too much memory for block max scores by @BubbleCal in https://github.com/lance-format/lance/pull/5718
+* docs: in dataset.rs, fix comment for get_fragments by @cmccabe in https://github.com/lance-format/lance/pull/5724
+* fix(python): close SQLite connections in BatchUDFCheckpoint by @wjones127 in https://github.com/lance-format/lance/pull/5733
+* fix: remove credential vending features from python and java bindings by @jackye1995 in https://github.com/lance-format/lance/pull/5737
+### Documentation 📚
+* docs: fix Append call in distributed write guide by @rongou in https://github.com/lance-format/lance/pull/5439
+* docs: fix and improve the description about row id by @yanghua in https://github.com/lance-format/lance/pull/5463
+* docs: add specification for handling indices by @wjones127 in https://github.com/lance-format/lance/pull/5543
+* docs: fix duplicate words in comments and error messages by @XuQianJin-Stars in https://github.com/lance-format/lance/pull/5548
+* docs: add research paper link to the landing page by @prrao87 in https://github.com/lance-format/lance/pull/5549
+* docs: auto-build refactored namespace integrations doc by @jackye1995 in https://github.com/lance-format/lance/pull/5562
+* docs: rename RowIdTreeMap to RowAddrTreeMap in rtree.md by @ddupg in https://github.com/lance-format/lance/pull/5564
+* docs: add docs for DuckDB extension by @prrao87 in https://github.com/lance-format/lance/pull/5578
+* docs: update Lance-DuckDB docs to latest version 0.4.1 by @prrao87 in https://github.com/lance-format/lance/pull/5613
+### Performance Improvements 🚀
+* perf: do not instrument self in multipart upload by @westonpace in https://github.com/lance-format/lance/pull/5416
+* perf: various btree performance improvements by @westonpace in https://github.com/lance-format/lance/pull/5446
+* perf: reuse session context by @wjones127 in https://github.com/lance-format/lance/pull/5462
+* perf: offload IVF partition build to CPU pool by @BubbleCal in https://github.com/lance-format/lance/pull/5551
+* perf: materialize the tokens after WAND done by @BubbleCal in https://github.com/lance-format/lance/pull/5572
+* perf: compute HNSW level counts after build by @BubbleCal in https://github.com/lance-format/lance/pull/5590
+* perf: improve SQ query speed by @BubbleCal in https://github.com/lance-format/lance/pull/5596
+* perf: reuse zstd compressors in encoding by @wkalt in https://github.com/lance-format/lance/pull/5598
+* perf: use binary search to skip documents by @BubbleCal in https://github.com/lance-format/lance/pull/5636
+* perf: improve FTS indexing perf and reduce memory footprint by @BubbleCal in https://github.com/lance-format/lance/pull/5650
+* perf: avoid copying tokens while merging by @BubbleCal in https://github.com/lance-format/lance/pull/5661
+* perf: tighten WAND block score upper bound by @BubbleCal in https://github.com/lance-format/lance/pull/5668
+* perf: cache global BM25 idf per query by @BubbleCal in https://github.com/lance-format/lance/pull/5727
+* perf: use LRU cache for session contexts in get_session_context by @wjones127 in https://github.com/lance-format/lance/pull/5736
+### Other Changes
+* refactor: write bitmap index statistics in file instead by @Xuanwo in https://github.com/lance-format/lance/pull/5251
+* refactor: rename RowIdTreeMap to RowAddrTreeMap by @yanghua in https://github.com/lance-format/lance/pull/5266
+* refactor: rename RowIdMask to RowAddrMask by @yanghua in https://github.com/lance-format/lance/pull/5281
+* refactor: consolidate logic between zonemap and bloomfilter indexes by @fenfeng9 in https://github.com/lance-format/lance/pull/5374
+* refactor: split dataset tests in a tests mod by @Xuanwo in https://github.com/lance-format/lance/pull/5387
+* refactor: use the same path for dedicated and packed blob by @Xuanwo in https://github.com/lance-format/lance/pull/5449
+* refactor: add store_prefix to lance-io's ObjectStore by @cmccabe in https://github.com/lance-format/lance/pull/5468
+* refactor: expose take_blobs_by_addresses to python by @Xuanwo in https://github.com/lance-format/lance/pull/5474
+* refactor: support java 21, drop java 8 by @cmccabe in https://github.com/lance-format/lance/pull/5565
+* refactor: allow switching to bitpack inside RLE by @Xuanwo in https://github.com/lance-format/lance/pull/5595
+
+**Full Changelog**: https://github.com/lance-format/lance/compare/release-root/2.0.0-beta.N...v2.0.0-beta.10
 ### Release: lance [v2.0.0-beta.9](https://github.com/lance-format/lance/releases/tag/v2.0.0-beta.9)
 <!-- Release notes generated using configuration in .github/release.yml at v2.0.0-beta.9 -->
 
@@ -1007,29 +1120,7 @@ This release includes [delta_kernel](https://crates.io/crates/delta_kernel) whic
 * @YinZheng-Sun made their first contribution in https://github.com/lance-format/lance/pull/4839
 
 **Full Changelog**: https://github.com/lance-format/lance/compare/release-root/2.0.0-beta.N...v2.0.0-beta.4
-### Release: lance [v1.0.1-rc.1](https://github.com/lance-format/lance/releases/tag/v1.0.1-rc.1)
-<!-- Release notes generated using configuration in .github/release.yml at v1.0.1-rc.1 -->
-
-## What's Changed
-### Bug Fixes 🐛
-* fix: dir namespace cloud storage path removes one subdir level by @jackye1995 in https://github.com/lance-format/lance/pull/5495
-* fix: panic unwrap on None in decoder.rs by @jackye1995 in https://github.com/lance-format/lance/pull/5498
-* fix: ensure trailing slash is normalized in rest adapter by @jackye1995 in https://github.com/lance-format/lance/pull/5500
-
-
-**Full Changelog**: https://github.com/lance-format/lance/compare/v1.0.0...v1.0.1-rc.1
-### Release: lance [v1.0.1-beta.1](https://github.com/lance-format/lance/releases/tag/v1.0.1-beta.1)
-<!-- Release notes generated using configuration in .github/release.yml at v1.0.1-beta.1 -->
-
-## What's Changed
-### Bug Fixes 🐛
-* fix: dir namespace cloud storage path removes one subdir level by @jackye1995 in https://github.com/lance-format/lance/pull/5495
-* fix: panic unwrap on None in decoder.rs by @jackye1995 in https://github.com/lance-format/lance/pull/5498
-* fix: ensure trailing slash is normalized in rest adapter by @jackye1995 in https://github.com/lance-format/lance/pull/5500
-
-
-**Full Changelog**: https://github.com/lance-format/lance/compare/v1.0.0...v1.0.1-beta.1
-## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 8 releases: ['Node/Rust LanceDB v0.23.1', 'Python LanceDB v0.26.1', 'Node/Rust LanceDB v0.23.1-beta.1', 'Node/Rust LanceDB v0.23.1-beta.0', 'Python LanceDB v0.26.1-beta.1', 'Python LanceDB v0.26.1-beta.0', 'Node/Rust LanceDB v0.23.0', 'Python LanceDB v0.26.0']
+## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 2 releases: ['Node/Rust LanceDB v0.23.1', 'Python LanceDB v0.26.1']
 ### Release: lancedb [Node/Rust LanceDB v0.23.1](https://github.com/lancedb/lancedb/releases/tag/v0.23.1)
 ## 🐛 Bug Fixes
 
@@ -1054,139 +1145,18 @@ This release includes [delta_kernel](https://crates.io/crates/delta_kernel) whic
 - docs: remove incorrect "LanceDb Cloud only" from table_names params by @jmhsieh in https://github.com/lancedb/lancedb/pull/2893
 
 
-### Release: lancedb [Node/Rust LanceDB v0.23.1-beta.1](https://github.com/lancedb/lancedb/releases/tag/v0.23.1-beta.1)
-## 🐛 Bug Fixes
-
-- fix: pass namespace storage options provider into native table by @jackye1995 in https://github.com/lancedb/lancedb/pull/2873
-
-
-### Release: lancedb [Node/Rust LanceDB v0.23.1-beta.0](https://github.com/lancedb/lancedb/releases/tag/v0.23.1-beta.0)
-## 🐛 Bug Fixes
-
-- fix: use post for describe_namespace and allow access to underlying client by @jackye1995 in https://github.com/lancedb/lancedb/pull/2871
-
-
-### Release: lancedb [Python LanceDB v0.26.1-beta.1](https://github.com/lancedb/lancedb/releases/tag/python-v0.26.1-beta.1)
-## 🐛 Bug Fixes
-
-- fix: pass namespace storage options provider into native table by @jackye1995 in https://github.com/lancedb/lancedb/pull/2873
+## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers?tab=readme-ov-file#datafusion-table-providers), 3 releases: ['v0.9.3', 'v0.9.2', 'v0.9.1']
+### Release: datafusion-table-providers [v0.9.3](https://github.com/datafusion-contrib/datafusion-table-providers/releases/tag/v0.9.3)
+## What's Changed
+* Bump bb8 from 0.9.0 to 0.9.1 by @dependabot[bot] in https://github.com/datafusion-contrib/datafusion-table-providers/pull/514
+* Bump bytes from 1.10.1 to 1.11.0 by @dependabot[bot] in https://github.com/datafusion-contrib/datafusion-table-providers/pull/515
+* Bump arrow-schema from 57.0.0 to 57.2.0 by @dependabot[bot] in https://github.com/datafusion-contrib/datafusion-table-providers/pull/524
+* Bump insta from 1.43.2 to 1.46.0 by @dependabot[bot] in https://github.com/datafusion-contrib/datafusion-table-providers/pull/523
+* Update the README file to include a development section. by @hozan23 in https://github.com/datafusion-contrib/datafusion-table-providers/pull/526
+* Prevent invalid INSERT statements with empty batches by @nuno-faria in https://github.com/datafusion-contrib/datafusion-table-providers/pull/528
 
 
-### Release: lancedb [Python LanceDB v0.26.1-beta.0](https://github.com/lancedb/lancedb/releases/tag/python-v0.26.1-beta.0)
-## 🐛 Bug Fixes
-
-- fix: use post for describe_namespace and allow access to underlying client by @jackye1995 in https://github.com/lancedb/lancedb/pull/2871
-
-
-### Release: lancedb [Node/Rust LanceDB v0.23.0](https://github.com/lancedb/lancedb/releases/tag/v0.23.0)
-## 🛠 Breaking Changes
-
-- refactor!: deprecate mac x86 support by @jackye1995 in https://github.com/lancedb/lancedb/pull/2836
-- refactor!: use namespace models directly for namespace operations by @jackye1995 in https://github.com/lancedb/lancedb/pull/2806
-
-## 🎉 New Features
-
-- feat: pare down docs to only show API refs by @prrao87 in https://github.com/lancedb/lancedb/pull/2770
-- feat: bump lance version to 0.40-0-beta.2 by @cmccabe in https://github.com/lancedb/lancedb/pull/2772
-- feat: let lance determine the default num_partitions param by @BubbleCal in https://github.com/lancedb/lancedb/pull/2775
-- feat: support namespace credentials vending by @jackye1995 in https://github.com/lancedb/lancedb/pull/2778
-- feat: add num_attempts to merge insert result by @wkalt in https://github.com/lancedb/lancedb/pull/2795
-- feat(python): support `to_pydantic` in async by @mykolaskrynnyk in https://github.com/lancedb/lancedb/pull/2438
-- feat: support async namespace connection by @jackye1995 in https://github.com/lancedb/lancedb/pull/2788
-- feat: implement head() for remote tables by @cmccabe in https://github.com/lancedb/lancedb/pull/2793
-- feat: update codex url key by @wkalt in https://github.com/lancedb/lancedb/pull/2812
-- feat: remove remote default features on lance-namespace-impls by @valkum in https://github.com/lancedb/lancedb/pull/2828
-- feat: support stable row IDs via storage_options by @jmhsieh in https://github.com/lancedb/lancedb/pull/2831
-- feat: support namespace server side query by @jackye1995 in https://github.com/lancedb/lancedb/pull/2811
-- feat: add IVF SQ index support and HNSW aliases by @BubbleCal in https://github.com/lancedb/lancedb/pull/2832
-- feat: use rest namespace for lancedb java sdk by @jackye1995 in https://github.com/lancedb/lancedb/pull/2845
-- feat: make java client builder generic by @jackye1995 in https://github.com/lancedb/lancedb/pull/2851
-- feat: infer vector type to float32 if integers are out of uint8 range by @BubbleCal in https://github.com/lancedb/lancedb/pull/2856
-- feat: upgrade lance-namespace python to 0.3.2 by @jackye1995 in https://github.com/lancedb/lancedb/pull/2868
-
-## 🐛 Bug Fixes
-
-- docs: update readme quickstart link (under how to install) by @erik-wang-lancedb in https://github.com/lancedb/lancedb/pull/2780
-- feat: support namespace credentials vending by @jackye1995 in https://github.com/lancedb/lancedb/pull/2778
-- fix: convert schema metadata to strings for JsonArrowSchema by @rpgreen in https://github.com/lancedb/lancedb/pull/2786
-- fix: use None default for namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2797
-- fix: .phrase_query() not working by @jachewz in https://github.com/lancedb/lancedb/pull/2781
-- fix: table_names error at root namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2842
-
-## 📚 Documentation
-
-- docs: update readme quickstart link (under how to install) by @erik-wang-lancedb in https://github.com/lancedb/lancedb/pull/2780
-- docs: add some missing classes by @wjones127 in https://github.com/lancedb/lancedb/pull/2450
-- docs: 404 and outdated URLs should now work by @prrao87 in https://github.com/lancedb/lancedb/pull/2800
-- docs: nodejs failing CI is fixed by @prrao87 in https://github.com/lancedb/lancedb/pull/2802
-- docs: improve docstring for RabitQ in Python by @prrao87 in https://github.com/lancedb/lancedb/pull/2808
-
-## 🔧 Build and CI
-
-- ci: migrate codex to API key based by @Xuanwo in https://github.com/lancedb/lancedb/pull/2783
-- ci: make rust ci faster, get ci green by @wjones127 in https://github.com/lancedb/lancedb/pull/2782
-- ci: add timely lance release check by @Xuanwo in https://github.com/lancedb/lancedb/pull/2790
-- ci: use larger runner for doctest and fix failing tests by @jackye1995 in https://github.com/lancedb/lancedb/pull/2801
-- ci: add support for lance-format fury index for downloading pylance by @jackye1995 in https://github.com/lancedb/lancedb/pull/2804
-- ci: trigger downstream verification after version bump by @jackye1995 in https://github.com/lancedb/lancedb/pull/2809
-- ci: migrate macos ci runners by @Xuanwo in https://github.com/lancedb/lancedb/pull/2818
-
-
-### Release: lancedb [Python LanceDB v0.26.0](https://github.com/lancedb/lancedb/releases/tag/python-v0.26.0)
-## 🛠 Breaking Changes
-
-- refactor!: deprecate mac x86 support by @jackye1995 in https://github.com/lancedb/lancedb/pull/2836
-- refactor!: use namespace models directly for namespace operations by @jackye1995 in https://github.com/lancedb/lancedb/pull/2806
-
-## 🎉 New Features
-
-- feat: pare down docs to only show API refs by @prrao87 in https://github.com/lancedb/lancedb/pull/2770
-- feat: bump lance version to 0.40-0-beta.2 by @cmccabe in https://github.com/lancedb/lancedb/pull/2772
-- feat: let lance determine the default num_partitions param by @BubbleCal in https://github.com/lancedb/lancedb/pull/2775
-- feat: support namespace credentials vending by @jackye1995 in https://github.com/lancedb/lancedb/pull/2778
-- feat: add num_attempts to merge insert result by @wkalt in https://github.com/lancedb/lancedb/pull/2795
-- feat(python): support `to_pydantic` in async by @mykolaskrynnyk in https://github.com/lancedb/lancedb/pull/2438
-- feat: support async namespace connection by @jackye1995 in https://github.com/lancedb/lancedb/pull/2788
-- feat: implement head() for remote tables by @cmccabe in https://github.com/lancedb/lancedb/pull/2793
-- feat: update codex url key by @wkalt in https://github.com/lancedb/lancedb/pull/2812
-- feat: remove remote default features on lance-namespace-impls by @valkum in https://github.com/lancedb/lancedb/pull/2828
-- feat: support stable row IDs via storage_options by @jmhsieh in https://github.com/lancedb/lancedb/pull/2831
-- feat: support namespace server side query by @jackye1995 in https://github.com/lancedb/lancedb/pull/2811
-- feat: add IVF SQ index support and HNSW aliases by @BubbleCal in https://github.com/lancedb/lancedb/pull/2832
-- feat: use rest namespace for lancedb java sdk by @jackye1995 in https://github.com/lancedb/lancedb/pull/2845
-- feat: make java client builder generic by @jackye1995 in https://github.com/lancedb/lancedb/pull/2851
-- feat: infer vector type to float32 if integers are out of uint8 range by @BubbleCal in https://github.com/lancedb/lancedb/pull/2856
-- feat: upgrade lance-namespace python to 0.3.2 by @jackye1995 in https://github.com/lancedb/lancedb/pull/2868
-
-## 🐛 Bug Fixes
-
-- docs: update readme quickstart link (under how to install) by @erik-wang-lancedb in https://github.com/lancedb/lancedb/pull/2780
-- feat: support namespace credentials vending by @jackye1995 in https://github.com/lancedb/lancedb/pull/2778
-- fix: convert schema metadata to strings for JsonArrowSchema by @rpgreen in https://github.com/lancedb/lancedb/pull/2786
-- fix: use None default for namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2797
-- fix: .phrase_query() not working by @jachewz in https://github.com/lancedb/lancedb/pull/2781
-- fix: table_names error at root namespace by @jackye1995 in https://github.com/lancedb/lancedb/pull/2842
-
-## 📚 Documentation
-
-- docs: update readme quickstart link (under how to install) by @erik-wang-lancedb in https://github.com/lancedb/lancedb/pull/2780
-- docs: add some missing classes by @wjones127 in https://github.com/lancedb/lancedb/pull/2450
-- docs: 404 and outdated URLs should now work by @prrao87 in https://github.com/lancedb/lancedb/pull/2800
-- docs: nodejs failing CI is fixed by @prrao87 in https://github.com/lancedb/lancedb/pull/2802
-- docs: improve docstring for RabitQ in Python by @prrao87 in https://github.com/lancedb/lancedb/pull/2808
-
-## 🔧 Build and CI
-
-- ci: migrate codex to API key based by @Xuanwo in https://github.com/lancedb/lancedb/pull/2783
-- ci: make rust ci faster, get ci green by @wjones127 in https://github.com/lancedb/lancedb/pull/2782
-- ci: add timely lance release check by @Xuanwo in https://github.com/lancedb/lancedb/pull/2790
-- ci: use larger runner for doctest and fix failing tests by @jackye1995 in https://github.com/lancedb/lancedb/pull/2801
-- ci: add support for lance-format fury index for downloading pylance by @jackye1995 in https://github.com/lancedb/lancedb/pull/2804
-- ci: trigger downstream verification after version bump by @jackye1995 in https://github.com/lancedb/lancedb/pull/2809
-- ci: migrate macos ci runners by @Xuanwo in https://github.com/lancedb/lancedb/pull/2818
-
-
-## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers?tab=readme-ov-file#datafusion-table-providers), 2 releases: ['v0.9.2', 'v0.9.1']
+**Full Changelog**: https://github.com/datafusion-contrib/datafusion-table-providers/compare/v0.9.2...v0.9.3
 ### Release: datafusion-table-providers [v0.9.2](https://github.com/datafusion-contrib/datafusion-table-providers/releases/tag/v0.9.2)
 ## What's Changed
 * Add write support for Decimal32 and Decimal64 by @nuno-faria in https://github.com/datafusion-contrib/datafusion-table-providers/pull/519
@@ -1200,7 +1170,18 @@ This release includes [delta_kernel](https://crates.io/crates/delta_kernel) whic
 
 
 **Full Changelog**: https://github.com/datafusion-contrib/datafusion-table-providers/compare/v0.9.0...v0.9.1
-## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers), 2 releases: ['v0.9.2', 'v0.9.1']
+## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers), 3 releases: ['v0.9.3', 'v0.9.2', 'v0.9.1']
+### Release: datafusion-table-providers [v0.9.3](https://github.com/datafusion-contrib/datafusion-table-providers/releases/tag/v0.9.3)
+## What's Changed
+* Bump bb8 from 0.9.0 to 0.9.1 by @dependabot[bot] in https://github.com/datafusion-contrib/datafusion-table-providers/pull/514
+* Bump bytes from 1.10.1 to 1.11.0 by @dependabot[bot] in https://github.com/datafusion-contrib/datafusion-table-providers/pull/515
+* Bump arrow-schema from 57.0.0 to 57.2.0 by @dependabot[bot] in https://github.com/datafusion-contrib/datafusion-table-providers/pull/524
+* Bump insta from 1.43.2 to 1.46.0 by @dependabot[bot] in https://github.com/datafusion-contrib/datafusion-table-providers/pull/523
+* Update the README file to include a development section. by @hozan23 in https://github.com/datafusion-contrib/datafusion-table-providers/pull/526
+* Prevent invalid INSERT statements with empty batches by @nuno-faria in https://github.com/datafusion-contrib/datafusion-table-providers/pull/528
+
+
+**Full Changelog**: https://github.com/datafusion-contrib/datafusion-table-providers/compare/v0.9.2...v0.9.3
 ### Release: datafusion-table-providers [v0.9.2](https://github.com/datafusion-contrib/datafusion-table-providers/releases/tag/v0.9.2)
 ## What's Changed
 * Add write support for Decimal32 and Decimal64 by @nuno-faria in https://github.com/datafusion-contrib/datafusion-table-providers/pull/519
