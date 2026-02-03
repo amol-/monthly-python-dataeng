@@ -1,17 +1,17 @@
 # Complete List of Projects
  * Project: apache/arrow has 2 releases
  * Project: substrait-io/substrait-python has 2 releases
- * Project: narwhals-dev/narwhals has 1 releases
+ * Project: narwhals-dev/narwhals has 2 releases
  * Project: pola-rs/polars has 2 releases
  * Project: pandas-dev/pandas has 2 releases
- * Project: holoviz/panel has 3 releases
+ * Project: holoviz/panel has 2 releases
  * Project: pyscript/pyscript has 1 releases
  * Project: cython/cython has 2 releases
  * Project: plotly/dash has 2 releases
- * Project: dask/dask has 4 releases
- * Project: delta-io/delta-rs has 5 releases
- * Project: lancedb/lance has 14 releases
- * Project: lancedb/lancedb has 8 releases
+ * Project: dask/dask has 5 releases
+ * Project: delta-io/delta-rs has 3 releases
+ * Project: lancedb/lance has 13 releases
+ * Project: lancedb/lancedb has 6 releases
  * Project: datafusion-contrib/datafusion-table-providers has 1 releases
  * Project: duckdb/duckdb has 1 releases
  * Project: datafusion-contrib/datafusion-table-providers has 1 releases
@@ -19,7 +19,7 @@
  * Project: https://spark.apache.org/news/index.html has 3 releases
  * Project: https://blog.holoviz.org/index.xml has 1 releases
  * Project: https://velox-lib.io/blog/rss.xml has 1 releases
- * Project: https://datafusion.apache.org/blog/feed.xml has 2 releases
+ * Project: https://datafusion.apache.org/blog/feed.xml has 4 releases
 
 
 # Releases for each project
@@ -36,7 +36,11 @@
 ## Project: [Velox Blog](https://velox-lib.io/blog), 1 articles
 ### Release: [Task Barrier: Efficient Task Reuse and Streaming Checkpoints in Velox](https://velox-lib.io/blog/task-barrier)
 
-## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 2 articles
+## Project: [Apache DataFusion Blog](https://datafusion.apache.org/blog/), 4 articles
+### Release: [Optimizing SQL CASE Expression Evaluation](https://datafusion.apache.org/blog/2026/02/02/datafusion_case)
+
+### Release: [Apache DataFusion Comet 0.13.0 Release](https://datafusion.apache.org/blog/2026/01/30/datafusion-comet-0.13.0)
+
 ### Release: [Apache DataFusion 52.0.0 Released](https://datafusion.apache.org/blog/2026/01/12/datafusion-52.0.0)
 
 ### Release: [Extending SQL in DataFusion: from ->> to TABLESAMPLE](https://datafusion.apache.org/blog/2026/01/12/extending-sql)
@@ -85,7 +89,48 @@ Release Notes: Release Candidate: 23.0.0 RC2
 * @giospada made their first contribution in https://github.com/substrait-io/substrait-python/pull/127
 
 **Full Changelog**: https://github.com/substrait-io/substrait-python/compare/v0.25.0...v0.26.0
-## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 1 releases: ['Narwhals v2.15.0']
+## Project: [narwhals-dev/narwhals](https://narwhals-dev.github.io/narwhals/), 2 releases: ['Narwhals v2.16.0', 'Narwhals v2.15.0']
+### Release: narwhals [Narwhals v2.16.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.16.0)
+## Changes
+
+- ci: Unpin `polars==1.34.0` in `--group typing` (#3434)
+- ci: Bump `duckdb==1.4.4` in `--group typing` (#3433)
+- test: DuckDB XPass (#3426)
+- refactor: Simplify `pd.ArrowDtype` -> `nw.DType` (#3413)
+- ci: Temporarily pin sqlglot, ignore pyspark warning (#3412)
+- Remove interchange from non v1 (#3403)
+
+## :sparkles: Enhancements
+
+- feat: add `separator` argument in `read_csv`/`scan_csv` (#2989)
+- feat: Allow nested structures in `lit` (#3424)
+- enh: Introduce `narwhals.sql` (#3254)
+- enh: Introduce (optional) `order_by` in `first` / `last` (#3372)
+- feat: support window functions in filter (#3401)
+- feat: Improve support for `Decimal` DType (#3377)
+- feat: Support `concat(..., how="diagonal")` for `ibis` (#3404)
+- feat: Enable`list.{sort, sum}` for sqlframe (#3400)
+- feat: Add `str.pad_{start,end}` (#3395)
+- feat: Add `{Expr,Series}.cos` (#3392)
+- feat: Add `testing.assert_frame_equal` (#3220)
+
+## 🐞 Bug fixes
+
+- fix(test): Pin correct polars version in `lit_test` (#3438)
+- refactor: Avoid subprocess to test TPCH queries, and fix q8 (#3419)
+- ci(fix): Temporary pin numba & llvmlite for darts downstream test (#3406)
+- fix(test): Change error message for polars, un-xfail sqlframe `list.mean` (#3397)
+
+## :hammer_and_wrench: Other improvements
+
+- ci: Pin `sqlglot<28.6.0` in `--group typing` (#3432)
+- chore: pin sqlglot to get ci green (#3428)
+- chore(typing): Improve `tpch` typing (#3420)
+- ci: pin pandas in some downstream jobs (#3417)
+- [pre-commit.ci] pre-commit autoupdate (#3275)
+
+Thank you to all our contributors for making this release possible!
+@FBruzzesi, @MarcoGorelli, @camriddell, @dangotbanned, @liamholmes31, and @raisadz
 ### Release: narwhals [Narwhals v2.15.0](https://github.com/narwhals-dev/narwhals/releases/tag/v2.15.0)
 ## Changes
 
@@ -301,7 +346,7 @@ Please report any issues with the release on the [pandas issue tracker](https://
 Thanks to all the contributors who made this release possible.
 ### Release: pandas [Pandas 3.0.0rc2](https://github.com/pandas-dev/pandas/releases/tag/v3.0.0rc2)
 ERROR: (datetime.datetime(2026, 1, 14, 22, 17, 15), 'Pandas 3.0.0rc2', '', 'https://github.com/pandas-dev/pandas/releases/tag/v3.0.0rc2')
-## Project: [holoviz/panel](https://panel.holoviz.org/), 3 releases: ['Version 1.8.7', 'Version 1.8.6', 'Version 1.8.5']
+## Project: [holoviz/panel](https://panel.holoviz.org/), 2 releases: ['Version 1.8.7', 'Version 1.8.6']
 ### Release: panel [Version 1.8.7](https://github.com/holoviz/panel/releases/tag/v1.8.7)
 This patch release reverts two changes that were made in 1.8.6 that turned out to be more disruptive than expected. Additionally it ensures that Tabulator automatically recalculates page sizes on resize and resolves issues with patched versions of Plotly.
 
@@ -354,29 +399,6 @@ This patch release includes several ESM and React-related fixes, UI behavior imp
 - Bump `preact` to 10.26.10 ([#8367](https://github.com/holoviz/panel/pull/8367))
 - Update pre-commit hooks ([#8363](https://github.com/holoviz/panel/pull/8363))
 
-### Release: panel [Version 1.8.5](https://github.com/holoviz/panel/releases/tag/v1.8.5)
-This release includes several fixes and enhancements for notebook stability, Tabulator behavior, ESM/ReactiveComponent handling, and Markdown rendering. It also adds documentation updates for FastAPI integration, app conversion guides, and the Panel roadmap.
-
-### 🐛 Bug Fixes
-
-- Fix error in notebook environments causing failure to run apps ([#8334](https://github.com/holoviz/panel/pull/8334))
-- Prevent `Tabulator` from unintentionally reverting `show_index=False` back to `True` ([#8333](https://github.com/holoviz/panel/pull/8333))
-- Ensure transformed param values are inherited by ESM components ([#8338](https://github.com/holoviz/panel/pull/8338))
-- Ensure DataFrame objects can be referenced in Vega `datasets` ([#8330](https://github.com/holoviz/panel/pull/8330))
-- Improve handling of code highlighting in `Markdown` pane ([#8331](https://github.com/holoviz/panel/pull/8331))
-- Allow replacing child models inside `ReactiveESM` components ([#8348](https://github.com/holoviz/panel/pull/8348))
-
-### 📚 Documentation
-
-* Add **how-to guides** for converting Panel apps to **desktop and mobile apps** ([#8349](https://github.com/holoviz/panel/pull/8349))
-* Update **FastAPI integration instructions** ([#8337](https://github.com/holoviz/panel/pull/8337))
-* Publish updated **Roadmap for Panel v2 and beyond** ([#8339](https://github.com/holoviz/panel/pull/8339))
-
-### 🧪 Maintenance & Build
-
-* Use **trusted publisher** setup for NPM release
-* Bump Node.js version used in build
-
 ## Project: [pyscript/pyscript](https://pyscript.com/), 1 releases: ['2026.1.1']
 ### Release: pyscript [2026.1.1](https://github.com/pyscript/pyscript/releases/tag/2026.1.1)
 * Minor fixes in [coincident](https://github.com/WebReflection/coincident/commit/eef4d0831ca47c1fabed3d7e8fa6809d818d729f).
@@ -420,7 +442,24 @@ ERROR: (datetime.datetime(2026, 1, 3, 15, 23, 29), '3.1.8', None, 'https://githu
 ## Changed
 - Bugfixes for feedback received in `rc5`: notably, popovers are `position: fixed` once again.
 
-## Project: [dask/dask](https://www.dask.org/), 4 releases: ['2025.3.1', '2025.9.2', '2026.1.1', '2026.1.0']
+## Project: [dask/dask](https://www.dask.org/), 5 releases: ['2026.1.2', '2025.3.1', '2025.9.2', '2026.1.1', '2026.1.0']
+### Release: dask [2026.1.2](https://github.com/dask/dask/releases/tag/2026.1.2)
+## Changes
+
+- Require PyArrow >=16 @crusaderky (#12258)
+- Better CPU affinity detection @crusaderky (#12221)
+- Bump conda-incubator/setup-miniconda from 3.2.0 to 3.3.0 @[dependabot[bot]](https://github.com/apps/dependabot) (#12256)
+- Run test suite with xarray but without zarr @crusaderky (#12254)
+- Add 2025.9.2 backport to changelog @jacobtomlinson (#12253)
+- change `zarr_read_kwargs` to `mode` argument @melonora (#12205)
+- Ignore deprecationwarning on np.fix @TomAugspurger (#12248)
+- Doctest fixes @TomAugspurger (#12246)
+- Set the integer size in `test_merge_groupby_to_frame` @TomAugspurger (#12244)
+- Update map\_meta test @TomAugspurger (#12243)
+- Pin to sphinx\<9 until it's supported in sphinx-autosummary-accessors @jacobtomlinson (#12242)  
+
+See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more information.
+
 ### Release: dask [2025.3.1](https://github.com/dask/dask/releases/tag/2025.3.1)
 ## Changes
 
@@ -469,7 +508,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more information.
 
-## Project: [delta-io/delta-rs](https://delta-io.github.io/delta-rs/usage/installation/), 5 releases: ['python-v1.4.0', 'python-v1.3.2', 'python-v1.3.1: read support deletion vectors, column mapping', 'rust-v0.30.0', 'python-v1.3.0']
+## Project: [delta-io/delta-rs](https://delta-io.github.io/delta-rs/usage/installation/), 3 releases: ['python-v1.4.0', 'python-v1.3.2', 'python-v1.3.1: read support deletion vectors, column mapping']
 ### Release: delta-rs [python-v1.4.0](https://github.com/delta-io/delta-rs/releases/tag/python-v1.4.0)
 ## What's Changed
 * fix: report failed data in data checks by @roeap in https://github.com/delta-io/delta-rs/pull/4083
@@ -541,139 +580,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 * @SG5 made their first contribution in https://github.com/delta-io/delta-rs/pull/3941
 
 **Full Changelog**: https://github.com/delta-io/delta-rs/compare/python-v1.3.0...python-v1.3.1
-### Release: delta-rs [rust-v0.30.0](https://github.com/delta-io/delta-rs/releases/tag/rust-v0.30.0)
-## :warning: There are a number of API changes between `0.30.x` and `0.29.4 :warning: 
-
-
-This release includes [delta_kernel](https://crates.io/crates/delta_kernel) which includes some performance improvements around stats parsing. The 0.30.x release line is expected to have a number of patch releases that incorporate more and more performance improvements with our delta_kernel integration.
-
-
-
-
-[Full Changelog](https://github.com/delta-io/delta-rs/compare/rust-v0.29.4...rust-v0.30.0)
-
-**Merged pull requests:**
-
-- refactor: remove log\_data call sites in find\_files [\#4026](https://github.com/delta-io/delta-rs/pull/4026) ([roeap](https://github.com/roeap))
-- chore: remove wildcard dependency for publishing [\#4025](https://github.com/delta-io/delta-rs/pull/4025) ([rtyler](https://github.com/rtyler))
-- refactor: use logical type ref when getting stats [\#4019](https://github.com/delta-io/delta-rs/pull/4019) ([roeap](https://github.com/roeap))
-- fix: handle stats config in data sink [\#4016](https://github.com/delta-io/delta-rs/pull/4016) ([roeap](https://github.com/roeap))
-- fix: null handling when extracting scalars [\#4014](https://github.com/delta-io/delta-rs/pull/4014) ([roeap](https://github.com/roeap))
-- fix: between range handling in expression translations [\#4013](https://github.com/delta-io/delta-rs/pull/4013) ([roeap](https://github.com/roeap))
-- chore: fix windows uri test [\#4011](https://github.com/delta-io/delta-rs/pull/4011) ([hntd187](https://github.com/hntd187))
-- refactor: towards lazier snapshots [\#4010](https://github.com/delta-io/delta-rs/pull/4010) ([roeap](https://github.com/roeap))
-- fix: pin pyspark and clear disk space in runners [\#4007](https://github.com/delta-io/delta-rs/pull/4007) ([ion-elgreco](https://github.com/ion-elgreco))
-- test: add utilities for asserting DAT scan results [\#4005](https://github.com/delta-io/delta-rs/pull/4005) ([roeap](https://github.com/roeap))
-- chore: update delta-kernel to 0.19 [\#4004](https://github.com/delta-io/delta-rs/pull/4004) ([roeap](https://github.com/roeap))
-- refactor: simplify kernel extensions [\#4003](https://github.com/delta-io/delta-rs/pull/4003) ([roeap](https://github.com/roeap))
-- chore: clippy [\#4002](https://github.com/delta-io/delta-rs/pull/4002) ([roeap](https://github.com/roeap))
-- refactor: handle target version when resolving snapshot [\#4001](https://github.com/delta-io/delta-rs/pull/4001) ([roeap](https://github.com/roeap))
-- refactor: use rstest for running DAT tests [\#4000](https://github.com/delta-io/delta-rs/pull/4000) ([roeap](https://github.com/roeap))
-- feat: kernel expression conversion [\#3998](https://github.com/delta-io/delta-rs/pull/3998) ([roeap](https://github.com/roeap))
-- chore: add easier local coverage reporting [\#3995](https://github.com/delta-io/delta-rs/pull/3995) ([rtyler](https://github.com/rtyler))
-- feat: expose operations on DeltaTable [\#3987](https://github.com/delta-io/delta-rs/pull/3987) ([roeap](https://github.com/roeap))
-- chore: remove some warnigs [\#3986](https://github.com/delta-io/delta-rs/pull/3986) ([roeap](https://github.com/roeap))
-- chore: normalize Url going into logstore and update everything to take references [\#3985](https://github.com/delta-io/delta-rs/pull/3985) ([rtyler](https://github.com/rtyler))
-- fix: add missing field to snapshot serde [\#3984](https://github.com/delta-io/delta-rs/pull/3984) ([roeap](https://github.com/roeap))
-- feat: allow for concurrent deletes in conflict checker if `data_change` is false [\#3982](https://github.com/delta-io/delta-rs/pull/3982) ([abhiaagarwal](https://github.com/abhiaagarwal))
-- fix: remove 3.9 from ci matrix [\#3978](https://github.com/delta-io/delta-rs/pull/3978) ([ion-elgreco](https://github.com/ion-elgreco))
-- fix: decode path before lookup [\#3976](https://github.com/delta-io/delta-rs/pull/3976) ([ion-elgreco](https://github.com/ion-elgreco))
-- chore: remove deprecated pyo3 methods [\#3975](https://github.com/delta-io/delta-rs/pull/3975) ([ion-elgreco](https://github.com/ion-elgreco))
-- chore: removing APIs and deprecation warnings: 0.30.x here we come [\#3962](https://github.com/delta-io/delta-rs/pull/3962) ([rtyler](https://github.com/rtyler))
-- feat: update to DataFusion 51, arrow 57, delta-kernel 0.18.0, pyo3 26, pyo3-arrow 0.14 [\#3949](https://github.com/delta-io/delta-rs/pull/3949) ([hntd187](https://github.com/hntd187))
-- fix: schema evolution for merge operation [\#3945](https://github.com/delta-io/delta-rs/pull/3945) ([JustinRush80](https://github.com/JustinRush80))
-- chore: remove Python 3.9 from our build infrastructure [\#3937](https://github.com/delta-io/delta-rs/pull/3937) ([rtyler](https://github.com/rtyler))
-- docs: fix small typo issue [\#3935](https://github.com/delta-io/delta-rs/pull/3935) ([bmoreau8](https://github.com/bmoreau8))
-- chore: removing references to using `partition_filters` for partition overwrite [\#3912](https://github.com/delta-io/delta-rs/pull/3912) ([zyd14](https://github.com/zyd14))
-- feat\(datafusion\): add max\_temp\_directory\_size parameter for z-order and compact operations for DataFusion [\#3847](https://github.com/delta-io/delta-rs/pull/3847) ([fvaleye](https://github.com/fvaleye))
-
-**Fixed bugs:**
-
-- Asked to increase `max_temp_directory_size` in the disk manager configuration when optimizing large table [\#3833](https://github.com/delta-io/delta-rs/issues/3833)
-
-**Closed issues:**
-
-- \[Bug\]: Count / get\_add\_actions exception for an empty table [\#4023](https://github.com/delta-io/delta-rs/issues/4023)
-- \[Bug\]: MERGE with schema evolution does not add new columns [\#4009](https://github.com/delta-io/delta-rs/issues/4009)
-- \[Bug\]: vacuum does not respect retention\_hours when `full=True` [\#3989](https://github.com/delta-io/delta-rs/issues/3989)
-- \[Bug\]: write table by FFI call from go may memory leak? [\#3973](https://github.com/delta-io/delta-rs/issues/3973)
-- \[Bug\]: Table merging fails with `merge_schema=True` [\#3943](https://github.com/delta-io/delta-rs/issues/3943)
-- \[Bug\]: \_internal.DeltaError: Generic DeltaTable error: Unable to map \_\_delta\_rs\_path to action during `overwrite` with `predicate` [\#3939](https://github.com/delta-io/delta-rs/issues/3939)
-- \[Feature\]: update to DataFusion 51.0.0 [\#3920](https://github.com/delta-io/delta-rs/issues/3920)
-- \[Bug\]: `get_add_actions()` panics with "index out of bounds" when table has no data files [\#3918](https://github.com/delta-io/delta-rs/issues/3918)
-- \[Bug\]: Docs describe `partition_filters` parameter to `write_deltalake` that doesn't exist [\#3904](https://github.com/delta-io/delta-rs/issues/3904)
-- \[Feature\]: split `delta-rs` into multiple crates [\#3899](https://github.com/delta-io/delta-rs/issues/3899)
-- \[Feature\]: Drop python 3.9 support once EOL [\#3886](https://github.com/delta-io/delta-rs/issues/3886)
-- \[Bug\]: PyPi storage limit hit for `deltalake` \[python releases blocked for time-being\] [\#3876](https://github.com/delta-io/delta-rs/issues/3876)**
-### Release: delta-rs [python-v1.3.0](https://github.com/delta-io/delta-rs/releases/tag/python-v1.3.0)
-## What's Changed
-* fix: remove manylinux 217 builds for aarch64 by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/3880
-* fix: display kernel-rs errors better by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/3883
-* fix: needs ci release python by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/3885
-* feat: add multiple constraints at once by @JustinRush80 in https://github.com/delta-io/delta-rs/pull/3879
-* chore: create the next release of the rust core package by @rtyler in https://github.com/delta-io/delta-rs/pull/3887
-* fix: surface the correct kernel objectstore error by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/3888
-* feat(memory): optimize collection preallocation where capacity is known by @fvaleye in https://github.com/delta-io/delta-rs/pull/3895
-* feat: tracing spans across threadpool by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/3894
-* chore: reduce wheel size by @abhiaagarwal in https://github.com/delta-io/delta-rs/pull/3878
-* fix: use the default features of aws-config by @rtyler in https://github.com/delta-io/delta-rs/pull/3898
-* perf(snapshot): minor memory allocation and usage reduction without cloning by @fvaleye in https://github.com/delta-io/delta-rs/pull/3903
-* feat: generate an Symlink Manifest for External Engines by @JustinRush80 in https://github.com/delta-io/delta-rs/pull/3889
-* feat(typed-builder): adopt typed-builder for safer builder pattern in non-core crates by @fvaleye in https://github.com/delta-io/delta-rs/pull/3902
-* chore: cleaning up warnings and preparing 0.29.3 by @rtyler in https://github.com/delta-io/delta-rs/pull/3910
-* fix: update stats serialization logic for scale-0 decimals by @DrakeLin in https://github.com/delta-io/delta-rs/pull/3916
-* feat: add GCS auto-registration via ctor hooks by @ethan-tyler in https://github.com/delta-io/delta-rs/pull/3923
-* chore: bump the patch version to release fixes by @rtyler in https://github.com/delta-io/delta-rs/pull/3919
-* chore(cargo): unify cargo profiles by @fvaleye in https://github.com/delta-io/delta-rs/pull/3924
-* fix: correctly rectify Urls with dots in DeltaTableBuilder by @rtyler in https://github.com/delta-io/delta-rs/pull/3929
-* chore(deps): update ctor requirement from 0.2 to 0.6 by @dependabot[bot] in https://github.com/delta-io/delta-rs/pull/3927
-* chore: remove proofs/ which are no longer used by @rtyler in https://github.com/delta-io/delta-rs/pull/3930
-* chore(deps): update convert_case requirement from 0.8.0 to 0.9.0 by @dependabot[bot] in https://github.com/delta-io/delta-rs/pull/3926
-* chore: adding more test coverage to the Gcp crate by @rtyler in https://github.com/delta-io/delta-rs/pull/3931
-* fix: handle empty tables in get_add_actions() by @vsmanish1772 in https://github.com/delta-io/delta-rs/pull/3922
-* chore: removing references to using `partition_filters` for partition overwrite by @zyd14 in https://github.com/delta-io/delta-rs/pull/3912
-* chore: remove Python 3.9 from our build infrastructure by @rtyler in https://github.com/delta-io/delta-rs/pull/3937
-* feat: update to DataFusion 51, arrow 57, delta-kernel 0.18.0, pyo3 26, pyo3-arrow 0.14 by @hntd187 in https://github.com/delta-io/delta-rs/pull/3949
-* docs: fix small typo issue by @bmoreau8 in https://github.com/delta-io/delta-rs/pull/3935
-* fix: retry advancement of `PreparedCommit` into `PostCommit` in case version 0 already exists (created by another writer) by @danielgafni in https://github.com/delta-io/delta-rs/pull/3513
-* fix: remove 3.9 from ci matrix by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/3978
-* chore: remove deprecated pyo3 methods by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/3975
-* fix: schema evolution for merge operation by @JustinRush80 in https://github.com/delta-io/delta-rs/pull/3945
-* chore: removing APIs and deprecation warnings: 0.30.x here we come by @rtyler in https://github.com/delta-io/delta-rs/pull/3962
-* fix: add missing field to snapshot serde by @roeap in https://github.com/delta-io/delta-rs/pull/3984
-* chore: remove some warnigs by @roeap in https://github.com/delta-io/delta-rs/pull/3986
-* feat: expose operations on DeltaTable by @roeap in https://github.com/delta-io/delta-rs/pull/3987
-* feat(datafusion): add max_temp_directory_size parameter for z-order and compact operations for DataFusion by @fvaleye in https://github.com/delta-io/delta-rs/pull/3847
-* chore: normalize Url going into logstore and update everything to take references by @rtyler in https://github.com/delta-io/delta-rs/pull/3985
-* chore: add easier local coverage reporting by @rtyler in https://github.com/delta-io/delta-rs/pull/3995
-* refactor: use rstest for running DAT tests by @roeap in https://github.com/delta-io/delta-rs/pull/4000
-* refactor: handle target version when resolving snapshot by @roeap in https://github.com/delta-io/delta-rs/pull/4001
-* chore: clippy by @roeap in https://github.com/delta-io/delta-rs/pull/4002
-* refactor: simplify kernel extensions by @roeap in https://github.com/delta-io/delta-rs/pull/4003
-* chore: update delta-kernel to 0.19 by @roeap in https://github.com/delta-io/delta-rs/pull/4004
-* test: add utilities for asserting DAT scan results by @roeap in https://github.com/delta-io/delta-rs/pull/4005
-* feat: allow for concurrent deletes in conflict checker if `data_change` is false by @abhiaagarwal in https://github.com/delta-io/delta-rs/pull/3982
-* feat: kernel expression conversion by @roeap in https://github.com/delta-io/delta-rs/pull/3998
-* fix: decode path before lookup by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/3976
-* fix: pin pyspark and clear disk space in runners by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4007
-* refactor: towards lazier snapshots by @roeap in https://github.com/delta-io/delta-rs/pull/4010
-* chore: fix windows uri test by @hntd187 in https://github.com/delta-io/delta-rs/pull/4011
-* fix: between range handling in expression translations by @roeap in https://github.com/delta-io/delta-rs/pull/4013
-* fix: null handling when extracting scalars by @roeap in https://github.com/delta-io/delta-rs/pull/4014
-* fix: handle stats config in data sink by @roeap in https://github.com/delta-io/delta-rs/pull/4016
-* refactor: use logical type ref when getting stats by @roeap in https://github.com/delta-io/delta-rs/pull/4019
-* chore: remove wildcard dependency for publishing by @rtyler in https://github.com/delta-io/delta-rs/pull/4025
-* refactor: remove log_data call sites in find_files by @roeap in https://github.com/delta-io/delta-rs/pull/4026
-
-## New Contributors
-* @DrakeLin made their first contribution in https://github.com/delta-io/delta-rs/pull/3916
-* @ethan-tyler made their first contribution in https://github.com/delta-io/delta-rs/pull/3923
-* @zyd14 made their first contribution in https://github.com/delta-io/delta-rs/pull/3912
-* @bmoreau8 made their first contribution in https://github.com/delta-io/delta-rs/pull/3935
-* @danielgafni made their first contribution in https://github.com/delta-io/delta-rs/pull/3513
-
-**Full Changelog**: https://github.com/delta-io/delta-rs/compare/python-v1.2.1...python-v1.3.0
-## Project: [lancedb/lance](https://lancedb.github.io/lance/), 14 releases: ['v2.0.0-rc.4', 'v2.0.0-rc.3', 'v1.0.4', 'v1.0.4-rc.1', 'v2.0.0-rc.2', 'v1.0.3', 'v1.0.3-rc.1', 'v2.0.0-rc.1', 'v2.0.0-beta.10', 'v2.0.0-beta.9', 'v1.0.2', 'v2.0.0-beta.8', 'v1.0.2-rc.2', 'v1.0.1']
+## Project: [lancedb/lance](https://lancedb.github.io/lance/), 13 releases: ['v2.0.0-rc.4', 'v2.0.0-rc.3', 'v1.0.4', 'v1.0.4-rc.1', 'v2.0.0-rc.2', 'v1.0.3', 'v1.0.3-rc.1', 'v2.0.0-rc.1', 'v2.0.0-beta.10', 'v2.0.0-beta.9', 'v1.0.2', 'v2.0.0-beta.8', 'v1.0.2-rc.2']
 ### Release: lance [v2.0.0-rc.4](https://github.com/lance-format/lance/releases/tag/v2.0.0-rc.4)
 <!-- Release notes generated using configuration in .github/release.yml at v2.0.0-rc.4 -->
 
@@ -1764,25 +1671,7 @@ This release includes [delta_kernel](https://crates.io/crates/delta_kernel) whic
 * perf: reuse session context by @jackye1995 in https://github.com/lance-format/lance/pull/5696
 
 **Full Changelog**: https://github.com/lance-format/lance/compare/v1.0.1...v1.0.2-rc.2
-### Release: lance [v1.0.1](https://github.com/lance-format/lance/releases/tag/v1.0.1)
-<!-- Release notes generated using configuration in .github/release.yml at v1.0.1 -->
-
-## What's Changed
-### Bug Fixes 🐛
-* fix: make column name lookups case-insensitive by @wjones127 in https://github.com/lance-format/lance/pull/5465
-* fix: dir namespace cloud storage path removes one subdir level by @jackye1995 in https://github.com/lance-format/lance/pull/5495
-* fix: panic unwrap on None in decoder.rs by @jackye1995 in https://github.com/lance-format/lance/pull/5498
-* fix: ensure trailing slash is normalized in rest adapter by @jackye1995 in https://github.com/lance-format/lance/pull/5500
-* fix: head external manifest object happend 404 NotFound error by @hushengquan in https://github.com/lance-format/lance/pull/5512
-* fix: json's arrow extension metadata missing by @Xuanwo in https://github.com/lance-format/lance/pull/5527
-* fix: infer multivector sampling rows by @BubbleCal in https://github.com/lance-format/lance/pull/5534
-* fix: support ManifestNamingSchemeV2 with unordered object stores by @wjones127 in https://github.com/lance-format/lance/pull/5539
-* fix: merge_insert uses full schema path for reordered columns by @wjones127 in https://github.com/lance-format/lance/pull/5541
-### Other Changes
-* refactor: split dataset tests in a tests mod by @Xuanwo in https://github.com/lance-format/lance/pull/5387
-
-**Full Changelog**: https://github.com/lance-format/lance/compare/v1.0.0...v1.0.1
-## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 8 releases: ['Node/Rust LanceDB v0.24.1', 'Python LanceDB v0.27.1', 'Node/Rust LanceDB v0.24.0', 'Python LanceDB v0.27.0', 'Node/Rust LanceDB v0.24.0-beta.0', 'Python LanceDB v0.27.0-beta.0', 'Node/Rust LanceDB v0.23.1', 'Python LanceDB v0.26.1']
+## Project: [lancedb/lancedb](https://lancedb.github.io/lancedb/basic/), 6 releases: ['Node/Rust LanceDB v0.24.1', 'Python LanceDB v0.27.1', 'Node/Rust LanceDB v0.24.0', 'Python LanceDB v0.27.0', 'Node/Rust LanceDB v0.24.0-beta.0', 'Python LanceDB v0.27.0-beta.0']
 ### Release: lancedb [Node/Rust LanceDB v0.24.1](https://github.com/lancedb/lancedb/releases/tag/v0.24.1)
 ## 🎉 New Features
 
@@ -1909,30 +1798,6 @@ This release includes [delta_kernel](https://crates.io/crates/delta_kernel) whic
 ## 📚 Documentation
 
 - docs: address styling and aesthetics issues with banner and links by @prrao87 in https://github.com/lancedb/lancedb/pull/2878
-
-
-### Release: lancedb [Node/Rust LanceDB v0.23.1](https://github.com/lancedb/lancedb/releases/tag/v0.23.1)
-## 🐛 Bug Fixes
-
-- fix: use post for describe_namespace and allow access to underlying client by @jackye1995 in https://github.com/lancedb/lancedb/pull/2871
-- fix: pass namespace storage options provider into native table by @jackye1995 in https://github.com/lancedb/lancedb/pull/2873
-- fix: add to_lance() and to_polars() stub methods for type-checkers by @prrao87 in https://github.com/lancedb/lancedb/pull/2876
-
-## 📚 Documentation
-
-- docs: remove incorrect "LanceDb Cloud only" from table_names params by @jmhsieh in https://github.com/lancedb/lancedb/pull/2893
-
-
-### Release: lancedb [Python LanceDB v0.26.1](https://github.com/lancedb/lancedb/releases/tag/python-v0.26.1)
-## 🐛 Bug Fixes
-
-- fix: use post for describe_namespace and allow access to underlying client by @jackye1995 in https://github.com/lancedb/lancedb/pull/2871
-- fix: pass namespace storage options provider into native table by @jackye1995 in https://github.com/lancedb/lancedb/pull/2873
-- fix: add to_lance() and to_polars() stub methods for type-checkers by @prrao87 in https://github.com/lancedb/lancedb/pull/2876
-
-## 📚 Documentation
-
-- docs: remove incorrect "LanceDb Cloud only" from table_names params by @jmhsieh in https://github.com/lancedb/lancedb/pull/2893
 
 
 ## Project: [datafusion-contrib/datafusion-table-providers](https://github.com/datafusion-contrib/datafusion-table-providers?tab=readme-ov-file#datafusion-table-providers), 1 releases: ['v0.9.3']
