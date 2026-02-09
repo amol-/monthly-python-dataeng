@@ -1,6 +1,7 @@
 import datetime
 import webbrowser
 import os
+import json
 import requests
 import markdown
 import feedparser
@@ -155,6 +156,12 @@ def _parse_eng_date(date):
 
 def main():
     mkdown = ""
+    json_output = {
+        "sections": [
+            {"title": "Complete List of Projects", "projects": []},
+            {"title": "Releases for each project", "projects": []},
+        ]
+    }
 
     github_releases, html_blogs, xml_feeds = fetch_news_entries()
     downloaded_data = {}
@@ -167,6 +174,15 @@ def main():
             continue
         downloaded_data[(project_org, project_name)] = recent_releases
         mkdown += f" * Project: {project_org}/{project_name} has {len(recent_releases)} releases\n"
+        json_output["sections"][0]["projects"].append({
+            "type": "github",
+            "org": project_org,
+            "repo": project_name,
+            "project_page": project_page,
+            "releases_url": releases_url,
+            "entries_kind": "release",
+            "entries_count": len(recent_releases),
+        })
     for url in html_blogs:
         print(f"[HTML] Fetching {url}")
         recent_articles = fetch_html_posts(url)
@@ -174,6 +190,12 @@ def main():
             continue
         downloaded_data[url] = recent_articles
         mkdown += f" * Project: {url} has {len(recent_articles)} releases\n"
+        json_output["sections"][0]["projects"].append({
+            "type": "html",
+            "url": url,
+            "entries_kind": "article",
+            "entries_count": len(recent_articles),
+        })
     for url in xml_feeds:
         print(f"[RSS] Fetching {url}")
         blog_url, blog_title, recent_articles = fetch_rss_posts(url)
@@ -181,6 +203,14 @@ def main():
             continue
         downloaded_data[url] = (blog_url, blog_title, recent_articles)
         mkdown += f" * Project: {url} has {len(recent_articles)} releases\n"
+        json_output["sections"][0]["projects"].append({
+            "type": "rss",
+            "feed_url": url,
+            "blog_url": blog_url,
+            "blog_title": blog_title,
+            "entries_kind": "article",
+            "entries_count": len(recent_articles),
+        })
     mkdown += "\n\n"
 
     mkdown += "# Releases for each project\n"
@@ -192,12 +222,25 @@ def main():
         if not recent_articles:
             continue
 
+        entries = []
         mkdown += f"## Project: [{url}]({url}), {len(recent_articles)} articles\n"
         for recent_article in recent_articles:
             article_date, article_title, article_content, article_url = recent_article
             mkdown += f"### Release: [{article_title}]({article_url})\n"
             # mkdown += article_content
             mkdown += "\n"
+            entries.append({
+                "date": article_date.isoformat(),
+                "title": article_title,
+                "url": article_url,
+                "summary": article_content,
+            })
+        json_output["sections"][1]["projects"].append({
+            "type": "html",
+            "url": url,
+            "entries_kind": "article",
+            "entries": entries,
+        })
 
     # Process RSS Blogs
     for url in xml_feeds:
@@ -207,12 +250,27 @@ def main():
             continue
         
         blog_url, blog_title, recent_articles = data
+        entries = []
         mkdown += f"## Project: [{blog_title}]({blog_url}), {len(recent_articles)} articles\n"
         for recent_article in recent_articles:
             article_date, article_title, article_content, article_url = recent_article
             mkdown += f"### Release: [{article_title}]({article_url})\n"
             # mkdown += article_content
             mkdown += "\n"
+            entries.append({
+                "date": article_date.isoformat(),
+                "title": article_title,
+                "url": article_url,
+                "summary": article_content,
+            })
+        json_output["sections"][1]["projects"].append({
+            "type": "rss",
+            "feed_url": url,
+            "blog_url": blog_url,
+            "blog_title": blog_title,
+            "entries_kind": "article",
+            "entries": entries,
+        })
 
     # Process GitHub Releases
     for releases_url, project_org, project_name, project_page in github_releases:
@@ -222,17 +280,36 @@ def main():
             continue
 
         release_names = [name for _, name, *_ in recent_releases]
+        entries = []
         mkdown += f"## Project: [{project_org}/{project_name}]({project_page}), {len(recent_releases)} releases: {release_names}\n"
         for recent_release in recent_releases:
             release_date, release_name, release_notes, release_url = recent_release
             mkdown += f"### Release: {project_name} [{release_name}]({release_url})\n"
             mkdown += release_notes or f"ERROR: {recent_release}"
             mkdown += "\n"
+            entries.append({
+                "date": release_date.isoformat(),
+                "name": release_name,
+                "url": release_url,
+                "notes": release_notes,
+            })
+        json_output["sections"][1]["projects"].append({
+            "type": "github",
+            "org": project_org,
+            "repo": project_name,
+            "project_page": project_page,
+            "releases_url": releases_url,
+            "entries_kind": "release",
+            "release_names": release_names,
+            "entries": entries,
+        })
 
     with open("newsletter.md", "w+") as f:
         f.write(mkdown)
     with open("newsletter.html", "w+") as f:
         f.write(markdown.markdown(mkdown))
+    with open("newsletter.json", "w+") as f:
+        json.dump(json_output, f, indent=2)
 
     webbrowser.open(f"file://{os.getcwd()}/newsletter.html", new=1)
 
