@@ -9,7 +9,7 @@
  * Project: pyscript/pyscript has 2 releases
  * Project: plotly/dash has 3 releases
  * Project: dask/dask has 5 releases
- * Project: delta-io/delta-rs has 5 releases
+ * Project: delta-io/delta-rs has 4 releases
  * Project: rapidsai/cudf has 2 releases
  * Project: lancedb/lance has 16 releases
  * Project: lancedb/lancedb has 14 releases
@@ -1328,7 +1328,7 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more information.
 
-## Project: [delta-io/delta-rs](https://delta-io.github.io/delta-rs/usage/installation/), 5 releases: ['python-v1.4.2', 'python-v1.4.1', 'python-v1.4.0', 'python-v1.3.2', 'python-v1.3.1: read support deletion vectors, column mapping']
+## Project: [delta-io/delta-rs](https://delta-io.github.io/delta-rs/usage/installation/), 4 releases: ['python-v1.4.2', 'python-v1.4.1', 'python-v1.4.0', 'python-v1.3.2']
 ### Release: delta-rs [python-v1.4.2](https://github.com/delta-io/delta-rs/releases/tag/python-v1.4.2)
 ## What's Changed
 * chore: upgrade python version for a patch release by @rtyler in https://github.com/delta-io/delta-rs/pull/4141
@@ -1412,31 +1412,6 @@ See the [Changelog](https://docs.dask.org/en/stable/changelog.html) for more inf
 
 
 **Full Changelog**: https://github.com/delta-io/delta-rs/compare/python-v1.3.1...python-v1.3.2
-### Release: delta-rs [python-v1.3.1: read support deletion vectors, column mapping](https://github.com/delta-io/delta-rs/releases/tag/python-v1.3.1)
-## What's Changed
-* docs: update the changelog for the last couple releases by @rtyler in https://github.com/delta-io/delta-rs/pull/4028
-* chore: tidy up the python release by @rtyler in https://github.com/delta-io/delta-rs/pull/4031
-* ci: configure python version for windows by @abhiaagarwal in https://github.com/delta-io/delta-rs/pull/4033
-* feat: improve kernel engine by @roeap in https://github.com/delta-io/delta-rs/pull/4035
-* feat: kernel based table scans by @roeap in https://github.com/delta-io/delta-rs/pull/4036
-* feat: push predicates into parquet scans by @roeap in https://github.com/delta-io/delta-rs/pull/4039
-* fix(catalog-unity): improve error messages for temporary credentials failures by @saivineel in https://github.com/delta-io/delta-rs/pull/4038
-* docs: explicitly describe filesystem_check does fix and not only checks it by @SG5 in https://github.com/delta-io/delta-rs/pull/3941
-* refactor: remove DataFrame usage in delete operation by @roeap in https://github.com/delta-io/delta-rs/pull/4047
-* feat: improve schema and predicate handling in scan planning by @roeap in https://github.com/delta-io/delta-rs/pull/4044
-* chore: bump the patch version for a release of catalog-unity by @rtyler in https://github.com/delta-io/delta-rs/pull/4042
-* fix: decode paths only during scan_memory_table by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4056
-* chore: improve lakefs error msg with unknown errors by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4055
-* feat: expose newest table provider to python by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4057
-* chore!: remove peek_next_commit from LogStore by @roeap in https://github.com/delta-io/delta-rs/pull/4059
-* chore: 1.3.1 release by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4060
-* chore(ci): use ubuntu-arm images for linux arm builds by @abhiaagarwal in https://github.com/delta-io/delta-rs/pull/4043
-
-## New Contributors
-* @saivineel made their first contribution in https://github.com/delta-io/delta-rs/pull/4038
-* @SG5 made their first contribution in https://github.com/delta-io/delta-rs/pull/3941
-
-**Full Changelog**: https://github.com/delta-io/delta-rs/compare/python-v1.3.0...python-v1.3.1
 ## Project: [rapidsai/cudf](https://docs.rapids.ai/api/cudf/stable/user_guide/10min/), 2 releases: ['v26.02.01', 'v26.02.00']
 ### Release: cudf [v26.02.01](https://github.com/rapidsai/cudf/releases/tag/v26.02.01)
 <!-- Release notes generated using configuration in .github/release.yml at v26.02.01 -->

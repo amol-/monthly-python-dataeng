@@ -100,7 +100,7 @@
           "project_page": "https://delta-io.github.io/delta-rs/usage/installation/",
           "releases_url": "https://github.com/delta-io/delta-rs/releases",
           "entries_kind": "release",
-          "entries_count": 5
+          "entries_count": 4
         },
         {
           "type": "github",
@@ -577,8 +577,7 @@
             "python-v1.4.2",
             "python-v1.4.1",
             "python-v1.4.0",
-            "python-v1.3.2",
-            "python-v1.3.1: read support deletion vectors, column mapping"
+            "python-v1.3.2"
           ],
           "entries": [
             {
@@ -604,12 +603,6 @@
               "name": "python-v1.3.2",
               "url": "https://github.com/delta-io/delta-rs/releases/tag/python-v1.3.2",
               "notes": "## What's Changed\r\n* ci: correct maturin invocations to call publish by @rtyler in https://github.com/delta-io/delta-rs/pull/4064\r\n* fix: ensure that delete on an empty table works by @rtyler in https://github.com/delta-io/delta-rs/pull/4066\r\n* fix: avoid unnecessary reload of file data by file_views() by @rtyler in https://github.com/delta-io/delta-rs/pull/4067\r\n* feat: expose new table provider in query builder by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4061\r\n* fix: wrap table provider with block_on in scan for python by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4072\r\n* feat: migrate table scans by @roeap in https://github.com/delta-io/delta-rs/pull/4048\r\n* chore: clippy by @roeap in https://github.com/delta-io/delta-rs/pull/4073\r\n* feat: move data validation on a stream by @roeap in https://github.com/delta-io/delta-rs/pull/4050\r\n* fix: handle DV mask exhaustion and short masks in batch_project by @ethan-tyler in https://github.com/delta-io/delta-rs/pull/4058\r\n* fix: use LTO thin for linux ARM release by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4077\r\n* chore: clean up older ignored tests for deletion vectors and column mapping by @rtyler in https://github.com/delta-io/delta-rs/pull/4075\r\n* feat: integrate new table provider with DataSink by @roeap in https://github.com/delta-io/delta-rs/pull/4049\r\n* refactor: remove unused error variants by @roeap in https://github.com/delta-io/delta-rs/pull/4078\r\n\r\n\r\n**Full Changelog**: https://github.com/delta-io/delta-rs/compare/python-v1.3.1...python-v1.3.2"
-            },
-            {
-              "date": "2026-01-09T21:29:48",
-              "name": "python-v1.3.1: read support deletion vectors, column mapping",
-              "url": "https://github.com/delta-io/delta-rs/releases/tag/python-v1.3.1",
-              "notes": "## What's Changed\r\n* docs: update the changelog for the last couple releases by @rtyler in https://github.com/delta-io/delta-rs/pull/4028\r\n* chore: tidy up the python release by @rtyler in https://github.com/delta-io/delta-rs/pull/4031\r\n* ci: configure python version for windows by @abhiaagarwal in https://github.com/delta-io/delta-rs/pull/4033\r\n* feat: improve kernel engine by @roeap in https://github.com/delta-io/delta-rs/pull/4035\r\n* feat: kernel based table scans by @roeap in https://github.com/delta-io/delta-rs/pull/4036\r\n* feat: push predicates into parquet scans by @roeap in https://github.com/delta-io/delta-rs/pull/4039\r\n* fix(catalog-unity): improve error messages for temporary credentials failures by @saivineel in https://github.com/delta-io/delta-rs/pull/4038\r\n* docs: explicitly describe filesystem_check does fix and not only checks it by @SG5 in https://github.com/delta-io/delta-rs/pull/3941\r\n* refactor: remove DataFrame usage in delete operation by @roeap in https://github.com/delta-io/delta-rs/pull/4047\r\n* feat: improve schema and predicate handling in scan planning by @roeap in https://github.com/delta-io/delta-rs/pull/4044\r\n* chore: bump the patch version for a release of catalog-unity by @rtyler in https://github.com/delta-io/delta-rs/pull/4042\r\n* fix: decode paths only during scan_memory_table by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4056\r\n* chore: improve lakefs error msg with unknown errors by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4055\r\n* feat: expose newest table provider to python by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4057\r\n* chore!: remove peek_next_commit from LogStore by @roeap in https://github.com/delta-io/delta-rs/pull/4059\r\n* chore: 1.3.1 release by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4060\r\n* chore(ci): use ubuntu-arm images for linux arm builds by @abhiaagarwal in https://github.com/delta-io/delta-rs/pull/4043\r\n\r\n## New Contributors\r\n* @saivineel made their first contribution in https://github.com/delta-io/delta-rs/pull/4038\r\n* @SG5 made their first contribution in https://github.com/delta-io/delta-rs/pull/3941\r\n\r\n**Full Changelog**: https://github.com/delta-io/delta-rs/compare/python-v1.3.0...python-v1.3.1"
             }
           ]
         },
